@@ -1,0 +1,114 @@
+/* EvolveWP Core Repeater Field Styles */
+
+.plugin-boilerplate-repeater-container {
+    max-width: 800px;
+}
+
+.plugin-boilerplate-repeater-items {
+    margin-bottom: 15px;
+}
+
+.plugin-boilerplate-repeater-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.plugin-boilerplate-repeater-item.collapsed .plugin-boilerplate-repeater-item-content {
+    display: none;
+}
+
+.plugin-boilerplate-repeater-item-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    cursor: move;
+}
+
+.plugin-boilerplate-repeater-item.collapsed .plugin-boilerplate-repeater-item-header {
+    border-bottom: none;
+}
+
+.plugin-boilerplate-repeater-handle {
+    color: #999;
+    margin-right: 10px;
+    cursor: move;
+}
+
+.plugin-boilerplate-repeater-title {
+    flex: 1;
+    font-weight: 600;
+}
+
+.plugin-boilerplate-repeater-toggle,
+.plugin-boilerplate-repeater-remove {
+    padding: 0;
+    margin-left: 10px;
+    color: #666;
+    text-decoration: none;
+}
+
+.plugin-boilerplate-repeater-toggle:hover,
+.plugin-boilerplate-repeater-remove:hover {
+    color: #0073aa;
+}
+
+.plugin-boilerplate-repeater-remove:hover {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-repeater-item-content {
+    padding: 15px;
+}
+
+.plugin-boilerplate-repeater-field {
+    margin-bottom: 15px;
+}
+
+.plugin-boilerplate-repeater-field:last-child {
+    margin-bottom: 0;
+}
+
+.plugin-boilerplate-repeater-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.plugin-boilerplate-repeater-field input[type="text"],
+.plugin-boilerplate-repeater-field input[type="email"],
+.plugin-boilerplate-repeater-field input[type="url"],
+.plugin-boilerplate-repeater-field input[type="number"],
+.plugin-boilerplate-repeater-field textarea,
+.plugin-boilerplate-repeater-field select {
+    width: 100%;
+    max-width: 500px;
+}
+
+.plugin-boilerplate-repeater-field textarea {
+    min-height: 80px;
+}
+
+.plugin-boilerplate-repeater-placeholder {
+    background: #f0f0f0;
+    border: 2px dashed #ddd;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.plugin-boilerplate-repeater-add {
+    margin-top: 10px;
+}
+
+.plugin-boilerplate-repeater-template {
+    display: none;
+}
+
+/* Sortable helper */
+.ui-sortable-helper {
+    opacity: 0.8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}

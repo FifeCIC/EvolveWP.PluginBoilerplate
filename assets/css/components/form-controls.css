@@ -1,0 +1,83 @@
+/**
+ * plugin-boilerplate - Form Controls Component Styles
+ * 
+ * Special form controls beyond basic inputs.
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Radio Group */
+.plugin-boilerplate-radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Weekday Checkboxes */
+.plugin-boilerplate-weekday-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Form Row */
+.plugin-boilerplate-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.plugin-boilerplate-form-group.half {
+    flex: 0 0 calc(50% - 20px);
+    margin: 0 10px;
+}
+
+/* Schedule Actions */
+.plugin-boilerplate-schedule-actions {
+    margin-top: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Log Controls */
+.plugin-boilerplate-log-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-log-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Trade Filters */
+.plugin-boilerplate-trades-filters {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-filter-group {
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+
+/* Legacy classes mapping for backward compatibility */

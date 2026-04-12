@@ -1,0 +1,142 @@
+/**
+ * EvolveWP Core — Scoped Typography Styles
+ *
+ * Typography for headings, text, links, and code blocks ONLY within
+ * .plugin-boilerplate-admin-wrap containers. Does not affect WordPress admin chrome.
+ *
+ * Uses CSS variables defined in variables.css.
+ *
+ * @package plugin-boilerplate/CSS/Base
+ * @since   1.0.0
+ * @since   3.1.0 Scoped to .plugin-boilerplate-admin-wrap. Helper classes prefixed.
+ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   Headings
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap h1,
+.plugin-boilerplate-admin-wrap h2,
+.plugin-boilerplate-admin-wrap h3,
+.plugin-boilerplate-admin-wrap h4,
+.plugin-boilerplate-admin-wrap h5,
+.plugin-boilerplate-admin-wrap h6 {
+  color: var(--plugin-boilerplate-color-gray-900);
+  font-weight: var(--plugin-boilerplate-font-weight-semibold);
+  line-height: 1.2;
+  margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-admin-wrap h1 {
+  font-size: 23px;
+  font-weight: var(--plugin-boilerplate-font-weight-bold);
+  margin-top: var(--plugin-boilerplate-spacing-md);
+  margin-bottom: var(--plugin-boilerplate-spacing-lg);
+  padding: 0;
+}
+
+.plugin-boilerplate-admin-wrap h2 {
+  font-size: 20px;
+  margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-admin-wrap h3 { font-size: 18px; }
+.plugin-boilerplate-admin-wrap h4 { font-size: 16px; }
+.plugin-boilerplate-admin-wrap h5 { font-size: 14px; }
+.plugin-boilerplate-admin-wrap h6 { font-size: 13px; }
+
+/* ─────────────────────────────────────────────────────────────────────
+   Paragraphs and text
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap p {
+  margin-bottom: var(--plugin-boilerplate-spacing-md);
+  font-size: var(--plugin-boilerplate-font-size);
+  line-height: 1.5;
+}
+
+.plugin-boilerplate-admin-wrap .description {
+  color: var(--plugin-boilerplate-color-gray-700);
+  font-size: var(--plugin-boilerplate-font-size);
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Lists
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap ul,
+.plugin-boilerplate-admin-wrap ol {
+  margin-left: 20px;
+  margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-admin-wrap ul { list-style-type: disc; }
+.plugin-boilerplate-admin-wrap ol { list-style-type: decimal; }
+
+.plugin-boilerplate-admin-wrap li {
+  margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Inline formatting
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap strong,
+.plugin-boilerplate-admin-wrap b {
+  font-weight: var(--plugin-boilerplate-font-weight-bold);
+}
+
+.plugin-boilerplate-admin-wrap code,
+.plugin-boilerplate-admin-wrap pre,
+.plugin-boilerplate-admin-wrap kbd {
+  font-family: var(--plugin-boilerplate-font-family-mono);
+  font-size: var(--plugin-boilerplate-font-size-sm);
+  background-color: var(--plugin-boilerplate-color-gray-100);
+  padding: 2px 4px;
+  border-radius: var(--plugin-boilerplate-border-radius-sm);
+}
+
+.plugin-boilerplate-admin-wrap pre {
+  padding: var(--plugin-boilerplate-spacing-md);
+  margin-bottom: var(--plugin-boilerplate-spacing-md);
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Section titles
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap .section-title {
+  border-bottom: 1px solid var(--plugin-boilerplate-color-gray-300);
+  padding-bottom: var(--plugin-boilerplate-spacing-xs);
+  margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Helper classes — prefixed to avoid conflicts.
+   Use .plugin-boilerplate-text-* instead of bare .text-* in templates.
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-text-small  { font-size: var(--plugin-boilerplate-font-size-sm); }
+.plugin-boilerplate-text-xs     { font-size: var(--plugin-boilerplate-font-size-xs); }
+.plugin-boilerplate-text-lg     { font-size: var(--plugin-boilerplate-font-size-lg); }
+.plugin-boilerplate-text-center { text-align: center; }
+.plugin-boilerplate-text-right  { text-align: right; }
+.plugin-boilerplate-text-left   { text-align: left; }
+
+.plugin-boilerplate-text-success { color: var(--plugin-boilerplate-color-success); }
+.plugin-boilerplate-text-warning { color: var(--plugin-boilerplate-color-warning); }
+.plugin-boilerplate-text-error   { color: var(--plugin-boilerplate-color-error); }
+.plugin-boilerplate-text-info    { color: var(--plugin-boilerplate-color-info); }
+.plugin-boilerplate-text-muted   { color: var(--plugin-boilerplate-color-gray-600); }
+
+/* ─────────────────────────────────────────────────────────────────────
+   Code syntax highlighting (for architecture/docs tabs)
+   ───────────────────────────────────────────────────────────────────── */
+
+.plugin-boilerplate-admin-wrap .code-comment { color: var(--plugin-boilerplate-color-gray-600); }
+.plugin-boilerplate-admin-wrap .code-string  { color: var(--plugin-boilerplate-color-success-dark); }
+.plugin-boilerplate-admin-wrap .code-keyword { color: var(--plugin-boilerplate-color-wp-blue); }

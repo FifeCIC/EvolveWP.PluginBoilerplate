@@ -1,0 +1,873 @@
+/**
+ * plugin-boilerplate - Filters Component Styles
+ * 
+ * Styles for filter controls, groups, and filter bars.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-filter-bar">
+ *   <div class="plugin-boilerplate-filter-group">
+ *     <label class="plugin-boilerplate-filter-label">Filter by:</label>
+ *     <select class="plugin-boilerplate-filter-select">...</select>
+ *   </div>
+ *   <div class="plugin-boilerplate-filter-search">
+ *     <input type="text" class="plugin-boilerplate-filter-search-input" />
+ *     <button class="plugin-boilerplate-filter-search-button">Search</button>
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+.plugin-boilerplate-filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl) !important;
+    padding: var(--plugin-boilerplate-spacing-lg) !important;
+    background: var(--plugin-boilerplate-color-white) !important;
+    border: var(--plugin-boilerplate-border-standard) !important;
+    border-radius: var(--plugin-boilerplate-border-radius) !important;
+}
+
+.plugin-boilerplate-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-lg);
+    align-items: flex-end;
+}
+
+.plugin-boilerplate-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-filter-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.plugin-boilerplate-filter-label {
+    font-size: 13px;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-filter-select,
+.plugin-boilerplate-filter-search-input {
+    height: 30px;
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 0 var(--plugin-boilerplate-spacing-sm);
+}
+
+.plugin-boilerplate-filter-search {
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-filter-search-input {
+    min-width: 200px;
+    margin-right: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-filter-search-button {
+    height: 30px;
+    padding: 0 var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-xs);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--plugin-boilerplate-color-gray-50);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+.plugin-boilerplate-filter-tag-remove {
+    margin-left: var(--plugin-boilerplate-spacing-xs);
+    cursor: pointer;
+    color: #666;
+}
+
+.plugin-boilerplate-filter-tag-remove:hover {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-filter-group {
+    margin-right: var(--plugin-boilerplate-spacing-xl) !important;
+    margin-bottom: var(--plugin-boilerplate-spacing-md) !important;
+}
+
+.plugin-boilerplate-filter-group label {
+    margin-right: var(--plugin-boilerplate-spacing-xs) !important;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold) !important;
+}
+
+.plugin-boilerplate-filter, .plugin-boilerplate-search {
+    min-width: 150px !important;
+}
+
+.plugin-boilerplate-date-filter {
+    display: none;
+}
+
+.plugin-boilerplate-date-filter.visible {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+    align-items: flex-end;
+}
+
+.plugin-boilerplate-info-text {
+    margin-top: var(--plugin-boilerplate-spacing-md);
+    color: #666;
+    font-size: 12px;
+}
+
+.plugin-boilerplate-info-text .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.plugin-boilerplate-display-toggle {
+    margin-left: auto;
+}
+
+.plugin-boilerplate-toggle-buttons {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-toggle-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: 3px;
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+}
+
+.plugin-boilerplate-toggle-button .dashicons {
+    margin-right: 4px;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.plugin-boilerplate-toggle-button.active {
+    background: var(--plugin-boilerplate-color-white);
+    border-color: #0073aa;
+    color: #0073aa;
+}
+
+/* ==========================================================================
+   UI Library Filters & Search Components
+   ========================================================================== */
+
+/* Search Input Variations */
+.search-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.search-label {
+    display: block;
+    font-weight: 600;
+    color: var(--plugin-boilerplate-color-text);
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    font-size: 14px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    background: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-text);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--plugin-boilerplate-color-text-muted);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    color: var(--plugin-boilerplate-color-text-muted);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.search-with-clear .search-input {
+    padding-right: 80px;
+}
+
+.search-clear {
+    position: absolute;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--plugin-boilerplate-color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 3;
+}
+
+.search-clear:hover {
+    color: var(--plugin-boilerplate-color-danger);
+    background: rgba(var(--plugin-boilerplate-color-danger-rgb), 0.1);
+}
+
+.search-advanced .search-input {
+    padding-right: 80px;
+}
+
+.search-advanced-toggle {
+    position: absolute;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--plugin-boilerplate-color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 3;
+}
+
+.search-advanced-toggle:hover {
+    color: var(--plugin-boilerplate-color-primary);
+    background: rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.search-advanced-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--plugin-boilerplate-color-white);
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-top: none;
+    border-radius: 0 0 var(--plugin-boilerplate-border-radius) var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: -2px;
+}
+
+.advanced-filter-row {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+    align-items: center;
+}
+
+/* Filter Button Groups */
+.filter-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    color: var(--plugin-boilerplate-color-text);
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    font-size: 14px;
+}
+
+.filter-button-group {
+    display: inline-flex;
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow: hidden;
+    background: var(--plugin-boilerplate-color-white);
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--plugin-boilerplate-color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--plugin-boilerplate-color-border-light);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.filter-button:last-child {
+    border-right: none;
+}
+
+.filter-button:hover {
+    background: var(--plugin-boilerplate-color-bg-hover);
+}
+
+.filter-button.active {
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.filter-count {
+    background: rgba(var(--plugin-boilerplate-color-text-rgb), 0.15);
+    color: inherit;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.filter-button.active .filter-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-performance .filter-gainers.active {
+    background: var(--plugin-boilerplate-color-success);
+}
+
+.filter-performance .filter-losers.active {
+    background: var(--plugin-boilerplate-color-danger);
+}
+
+.filter-performance .filter-volume.active {
+    background: var(--plugin-boilerplate-color-info);
+}
+
+/* Advanced Filter Panels */
+.filter-panel-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.filter-panel {
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    overflow: hidden;
+}
+
+.filter-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: var(--plugin-boilerplate-color-bg-secondary);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-border-light);
+    cursor: pointer;
+}
+
+.filter-panel-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--plugin-boilerplate-color-text);
+}
+
+.filter-panel-toggle {
+    background: none;
+    border: none;
+    color: var(--plugin-boilerplate-color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.filter-panel-toggle:hover {
+    color: var(--plugin-boilerplate-color-primary);
+    background: rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.filter-panel-content {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.filter-row {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.filter-row:last-child {
+    margin-bottom: 0;
+}
+
+.filter-column {
+    flex: 1;
+    min-width: 0;
+}
+
+.filter-field-label {
+    display: block;
+    font-weight: 600;
+    color: var(--plugin-boilerplate-color-text);
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    font-size: 14px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.filter-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    background: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.filter-range {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.filter-range-separator {
+    color: var(--plugin-boilerplate-color-text-muted);
+    font-weight: 500;
+}
+
+.filter-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--plugin-boilerplate-color-border-light);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.filter-slider:hover {
+    opacity: 1;
+}
+
+.filter-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--plugin-boilerplate-color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.filter-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--plugin-boilerplate-color-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.filter-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--plugin-boilerplate-spacing-xs);
+    font-size: 12px;
+    color: var(--plugin-boilerplate-color-text-muted);
+}
+
+.filter-actions {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+    justify-content: flex-end;
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    padding-top: var(--plugin-boilerplate-spacing-lg);
+    border-top: 1px solid var(--plugin-boilerplate-color-border-light);
+}
+
+/* Tag-based Filtering */
+.tag-filter-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.tag-filter-container {
+    background: var(--plugin-boilerplate-color-white);
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-md);
+}
+
+.tag-filter-input-wrapper {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.tag-filter-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.tag-filter-input:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.tag-add-button {
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+    border: none;
+    padding: 10px 12px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag-add-button:hover {
+    background: var(--plugin-boilerplate-color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.active-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    min-height: 32px;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-xs);
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tag-remove {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag-remove:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.suggested-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    align-items: center;
+}
+
+.tag-suggestions-label {
+    font-size: 13px;
+    color: var(--plugin-boilerplate-color-text-muted);
+    font-weight: 500;
+    margin-right: var(--plugin-boilerplate-spacing-sm);
+}
+
+.tag-suggestion {
+    background: var(--plugin-boilerplate-color-bg-secondary);
+    color: var(--plugin-boilerplate-color-text);
+    border: 1px solid var(--plugin-boilerplate-color-border-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-suggestion:hover {
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+    border-color: var(--plugin-boilerplate-color-primary);
+    transform: translateY(-1px);
+}
+
+/* Date Range Selectors */
+.date-filter-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.date-input-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.date-input {
+    padding: 10px 40px 10px 12px;
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-text);
+    min-width: 150px;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.date-icon {
+    position: absolute;
+    right: 12px;
+    color: var(--plugin-boilerplate-color-text-muted);
+    pointer-events: none;
+}
+
+.date-range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.date-range-separator {
+    color: var(--plugin-boilerplate-color-text-muted);
+    font-weight: 500;
+}
+
+.date-preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.date-preset-button {
+    background: var(--plugin-boilerplate-color-bg-secondary);
+    color: var(--plugin-boilerplate-color-text);
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    padding: 8px 16px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.date-preset-button:hover {
+    background: var(--plugin-boilerplate-color-bg-hover);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.date-preset-button.active {
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+/* Sorting Controls */
+.sort-demo {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.sort-label {
+    display: block;
+    font-weight: 600;
+    color: var(--plugin-boilerplate-color-text);
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    font-size: 14px;
+}
+
+.sort-select {
+    padding: 10px 12px;
+    border: 1px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 14px;
+    background: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--plugin-boilerplate-color-primary-rgb), 0.1);
+}
+
+.sort-button-group {
+    display: inline-flex;
+    border: 2px solid var(--plugin-boilerplate-color-border);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow: hidden;
+    background: var(--plugin-boilerplate-color-white);
+}
+
+.sort-button {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--plugin-boilerplate-color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--plugin-boilerplate-color-border-light);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.sort-button:last-child {
+    border-right: none;
+}
+
+.sort-button:hover {
+    background: var(--plugin-boilerplate-color-bg-hover);
+}
+
+.sort-button.active {
+    background: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.sort-direction {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.sort-button.active .sort-direction {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        gap: var(--plugin-boilerplate-spacing-md);
+    }
+    
+    .filter-button-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .filter-button {
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+    }
+    
+    .date-range-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--plugin-boilerplate-spacing-sm);
+    }
+    
+    .date-preset-buttons {
+        justify-content: center;
+    }
+    
+    .sort-button-group {
+        display: flex;
+        width: 100%;
+    }
+    
+    .sort-button {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .advanced-filter-row {
+        flex-direction: column;
+        gap: var(--plugin-boilerplate-spacing-sm);
+    }
+    
+    .tag-filter-input-wrapper {
+        flex-direction: column;
+    }
+    
+    .suggested-tags {
+        justify-content: center;
+    }
+}

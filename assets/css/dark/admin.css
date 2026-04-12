@@ -1,0 +1,125 @@
+/**
+ * plugin-boilerplate Dark Theme - Admin Layout Styles
+ * 
+ * Dark theme overrides for admin page layouts and structure.
+ * 
+ * @package plugin-boilerplate/CSS/Dark
+ * @since 1.0.0
+ */
+
+.plugin-boilerplate-dark-theme {
+    background-color: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+/* Admin Page Structure */
+.plugin-boilerplate-dark-theme .plugin-boilerplate-admin-page {
+    background-color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-admin-section {
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-admin-section h2 {
+    color: var(--plugin-boilerplate-color-black);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-300);
+}
+
+/* Service Card Layout */
+.plugin-boilerplate-dark-theme .service-overview {
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .service-details h3 {
+    color: var(--plugin-boilerplate-color-black);
+}
+
+/* Import/Export Layout */
+.plugin-boilerplate-dark-theme .plugin-boilerplate-import-section,
+.plugin-boilerplate-dark-theme .plugin-boilerplate-export-section {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+/* Feature Status Tables */
+.plugin-boilerplate-dark-theme .feature-status-table th {
+    background: var(--plugin-boilerplate-color-gray-100);
+    color: var(--plugin-boilerplate-color-black);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-400);
+}
+
+.plugin-boilerplate-dark-theme .feature-status-table td {
+    color: var(--plugin-boilerplate-color-black);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-dark-theme .feature-status-table tr:hover {
+    background: var(--plugin-boilerplate-color-gray-100);
+}
+
+.plugin-boilerplate-dark-theme .feature-tab-header {
+    background: var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-dark-theme .completion-stats {
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+/* Button Styles */
+.plugin-boilerplate-dark-theme .test-button {
+    background-color: var(--plugin-boilerplate-color-primary);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-dark-theme .test-button:hover {
+    background-color: var(--plugin-boilerplate-color-primary-dark);
+}
+
+.plugin-boilerplate-dark-theme .test-button.maintenance {
+    background-color: var(--plugin-boilerplate-color-gray-500);
+}
+
+/* Quick Actions Bar */
+.plugin-boilerplate-dark-theme .api-quick-actions {
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+}
+
+.plugin-boilerplate-dark-theme .quick-action-button {
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .quick-action-button:hover {
+    background: var(--plugin-boilerplate-color-gray-200);
+    color: var(--plugin-boilerplate-color-primary);
+}
+
+/* Issues Tab Styles */
+.plugin-boilerplate-dark-theme .issue-row:hover {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+}
+
+/* BugNet Log Viewer Styles */
+.plugin-boilerplate-dark-theme .bugnet-log-viewer h3 {
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .bugnet-log-viewer textarea {
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .bugnet-log-viewer p {
+    color: var(--plugin-boilerplate-color-gray-700);
+}

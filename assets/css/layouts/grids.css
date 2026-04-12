@@ -1,0 +1,122 @@
+/**
+ * plugin-boilerplate - Grid Layout Styles
+ * 
+ * Reusable grid systems for layouts.
+ * 
+ * HTML Structure:
+ * <div class="tp-grid tp-grid-2col">
+ *   <div class="tp-grid-item">Item 1</div>
+ *   <div class="tp-grid-item">Item 2</div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Layouts
+ * @since 1.0.0
+ */
+
+.plugin-boilerplate-grid {
+    display: grid !important;
+    grid-gap: var(--plugin-boilerplate-spacing-lg) !important;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl) !important;
+}
+
+.plugin-boilerplate-grid-2col {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.plugin-boilerplate-grid-3col {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.plugin-boilerplate-grid-4col {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.plugin-boilerplate-grid-item {
+    min-width: 0 !important; /* Fix for text overflow */
+}
+
+.plugin-boilerplate-grid-auto {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* API Grid Layout */
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Metrics Grid */
+.plugin-boilerplate-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.plugin-boilerplate-metrics-grid.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Emoji Guide Grid */
+.emoji-guide {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    grid-gap: 10px !important;
+    margin-top: 15px !important;
+}
+
+/* Template Buttons Grid */
+.templates-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* Alert Grid Layout */
+.plugin-boilerplate-alerts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Statistics Grid Layout */
+.plugin-boilerplate-statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: 30px;
+}
+
+/* Charts Grid Layout */
+.plugin-boilerplate-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: 30px;
+}
+
+/* Legacy classes mapping for backward compatibility */
+@media screen and (max-width: 782px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-boilerplate-metrics-grid.columns-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .emoji-guide {
+        grid-template-columns: 1fr;
+    }
+}

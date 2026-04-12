@@ -1,0 +1,73 @@
+/**
+ * Component Group Layout
+ * Provides consistent spacing and grouping for UI components within a section.
+ */
+.plugin-boilerplate-component-group {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding: var(--plugin-boilerplate-spacing-md);
+    border: 1px solid var(--plugin-boilerplate-border-color);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background-color: var(--plugin-boilerplate-color-white);
+}
+
+/**
+ * Component Showcase
+ * Container for displaying component examples in the UI Library
+ */
+.plugin-boilerplate-component-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-md);
+    padding: var(--plugin-boilerplate-spacing-sm);
+    margin-top: var(--plugin-boilerplate-spacing-sm);
+    background-color: var(--plugin-boilerplate-color-background-light);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/**
+ * UI Library Container
+ * Main wrapper for the UI Library page
+ */
+.plugin-boilerplate-ui-library {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.plugin-boilerplate-ui-container {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+/**
+ * Grid Layouts
+ * Provides consistent grid layouts with different column counts
+ */
+.plugin-boilerplate-grid {
+    display: grid;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-grid-2-cols,
+    .plugin-boilerplate-grid-3-cols {
+        grid-template-columns: 1fr;
+    }
+}

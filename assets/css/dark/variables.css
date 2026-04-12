@@ -1,0 +1,97 @@
+/**
+ * plugin-boilerplate Dark Theme CSS Variables
+ * 
+ * Dark theme color overrides for plugin-boilerplate
+ * 
+ * @package plugin-boilerplate/CSS/Dark
+ * @since 1.0.0
+ * @created 2024-12-21
+ */
+
+.plugin-boilerplate-dark-theme {
+    /* Dark Theme Colors */
+    --plugin-boilerplate-color-primary: #4a9eff;
+    --plugin-boilerplate-color-primary-dark: #2271b1;
+    --plugin-boilerplate-color-primary-light: #72aee6;
+    
+    --plugin-boilerplate-color-secondary: #8c8f94;
+    --plugin-boilerplate-color-secondary-dark: #646970;
+    --plugin-boilerplate-color-secondary-light: #a7aaad;
+    
+    --plugin-boilerplate-color-success: #46d369;
+    --plugin-boilerplate-color-success-dark: #00a32a;
+    --plugin-boilerplate-color-success-light: #68de7c;
+    
+    --plugin-boilerplate-color-warning: #f0c33c;
+    --plugin-boilerplate-color-warning-dark: #dba617;
+    --plugin-boilerplate-color-warning-light: #ffeb3b;
+    
+    --plugin-boilerplate-color-error: #ff6b6b;
+    --plugin-boilerplate-color-error-dark: #d63638;
+    --plugin-boilerplate-color-error-light: #ff8a80;
+    
+    --plugin-boilerplate-color-info: #4a9eff;
+    --plugin-boilerplate-color-info-dark: #2271b1;
+    --plugin-boilerplate-color-info-light: #a7c7e7;
+    
+    /* Dark Neutral Colors */
+    --plugin-boilerplate-color-white: #1e1e1e;
+    --plugin-boilerplate-color-black: #ffffff;
+    
+    --plugin-boilerplate-color-gray-50: #2d2d2d;
+    --plugin-boilerplate-color-gray-100: #3a3a3a;
+    --plugin-boilerplate-color-gray-200: #4a4a4a;
+    --plugin-boilerplate-color-gray-300: #5a5a5a;
+    --plugin-boilerplate-color-gray-400: #6a6a6a;
+    --plugin-boilerplate-color-gray-500: #7a7a7a;
+    --plugin-boilerplate-color-gray-600: #8a8a8a;
+    --plugin-boilerplate-color-gray-700: #9a9a9a;
+    --plugin-boilerplate-color-gray-800: #aaaaaa;
+    --plugin-boilerplate-color-gray-900: #e0e0e0;
+    
+    /* Dark Status Colors */
+    --plugin-boilerplate-status-success-bg: #1a3d1a;
+    --plugin-boilerplate-status-success-border: #2d5a2d;
+    --plugin-boilerplate-status-success-text: #68de7c;
+    
+    --plugin-boilerplate-status-warning-bg: #3d3d1a;
+    --plugin-boilerplate-status-warning-border: #5a5a2d;
+    --plugin-boilerplate-status-warning-text: #f0c33c;
+    
+    --plugin-boilerplate-status-error-bg: #3d1a1a;
+    --plugin-boilerplate-status-error-border: #5a2d2d;
+    --plugin-boilerplate-status-error-text: #ff6b6b;
+    
+    --plugin-boilerplate-status-info-bg: #1a2d3d;
+    --plugin-boilerplate-status-info-border: #2d4a5a;
+    --plugin-boilerplate-status-info-text: #4a9eff;
+
+    /* Dark Form Controls */
+    --plugin-boilerplate-input-bg: #2d2d2d;
+    --plugin-boilerplate-input-border: 1px solid #4a4a4a;
+    --plugin-boilerplate-input-border-focus: 1px solid #4a9eff;
+    
+    /* Update backward compatibility variables */
+    --plugin-boilerplate-color-white: var(--plugin-boilerplate-color-white);
+    --plugin-boilerplate-color-gray-50: var(--plugin-boilerplate-color-gray-50);
+    --plugin-boilerplate-color-gray-300: var(--plugin-boilerplate-color-gray-300);
+    --color-white: var(--plugin-boilerplate-color-white);
+    --color-gray-50: var(--plugin-boilerplate-color-gray-50);
+    --color-gray-300: var(--plugin-boilerplate-color-gray-300);
+}
+
+/* Dark Theme Color Swatch Classes */
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-primary { background-color: var(--plugin-boilerplate-color-primary) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-primary-dark { background-color: var(--plugin-boilerplate-color-primary-dark) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-primary-light { background-color: var(--plugin-boilerplate-color-primary-light) !important; }
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-success { background-color: var(--plugin-boilerplate-color-success) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-warning { background-color: var(--plugin-boilerplate-color-warning) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-error { background-color: var(--plugin-boilerplate-color-error) !important; }
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-white { background-color: var(--plugin-boilerplate-color-white) !important; border: 1px solid var(--plugin-boilerplate-color-gray-300) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-gray-100 { background-color: var(--plugin-boilerplate-color-gray-100) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-gray-300 { background-color: var(--plugin-boilerplate-color-gray-300) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-gray-500 { background-color: var(--plugin-boilerplate-color-gray-500) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-gray-700 { background-color: var(--plugin-boilerplate-color-gray-700) !important; }
+.plugin-boilerplate-dark-theme .plugin-boilerplate-color-gray-900 { background-color: var(--plugin-boilerplate-color-gray-900) !important; }

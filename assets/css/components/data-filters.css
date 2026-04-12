@@ -1,0 +1,119 @@
+/**
+ * plugin-boilerplate - Data Filter Component Styles
+ * 
+ * For filtering and searching data tables.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-filter-form">
+ *   <div class="plugin-boilerplate-filter-controls">
+ *     <div class="plugin-boilerplate-filter-row">
+ *       <div class="plugin-boilerplate-filter-item">
+ *         <label>Filter Label</label>
+ *         <select></select>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Filter Form */
+.plugin-boilerplate-filter-form {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Filter Controls */
+.plugin-boilerplate-filter-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-lg);
+    align-items: flex-end;
+}
+
+.plugin-boilerplate-filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.plugin-boilerplate-filter-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Data Filter Controls */
+.plugin-boilerplate-data-filter-controls {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: #f8f8f8;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+}
+
+.plugin-boilerplate-data-search {
+    flex-grow: 1;
+}
+
+/* Data Table Preview */
+.plugin-boilerplate-table-data-preview {
+    overflow-x: auto;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-table-data-preview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plugin-boilerplate-table-data-preview th, 
+.plugin-boilerplate-table-data-preview td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #e5e5e5;
+}
+
+.plugin-boilerplate-table-data-preview th {
+    background: #f8f8f8;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-table-data-preview tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Data Pagination */
+.plugin-boilerplate-data-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-pagination-info {
+    font-size: 13px;
+    color: #666;
+}
+
+.plugin-boilerplate-current-page, .plugin-boilerplate-total-pages {
+    font-weight: bold;
+}
+
+/* Loading State */
+.plugin-boilerplate-loading {
+    text-align: center;
+    padding: var(--plugin-boilerplate-spacing-xl);
+    color: #666;
+}
+
+/* Legacy classes mapping for backward compatibility */

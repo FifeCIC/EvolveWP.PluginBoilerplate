@@ -1,0 +1,343 @@
+/**
+ * plugin-boilerplate Button Components
+ * 
+ * Button styles used throughout the plugin interface
+ * 
+ * HTML Structure:
+ * <button class="plugin-boilerplate-button plugin-boilerplate-button-primary">Primary Button</button>
+ * <button class="plugin-boilerplate-button plugin-boilerplate-button-secondary">Secondary Button</button>
+ * <button class="plugin-boilerplate-button plugin-boilerplate-button-danger">Danger Button</button>
+ * <button class="plugin-boilerplate-button plugin-boilerplate-button-link">Link Button</button>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Base Button Styles */
+.plugin-boilerplate-button {
+    display: inline-block;
+    padding: var(--plugin-boilerplate-button-padding-y) var(--plugin-boilerplate-button-padding-x);
+    font-family: var(--plugin-boilerplate-font-family-base);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    line-height: var(--plugin-boilerplate-line-height-normal);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: var(--plugin-boilerplate-border-width) solid transparent;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    transition: all var(--plugin-boilerplate-transition-fast);
+    user-select: none;
+    white-space: nowrap;
+    
+    /* Prevent button from breaking layout */
+    min-height: 32px;
+    box-sizing: border-box;
+}
+
+.plugin-boilerplate-button:focus {
+    outline: 2px solid var(--plugin-boilerplate-color-primary-light);
+    outline-offset: 2px;
+}
+
+.plugin-boilerplate-button:disabled,
+.plugin-boilerplate-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Primary Button */
+.plugin-boilerplate-button-primary {
+    color: var(--plugin-boilerplate-color-white);
+    background-color: var(--plugin-boilerplate-color-primary);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-button-primary:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-primary-dark);
+    border-color: var(--plugin-boilerplate-color-primary-dark);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-button-primary:active {
+    background-color: var(--plugin-boilerplate-color-primary-dark);
+    border-color: var(--plugin-boilerplate-color-primary-dark);
+    transform: translateY(1px);
+}
+
+/* Secondary Button */
+.plugin-boilerplate-button-secondary {
+    color: var(--plugin-boilerplate-color-gray-700);
+    background-color: var(--plugin-boilerplate-color-white);
+    border-color: var(--plugin-boilerplate-color-gray-400);
+}
+
+.plugin-boilerplate-button-secondary:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-gray-50);
+    border-color: var(--plugin-boilerplate-color-gray-500);
+    color: var(--plugin-boilerplate-color-gray-800);
+}
+
+.plugin-boilerplate-button-secondary:active {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    transform: translateY(1px);
+}
+
+/* Success Button */
+.plugin-boilerplate-button-success {
+    color: var(--plugin-boilerplate-color-white);
+    background-color: var(--plugin-boilerplate-color-success);
+    border-color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-button-success:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-success-dark);
+    border-color: var(--plugin-boilerplate-color-success-dark);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Danger Button */
+.plugin-boilerplate-button-danger {
+    color: var(--plugin-boilerplate-color-white);
+    background-color: var(--plugin-boilerplate-color-error);
+    border-color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-button-danger:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-error-dark);
+    border-color: var(--plugin-boilerplate-color-error-dark);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Warning Button */
+.plugin-boilerplate-button-warning {
+    color: var(--plugin-boilerplate-color-black);
+    background-color: var(--plugin-boilerplate-color-warning);
+    border-color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-button-warning:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-warning-dark);
+    border-color: var(--plugin-boilerplate-color-warning-dark);
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Link Button */
+.plugin-boilerplate-button-link {
+    color: var(--plugin-boilerplate-color-primary);
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+}
+
+.plugin-boilerplate-button-link:hover:not(:disabled) {
+    color: var(--plugin-boilerplate-color-primary-dark);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* Link Buttons - More specific selectors to override WordPress defaults */
+.wp-core-ui .button-link,
+.wp-admin .button-link,
+button.button-link,
+input.button-link {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    color: var(--plugin-boilerplate-color-primary) !important;
+    text-decoration: underline !important;
+    transition-property: border, background, color !important;
+    transition-duration: 0.05s !important;
+    transition-timing-function: ease-in-out !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    display: inline !important;
+    font-family: inherit !important;
+}
+
+.wp-core-ui .button-link:hover,
+.wp-core-ui .button-link:active,
+.wp-admin .button-link:hover,
+.wp-admin .button-link:active,
+button.button-link:hover,
+button.button-link:active,
+input.button-link:hover,
+input.button-link:active {
+    color: var(--plugin-boilerplate-color-primary-dark) !important;
+    text-decoration: underline !important;
+    background: none !important;
+}
+
+.wp-core-ui .button-link:focus,
+.wp-admin .button-link:focus,
+button.button-link:focus,
+input.button-link:focus {
+    color: var(--plugin-boilerplate-color-primary-dark) !important;
+    box-shadow: 0 0 0 2px var(--plugin-boilerplate-color-primary) !important;
+    outline: 2px solid transparent !important;
+    text-decoration: underline !important;
+    background: none !important;
+}
+
+.wp-core-ui .button-link-delete,
+.wp-admin .button-link-delete,
+button.button-link-delete,
+input.button-link-delete {
+    color: var(--plugin-boilerplate-color-error) !important;
+}
+
+.wp-core-ui .button-link-delete:hover,
+.wp-core-ui .button-link-delete:focus,
+.wp-admin .button-link-delete:hover,
+.wp-admin .button-link-delete:focus,
+button.button-link-delete:hover,
+button.button-link-delete:focus,
+input.button-link-delete:hover,
+input.button-link-delete:focus {
+    color: var(--plugin-boilerplate-color-error-dark) !important;
+    background: none !important;
+}
+
+.wp-core-ui .button-link-delete:disabled,
+.wp-admin .button-link-delete:disabled,
+button.button-link-delete:disabled,
+input.button-link-delete:disabled {
+    background: none !important;
+    color: var(--plugin-boilerplate-color-gray-500) !important;
+}
+
+/* Ensure plugin-boilerplate UI Library button links work properly */
+.plugin-boilerplate-ui-library-container .button-link,
+#ui-library .button-link {
+    color: var(--plugin-boilerplate-color-primary) !important;
+    text-decoration: underline !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* Button Sizes */
+.plugin-boilerplate-button-small {
+    padding: var(--plugin-boilerplate-spacing-xs) var(--plugin-boilerplate-spacing-sm);
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    min-height: 28px;
+}
+
+.plugin-boilerplate-button-large {
+    padding: var(--plugin-boilerplate-spacing-lg) var(--plugin-boilerplate-spacing-xl);
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    min-height: 40px;
+}
+
+/* WordPress Button Size Compatibility */
+.button-large {
+    min-height: 32px;
+    line-height: 2.30769231;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+/* Ensure button-large works properly in UI Library context */
+.plugin-boilerplate-ui-library-container .button.button-large,
+#ui-library .button.button-large {
+    min-height: 32px !important;
+    line-height: 2.30769231 !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+}
+
+/* Button Groups */
+.plugin-boilerplate-button-group {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.plugin-boilerplate-button-group .plugin-boilerplate-button {
+    border-radius: 0;
+    margin-left: -1px;
+}
+
+.plugin-boilerplate-button-group .plugin-boilerplate-button:first-child {
+    border-top-left-radius: var(--plugin-boilerplate-border-radius);
+    border-bottom-left-radius: var(--plugin-boilerplate-border-radius);
+    margin-left: 0;
+}
+
+.plugin-boilerplate-button-group .plugin-boilerplate-button:last-child {
+    border-top-right-radius: var(--plugin-boilerplate-border-radius);
+    border-bottom-right-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-button-group .plugin-boilerplate-button:hover {
+    z-index: 1;
+}
+
+/* Icon Buttons */
+.plugin-boilerplate-button-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-button-icon .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Loading State */
+.plugin-boilerplate-button-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.plugin-boilerplate-button-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: plugin-boilerplate-button-spin 0.8s linear infinite;
+}
+
+@keyframes plugin-boilerplate-button-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* WordPress Button Compatibility */
+.button.plugin-boilerplate-button {
+    font-family: var(--plugin-boilerplate-font-family-base);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-button {
+        padding: var(--plugin-boilerplate-spacing-sm) var(--plugin-boilerplate-spacing-md);
+        font-size: var(--plugin-boilerplate-font-size-md);
+        min-height: 36px;
+    }
+    
+    .plugin-boilerplate-button-small {
+        padding: var(--plugin-boilerplate-spacing-xs) var(--plugin-boilerplate-spacing-sm);
+        font-size: var(--plugin-boilerplate-font-size-sm);
+        min-height: 32px;
+    }
+}

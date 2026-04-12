@@ -1,0 +1,120 @@
+/**
+ * plugin-boilerplate - Responsive Layout Styles
+ * 
+ * Media queries and responsive adjustments.
+ * 
+ * @package plugin-boilerplate/CSS/Layouts
+ * @since 1.0.0
+ */
+
+@media screen and (max-width: 1200px) {
+    .api-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .plugin-boilerplate-discord-settings-container {
+        flex-direction: column;
+    }
+    
+    .plugin-boilerplate-discord-card + .plugin-boilerplate-discord-card {
+        margin-top: var(--plugin-boilerplate-spacing-xl);
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-grid-2col,
+    .plugin-boilerplate-grid-3col,
+    .plugin-boilerplate-grid-4col {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .plugin-boilerplate-card-span2 {
+        grid-column: span 1 !important;
+    }
+    
+    .plugin-boilerplate-form-actions {
+        flex-direction: column !important;
+    }
+    
+    .plugin-boilerplate-button {
+        width: 100% !important;
+        margin-bottom: var(--plugin-boilerplate-spacing-xs) !important;
+    }
+    
+    .api-quick-actions {
+        flex-wrap: wrap;
+    }
+    
+    .endpoints-filter {
+        flex-direction: column;
+    }
+    
+    .plugin-boilerplate-import-export {
+        flex-direction: column;
+    }
+    
+    .github-issues-toolbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .issue-filters {
+        flex-wrap: wrap;
+        flex: initial;
+        width: 100%;
+    }
+    
+    .search-group {
+        flex: 1;
+        max-width: none;
+    }
+    
+    /* Legacy responsive styles from alert-decoder */
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-card.summary {
+        grid-column: span 1;
+    }
+    
+    .emoji-guide {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .plugin-boilerplate-hide-mobile {
+        display: none !important;
+    }
+    
+    .plugin-boilerplate-card-footer,
+    .plugin-boilerplate-form-actions {
+        flex-direction: column;
+    }
+    
+    .plugin-boilerplate-form-actions .button {
+        width: 100%;
+        margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    }
+    
+    .api-main-section {
+        flex-direction: column;
+    }
+    
+    .api-sidebar {
+        width: 100%;
+    }
+    
+    .completion-stats {
+        flex-direction: column;
+    }
+    
+    .stat-box {
+        margin-right: 0;
+    }
+    
+    .forecast-card {
+        width: 100%;
+    }
+}

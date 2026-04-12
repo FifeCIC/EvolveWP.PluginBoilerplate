@@ -1,0 +1,35 @@
+/**
+ * plugin-boilerplate - Log Viewer Component Styles
+ * 
+ * Styles for log viewing and code display.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-log-viewer">
+ *   <pre class="plugin-boilerplate-log-content">Log content goes here</pre>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Log Viewer */
+.plugin-boilerplate-log-viewer {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-log-content {
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: var(--plugin-boilerplate-spacing-md);
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* Legacy classes mapping for backward compatibility */

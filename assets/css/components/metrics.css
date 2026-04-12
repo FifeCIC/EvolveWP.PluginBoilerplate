@@ -1,0 +1,302 @@
+/**
+ * plugin-boilerplate - Metrics Component Styles
+ * 
+ * Styles for displaying metrics, stats, and data visualizations.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-metrics-grid">
+ *   <div class="plugin-boilerplate-metric-item">
+ *     <span class="plugin-boilerplate-metric-label">Label</span>
+ *     <span class="plugin-boilerplate-metric-value">Value</span>
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Metrics Grid */
+.plugin-boilerplate-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* Metric Item */
+.plugin-boilerplate-metric-item {
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    text-align: center;
+}
+
+.plugin-boilerplate-metric-label {
+    display: block;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    color: #444;
+}
+
+.plugin-boilerplate-metric-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2271b1;
+}
+
+/* Component Metrics - Used in automation */
+.plugin-boilerplate-component-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin: var(--plugin-boilerplate-spacing-lg) 0;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/**
+ * plugin-boilerplate - Metrics Component Styles
+ * 
+ * For displaying data metrics, stats, and numerical information.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-stats-grid">
+ *   <div class="plugin-boilerplate-stat-item">
+ *     <div class="plugin-boilerplate-stat-label">Label</div>
+ *     <div class="plugin-boilerplate-stat-value">Value</div>
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Stats Numbers */
+.plugin-boilerplate-stat-numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plugin-boilerplate-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plugin-boilerplate-stat-value {
+    font-size: 24px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.plugin-boilerplate-stat-detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.plugin-boilerplate-stat-detail-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.plugin-boilerplate-stat-detail-value {
+    font-size: 14px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Success/Error Stats */
+.plugin-boilerplate-stat-item.success .plugin-boilerplate-stat-value {
+    color: #46b450;
+}
+
+.plugin-boilerplate-stat-item.error .plugin-boilerplate-stat-value {
+    color: #dc3232;
+}
+
+/* Table Stats */
+.plugin-boilerplate-table-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 10px;
+}
+
+/* Process Count */
+.plugin-boilerplate-process-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/**
+ * plugin-boilerplate - Metrics Component Styles
+ * 
+ * Styles for metrics, scores, charts and data visualization elements.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-metric-card">
+ *   <div class="plugin-boilerplate-metric-label">Label</div>
+ *   <div class="plugin-boilerplate-metric-value">Value</div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Base metrics container */
+.plugin-boilerplate-metrics-container {
+    margin: 20px 0;
+}
+
+/* Metric score visualization */
+.plugin-boilerplate-score-container {
+    position: relative;
+    height: 24px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.plugin-boilerplate-score-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 2;
+    color: #333;
+}
+
+.plugin-boilerplate-score-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: width 0.3s ease;
+}
+
+.plugin-boilerplate-score-high .plugin-boilerplate-score-bar {
+    background-color: #46b450;
+}
+
+.plugin-boilerplate-score-medium .plugin-boilerplate-score-bar {
+    background-color: #ffb900;
+}
+
+.plugin-boilerplate-score-low .plugin-boilerplate-score-bar {
+    background-color: #dc3232;
+}
+
+.plugin-boilerplate-score-star {
+    color: gold;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+/* Loading indicators */
+.plugin-boilerplate-loader-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* EPS Change indicators */
+.plugin-boilerplate-value-positive {
+    color: #46b450;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-value-negative {
+    color: #dc3232;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-value-neutral {
+    color: #767676;
+}
+
+/* Whisper difference indicators */
+.plugin-boilerplate-whisper-diff {
+    display: block;
+    font-size: 11px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+.plugin-boilerplate-whisper-positive {
+    background-color: rgba(70, 180, 80, 0.1);
+    color: #46b450;
+}
+
+.plugin-boilerplate-whisper-negative {
+    background-color: rgba(220, 50, 50, 0.1);
+    color: #dc3232;
+}
+
+/* Importance indicators */
+.plugin-boilerplate-importance-high {
+    background-color: rgba(214, 54, 56, 0.05);
+}
+
+.plugin-boilerplate-importance-indicator {
+    color: #d63638;
+    margin-left: 5px;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/**
+ * plugin-boilerplate - Metrics Component Styles
+ * 
+ * Styles for displaying metrics and statistics.
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Stat items */
+.plugin-boilerplate-stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: #f9f9f9;
+    border-radius: 3px;
+}
+
+.plugin-boilerplate-live-count {
+    color: #46b450;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-demo-count {
+    color: #f0c33c;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Stats grid */
+.plugin-boilerplate-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Legacy classes mapping for backward compatibility */

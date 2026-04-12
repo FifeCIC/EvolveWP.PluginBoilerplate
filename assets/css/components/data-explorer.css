@@ -1,0 +1,99 @@
+/**
+ * plugin-boilerplate - Data Explorer Component Styles
+ * 
+ * Interface elements for exploring and displaying data.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-data-explorer">
+ *   <div class="plugin-boilerplate-data-explorer-controls">...</div>
+ *   <div class="plugin-boilerplate-data-explorer-response">...</div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Data Explorer Content */
+.plugin-boilerplate-data-explorer-content {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* Data Explorer Controls */
+.plugin-boilerplate-data-explorer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    align-items: flex-end;
+}
+
+.plugin-boilerplate-data-explorer-control {
+    flex: 1;
+    min-width: 200px;
+}
+
+.plugin-boilerplate-data-explorer-control label {
+    display: block;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-data-explorer-control select,
+.plugin-boilerplate-data-explorer-control input {
+    width: 100%;
+}
+
+/* Data Explorer Response */
+.plugin-boilerplate-data-explorer-response {
+    background: #f8f8f8;
+    border: var(--plugin-boilerplate-border-standard);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    overflow: auto;
+    max-height: 400px;
+    white-space: pre-wrap;
+    font-family: monospace;
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Data Explorer Loading */
+.plugin-boilerplate-data-explorer-loading {
+    display: flex;
+    align-items: center;
+    margin: var(--plugin-boilerplate-spacing-md) 0;
+}
+
+.plugin-boilerplate-data-explorer-loading .spinner {
+    float: none;
+    margin-top: 0;
+    margin-right: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Test Results */
+.plugin-boilerplate-api-test-results {
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-test-result {
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.plugin-boilerplate-test-result.success {
+    background-color: #f0f9eb;
+    border-left: 4px solid #46b450;
+}
+
+.plugin-boilerplate-test-result.error {
+    background-color: #fdf2f2;
+    border-left: 4px solid #dc3232;
+}
+
+.plugin-boilerplate-test-result .dashicons {
+    margin-right: var(--plugin-boilerplate-spacing-xs);
+    vertical-align: middle;
+}
+
+/* Legacy classes mapping for backward compatibility */

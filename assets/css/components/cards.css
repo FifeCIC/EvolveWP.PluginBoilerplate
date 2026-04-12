@@ -1,0 +1,1194 @@
+/**
+ * plugin-boilerplate - Card Component Styles
+ * 
+ * Styles for card UI elements.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-card">
+ *   <h4 class="plugin-boilerplate-card-header">Title</h4>
+ *   <div class="plugin-boilerplate-card-body">
+ *     Content goes here
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Card Container */
+.plugin-boilerplate-card {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 12px;
+    box-shadow: var(--plugin-boilerplate-shadow-sm);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-card-header {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-card-body {
+    padding: 15px;
+}
+
+.plugin-boilerplate-card-footer {
+    padding: 10px 15px;
+    border-top: 1px solid var(--plugin-boilerplate-color-gray-200);
+    background-color: var(--plugin-boilerplate-color-gray-100);
+}
+
+.plugin-boilerplate-card-row {
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plugin-boilerplate-card-span2 {
+    grid-column: span 2;
+}
+
+/* Interactive Card - Used for Shortcode Cards */
+.plugin-boilerplate-card-interactive {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.plugin-boilerplate-card-interactive:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* API Settings Card */
+.plugin-boilerplate-api-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    box-shadow: var(--plugin-boilerplate-shadow);
+    padding: 15px 25px;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-api-card h2 {
+    font-size: 1.3em;
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-api-card .description {
+    color: #666;
+    font-style: italic;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* API Overview Card */
+.plugin-boilerplate-api-overview {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    box-shadow: var(--plugin-boilerplate-shadow);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow: hidden;
+}
+
+.plugin-boilerplate-api-header {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-api-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: var(--plugin-boilerplate-spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plugin-boilerplate-api-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.plugin-boilerplate-api-info {
+    flex: 1;
+}
+
+.plugin-boilerplate-api-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.plugin-boilerplate-api-version {
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+
+.plugin-boilerplate-api-description {
+    margin: 0 0 10px 0;
+    color: #555;
+}
+
+/* API Credentials Cards */
+.plugin-boilerplate-api-credentials-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-api-credentials-column {
+    flex: 1;
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-api-credentials-column h4 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    padding-bottom: var(--plugin-boilerplate-spacing-xs);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+    font-size: 16px;
+    font-weight: bold;
+    color: #23282d;
+}
+
+/* Algorithm Control Cards */
+.plugin-boilerplate-algorithm-card {
+    border: 1px solid #ccd0d4;
+    padding: var(--plugin-boilerplate-spacing-xl);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Scheduling Cards */
+.plugin-boilerplate-schedule-card {
+    border: 1px solid #ccd0d4;
+    padding: var(--plugin-boilerplate-spacing-xl);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-schedule-group {
+    margin: var(--plugin-boilerplate-spacing-xl) 0;
+    border: 1px solid #eee;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/* Legacy classes mapping for backward compatibility */
+.algorithm-status-card, 
+.algorithm-metrics-card, 
+.cron-schedule-card, 
+.summary-card, 
+/* Legacy result card styles from alert-decoder */
+.result-card {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 12px;
+    box-shadow: var(--plugin-boilerplate-shadow-sm);
+}
+
+.result-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.result-row {
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.result-label {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-right: 5px;
+}
+
+.result-card.summary {
+    grid-column: span 2;
+}
+
+/* Metric Cards */
+.plugin-boilerplate-metric-card {
+    background: var(--plugin-boilerplate-color-gray-100);
+    padding: 15px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    box-shadow: var(--plugin-boilerplate-shadow-sm);
+    text-align: center;
+}
+
+.plugin-boilerplate-metric-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: var(--plugin-boilerplate-font-size);
+    color: var(--plugin-boilerplate-color-gray-700);
+}
+
+.plugin-boilerplate-metric-value {
+    font-size: 24px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-bottom: 10px;
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+.plugin-boilerplate-metric-description {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    color: var(--plugin-boilerplate-color-gray-600);
+}
+
+/* Forecast Cards */
+.forecast-cards-wrapper { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 15px;
+}
+
+.forecast-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    box-shadow: var(--plugin-boilerplate-shadow);
+    width: calc(33.333% - 15px);
+    min-width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.forecast-card h4 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding-bottom: 10px;
+}
+
+.forecast-card-data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.forecast-card-label {
+    font-weight: bold;
+}
+
+.forecast-card-value {
+    text-align: right;
+}
+
+/* Watchlist Cards */
+.watchlist-card {
+    background-color: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: var(--plugin-boilerplate-shadow-sm);
+}
+
+.watchlist-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding-bottom: 8px;
+}
+
+.watchlist-symbols {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.watchlist-symbols li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-50);
+    display: flex;
+    justify-content: space-between;
+}
+
+.watchlist-symbols li:last-child {
+    border-bottom: none;
+}
+
+.watchlist-symbols .symbol {
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.watchlist-symbols .name {
+    color: var(--plugin-boilerplate-color-gray-600);
+    font-size: 0.9em;
+}
+
+.empty-watchlist {
+    font-style: italic;
+    color: var(--plugin-boilerplate-color-gray-600);
+}
+
+/* Automation Section Card */
+.plugin-boilerplate-automation-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+/* Component Card */
+.plugin-boilerplate-component-card {
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-component-card h4 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-component-controls {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    text-align: center;
+}
+
+/* Components Grid */
+.plugin-boilerplate-components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Database Summary Card */
+.plugin-boilerplate-database-summary {
+    margin: var(--plugin-boilerplate-spacing-xl) 0;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background-color: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/* Database Table Card */
+.plugin-boilerplate-table-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    box-shadow: var(--plugin-boilerplate-shadow);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.plugin-boilerplate-table-card:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+}
+
+.plugin-boilerplate-table-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    background: #f8f8f8;
+}
+
+.plugin-boilerplate-table-name {
+    margin: 0;
+    font-size: 16px;
+}
+
+.plugin-boilerplate-table-card-body {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-table-description {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    color: #666;
+}
+
+.plugin-boilerplate-table-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 15px;
+    border-top: 1px solid var(--plugin-boilerplate-color-gray-200);
+    background: #f8f8f8;
+}
+
+.plugin-boilerplate-table-action {
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-table-action .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+/* Stats Card */
+.plugin-boilerplate-stat-card {
+    background-color: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    min-width: 200px;
+    flex: 1;
+}
+
+.plugin-boilerplate-stat-card h3 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    font-size: 16px;
+}
+
+/* Process List Item */
+.plugin-boilerplate-process-list-item {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-process-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.plugin-boilerplate-process-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-process-description {
+    margin: var(--plugin-boilerplate-spacing-md) 0 0 0;
+    padding-top: var(--plugin-boilerplate-spacing-md);
+    border-top: 1px solid var(--plugin-boilerplate-color-gray-200);
+    color: #666;
+}
+
+.plugin-boilerplate-process-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Discord Setup Cards */
+.plugin-boilerplate-discord-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.plugin-boilerplate-discord-card h3 {
+    margin-top: 0;
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+/* Bot Info Card */
+.plugin-boilerplate-bot-info {
+    display: flex;
+    align-items: center;
+    background: var(--plugin-boilerplate-color-white);
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-bot-avatar-container {
+    width: 50px;
+    height: 50px;
+    margin-right: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-bot-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.plugin-boilerplate-bot-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #646970;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-bot-name {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-bot-id {
+    font-size: 12px;
+    color: #646970;
+}
+
+/* Demo Indicator Card */
+.plugin-boilerplate-demo-indicator {
+    display: flex;
+    align-items: center;
+    background-color: #f0f7ff;
+    border-left: 4px solid #0073aa;
+    padding: 12px 15px;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    position: relative;
+}
+
+.plugin-boilerplate-demo-icon {
+    font-size: 24px;
+    margin-right: var(--plugin-boilerplate-spacing-lg);
+    color: #0073aa;
+}
+
+.plugin-boilerplate-demo-text h4 {
+    margin: 0 0 5px 0;
+    color: #23282d;
+}
+
+.plugin-boilerplate-demo-text p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+}
+
+/* Card-style View */
+.plugin-boilerplate-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-featured-card {
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plugin-boilerplate-featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plugin-boilerplate-featured-card h4 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    font-size: 18px;
+}
+
+.plugin-boilerplate-featured-card p {
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+    color: #666;
+}
+
+.plugin-boilerplate-featured-card.plugin-boilerplate-score-high {
+    border-left: 4px solid #46b450;
+}
+
+.plugin-boilerplate-featured-card.plugin-boilerplate-score-medium {
+    border-left: 4px solid #ffb900;
+}
+
+.plugin-boilerplate-featured-card.plugin-boilerplate-score-low {
+    border-left: 4px solid #dc3232;
+}
+
+/* Message Card */
+.plugin-boilerplate-message-card {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    text-align: center;
+}
+
+/* Research Cards */
+.plugin-boilerplate-research-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.plugin-boilerplate-research-card h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.plugin-boilerplate-research-card .plugin-boilerplate-card-description {
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 4px solid #2271b1;
+    margin-top: 10px;
+}
+
+.plugin-boilerplate-metrics-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Research Controls Card */
+.plugin-boilerplate-research-controls {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+}
+
+.plugin-boilerplate-chart-container {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.plugin-boilerplate-indicator-card {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.plugin-boilerplate-indicator-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 16px;
+}
+
+.plugin-boilerplate-chart-wrapper {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.plugin-boilerplate-chart-wrapper h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Stock Alert Cards */
+.plugin-boilerplate-alert-card {
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plugin-boilerplate-alert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Alert card types */
+.plugin-boilerplate-alert-card.trade-alert {
+    border-top: 4px solid #e74c3c;
+}
+
+.plugin-boilerplate-alert-card.watchlist {
+    border-top: 4px solid #3498db;
+}
+
+.plugin-boilerplate-alert-card.update {
+    border-top: 4px solid #f39c12;
+}
+
+.plugin-boilerplate-alert-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+.plugin-boilerplate-alert-ticker {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.plugin-boilerplate-alert-type {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.plugin-boilerplate-alert-type.trade-alert {
+    background-color: #e74c3c;
+}
+
+.plugin-boilerplate-alert-type.watchlist {
+    background-color: #3498db;
+}
+
+.plugin-boilerplate-alert-type.update {
+    background-color: #f39c12;
+}
+
+.plugin-boilerplate-company-name {
+    padding: 0 15px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.plugin-boilerplate-alert-details {
+    padding: 15px;
+}
+
+.plugin-boilerplate-detail-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.plugin-boilerplate-detail-label {
+    flex: 0 0 100px;
+    font-weight: 500;
+    color: #555;
+}
+
+.plugin-boilerplate-detail-value {
+    flex: 1;
+}
+
+.plugin-boilerplate-detail-value.price {
+    font-weight: 700;
+    color: #2ecc71;
+}
+
+.plugin-boilerplate-alert-card-footer {
+    padding: 10px 15px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+.plugin-boilerplate-timestamp {
+    font-size: 12px;
+    color: #777;
+}
+
+.plugin-boilerplate-view-details-link {
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* Statistics Cards */
+.plugin-boilerplate-stat-card {
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.plugin-boilerplate-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #0073aa;
+}
+
+.plugin-boilerplate-stat-label {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Chart Box */
+.plugin-boilerplate-chart-box {
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.plugin-boilerplate-chart-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.plugin-boilerplate-chart-placeholder {
+    background: #f5f5f5;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.plugin-boilerplate-placeholder-text {
+    color: #777;
+    font-style: italic;
+}
+
+/* Calculator Results Card */
+.plugin-boilerplate-calculator-results {
+    margin-top: var(--plugin-boilerplate-spacing-xxl);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    background: #f9f9f9;
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+.plugin-boilerplate-result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    border-left: 4px solid #2271b1;
+}
+
+.plugin-boilerplate-result-value {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Task Card Styles */
+.plugin-boilerplate-task-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-task-card-header {
+    background: var(--plugin-boilerplate-color-gray-50);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-task-title {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    font-size: 18px;
+    color: #23282d;
+}
+
+.plugin-boilerplate-task-card-body {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-task-card-footer {
+    background: #f9f9f9;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-top: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-section-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-empty-state-card {
+    background: #f9f9f9;
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    text-align: center;
+    color: #555;
+}
+
+/* Legacy class mappings for backward compatibility */
+/* API Status Column Styles */
+.api-status-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.status-box {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #ccd0d4;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.status-box h3 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    font-size: 16px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.status-box h4 {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    font-size: 14px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: #23282d;
+}
+
+.status-box h5 {
+    margin-top: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    font-size: 13px;
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    color: #50575e;
+}
+
+.api-type-indicator {
+    display: flex;
+    align-items: flex-start;
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: #f0f7ff;
+    border-left: 4px solid #0073aa;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.api-type-indicator .dashicons {
+    margin-right: var(--plugin-boilerplate-spacing-md);
+    color: #0073aa;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.api-type-text strong {
+    display: block;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    color: #23282d;
+}
+
+.api-type-text p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.api-features ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.api-features li {
+    display: flex;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-xs) 0;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-100);
+}
+
+.api-features li:last-child {
+    border-bottom: none;
+}
+
+.api-features .dashicons {
+    margin-right: var(--plugin-boilerplate-spacing-sm);
+    color: #46b450;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.test-credentials-buttons {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    text-align: center;
+}
+
+.test-credentials-buttons .button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-xs);
+}
+
+.test-credentials-buttons .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Additional styles for tables and stats */
+.plugin-boilerplate-decoded-data-card .decoded-data-details dd:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Table Card Styles (from admin-database.css) */
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.table-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.table-card:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+}
+
+.table-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: #f8f8f8;
+}
+
+.table-name {
+    margin: 0;
+    font-size: 16px;
+}
+
+.table-card-body {
+    padding: 15px;
+}
+
+.table-description {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.table-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 10px;
+}
+
+.table-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    background: #f8f8f8;
+}
+
+.table-action {
+    display: flex;
+    align-items: center;
+}
+
+.table-action .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+/* Stats Card Styles (from admin-database.css) */
+.plugin-boilerplate-stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 15px;
+    min-width: 200px;
+    flex: 1;
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.stat-numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item .stat-value {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.stat-item .stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.stat-item.success .stat-value {
+    color: #46b450;
+}
+
+.stat-item.error .stat-value {
+    color: #dc3232;
+}
+
+@media screen and (max-width: 782px) {
+    .stat-card {
+        min-width: 100%;
+    }
+}

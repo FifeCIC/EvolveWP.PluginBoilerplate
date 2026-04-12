@@ -1,0 +1,144 @@
+/**
+ * plugin-boilerplate - Badge Components
+ * 
+ * Styles for badges, indicators, and small info displays.
+ * 
+ * HTML Structure:
+ * <span class="plugin-boilerplate-badge plugin-boilerplate-badge-primary">Badge Text</span>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Base Badge */
+.plugin-boilerplate-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Time Badges */
+.plugin-boilerplate-time-badge {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.plugin-boilerplate-time-badge.bmo {
+    background-color: #e6f7ff;
+    color: #0073aa;
+}
+
+.plugin-boilerplate-time-badge.amc {
+    background-color: #fef0f0;
+    color: #d63638;
+}
+
+.plugin-boilerplate-time-full {
+    font-size: 12px;
+    display: none;
+}
+
+.plugin-boilerplate-time-specific {
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+/* Sentiment Badges */
+.plugin-boilerplate-sentiment-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-sentiment-pct {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.plugin-boilerplate-sentiment-bullish {
+    background-color: #e7f5e8;
+    color: #2e7d32;
+}
+
+.plugin-boilerplate-sentiment-bearish {
+    background-color: #fef0f0;
+    color: #d63638;
+}
+
+.plugin-boilerplate-sentiment-neutral {
+    background-color: #f0f0f0;
+    color: #616161;
+}
+
+/* Sector Badges */
+.plugin-boilerplate-sector-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.plugin-boilerplate-sector-technology {
+    background-color: #e6f7ff;
+    color: #0073aa;
+}
+
+.plugin-boilerplate-sector-healthcare {
+    background-color: #e7f5e8;
+    color: #2e7d32;
+}
+
+.plugin-boilerplate-sector-financial {
+    background-color: #f5f3ff;
+    color: #673ab7;
+}
+
+.plugin-boilerplate-sector-consumer {
+    background-color: #fff8e1;
+    color: #f57c00;
+}
+
+.plugin-boilerplate-sector-industrial {
+    background-color: #f0f0f0;
+    color: #616161;
+}
+
+.plugin-boilerplate-sector-energy {
+    background-color: #ffeacc;
+    color: #e65100;
+}
+
+/* Report Count Badge */
+.plugin-boilerplate-report-count {
+    margin-left: auto;
+    background: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+
+/* Demo Badge */
+.plugin-boilerplate-demo-badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #ffb900;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+/* Legacy classes mapping for backward compatibility */

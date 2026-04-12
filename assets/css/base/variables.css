@@ -1,0 +1,183 @@
+/**
+ * plugin-boilerplate CSS Variables
+ * 
+ * Global CSS custom properties for consistent styling
+ * 
+ * @package plugin-boilerplate/CSS/Base
+ * @since 1.0.0
+ * @created 2024-12-21
+ */
+
+:root {
+    /* Colors - WordPress Admin Color Scheme */
+    --plugin-boilerplate-color-primary: #2271b1;
+    --plugin-boilerplate-color-primary-dark: #135e96;
+    --plugin-boilerplate-color-primary-light: #72aee6;
+    
+    --plugin-boilerplate-color-secondary: #646970;
+    --plugin-boilerplate-color-secondary-dark: #50575e;
+    --plugin-boilerplate-color-secondary-light: #8c8f94;
+    
+    --plugin-boilerplate-color-success: #00a32a;
+    --plugin-boilerplate-color-success-dark: #007317;
+    --plugin-boilerplate-color-success-light: #68de7c;
+    
+    --plugin-boilerplate-color-warning: #dba617;
+    --plugin-boilerplate-color-warning-dark: #996b00;
+    --plugin-boilerplate-color-warning-light: #f0c33c;
+    
+    --plugin-boilerplate-color-error: #d63638;
+    --plugin-boilerplate-color-error-dark: #b32d2e;
+    --plugin-boilerplate-color-error-light: #e65054;
+    
+    --plugin-boilerplate-color-info: #72aee6;
+    --plugin-boilerplate-color-info-dark: #2271b1;
+    --plugin-boilerplate-color-info-light: #a7c7e7;
+    
+    /* Neutral Colors */
+    --plugin-boilerplate-color-white: #ffffff;
+    --plugin-boilerplate-color-black: #000000;
+    
+    --plugin-boilerplate-color-gray-50: #f6f7f7;
+    --plugin-boilerplate-color-gray-100: #f0f0f1;
+    --plugin-boilerplate-color-gray-200: #e0e0e0;
+    --plugin-boilerplate-color-gray-300: #dcdcde;
+    --plugin-boilerplate-color-gray-400: #c3c4c7;
+    --plugin-boilerplate-color-gray-500: #a7aaad;
+    --plugin-boilerplate-color-gray-600: #8c8f94;
+    --plugin-boilerplate-color-gray-700: #646970;
+    --plugin-boilerplate-color-gray-800: #50575e;
+    --plugin-boilerplate-color-gray-900: #1d2327;
+    
+    /* WordPress Blue Variants */
+    --plugin-boilerplate-color-wp-blue: #2271b1;
+    --plugin-boilerplate-color-wp-blue-dark: #135e96;
+    --plugin-boilerplate-color-wp-blue-light: #72aee6;
+    
+    /* Spacing Scale */
+    --plugin-boilerplate-spacing-xs: 4px;
+    --plugin-boilerplate-spacing-sm: 8px;
+    --plugin-boilerplate-spacing-md: 12px;
+    --plugin-boilerplate-spacing-lg: 16px;
+    --plugin-boilerplate-spacing-xl: 20px;
+    --plugin-boilerplate-spacing-2xl: 24px;
+    --plugin-boilerplate-spacing-3xl: 32px;
+    --plugin-boilerplate-spacing-4xl: 40px;
+    --plugin-boilerplate-spacing-5xl: 48px;
+    
+    /* Typography */
+    --plugin-boilerplate-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --plugin-boilerplate-font-family-mono: Consolas, Monaco, monospace;
+    
+    --plugin-boilerplate-font-size-xs: 11px;
+    --plugin-boilerplate-font-size-sm: 12px;
+    --plugin-boilerplate-font-size: 13px;
+    --plugin-boilerplate-font-size-md: 14px;
+    --plugin-boilerplate-font-size-lg: 16px;
+    --plugin-boilerplate-font-size-xl: 18px;
+    --plugin-boilerplate-font-size-2xl: 22px;
+    --plugin-boilerplate-font-size-3xl: 28px;
+    
+    --plugin-boilerplate-font-weight-normal: 400;
+    --plugin-boilerplate-font-weight-medium: 500;
+    --plugin-boilerplate-font-weight-semibold: 600;
+    --plugin-boilerplate-font-weight-bold: 700;
+    
+    --plugin-boilerplate-line-height-tight: 1.2;
+    --plugin-boilerplate-line-height-normal: 1.4;
+    --plugin-boilerplate-line-height-relaxed: 1.6;
+    
+    /* Border Radius */
+    --plugin-boilerplate-border-radius-sm: 2px;
+    --plugin-boilerplate-border-radius: 4px;
+    --plugin-boilerplate-border-radius-md: 6px;
+    --plugin-boilerplate-border-radius-lg: 8px;
+    --plugin-boilerplate-border-radius-xl: 12px;
+    --plugin-boilerplate-border-radius-full: 9999px;
+    
+    /* Borders */
+    --plugin-boilerplate-border-width: 1px;
+    --plugin-boilerplate-border-width-thick: 2px;
+    --plugin-boilerplate-border-style: solid;
+    --plugin-boilerplate-border-color: var(--plugin-boilerplate-color-gray-300);
+    --plugin-boilerplate-border-standard: var(--plugin-boilerplate-border-width) var(--plugin-boilerplate-border-style) var(--plugin-boilerplate-border-color);
+    
+    /* Shadows */
+    --plugin-boilerplate-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --plugin-boilerplate-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --plugin-boilerplate-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --plugin-boilerplate-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --plugin-boilerplate-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Z-Index Scale */
+    --plugin-boilerplate-z-index-dropdown: 1000;
+    --plugin-boilerplate-z-index-modal: 1050;
+    --plugin-boilerplate-z-index-popover: 1060;
+    --plugin-boilerplate-z-index-tooltip: 1070;
+    --plugin-boilerplate-z-index-toast: 1080;
+    
+    /* Transitions */
+    --plugin-boilerplate-transition-fast: 150ms ease;
+    --plugin-boilerplate-transition-normal: 250ms ease;
+    --plugin-boilerplate-transition-slow: 350ms ease;
+    
+    /* Component Specific */
+    --plugin-boilerplate-button-padding-x: var(--plugin-boilerplate-spacing-md);
+    --plugin-boilerplate-button-padding-y: var(--plugin-boilerplate-spacing-sm);
+    --plugin-boilerplate-input-padding-x: var(--plugin-boilerplate-spacing-md);
+    --plugin-boilerplate-input-padding-y: var(--plugin-boilerplate-spacing-sm);
+    
+    /* Form Controls */
+    --plugin-boilerplate-input-bg: var(--plugin-boilerplate-color-white);
+    --plugin-boilerplate-input-border: var(--plugin-boilerplate-border-standard);
+    --plugin-boilerplate-input-border-focus: var(--plugin-boilerplate-border-width) var(--plugin-boilerplate-border-style) var(--plugin-boilerplate-color-primary);
+    --plugin-boilerplate-input-border-radius: var(--plugin-boilerplate-border-radius);
+    
+    /* Status Colors */
+    --plugin-boilerplate-status-success-bg: #d4edda;
+    --plugin-boilerplate-status-success-border: #c3e6cb;
+    --plugin-boilerplate-status-success-text: #155724;
+    
+    --plugin-boilerplate-status-warning-bg: #fff3cd;
+    --plugin-boilerplate-status-warning-border: #ffeaa7;
+    --plugin-boilerplate-status-warning-text: #856404;
+    
+    --plugin-boilerplate-status-error-bg: #f8d7da;
+    --plugin-boilerplate-status-error-border: #f5c6cb;
+    --plugin-boilerplate-status-error-text: #721c24;
+    
+    --plugin-boilerplate-status-info-bg: #d1ecf1;
+    --plugin-boilerplate-status-info-border: #bee5eb;
+    --plugin-boilerplate-status-info-text: #0c5460;
+
+    /* Focus Ring — consistent focus style for accessibility */
+    --plugin-boilerplate-focus-ring: 2px solid var(--plugin-boilerplate-color-primary);
+    --plugin-boilerplate-focus-ring-offset: 1px;
+
+    /* Accent Color — secondary brand color for highlights */
+    --plugin-boilerplate-color-accent: #2271b1;
+    --plugin-boilerplate-color-accent-light: #72aee6;
+    --plugin-boilerplate-color-accent-dark: #135e96;
+}
+
+/* Color Swatch Classes — used by the UI Library color palette showcase */
+.plugin-boilerplate-color-primary { background-color: var(--plugin-boilerplate-color-primary) !important; }
+.plugin-boilerplate-color-primary-dark { background-color: var(--plugin-boilerplate-color-primary-dark) !important; }
+.plugin-boilerplate-color-primary-light { background-color: var(--plugin-boilerplate-color-primary-light) !important; }
+
+.plugin-boilerplate-color-success { background-color: var(--plugin-boilerplate-color-success) !important; }
+.plugin-boilerplate-color-warning { background-color: var(--plugin-boilerplate-color-warning) !important; }
+.plugin-boilerplate-color-error { background-color: var(--plugin-boilerplate-color-error) !important; }
+
+.plugin-boilerplate-color-white { background-color: var(--plugin-boilerplate-color-white) !important; border: 1px solid var(--plugin-boilerplate-color-gray-300) !important; }
+.plugin-boilerplate-color-gray-100 { background-color: var(--plugin-boilerplate-color-gray-100) !important; }
+.plugin-boilerplate-color-gray-300 { background-color: var(--plugin-boilerplate-color-gray-300) !important; }
+.plugin-boilerplate-color-gray-500 { background-color: var(--plugin-boilerplate-color-gray-500) !important; }
+.plugin-boilerplate-color-gray-700 { background-color: var(--plugin-boilerplate-color-gray-700) !important; }
+.plugin-boilerplate-color-gray-900 { background-color: var(--plugin-boilerplate-color-gray-900) !important; }
+
+/* WordPress Admin Compatibility */
+.wp-admin {
+    --admin-color-scheme-primary: #2271b1;
+    --admin-color-scheme-secondary: #72aee6;
+}

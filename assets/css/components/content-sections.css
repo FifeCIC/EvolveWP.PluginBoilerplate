@@ -1,0 +1,73 @@
+/**
+ * plugin-boilerplate - Content Sections Component Styles
+ * 
+ * Reusable content section styles for task details, descriptions, notes.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-content-section">
+ *   <h3 class="plugin-boilerplate-section-title">Title</h3>
+ *   <div class="plugin-boilerplate-section-content">Content here</div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+.plugin-boilerplate-content-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-section-title {
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-section-content {
+    line-height: 1.5;
+}
+
+.plugin-boilerplate-section-content p {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.plugin-boilerplate-section-content ul, 
+.plugin-boilerplate-section-content ol {
+    margin-left: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-section-content pre {
+    background-color: var(--plugin-boilerplate-color-gray-50);
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow: auto;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-section-content.empty {
+    color: #666;
+    font-style: italic;
+}
+
+.plugin-boilerplate-section-loading {
+    text-align: center;
+    padding: var(--plugin-boilerplate-spacing-xl);
+    color: #666;
+}
+
+.plugin-boilerplate-section-loading .spinner {
+    float: none;
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    visibility: visible;
+}
+
+/* Legacy classes mapping for backward compatibility */

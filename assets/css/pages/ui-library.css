@@ -1,0 +1,1448 @@
+/**
+ * plugin-boilerplate UI Library Page Styles
+ * 
+ * Comprehensive styles for the UI Library showcase page
+ * 
+ * @package plugin-boilerplate/CSS/Pages
+ * @since 1.0.0
+ */
+
+/* =========================================================================
+   Main UI Library Container Classes
+   ========================================================================== */
+
+/* Primary UI Library Wrapper */
+.plugin-boilerplate-ui-library {
+    position: relative;
+    background: var(--plugin-boilerplate-color-gray-50);
+    min-height: 100vh;
+    font-family: var(--plugin-boilerplate-font-family-base);
+}
+
+.plugin-boilerplate-ui-library .wrap {
+    background: transparent;
+    padding: var(--plugin-boilerplate-spacing-lg) var(--plugin-boilerplate-spacing-xl);
+    margin: 0;
+    max-width: none;
+}
+
+.plugin-boilerplate-ui-library h1 {
+    font-size: var(--plugin-boilerplate-font-size-3xl);
+    font-weight: var(--plugin-boilerplate-font-weight-bold);
+    color: var(--plugin-boilerplate-color-gray-900);
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 3px solid var(--plugin-boilerplate-color-primary);
+    position: relative;
+}
+
+.plugin-boilerplate-ui-library h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--plugin-boilerplate-color-accent);
+    border-radius: 2px;
+}
+
+.plugin-boilerplate-ui-library .description {
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    color: var(--plugin-boilerplate-color-gray-700);
+    margin: 0 0 var(--plugin-boilerplate-spacing-xl) 0;
+    line-height: var(--plugin-boilerplate-line-height-relaxed);
+    max-width: 800px;
+}
+
+
+
+/* Section Toggle Controls */
+.plugin-boilerplate-ui-section-controls {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-ui-section-controls .plugin-boilerplate-card {
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius-lg);
+    box-shadow: var(--plugin-boilerplate-shadow);
+    overflow: hidden;
+}
+
+.plugin-boilerplate-ui-section-controls .plugin-boilerplate-card-header {
+    background: linear-gradient(135deg, var(--plugin-boilerplate-color-gray-50) 0%, var(--plugin-boilerplate-color-white) 100%);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plugin-boilerplate-ui-section-controls .plugin-boilerplate-card-header h3 {
+    margin: 0;
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+.plugin-boilerplate-ui-section-controls .control-actions {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.plugin-boilerplate-ui-section-controls .control-actions .button {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    padding: var(--plugin-boilerplate-spacing-sm) var(--plugin-boilerplate-spacing-md);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    transition: all var(--plugin-boilerplate-transition-fast);
+}
+
+.plugin-boilerplate-ui-section-controls .control-actions .button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+.plugin-boilerplate-ui-section-controls .plugin-boilerplate-card-body {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.section-toggles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.section-toggle {
+    display: flex;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    cursor: pointer;
+    transition: all var(--plugin-boilerplate-transition-fast);
+    user-select: none;
+}
+
+.section-toggle:hover {
+    background: var(--plugin-boilerplate-color-primary-50);
+    border-color: var(--plugin-boilerplate-color-primary-200);
+    transform: translateY(-1px);
+}
+
+.section-toggle-checkbox {
+    margin: 0 var(--plugin-boilerplate-spacing-sm) 0 0 !important;
+    accent-color: var(--plugin-boilerplate-color-primary);
+}
+
+.section-toggle-label {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    color: var(--plugin-boilerplate-color-gray-800);
+}
+
+/* Individual Section Containers */
+.ui-library-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    transition: all var(--plugin-boilerplate-transition-normal);
+}
+
+.ui-library-section:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Trading Environment Enhancements */
+.plugin-boilerplate-ui-library {
+    /* Dark mode support for trading environments */
+    --ui-bg-primary: var(--plugin-boilerplate-color-white);
+    --ui-bg-secondary: var(--plugin-boilerplate-color-gray-50);
+    --ui-text-primary: var(--plugin-boilerplate-color-gray-900);
+    --ui-text-secondary: var(--plugin-boilerplate-color-gray-700);
+    --ui-border: var(--plugin-boilerplate-color-gray-200);
+}
+
+@media (prefers-color-scheme: dark) {
+    .plugin-boilerplate-ui-library {
+        --ui-bg-primary: var(--plugin-boilerplate-color-gray-800);
+        --ui-bg-secondary: var(--plugin-boilerplate-color-gray-900);
+        --ui-text-primary: var(--plugin-boilerplate-color-gray-100);
+        --ui-text-secondary: var(--plugin-boilerplate-color-gray-300);
+        --ui-border: var(--plugin-boilerplate-color-gray-600);
+    }
+}
+
+/* Responsive Design for Mobile Trading */
+@media (max-width: 768px) {
+    .plugin-boilerplate-ui-library .wrap {
+        padding: var(--plugin-boilerplate-spacing-md);
+    }
+    
+    .plugin-boilerplate-ui-container {
+        padding: var(--plugin-boilerplate-spacing-lg);
+        margin-top: var(--plugin-boilerplate-spacing-lg);
+    }
+    
+    .section-toggles {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-boilerplate-ui-section-controls .plugin-boilerplate-card-header {
+        flex-direction: column;
+        gap: var(--plugin-boilerplate-spacing-md);
+        align-items: stretch;
+    }
+    
+    .plugin-boilerplate-ui-section-controls .control-actions {
+        justify-content: center;
+    }
+    
+    .ui-library-section {
+        padding: var(--plugin-boilerplate-spacing-lg);
+        margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    }
+}
+
+/* Print Styles for Documentation */
+@media print {
+    .plugin-boilerplate-ui-library {
+        background: white !important;
+    }
+    
+    .plugin-boilerplate-ui-section-controls {
+        display: none !important;
+    }
+    
+    .ui-library-section {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}
+
+/* Main Container */
+.plugin-boilerplate-ui-library-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--plugin-boilerplate-spacing-xl) 0;
+    font-family: var(--plugin-boilerplate-font-family-base);
+}
+
+/* Universal UI Section Styling */
+.ui-section,
+.plugin-boilerplate-ui-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-2xl);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+.ui-section h3,
+.plugin-boilerplate-ui-section h3 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    font-size: var(--plugin-boilerplate-font-size-xl);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+    border-bottom: 2px solid var(--plugin-boilerplate-color-primary);
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+}
+
+.ui-section > p,
+.plugin-boilerplate-ui-section > p {
+    margin: 0 0 var(--plugin-boilerplate-spacing-lg) 0;
+    color: var(--plugin-boilerplate-color-gray-700);
+    font-size: var(--plugin-boilerplate-font-size-md);
+    line-height: var(--plugin-boilerplate-line-height-relaxed);
+}
+
+/* Color Palette Specific Styles */
+.color-palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-md);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    cursor: pointer;
+    transition: all var(--plugin-boilerplate-transition-fast);
+    min-height: 70px;
+}
+
+.color-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--plugin-boilerplate-shadow-md);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-right: var(--plugin-boilerplate-spacing-md);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    flex-shrink: 0;
+}
+
+.color-info h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-xs) 0;
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+.color-info .color-value {
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    color: var(--plugin-boilerplate-color-gray-600);
+    font-family: var(--plugin-boilerplate-font-family-mono);
+}
+
+/* Button Components Showcase */
+.button-showcase {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.button-group {
+    margin-bottom: var(--plugin-boilerplate-spacing-3xl);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-gray-50);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    border-left: 4px solid var(--plugin-boilerplate-color-primary);
+}
+
+.button-group h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-lg) 0;
+    font-size: var(--plugin-boilerplate-font-size-md);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-800);
+}
+
+.button-group .plugin-boilerplate-button {
+    margin-right: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-sm);
+}
+
+/* Button Base Styles */
+.plugin-boilerplate-button {
+    display: inline-block;
+    padding: var(--plugin-boilerplate-button-padding-y) var(--plugin-boilerplate-button-padding-x);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    line-height: var(--plugin-boilerplate-line-height-normal);
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    cursor: pointer;
+    transition: all var(--plugin-boilerplate-transition-fast);
+    vertical-align: middle;
+    user-select: none;
+}
+
+.plugin-boilerplate-button:focus {
+    outline: 2px solid var(--plugin-boilerplate-color-primary);
+    outline-offset: 2px;
+}
+
+/* Primary Button */
+.plugin-boilerplate-button-primary {
+    color: var(--plugin-boilerplate-color-white);
+    background-color: var(--plugin-boilerplate-color-primary);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-button-primary:hover:not(:disabled) {
+    background-color: var(--plugin-boilerplate-color-primary-dark);
+    border-color: var(--plugin-boilerplate-color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--plugin-boilerplate-shadow-md);
+}
+
+.plugin-boilerplate-button-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+.plugin-boilerplate-button-primary:disabled {
+    background-color: var(--plugin-boilerplate-color-gray-400);
+    border-color: var(--plugin-boilerplate-color-gray-400);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Secondary Button */
+.plugin-boilerplate-button-secondary {
+    color: var(--plugin-boilerplate-color-primary);
+    background-color: var(--plugin-boilerplate-color-white);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-button-secondary:hover:not(:disabled) {
+    color: var(--plugin-boilerplate-color-white);
+    background-color: var(--plugin-boilerplate-color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--plugin-boilerplate-shadow-md);
+}
+
+.plugin-boilerplate-button-secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+.plugin-boilerplate-button-secondary:disabled {
+    color: var(--plugin-boilerplate-color-gray-400);
+    border-color: var(--plugin-boilerplate-color-gray-400);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Modal Components Showcase */
+.modal-showcase {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.component-demo {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    box-shadow: var(--plugin-boilerplate-shadow-sm);
+}
+
+.component-demo h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-lg) 0;
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+    border-bottom: 2px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-component-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-component-group {
+    margin-bottom: var(--plugin-boilerplate-spacing-2xl);
+}
+
+.plugin-boilerplate-component-group h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-lg) 0;
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-800);
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+    border-bottom: 2px solid var(--plugin-boilerplate-color-primary);
+}
+
+/* Modal Styles */
+.plugin-boilerplate-modal {
+    display: none;
+    position: fixed;
+    z-index: var(--plugin-boilerplate-z-index-modal);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.plugin-boilerplate-modal-content {
+    background-color: var(--plugin-boilerplate-color-white);
+    margin: 5% auto;
+    border-radius: var(--plugin-boilerplate-border-radius-lg);
+    box-shadow: var(--plugin-boilerplate-shadow-xl);
+    width: 90%;
+    max-width: 600px;
+    animation: modalFadeIn var(--plugin-boilerplate-transition-normal);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.plugin-boilerplate-modal-header {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plugin-boilerplate-modal-header h4 {
+    margin: 0;
+    font-size: var(--plugin-boilerplate-font-size-lg);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+.plugin-boilerplate-modal-close {
+    background: none;
+    border: none;
+    font-size: var(--plugin-boilerplate-font-size-xl);
+    cursor: pointer;
+    color: var(--plugin-boilerplate-color-gray-600);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    transition: all var(--plugin-boilerplate-transition-fast);
+}
+
+.plugin-boilerplate-modal-close:hover {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+.plugin-boilerplate-modal-body {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    color: var(--plugin-boilerplate-color-gray-700);
+    line-height: var(--plugin-boilerplate-line-height-relaxed);
+}
+
+.plugin-boilerplate-modal-footer {
+    padding: var(--plugin-boilerplate-spacing-xl);
+    border-top: 1px solid var(--plugin-boilerplate-color-gray-300);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+    .plugin-boilerplate-ui-library-container {
+        padding: var(--plugin-boilerplate-spacing-md);
+    }
+    
+    .ui-section,
+    .plugin-boilerplate-ui-section {
+        padding: var(--plugin-boilerplate-spacing-md);
+    }
+    
+    .color-palette-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group .plugin-boilerplate-button {
+        margin-bottom: var(--plugin-boilerplate-spacing-md);
+        width: 100%;
+    }
+    
+    .plugin-boilerplate-modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+}
+
+/* Color Info Display Panel */
+.color-info-panel {
+    position: fixed;
+    top: 50%;
+    right: var(--plugin-boilerplate-spacing-xl);
+    transform: translateY(-50%);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius-lg);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    box-shadow: var(--plugin-boilerplate-shadow-lg);
+    z-index: var(--plugin-boilerplate-z-index-popover);
+    min-width: 250px;
+}
+
+.color-info-panel h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    font-size: var(--plugin-boilerplate-font-size-md);
+    color: var(--plugin-boilerplate-color-gray-900);
+}
+
+/* Chart Visualization Showcase */
+.chart-visualization-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* Modal Showcase */
+.modal-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* Status Indicators Showcase */
+.status-indicators-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    padding: var(--plugin-boilerplate-spacing-md);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #f0f0f1;
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/* Color Info Panel */
+.color-info-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid #dcdcde;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    min-width: 300px;
+}
+
+.color-info-panel h4 {
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* Demo Modal */
+.plugin-boilerplate-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plugin-boilerplate-modal-content {
+    background: var(--plugin-boilerplate-color-white);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.plugin-boilerplate-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-bottom: 1px solid #dcdcde;
+}
+
+.plugin-boilerplate-modal-header h3 {
+    margin: 0;
+}
+
+.plugin-boilerplate-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #646970;
+}
+
+.plugin-boilerplate-modal-body {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--plugin-boilerplate-spacing-md);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-top: 1px solid #dcdcde;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-ui-library-container {
+        padding: var(--plugin-boilerplate-spacing-md);
+    }
+    
+    .plugin-boilerplate-color-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: var(--plugin-boilerplate-spacing-sm);
+    }
+    
+    .plugin-boilerplate-color-swatch {
+        height: 40px;
+    }
+    
+    .button-showcase {
+        flex-direction: column;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-boilerplate-input, .plugin-boilerplate-select {
+        width: 100%;
+    }
+    
+    .plugin-boilerplate-modal-content {
+        margin: var(--plugin-boilerplate-spacing-md);
+        width: auto;
+    }
+}
+
+/* Additional component styles needed for the UI Library */
+.spinner-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+}
+
+.spinner-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.spinner-label {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    color: #646970;
+    font-weight: 500;
+}
+
+/* Ensure visibility of key elements */
+.ui-section,
+.component-demo,
+.ui-library-intro,
+.design-principles {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Color Palette Grid - Force 2 rows maximum */
+.color-palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-sm);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    cursor: pointer;
+    transition: all var(--plugin-boilerplate-transition-fast);
+    min-height: 60px;
+}
+
+.color-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--plugin-boilerplate-shadow-md);
+}
+
+.color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-right: var(--plugin-boilerplate-spacing-md);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    flex-shrink: 0;
+}
+
+.color-info h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-xs) 0;
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.color-info .color-value {
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    color: var(--plugin-boilerplate-color-gray-600);
+    font-family: var(--plugin-boilerplate-font-family-mono);
+}
+
+/**
+ * UI Library Page Specific Styles
+ * 
+ * @package plugin-boilerplate/CSS/Pages
+ * @since 1.0.0
+ */
+
+/* Main UI Library Container */
+.plugin-boilerplate-ui-library-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--plugin-boilerplate-spacing-xl) 0;
+}
+
+/* UI Section Styles */
+.plugin-boilerplate-ui-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-3xl);
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+.plugin-boilerplate-ui-section h3 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-lg) 0;
+    color: var(--plugin-boilerplate-color-gray-900);
+    font-size: var(--plugin-boilerplate-font-size-xl);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-ui-section > p {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    color: var(--plugin-boilerplate-color-gray-700);
+}
+
+/* Color Palette Styles */
+.plugin-boilerplate-color-group {
+    margin-bottom: var(--plugin-boilerplate-spacing-2xl);
+}
+
+.plugin-boilerplate-color-group h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    color: var(--plugin-boilerplate-color-gray-800);
+    font-size: var(--plugin-boilerplate-font-size-md);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-color-item {
+    display: flex;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-sm);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    cursor: pointer;
+    transition: all var(--plugin-boilerplate-transition-fast);
+    min-height: 60px;
+}
+
+.plugin-boilerplate-color-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--plugin-boilerplate-shadow-md);
+    border-color: var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-right: var(--plugin-boilerplate-spacing-md);
+    border: 1px solid var(--plugin-boilerplate-color-gray-400);
+    flex-shrink: 0;
+}
+
+.plugin-boilerplate-color-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.plugin-boilerplate-color-name {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-900);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-color-value {
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    color: var(--plugin-boilerplate-color-gray-600);
+    font-family: var(--plugin-boilerplate-font-family-mono);
+}
+
+/* Color Info Panel */
+.plugin-boilerplate-color-info-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    box-shadow: var(--plugin-boilerplate-shadow-lg);
+    z-index: var(--plugin-boilerplate-z-index-popover);
+    min-width: 250px;
+}
+
+.plugin-boilerplate-color-info-panel h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    color: var(--plugin-boilerplate-color-gray-900);
+    font-size: var(--plugin-boilerplate-font-size-md);
+}
+
+/* Button Components */
+.plugin-boilerplate-button-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-button-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.plugin-boilerplate-button-group h5 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-xs) 0;
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    color: var(--plugin-boilerplate-color-gray-800);
+}
+
+/* Form Components Styles */
+.plugin-boilerplate-form-showcase {
+    background: var(--plugin-boilerplate-color-gray-50);
+    border: none;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-form-row {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.plugin-boilerplate-form-label {
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    color: var(--plugin-boilerplate-color-gray-700);
+    font-size: var(--plugin-boilerplate-font-size);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-form-input,
+.plugin-boilerplate-form-select,
+.plugin-boilerplate-form-textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--plugin-boilerplate-spacing-sm) var(--plugin-boilerplate-spacing-md);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-family: var(--plugin-boilerplate-font-family-base);
+    background-color: var(--plugin-boilerplate-color-white);
+    transition: var(--plugin-boilerplate-transition-fast);
+    box-sizing: border-box;
+}
+
+.plugin-boilerplate-form-input:focus,
+.plugin-boilerplate-form-select:focus,
+.plugin-boilerplate-form-textarea:focus {
+    outline: none;
+    border-color: var(--plugin-boilerplate-color-primary);
+    box-shadow: 0 0 0 1px var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-form-input-number {
+    max-width: 120px;
+}
+
+.plugin-boilerplate-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.plugin-boilerplate-form-select-multiple {
+    height: auto;
+}
+
+/* Validation States */
+.plugin-boilerplate-form-input-success {
+    border-color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-form-input-error {
+    border-color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-form-input-warning {
+    border-color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-form-feedback {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-xs);
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    margin-top: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-form-feedback-success {
+    color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-form-feedback-error {
+    color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-form-feedback-warning {
+    color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-form-feedback .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Fieldset and Legend */
+.plugin-boilerplate-form-fieldset {
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    margin: 0;
+}
+
+.plugin-boilerplate-form-legend {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-700);
+    padding: 0 var(--plugin-boilerplate-spacing-sm);
+}
+
+/* Checkbox and Radio Groups */
+.plugin-boilerplate-form-checkbox-group,
+.plugin-boilerplate-form-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--plugin-boilerplate-spacing-sm);
+}
+
+.plugin-boilerplate-form-checkbox-label,
+.plugin-boilerplate-form-radio-label {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.plugin-boilerplate-form-checkbox,
+.plugin-boilerplate-form-radio {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.plugin-boilerplate-form-checkbox-text,
+.plugin-boilerplate-form-radio-text {
+    color: var(--plugin-boilerplate-color-gray-700);
+}
+
+/* Search Input */
+.plugin-boilerplate-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.plugin-boilerplate-search-input {
+    padding-right: var(--plugin-boilerplate-spacing-3xl);
+}
+
+.plugin-boilerplate-search-icon {
+    position: absolute;
+    right: var(--plugin-boilerplate-spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--plugin-boilerplate-color-gray-500);
+    pointer-events: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* File Input */
+.plugin-boilerplate-form-file {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--plugin-boilerplate-spacing-sm);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background-color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-form-description {
+    font-size: var(--plugin-boilerplate-font-size-sm);
+    color: var(--plugin-boilerplate-color-gray-600);
+    margin: var(--plugin-boilerplate-spacing-xs) 0 0 0;
+}
+
+/* Form Layouts */
+.plugin-boilerplate-form-layout {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-form-layout h5 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    color: var(--plugin-boilerplate-color-gray-700);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Horizontal Layout */
+.plugin-boilerplate-form-row-horizontal {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-form-label-horizontal {
+    min-width: 120px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Inline Layout */
+.plugin-boilerplate-form-row-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+    flex-wrap: wrap;
+}
+
+.plugin-boilerplate-form-label-inline {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.plugin-boilerplate-form-input-inline,
+.plugin-boilerplate-form-select-inline {
+    max-width: 200px;
+    flex-shrink: 0;
+}
+
+/* Component Groups */
+.plugin-boilerplate-component-group {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.plugin-boilerplate-component-group h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-sm) 0;
+    font-size: var(--plugin-boilerplate-font-size-md);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: var(--plugin-boilerplate-color-gray-800);
+    padding-bottom: var(--plugin-boilerplate-spacing-xs);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-300);
+}
+
+/* Demo Form */
+.plugin-boilerplate-demo-form {
+    background: var(--plugin-boilerplate-color-gray-50);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    border: 1px solid var(--plugin-boilerplate-color-gray-300);
+}
+
+.plugin-boilerplate-form-actions {
+    margin-top: var(--plugin-boilerplate-spacing-xl);
+    padding-top: var(--plugin-boilerplate-spacing-lg);
+    border-top: 1px solid var(--plugin-boilerplate-color-gray-300);
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Notice Demo Sections */
+.notice-demo-group {
+    margin: 30px 0;
+    padding: 0;
+}
+
+.notice-demo-group:first-child {
+    margin-top: 0;
+}
+
+.notice-demo-group h4 {
+    margin: 0 0 8px 0;
+    color: #1d2327;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 8px;
+}
+
+.section-intro {
+    margin: 0 0 20px 0;
+    color: #646970;
+    font-style: italic;
+}
+
+/* Notice Examples */
+.notice-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notice-example {
+    padding: 0;
+}
+
+.notice-example h6 {
+    margin: 0 0 8px 0;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-left: 3px solid #6b7280;
+    border-radius: 0 4px 4px 0;
+}
+
+.example-description {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Code Examples */
+.code-examples-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 1200px) {
+    .code-examples-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.plugin-boilerplate-code-example {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.plugin-boilerplate-code-example h6 {
+    margin: 0 0 12px 0;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.plugin-boilerplate-code-example pre {
+    margin: 0;
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 14px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.plugin-boilerplate-code-example code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Missing CSS classes for UI Library components */
+.plugin-boilerplate-notice {
+    padding: 12px;
+    margin: 5px 0 15px;
+    border-left: 4px solid #00a0d2;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.plugin-boilerplate-notice-info {
+    border-left-color: #00a0d2;
+    background: #f7fcfe;
+}
+
+.notice-success {
+    border-left-color: #46b450;
+    background: #ecf7ed;
+}
+
+.notice-info {
+    border-left-color: #00a0d2;
+    background: #f7fcfe;
+}
+
+.notice-warning {
+    border-left-color: #ffb900;
+    background: #fff8e5;
+}
+
+.notice-error {
+    border-left-color: #dc3232;
+    background: #fbeaea;
+}
+
+.is-dismissible {
+    position: relative;
+    padding-right: 38px;
+}
+
+.plugin-boilerplate-connect {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #2271b1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.submit {
+    padding: 23px 8px 24px 0;
+}
+
+.skip {
+    color: #646970;
+    text-decoration: none;
+}
+
+.process-status-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.process-status-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.process-status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.process-status-running .process-status-dot {
+    background: #46b450;
+    animation: pulse 2s infinite;
+}
+
+.process-status-stopped .process-status-dot {
+    background: #dc3232;
+}
+
+.process-status-label {
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.process-runtime {
+    font-size: 12px;
+    color: #646970;
+}
+
+.component-notes {
+    margin-top: 16px;
+    padding: 12px;
+    background: #f0f6fc;
+    border: 1px solid #c7d2fe;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #0969da;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Responsive adjustments for UI Library */
+@media (max-width: 782px) {
+    .notice-demo-group h4 {
+        font-size: 16px;
+    }
+    
+    .notice-example h6 {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    .plugin-boilerplate-code-example {
+        padding: 12px;
+    }
+    
+    .plugin-boilerplate-code-example pre {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .process-status-examples {
+        grid-template-columns: 1fr;
+    }
+}

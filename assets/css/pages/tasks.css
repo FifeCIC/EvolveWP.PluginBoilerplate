@@ -1,0 +1,221 @@
+/**
+ * plugin-boilerplate - Tasks Page Styles
+ * 
+ * Page-specific styles for the tasks management page.
+ * Only includes styles that are specific to the tasks page layout
+ * and don't belong in the reusable components.
+ * 
+ * @package plugin-boilerplate/CSS/Pages
+ * @since 1.0.0
+ */
+
+/* Task Page Layout */
+.plugin-boilerplate-tasks-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: var(--plugin-boilerplate-spacing-lg) 0 !important;
+}
+
+.plugin-boilerplate-tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-tasks-title {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.plugin-boilerplate-tasks-actions {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Task Table Column Widths */
+.plugin-boilerplate-tasks-table .column-status {
+    width: 40px !important;
+    text-align: center !important;
+}
+
+.plugin-boilerplate-tasks-table .column-title {
+    width: 35% !important;
+}
+
+.plugin-boilerplate-tasks-table .column-source {
+    width: 15% !important;
+}
+
+.plugin-boilerplate-tasks-table .column-phase {
+    width: 15% !important;
+}
+
+.plugin-boilerplate-tasks-table .column-priority {
+    width: 15% !important;
+}
+
+.plugin-boilerplate-tasks-table .column-actions {
+    width: 20% !important;
+}
+
+/* Task Detail Layout */
+.plugin-boilerplate-task-detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-task-main {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-task-sidebar {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-task-header {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.plugin-boilerplate-task-title {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md) 0;
+    font-size: 18px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    font-weight: var(--plugin-boilerplate-font-weight-medium) !important;
+    display: block !important;
+    text-decoration: none !important;
+}
+
+.plugin-boilerplate-task-title:hover {
+    color: #0073aa !important;
+    text-decoration: underline !important;
+}
+
+.plugin-boilerplate-task-actions {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    flex-wrap: wrap !important;
+    gap: var(--plugin-boilerplate-spacing-xs) !important;
+}
+
+.plugin-boilerplate-task-actions .button {
+    font-size: 12px !important;
+    padding: 2px 8px !important;
+    height: auto !important;
+    line-height: 2 !important;
+}
+
+/* Current Task Specific */
+.plugin-boilerplate-current-task {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-current-task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-current-task-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-current-task-status {
+    margin-left: auto;
+}
+
+.plugin-boilerplate-no-current-task {
+    text-align: center;
+    padding: var(--plugin-boilerplate-spacing-xl) 0;
+    color: #666;
+}
+
+/* Recent Tasks */
+.plugin-boilerplate-recent-tasks {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    margin-top: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-recent-tasks-header {
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    padding-bottom: var(--plugin-boilerplate-spacing-sm);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-recent-tasks-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-task-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-boilerplate-tasks-header,
+    .plugin-boilerplate-current-task-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .plugin-boilerplate-tasks-actions,
+    .plugin-boilerplate-current-task-status {
+        margin-top: var(--plugin-boilerplate-spacing-md);
+        margin-left: 0;
+    }
+    
+    .plugin-boilerplate-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .plugin-boilerplate-filter-search {
+        width: 100%;
+    }
+    
+    .plugin-boilerplate-filter-search-input {
+        flex: 1;
+    }
+}
+
+/* Utility Classes */
+.plugin-boilerplate-hidden {
+    display: none !important;
+}
+
+/* Task Detail Content */
+#task-detail-content {
+    margin-top: var(--plugin-boilerplate-spacing-md) !important;
+}
+
+/* Legacy classes mapping for backward compatibility */

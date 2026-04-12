@@ -1,0 +1,364 @@
+<?php
+/**
+ * EvolveWP Core - Admin Notices
+ *
+ * Management of notice data and arguments controlling notice presentation. 
+ *
+ * @author   Ryan Bayne
+ * @category User Interface
+ * @package  EvolveWP Core/Notices
+ * @since    1.0.0
+ * @version  1.2.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+if( !class_exists( 'EvolveWP_Core_Admin_Notices') ) :
+
+class EvolveWP_Core_Admin_Notices {
+
+    /**
+    * Stores notices.
+    * @var array
+    */
+    private static $notices = array();
+    
+    /**
+     * Array of notices - name => callback.
+     * @var array
+     */
+    private static $core_notices = array(
+        'install'             => 'install_notice',
+        'update'              => 'update_notice',
+    );
+
+    /**
+     * Constructor.
+     * 
+     * @package EvolveWP Core
+     */
+    public static function init() {             
+        self::$notices = get_option( 'plugin_boilerplate_admin_notices', array() );
+        add_action( 'plugin_boilerplate_installed', array( __CLASS__, 'reset_admin_notices' ) );
+        add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
+        add_action( 'shutdown', array( __CLASS__, 'store_notices' ) );
+
+        // Display administrator (staff) only notices.
+        if ( function_exists('current_user_can') && current_user_can( 'manage_plugin-boilerplate' ) ) {
+            add_action( 'admin_print_styles', array( __CLASS__, 'add_notices' ) );
+        }
+    }
+       
+    /**
+    * Box for presenting the status and progress of something.
+    * 
+    * Includes HTML5 progress bars.
+    * 
+    * @author Ryan Bayne
+    * @package EvolveWP Core
+    */    
+    public function progress_box( $title, $intro, $progress_array = array() ){    
+        echo '
+        <div class="plugin_boilerplate_status_box_container">
+            <div class="welcome-panel">
+            
+                <h3>' . esc_html(ucfirst( $title )) . '</h3>
+                
+                <div class="welcome-panel-content">
+                    <p class="about-description">' . esc_html(ucfirst( $intro )) . '...</p>
+                    
+                    <h4>Section Development Progress</h4>
+
+                    ' . wp_kses_post(self::info_area( '', '                    
+                    Free Edition: <progress max="100" value="24"></progress> <br>
+                    Premium Edition: <progress max="100" value="36"></progress> <br>
+                    Support Content: <progress max="100" value="67"></progress> <br>
+                    Translation: <progress max="100" value="87"></progress>' )) .'
+                    <p>' . esc_html__( 'Pledge £9.99 to the Multitool project for 50% discount on the premium edition.', 'plugin-boilerplate' ) . '</p>                                                     
+                </div>
+
+            </div> 
+        </div>';  
+    }
+    
+    /**
+     * Present information at the head of a page with option to dismiss.
+     *
+     * Renders a styled welcome-panel box with an optional highlighted info area,
+     * footer text, and a dismissal link secured by a nonce. The nonce is
+     * extracted into a sanitised local variable before verification so that
+     * PHPCS can confirm the superglobal is both unslashed and sanitised.
+     *
+     * @since   1.0.0
+     * @version 1.2.0
+     *
+     * @param string      $title             Box heading text.
+     * @param string      $intro             Introductory paragraph text.
+     * @param bool        $info_area         Whether to render the highlighted info area.
+     * @param string      $info_area_title   Heading for the highlighted info area.
+     * @param string      $info_area_content Content for the highlighted info area.
+     * @param string|bool $footer            Footer text, or false for none.
+     * @param string|bool $dismissable_id    Meta key used to track dismissal, or false.
+     * @return void
+     */
+    public function intro_box( $title, $intro, $info_area = false, $info_area_title = '', $info_area_content = '', $footer = false, $dismissable_id = false ){
+        global $current_user;
+
+        // handling user action - hide notice and update user meta
+        if ( isset( $_GET[ $dismissable_id ], $_GET['_wpnonce'] ) ) {
+            // Unslash and sanitise the nonce into a local variable so PHPCS
+            // recognises it as sanitised before it is passed to wp_verify_nonce().
+            $plugin_boilerplate_dismiss_nonce = sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) );
+
+            if ( 'dismiss' === $_GET[ $dismissable_id ] && wp_verify_nonce( $plugin_boilerplate_dismiss_nonce, 'dismiss_notice' ) ) {
+                add_user_meta( $current_user->ID, $dismissable_id, 'true', true );
+                return;
+            }
+        }
+               
+        // a dismissed intro
+        if ( $dismissable_id !== false && get_user_meta( $current_user->ID, $dismissable_id ) ) {
+            return;
+        }
+                              
+        // highlighted area within the larger box
+        $highlighted_info = '';
+        if( $info_area == true && is_string( $info_area_title ) ) {
+            $highlighted_info = '<h4>' . $info_area_title . '</h4>';
+            $highlighted_info .= self::info_area( false, $info_area_content );
+        }
+                      
+        // footer text within the larger box, smaller text, good for contact info or a link
+        $footer_text = '<br>';
+        if( $footer ) {
+            $footer_text = '<p>' . $footer . '</p>';    
+        }
+        
+        // add dismiss button
+        $dismissable_button = '';
+        if( $dismissable_id !== false ) {
+            $dismissable_button = sprintf( 
+                ' <a href="%s&%s=dismiss&_wpnonce=%s" class="button button-primary"> ' . esc_html__( 'Hide', 'plugin-boilerplate' ) . ' </a>', 
+                esc_url(isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : ''), 
+                esc_attr($dismissable_id),
+                wp_create_nonce('dismiss_notice')
+            );
+        }
+                
+        echo '
+        <div class="plugin_boilerplate_status_box_container">
+            <div class="welcome-panel">
+                <div class="welcome-panel-content">
+                    
+                    <h1>' . esc_html(ucfirst( $title )) . wp_kses_post($dismissable_button) . '</h1>
+                    
+                    <p class="about-description">' . esc_html(ucfirst( $intro )) . '</p>
+ 
+                    ' . wp_kses_post($highlighted_info) . '
+                    
+                    ' . wp_kses_post($footer_text) . '
+                  
+                </div>
+            </div> 
+        </div>';  
+    } 
+
+    /**
+    * A mid grey area for attracting focus to a small amount of information. Is 
+    * an alternative to standard WordPress notices and good for tips. 
+    * 
+    * @param mixed $title
+    * @param mixed $message
+    * 
+    * @author Ryan Bayne
+    * @package EvolveWP Core 
+    */
+    public function info_area( $title, $message, $admin_only = true ){   
+        if( $admin_only == true && function_exists('current_user_can') && current_user_can( 'manage_options' ) || $admin_only !== true){
+            
+            $area_title = '';
+            if( $title ){
+                $area_title = '<h4>' . $title . '</h4>';
+            }
+            
+            return '
+            <div style="background:#ECECEC;border:1px solid #CCC;padding:0 10px;margin-top:5px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+                ' . $area_title  . '
+                <p>' . $message . '</p>
+            </div>';          
+        }
+    }                          
+
+    /**
+     * Store notices to DB
+     */
+    public static function store_notices() {
+        update_option( 'plugin_boilerplate_admin_notices', self::get_notices() );
+    }
+                                
+    /**
+     * Get notices
+     * @return array
+     */
+    public static function get_notices() {
+        return self::$notices;
+    }
+                                  
+    /**
+     * Remove all notices.
+     */
+    public static function remove_all_notices() {
+        self::$notices = array();
+    }
+
+    /**
+     * Show a notice.
+     * @param string $name
+     */
+    public static function add_notice( $name ) {
+        self::$notices = array_unique( array_merge( self::get_notices(), array( $name ) ) );
+    }
+                                        
+    /**
+     * Remove a notice from being displayed.
+     * @param  string $name
+     */
+    public static function remove_notice( $name ) {
+        self::$notices = array_diff( self::get_notices(), array( $name ) );
+        delete_option( 'plugin_boilerplate_admin_notice_' . $name );
+    }
+
+    /**
+     * When theme is switched or new version detected, reset notices.
+     */
+    public static function reset_admin_notices() {
+
+    }
+        
+    /**
+     * See if a notice is being shown.
+     * @param  string  $name
+     * @return boolean
+     */
+    public static function has_notice( $name ) {
+        return in_array( $name, self::get_notices() );
+    }
+                                       
+    /**
+     * Hide a notice if the GET variable is set.
+     */
+    public static function hide_notices() {
+        if ( isset( $_GET['plugin-boilerplate-hide-notice'] ) && isset( $_GET['_plugin_boilerplate_notice_nonce'] ) ) {
+            if ( ! wp_verify_nonce( sanitize_text_field(wp_unslash($_GET['_plugin_boilerplate_notice_nonce'])), 'plugin_boilerplate_hide_notices_nonce' ) ) {
+                wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'plugin-boilerplate' ) );
+            }
+
+            if ( function_exists('current_user_can') && ! current_user_can( 'manage_plugin-boilerplate' ) ) {
+                wp_die( esc_html__( 'Cheatin&#8217; huh?', 'plugin-boilerplate' ) );
+            }
+
+            $hide_notice = sanitize_text_field( wp_unslash($_GET['plugin-boilerplate-hide-notice']) );
+            self::remove_notice( $hide_notice );
+            do_action( 'plugin_boilerplate_hide_' . $hide_notice . '_notice' );
+        }
+    }
+                                         
+    /**
+     * Add notices + styles if needed.
+     */
+    public static function add_notices() {
+        $notices = self::get_notices();
+
+        if ( ! empty( $notices ) ) {
+            wp_enqueue_style( 'plugin-boilerplate-activation', plugins_url(  '/assets/css/activation.css', PLUGIN_BOILERPLATE_PLUGIN_FILE ), array(), PLUGIN_BOILERPLATE_VERSION );
+            foreach ( $notices as $notice ) {
+                if ( ! empty( self::$core_notices[ $notice ] ) && apply_filters( 'plugin_boilerplate_show_admin_notice', true, $notice ) ) {
+                    add_action( 'admin_notices', array( __CLASS__, self::$core_notices[ $notice ] ) );
+                } else {
+                    add_action( 'admin_notices', array( __CLASS__, 'output_custom_notices' ) );
+                }
+            }
+        }
+    }
+
+    /**
+     * Add a custom notice.
+     * 
+     * Example: EvolveWP_Core_Admin_Notices::add_custom_notice( 'mycustomnotice', 'My name is <strong>Ryan Bayne</strong>' );
+     * 
+     * @param string $name
+     * @param string $notice_html
+     */
+    public static function add_custom_notice( $name, $notice_html ) {
+        self::add_notice( $name );
+        update_option( 'plugin_boilerplate_admin_notice_' . $name, wp_kses_post( $notice_html ) );
+    }
+                                        
+    /**
+     * Output any stored custom notices.
+     */
+    public static function output_custom_notices() {
+        $notices = self::get_notices();
+
+        if ( ! empty( $notices ) ) {
+            foreach ( $notices as $notice ) {
+                if ( empty( self::$core_notices[ $notice ] ) ) {
+                    $notice_html = get_option( 'plugin_boilerplate_admin_notice_' . $notice );
+
+                    if ( $notice_html ) {
+                        include( 'notices/custom.php' );
+                    }
+                }
+            }
+        }
+    }                               
+
+    /**
+     * If we need to update, include a message with the update button.
+     *
+     * Verifies a nonce and manage_options capability before acting on the
+     * do_update_plugin-boilerplate GET parameter, preventing unauthorised or forged
+     * update requests from triggering the updater.
+     *
+     * @since   1.0.0
+     * @version 1.2.0
+     * @return void
+     */
+    public static function update_notice() {
+        if ( version_compare( get_option( 'plugin_boilerplate_db_version' ), PLUGIN_BOILERPLATE_VERSION, '<' ) ) {
+            $updater = new EvolveWP_Core_Background_Updater();
+
+            // Verify nonce and capability before treating the GET parameter as
+            // an instruction to run the updater — prevents CSRF and privilege abuse.
+            $plugin_boilerplate_do_update = false;
+            if ( isset( $_GET['do_update_plugin-boilerplate'], $_GET['_plugin_boilerplate_update_nonce'] ) ) {
+                $plugin_boilerplate_update_nonce = sanitize_text_field( wp_unslash( $_GET['_plugin_boilerplate_update_nonce'] ) );
+                if ( wp_verify_nonce( $plugin_boilerplate_update_nonce, 'plugin_boilerplate_do_update' ) && current_user_can( 'manage_options' ) ) {
+                    $plugin_boilerplate_do_update = true;
+                }
+            }
+
+            if ( $updater->is_updating() || $plugin_boilerplate_do_update ) {
+                include( 'notices/updating.php' );
+            } else {
+                include( 'notices/update.php' );
+            }
+        } else {
+            include( 'notices/updated.php' );
+        }
+    }
+
+    /**
+     * If we have just installed, show a message with the install pages button.
+     */
+    public static function install_notice() {
+        include( 'notices/install.php' );
+    }
+}
+
+endif;
+
+// Initialize only after WordPress is loaded
+add_action('init', array('EvolveWP_Core_Admin_Notices', 'init'));

@@ -1,0 +1,76 @@
+/**
+ * plugin-boilerplate - WordPress Admin Dashboard Styles: plugin-boilerplate/wp-admin/index.php
+ * 
+ * @package plugin-boilerplate/CSS/Pages
+ * @since 1.0.0
+ */
+
+/* Recent Symbols Widget Styles */
+.plugin-boilerplate-recent-symbols-widget {
+    margin: -12px;
+}
+
+.plugin-boilerplate-recent-symbol-item {
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.plugin-boilerplate-recent-symbol-item:last-child {
+    border-bottom: none;
+}
+
+.plugin-boilerplate-symbol-icon {
+    margin-right: 12px;
+}
+
+.plugin-boilerplate-symbol-icon img {
+    border-radius: 4px;
+    background: #f0f0f0;
+}
+
+.plugin-boilerplate-symbol-info {
+    flex: 1;
+}
+
+.plugin-boilerplate-symbol-name {
+    margin: 0 0 2px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.plugin-boilerplate-company-name {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+.plugin-boilerplate-symbol-price {
+    text-align: right;
+}
+
+.plugin-boilerplate-price-value {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.plugin-boilerplate-price-change {
+    font-size: 12px;
+}
+
+.plugin-boilerplate-price-change.positive {
+    color: #0c833f;
+}
+
+.plugin-boilerplate-price-change.negative {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-widget-footer {
+    padding: 8px 12px;
+    background: #f8f8f8;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+

@@ -1,0 +1,119 @@
+/**
+ * plugin-boilerplate - Task Items Component Styles
+ * 
+ * Styles for task cards, current task display, and task actions.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-task-item">
+ *   <div class="plugin-boilerplate-task-item-header">
+ *     <h3 class="plugin-boilerplate-task-item-title">Task Title</h3>
+ *     <span class="plugin-boilerplate-task-item-badge">Status</span>
+ *   </div>
+ *   <div class="plugin-boilerplate-task-item-body">
+ *     <div class="plugin-boilerplate-task-item-meta">...</div>
+ *     <div class="plugin-boilerplate-task-item-description">...</div>
+ *   </div>
+ *   <div class="plugin-boilerplate-task-item-actions">...</div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Task Item Container */
+.plugin-boilerplate-task-item {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    box-shadow: var(--plugin-boilerplate-shadow);
+}
+
+/* Task Item Header */
+.plugin-boilerplate-task-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-task-item-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-task-item-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-size: 12px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    text-transform: uppercase;
+}
+
+.plugin-boilerplate-task-item-badge.in-progress {
+    background-color: #e9f3fa;
+    color: #1e6586;
+}
+
+.plugin-boilerplate-task-item-badge.completed {
+    background-color: #f0f9eb;
+    color: #2a6b31;
+}
+
+.plugin-boilerplate-task-item-badge.pending {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+.plugin-boilerplate-task-item-badge.on-hold {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+
+/* Task Item Body */
+.plugin-boilerplate-task-item-body {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-task-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-task-item-meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.plugin-boilerplate-task-item-meta-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.plugin-boilerplate-task-item-meta-value {
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-task-item-description {
+    margin-top: var(--plugin-boilerplate-spacing-md);
+    line-height: 1.5;
+}
+
+/* Task Item Actions */
+.plugin-boilerplate-task-item-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-sm);
+    padding-top: var(--plugin-boilerplate-spacing-md);
+    border-top: var(--plugin-boilerplate-border-standard);
+}
+
+/* Legacy classes mapping for backward compatibility */

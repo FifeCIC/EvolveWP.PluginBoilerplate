@@ -1,0 +1,212 @@
+/**
+ * plugin-boilerplate - Features Layout Styles
+ * 
+ * Layout for features management page.
+ * 
+ * @package plugin-boilerplate/CSS/Layouts
+ * @since 1.0.0
+ */
+
+/* Features Management Header */
+.plugin-boilerplate-features-header {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Features Controls */
+.plugin-boilerplate-features-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    background: #f9f9f9;
+    padding: var(--plugin-boilerplate-spacing-md);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/* Feature Page Sections */
+.plugin-boilerplate-feature-page-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    background: var(--plugin-boilerplate-color-white);
+    box-shadow: var(--plugin-boilerplate-shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+.plugin-boilerplate-feature-page-section:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,.08);
+}
+
+.plugin-boilerplate-feature-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-md) var(--plugin-boilerplate-spacing-lg);
+    background: #f7fcf7;
+    border-left: 3px solid #46b450;
+    border-bottom: var(--plugin-boilerplate-border-standard);
+    cursor: pointer;
+}
+
+.plugin-boilerplate-feature-page-header h3 {
+    margin: 0;
+}
+
+.plugin-boilerplate-feature-page-header h3 a {
+    text-decoration: none;
+    color: #2c7636;
+}
+
+.plugin-boilerplate-feature-page-header h3 .dashicons {
+    font-size: 16px;
+    vertical-align: text-bottom;
+}
+
+.plugin-boilerplate-feature-page-header .toggle-section {
+    color: #46b450;
+}
+
+.plugin-boilerplate-feature-page-content {
+    padding: var(--plugin-boilerplate-spacing-lg);
+    display: none; /* Initially hidden */
+}
+
+/* Feature Tables */
+.plugin-boilerplate-feature-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.plugin-boilerplate-feature-table th {
+    text-align: left;
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 2px solid #ddd;
+}
+
+.plugin-boilerplate-feature-table td {
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-bottom: 1px solid #eee;
+}
+
+.plugin-boilerplate-feature-table tr:hover {
+    background-color: #f7fcfe;
+}
+
+.plugin-boilerplate-tab-cell {
+    background-color: #f7f7f7;
+    border-right: 1px solid #eee;
+    vertical-align: top;
+}
+
+.plugin-boilerplate-tab-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plugin-boilerplate-tab-content a {
+    text-decoration: none;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: #23282d;
+}
+
+.plugin-boilerplate-feature-mode select {
+    width: 100px;
+}
+
+/* Feature Summary */
+.plugin-boilerplate-feature-summary {
+    margin: var(--plugin-boilerplate-spacing-xl) 0;
+}
+
+.plugin-boilerplate-summary-box {
+    background: var(--plugin-boilerplate-color-white);
+    border: var(--plugin-boilerplate-border-standard);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-summary-box h4 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Feature Navigation */
+.plugin-boilerplate-feature-navigation {
+    position: sticky;
+    top: 32px;
+    background: var(--plugin-boilerplate-color-white);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+    padding: var(--plugin-boilerplate-spacing-md) 0;
+    z-index: 100;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-feature-sections-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.plugin-boilerplate-feature-nav-item {
+    display: inline-block;
+    padding: 5px 12px;
+    margin-right: 5px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    text-decoration: none;
+    color: #646970;
+    background: #f0f0f1;
+}
+
+.plugin-boilerplate-feature-nav-item:hover,
+.plugin-boilerplate-feature-nav-item.active {
+    background: #2271b1;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Feature row states */
+.plugin-boilerplate-feature-row.disabled {
+    opacity: 0.6;
+}
+
+/* Tab header */
+.plugin-boilerplate-tab-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    border-bottom: 1px solid #eee;
+    padding-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-tab-header h2 {
+    margin: 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 782px) {
+    .plugin-boilerplate-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-boilerplate-tab-cell {
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .plugin-boilerplate-tab-content {
+        flex-direction: column;
+        gap: var(--plugin-boilerplate-spacing-md);
+    }
+}
+
+/* Features Container */
+.plugin-boilerplate-features-container {
+    margin-top: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Legacy classes mapping for backward compatibility */

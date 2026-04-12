@@ -1,0 +1,370 @@
+/**
+ * plugin-boilerplate - Table Component Styles
+ * 
+ * Styles for tables and data display.
+ * 
+ * HTML Structure:
+ * <table class="plugin-boilerplate-table">
+ *   <thead>
+ *     <tr><th>Header 1</th><th>Header 2</th></tr>
+ *   </thead>
+ *   <tbody>
+ *     <tr><td>Data 1</td><td>Data 2</td></tr>
+ *   </tbody>
+ * </table>
+ * 
+ * Variants:
+ * - plugin-boilerplate-table-bordered: Adds borders to all cells
+ * - plugin-boilerplate-table-striped: Adds zebra striping to rows
+ * - plugin-boilerplate-table-hover: Highlights rows on hover
+ * - plugin-boilerplate-table-sm: Compact version with less padding
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Base table */
+.plugin-boilerplate-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg) !important;
+    color: var(--plugin-boilerplate-color-text) !important;
+    vertical-align: top !important;
+}
+
+.plugin-boilerplate-table th,
+.plugin-boilerplate-table td {
+    padding: var(--plugin-boilerplate-spacing-sm) var(--plugin-boilerplate-spacing-md) !important;
+    text-align: left !important;
+    border: var(--plugin-boilerplate-border-standard) !important;
+}
+
+.plugin-boilerplate-table th {
+    background-color: var(--plugin-boilerplate-color-gray-50) !important;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold) !important;
+}
+
+.plugin-boilerplate-table thead {
+    vertical-align: bottom !important;
+}
+
+.plugin-boilerplate-table tbody {
+    vertical-align: inherit !important;
+}
+
+.plugin-boilerplate-table tr:nth-child(even) {
+    background-color: var(--plugin-boilerplate-color-gray-100) !important;
+}
+
+/* Responsive wrapper */
+.plugin-boilerplate-table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-bottom: var(--plugin-boilerplate-spacing-lg) !important;
+}
+
+/* Table variants */
+.plugin-boilerplate-table-bordered {
+    border: var(--plugin-boilerplate-border-standard) !important;
+}
+
+.plugin-boilerplate-table-bordered th,
+.plugin-boilerplate-table-bordered td {
+    border: var(--plugin-boilerplate-border-standard) !important;
+}
+
+.plugin-boilerplate-table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--plugin-boilerplate-color-gray-100) !important;
+}
+
+.plugin-boilerplate-table-hover tbody tr:hover {
+    background-color: var(--plugin-boilerplate-color-table-hover-bg) !important;
+}
+
+.plugin-boilerplate-table-sm th,
+.plugin-boilerplate-table-sm td {
+    padding: var(--plugin-boilerplate-spacing-xs) var(--plugin-boilerplate-spacing-sm) !important;
+}
+
+/* Table contextual variants */
+.plugin-boilerplate-table-primary {
+    background-color: var(--plugin-boilerplate-color-primary-light) !important;
+}
+
+.plugin-boilerplate-table-secondary {
+    background-color: var(--plugin-boilerplate-color-secondary-light) !important;
+}
+
+.plugin-boilerplate-table-success {
+    background-color: var(--plugin-boilerplate-color-success-light) !important;
+}
+
+.plugin-boilerplate-table-warning {
+    background-color: var(--plugin-boilerplate-color-warning-light) !important;
+}
+
+.plugin-boilerplate-table-danger {
+    background-color: var(--plugin-boilerplate-color-error-light) !important;
+}
+
+.plugin-boilerplate-table-light {
+    background-color: var(--plugin-boilerplate-color-gray-50) !important;
+}
+
+.plugin-boilerplate-table-dark {
+    background-color: var(--plugin-boilerplate-color-gray-900) !important;
+    color: var(--plugin-boilerplate-color-white) !important;
+}
+
+/* Fixed layout tables */
+.plugin-boilerplate-table-fixed {
+    table-layout: fixed !important;
+}
+
+.plugin-boilerplate-table-fixed td, 
+.plugin-boilerplate-table-fixed th {
+    word-break: break-word !important;
+}
+
+/* Caption */
+.plugin-boilerplate-table caption {
+    padding: var(--plugin-boilerplate-spacing-sm) 0 !important;
+    color: var(--plugin-boilerplate-color-gray-600) !important;
+    text-align: left !important;
+    caption-side: top !important;
+}
+
+/* Table alignment classes */
+.plugin-boilerplate-table-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.plugin-boilerplate-table-right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* Pagination row */
+.plugin-boilerplate-table-pagination {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: var(--plugin-boilerplate-spacing-md) !important;
+}
+
+.plugin-boilerplate-pagination-info {
+    color: var(--plugin-boilerplate-color-gray-600) !important;
+}
+
+.plugin-boilerplate-pagination-controls {
+    display: flex !important;
+    gap: var(--plugin-boilerplate-spacing-sm) !important;
+}
+
+/* Row/cell states */
+.plugin-boilerplate-table tr.active {
+    background-color: var(--plugin-boilerplate-color-table-active-bg) !important;
+}
+
+.plugin-boilerplate-table tr.selected td,
+.plugin-boilerplate-table td.selected {
+    background-color: var(--plugin-boilerplate-color-highlight-bg) !important;
+}
+
+/* Support for WordPress Gutenberg block tables */
+.plugin-boilerplate-block-table {
+    overflow-x: auto !important;
+}
+
+.plugin-boilerplate-block-table table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+.plugin-boilerplate-block-table thead {
+    border-bottom: 3px solid !important;
+}
+
+.plugin-boilerplate-block-table tfoot {
+    border-top: 3px solid !important;
+}
+
+.plugin-boilerplate-block-table.aligncenter,
+.plugin-boilerplate-block-table.alignleft,
+.plugin-boilerplate-block-table.alignright {
+    display: table !important;
+    width: auto !important;
+}
+
+/* Specific styles for plugin-boilerplate tables */
+.plugin-boilerplate-tasks-table th {
+    background-color: var(--plugin-boilerplate-color-gray-50) !important;
+    text-align: left !important;
+    padding: 10px !important;
+    border-bottom: var(--plugin-boilerplate-border-standard) !important;
+}
+
+.plugin-boilerplate-tasks-table td {
+    padding: 12px 10px !important;
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200) !important;
+    vertical-align: top !important;
+}
+
+.plugin-boilerplate-tasks-table tr:hover {
+    background-color: var(--plugin-boilerplate-color-gray-100) !important;
+}
+
+.plugin-boilerplate-sortable {
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.plugin-boilerplate-sortable:after {
+    content: "\25BC" !important; /* Down triangle */
+    font-size: 8px !important;
+    color: var(--plugin-boilerplate-color-gray-500) !important;
+    margin-left: var(--plugin-boilerplate-spacing-xs) !important;
+    visibility: hidden !important;
+}
+
+.plugin-boilerplate-sortable:hover:after {
+    visibility: visible !important;
+}
+
+.plugin-boilerplate-sortable.plugin-boilerplate-sorted-asc:after {
+    content: "\25BC" !important;
+    visibility: visible !important;
+    color: var(--plugin-boilerplate-color-text) !important;
+}
+
+.plugin-boilerplate-sortable.plugin-boilerplate-sorted-desc:after {
+    content: "\25B2" !important;
+    visibility: visible !important;
+    color: var(--plugin-boilerplate-color-text) !important;
+}
+
+/* Task Table Styles */
+.plugin-boilerplate-table-container {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin-top: var(--plugin-boilerplate-spacing-md) !important;
+}
+
+.plugin-boilerplate-table th {
+    background-color: #f5f5f5 !important;
+    text-align: left !important;
+    padding: var(--plugin-boilerplate-spacing-md) !important;
+    border-bottom: var(--plugin-boilerplate-border-standard) !important;
+}
+
+.plugin-boilerplate-table td {
+    padding: 12px var(--plugin-boilerplate-spacing-md) !important;
+    border-bottom: 1px solid #eee !important;
+    vertical-align: top !important;
+}
+
+.plugin-boilerplate-table tr:hover {
+    background-color: #f9f9f9 !important;
+}
+
+/* Sortable columns */
+.plugin-boilerplate-sortable {
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+.plugin-boilerplate-sortable:after {
+    content: "▼" !important;
+    font-size: 8px !important;
+    color: #999 !important;
+    margin-left: var(--plugin-boilerplate-spacing-xs) !important;
+    visibility: hidden !important;
+}
+
+.plugin-boilerplate-sortable:hover:after {
+    visibility: visible !important;
+}
+
+.plugin-boilerplate-sortable.sorted-asc:after {
+    content: "▼" !important;
+    visibility: visible !important;
+    color: #333 !important;
+}
+
+.plugin-boilerplate-sortable.sorted-desc:after {
+    content: "▲" !important;
+    visibility: visible !important;
+    color: #333 !important;
+}
+
+/* Directives Table Styles */
+.plugin-boilerplate-directives-table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.plugin-boilerplate-directives-table th {
+    font-weight: 600;
+}
+
+.plugin-boilerplate-directives-actions {
+    margin-top: 20px;
+}
+
+.plugin-boilerplate-test-data-table {
+    margin-bottom: 20px;
+}
+
+/* Legacy class mappings */
+.plugin-boilerplate-table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Data Preview Table Styles (from admin-database.css) */
+#table-data-preview {
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+#table-data-preview table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table-data-preview th, 
+#table-data-preview td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #e5e5e5;
+}
+
+#table-data-preview th {
+    background: #f8f8f8;
+    font-weight: bold;
+}
+
+#table-data-preview tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.data-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-info {
+    font-size: 13px;
+    color: #666;
+}
+
+.current-page, .total-pages {
+    font-weight: bold;
+}

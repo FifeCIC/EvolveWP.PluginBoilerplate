@@ -1,0 +1,142 @@
+/**
+ * plugin-boilerplate - API Layout Styles
+ * 
+ * Layout structures for API pages.
+ * 
+ * @package plugin-boilerplate/CSS/Layouts
+ * @since 1.0.0
+ */
+
+/* API Configuration Content */
+.plugin-boilerplate-api-configuration-content {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+/* API Details and Sidebar Layout */
+.plugin-boilerplate-api-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--plugin-boilerplate-spacing-xl);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-api-main-content {
+    flex: 1;
+    min-width: 500px;
+}
+
+.plugin-boilerplate-api-sidebar {
+    width: 300px;
+}
+
+/* API Capabilities */
+.plugin-boilerplate-api-capabilities {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-capability-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-capability-item .dashicons {
+    margin-right: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-capability-item.available .dashicons-yes {
+    color: #46b450;
+}
+
+.plugin-boilerplate-capability-item.unavailable .dashicons-no {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-capability-text {
+    flex: 1;
+}
+
+.plugin-boilerplate-premium-badge {
+    display: inline-block;
+    background: #f18200;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: var(--plugin-boilerplate-spacing-xs);
+}
+
+/* Endpoints List */
+.plugin-boilerplate-endpoints-list {
+    padding: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-endpoint-item {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+    padding-bottom: var(--plugin-boilerplate-spacing-lg);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+}
+
+.plugin-boilerplate-endpoint-item:last-child {
+    border-bottom: none;
+}
+
+.plugin-boilerplate-endpoint-name {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-endpoint-function {
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-endpoint-function code {
+    background: #f8f8f8;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+.plugin-boilerplate-endpoint-view-all {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    text-align: center;
+}
+
+/* plugin-boilerplate API Settings */
+.plugin-boilerplate-api-settings-container {
+    margin-top: 30px;
+    padding: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* API Credentials Testing */
+.plugin-boilerplate-api-test-credentials {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-test-credentials-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--plugin-boilerplate-spacing-md);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Animation for tool sections */
+.plugin-boilerplate-tool-section {
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.7;}
+    to {opacity: 1;}
+}
+
+.plugin-boilerplate-loading-spinner {
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Legacy classes mapping for backward compatibility */

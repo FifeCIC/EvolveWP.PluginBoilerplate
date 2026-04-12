@@ -1,0 +1,119 @@
+/**
+ * plugin-boilerplate - Code Blocks Component Styles
+ * 
+ * Styles for code blocks, syntax highlighting, and code displays.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-code-block">
+ *   <code>Code content goes here</code>
+ *   <button class="plugin-boilerplate-copy-code">Copy</button>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Code Block Container */
+.plugin-boilerplate-code-block {
+    background-color: #f5f5f5;
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-sm);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    position: relative;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Code Content */
+.plugin-boilerplate-code-content {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Copy Code Button */
+.plugin-boilerplate-copy-code {
+    position: absolute;
+    top: var(--plugin-boilerplate-spacing-xs);
+    right: var(--plugin-boilerplate-spacing-xs);
+    background-color: transparent;
+    border: none;
+    color: var(--plugin-boilerplate-color-gray-500);
+    cursor: pointer;
+    padding: var(--plugin-boilerplate-spacing-xs);
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.plugin-boilerplate-copy-code:hover {
+    color: var(--plugin-boilerplate-color-wp-blue);
+}
+
+.plugin-boilerplate-code-block:focus-within {
+    box-shadow: 0 0 0 1px var(--plugin-boilerplate-color-wp-blue);
+}
+
+/* Copy Animation */
+@keyframes copy-success {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.plugin-boilerplate-copy-code .dashicons-yes {
+    animation: copy-success 0.3s ease;
+    color: #46b450;
+}
+
+/* Shortcode Display */
+.plugin-boilerplate-shortcode-code {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-xs) var(--plugin-boilerplate-spacing-sm);
+    font-family: monospace;
+    position: relative;
+    margin-right: var(--plugin-boilerplate-spacing-md);
+}
+
+/* Table display for data */
+.plugin-boilerplate-data-table {
+    margin-top: var(--plugin-boilerplate-spacing-xl);
+    background: #f9f9f9;
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    overflow-x: auto;
+}
+
+.plugin-boilerplate-data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plugin-boilerplate-data-table th, 
+.plugin-boilerplate-data-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.plugin-boilerplate-data-table th {
+    background-color: #f2f2f2;
+}
+
+/* Log file display */
+.plugin-boilerplate-log-files {
+    background: #f9f9f9;
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    border-radius: var(--plugin-boilerplate-border-radius);
+}
+
+/* Legacy classes mapping for backward compatibility */

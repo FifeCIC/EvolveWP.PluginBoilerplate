@@ -1,0 +1,1219 @@
+/**
+ * plugin-boilerplate - Status Component Styles
+ * 
+ * Status indicators, badges, and operational status elements.
+ * 
+ * HTML Structure:
+ * <div class="plugin-boilerplate-status plugin-boilerplate-status-active">
+ *   <span class="plugin-boilerplate-status-indicator"></span>
+ *   <span class="plugin-boilerplate-status-text">Status Text</span>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Status Badges */
+.plugin-boilerplate-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-status-success {
+    background-color: #dff0d8;
+    color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-status-warning {
+    background-color: #fcf8e3;
+    color: var(--plugin-boilerplate-color-warning-dark);
+}
+
+.plugin-boilerplate-status-error {
+    background-color: #f2dede;
+    color: var(--plugin-boilerplate-color-error-dark);
+}
+
+.plugin-boilerplate-status-info {
+    background-color: #d9edf7;
+    color: var(--plugin-boilerplate-color-info-dark);
+}
+
+/* Old Styles Mapping */
+/* Service Status Badges */
+.service-status-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-weight: var(--plugin-boilerplate-font-weight-bold);
+}
+
+.service-status-badge.operational {
+    background-color: #edfaef;
+    color: var(--plugin-boilerplate-color-success);
+}
+
+.service-status-badge.disruption {
+    background-color: var(--plugin-boilerplate-color-warning-light);
+    color: var(--plugin-boilerplate-color-warning-dark);
+}
+
+.service-status-badge.outage {
+    background-color: #fbeaea;
+    color: var(--plugin-boilerplate-color-error);
+}
+
+/* Method Badges */
+.method-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    font-weight: var(--plugin-boilerplate-font-weight-bold);
+    color: var(--plugin-boilerplate-color-white);
+    text-align: center;
+    min-width: 50px;
+}
+
+.method-get {
+    background-color: var(--plugin-boilerplate-color-method-get);
+}
+
+.method-post {
+    background-color: var(--plugin-boilerplate-color-method-post);
+}
+
+.method-put {
+    background-color: var(--plugin-boilerplate-color-method-put);
+}
+
+.method-delete {
+    background-color: var(--plugin-boilerplate-color-method-delete);
+}
+
+.method-ws {
+    background-color: var(--plugin-boilerplate-color-method-ws);
+}
+
+/* Directive Type Badges */
+.plugin-boilerplate-directive-type {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.plugin-boilerplate-directive-type.bullish {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.plugin-boilerplate-directive-type.bearish {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+.plugin-boilerplate-directive-type.neutral {
+    background-color: #e0e0e0;
+    color: #616161;
+}
+
+/* Directive Status Badges */
+.plugin-boilerplate-directive-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.plugin-boilerplate-directive-status.ready {
+    background-color: #bbdefb;
+    color: #1565c0;
+}
+
+.plugin-boilerplate-directive-status.not-ready {
+    background-color: #ffe0b2;
+    color: #ef6c00;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Premium Badge */
+.premium-badge {
+    display: inline-block;
+    background: var(--plugin-boilerplate-color-premium);
+    color: var(--plugin-boilerplate-color-white);
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    margin-left: 5px;
+}
+
+/* Feature Status Badge */
+.feature-status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.status-live {
+    background: #d1ffd6;
+    color: var(--plugin-boilerplate-color-success-dark);
+}
+
+.status-demo {
+    background: var(--plugin-boilerplate-color-warning-light);
+    color: #96600c;
+}
+
+/* Completion Stats Section */
+.completion-stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background: var(--plugin-boilerplate-color-white);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding: 15px;
+}
+
+.stat-box {
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-weight: var(--plugin-boilerplate-font-weight-bold);
+    margin-right: 5px;
+}
+
+.feature-tab-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--plugin-boilerplate-color-wp-blue);
+}
+
+.feature-tab-link:hover {
+    color: var(--plugin-boilerplate-color-wp-blue-hover);
+    text-decoration: underline;
+}
+
+/* Issue Status Badge */
+.issue-status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    font-size: var(--plugin-boilerplate-font-size-xs);
+    text-transform: capitalize;
+}
+
+.issue-status-badge.open {
+    background-color: #2cbe4e;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.issue-status-badge.closed {
+    background-color: #cb2431;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Status Indicator System */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status-green {
+    background-color: var(--plugin-boilerplate-color-success);
+}
+
+.status-orange {
+    background-color: var(--plugin-boilerplate-color-warning);
+}
+
+.status-red {
+    background-color: var(--plugin-boilerplate-color-error);
+}
+
+.status-grey {
+    background-color: #72777c;
+}
+
+/* Status Header with Actions */
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status-header h3 {
+    margin: 0;
+}
+
+.status-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Progress Bar */
+.progress-bar-wrapper {
+    background-color: #f0f0f1;
+    height: 16px;
+    position: relative;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    background-color: var(--plugin-boilerplate-color-wp-blue);
+    height: 100%;
+    border-radius: var(--plugin-boilerplate-border-radius-sm);
+}
+
+/* Environment indicators */
+.demo-env {
+    color: var(--plugin-boilerplate-color-orange);
+    font-weight: bold;
+}
+
+.live-env {
+    color: var(--plugin-boilerplate-color-success);
+    font-weight: bold;
+}
+
+.live-trading {
+    color: var(--plugin-boilerplate-color-error);
+    font-weight: bold;
+}
+
+.paper-trading {
+    color: var(--plugin-boilerplate-color-info);
+    font-weight: bold;
+}
+
+/* Consensus indicators */
+.consensus-high { 
+    color: var(--plugin-boilerplate-color-success); 
+    font-weight: bold; 
+}
+
+.consensus-medium { 
+    color: var(--plugin-boilerplate-color-warning); 
+    font-weight: bold; 
+}
+
+.consensus-low { 
+    color: var(--plugin-boilerplate-color-error-dark); 
+    font-weight: bold; 
+}
+
+/* Percentage difference indicators */
+.positive-pct { 
+    color: var(--plugin-boilerplate-color-success); 
+    font-weight: bold; 
+}
+
+.negative-pct { 
+    color: var(--plugin-boilerplate-color-error-dark); 
+    font-weight: bold; 
+}
+
+/* Status Containers */
+.plugin-boilerplate-status-header {
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding: var(--plugin-boilerplate-spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--plugin-boilerplate-color-gray-100);
+}
+
+.plugin-boilerplate-status-header h3 {
+    margin: 0;
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+.plugin-boilerplate-status-actions {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-status-actions a {
+    text-decoration: none;
+    color: #555;
+}
+
+.plugin-boilerplate-status-actions a:hover {
+    color: #0073aa;
+}
+
+/* Status Data Display */
+.plugin-boilerplate-status-data-columns {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    gap: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-status-data-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.plugin-boilerplate-status-data-item {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-status-label {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-status-value {
+    font-size: 16px;
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-status-value.active {
+    color: #46b450;
+}
+
+.plugin-boilerplate-status-value.inactive {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-status-value.operational {
+    color: #46b450;
+}
+
+.plugin-boilerplate-status-value.disruption, 
+.plugin-boilerplate-status-value.outage, 
+.plugin-boilerplate-status-value.maintenance {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-status-message {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-status-timestamp {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Rate Limits */
+.plugin-boilerplate-rate-limits {
+    margin-top: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-rate-limit-item {
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-rate-limit-title {
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-rate-limit-bar {
+    height: 6px;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-rate-limit-progress {
+    height: 100%;
+    background-color: #0073aa;
+    width: 0;
+}
+
+.plugin-boilerplate-rate-limit-text {
+    font-size: 12px;
+    color: #666;
+}
+
+.plugin-boilerplate-rate-limit-reset {
+    font-size: 12px;
+    color: #999;
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+/* API Status Indicators */
+.plugin-boilerplate-api-status {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+    padding: var(--plugin-boilerplate-spacing-md) var(--plugin-boilerplate-spacing-xl);
+    margin-left: auto;
+}
+
+.plugin-boilerplate-api-status.active .plugin-boilerplate-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #46b450;
+}
+
+.plugin-boilerplate-api-status.inactive .plugin-boilerplate-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #dc3232;
+}
+
+.plugin-boilerplate-status-text {
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+}
+
+.plugin-boilerplate-api-status.active .plugin-boilerplate-status-text {
+    color: #46b450;
+}
+
+.plugin-boilerplate-api-status.inactive .plugin-boilerplate-status-text {
+    color: #dc3232;
+}
+
+/* API Badges */
+.plugin-boilerplate-api-badges {
+    display: flex;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-api-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-xs);
+    background: #f1f1f1;
+    color: #555;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Key Status */
+.plugin-boilerplate-key-status-container {
+    margin-bottom: var(--plugin-boilerplate-spacing-lg);
+}
+
+.plugin-boilerplate-key-status-container h5 {
+    margin: var(--plugin-boilerplate-spacing-md) 0 var(--plugin-boilerplate-spacing-xs);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: #50575e;
+}
+
+.plugin-boilerplate-key-status {
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-key-status.missing-key {
+    background-color: #fdf2f2;
+    border-left: 4px solid #dc3232;
+}
+
+.plugin-boilerplate-key-status.valid-key {
+    background-color: #f0f9eb;
+    border-left: 4px solid #46b450;
+}
+
+.plugin-boilerplate-key-status .dashicons {
+    margin-right: var(--plugin-boilerplate-spacing-xs);
+    vertical-align: middle;
+}
+
+.plugin-boilerplate-key-status .dashicons-warning {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-key-status .dashicons-yes {
+    color: #46b450;
+}
+
+/* Mode Toggle Buttons */
+.plugin-boilerplate-mode-toggle-button {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    text-transform: uppercase;
+    margin-left: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Trading Mode Button Styles */
+.plugin-boilerplate-trading-mode-toggle-button.paper {
+    background-color: #f0c33c;
+    color: #644c00;
+}
+
+.plugin-boilerplate-trading-mode-toggle-button.live {
+    background-color: #46b450;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Service Status Button Styles */
+.plugin-boilerplate-service-status-toggle-button.operational {
+    background-color: #46b450;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+.plugin-boilerplate-service-status-toggle-button.disabled {
+    background-color: #dc3232;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Demo Mode Button Styles */
+.plugin-boilerplate-demo-mode-toggle-button.demo-on {
+    background-color: #f0c33c;
+    color: #644c00;
+}
+
+.plugin-boilerplate-demo-mode-toggle-button.demo-off {
+    background-color: #47a8d7;
+    color: var(--plugin-boilerplate-color-white);
+}
+
+/* Button Forms */
+.plugin-boilerplate-service-status-form, 
+.plugin-boilerplate-trading-mode-button-form, 
+.plugin-boilerplate-demo-mode-button-form {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Algorithm Status Indicators */
+.plugin-boilerplate-status-indicator-wrapper {
+    text-align: center;
+    margin: var(--plugin-boilerplate-spacing-xl) 0;
+}
+
+.plugin-boilerplate-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background: #f1f1f1;
+}
+
+.plugin-boilerplate-status-running {
+    background: #d4f4e2;
+    color: #1d9d74;
+}
+
+.plugin-boilerplate-status-stopped {
+    background: #f8d7da;
+    color: #dc3545;
+}
+
+.plugin-boilerplate-status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.plugin-boilerplate-status-running .plugin-boilerplate-status-dot {
+    background-color: #1d9d74;
+    animation: pulse 2s infinite;
+}
+
+.plugin-boilerplate-status-stopped .plugin-boilerplate-status-dot {
+    background-color: #dc3545;
+}
+
+.plugin-boilerplate-runtime-display {
+    text-align: center;
+    margin: var(--plugin-boilerplate-spacing-xl) 0;
+}
+
+/* Trade Action Status */
+.plugin-boilerplate-trade-action {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-trade-buy {
+    background-color: #d4f4e2;
+    color: #1d9d74;
+}
+
+.plugin-boilerplate-trade-sell {
+    background-color: #f8d7da;
+    color: #dc3545;
+}
+
+.plugin-boilerplate-score {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    font-weight: bold;
+}
+
+.plugin-boilerplate-score-high {
+    background-color: #d4f4e2;
+    color: #1d9d74;
+}
+
+.plugin-boilerplate-score-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.plugin-boilerplate-score-low {
+    background-color: #f8d7da;
+    color: #dc3545;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Automation Status Indicators */
+.plugin-boilerplate-status-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: var(--plugin-boilerplate-spacing-lg);
+    background: var(--plugin-boilerplate-color-gray-100);
+    border: 1px solid var(--plugin-boilerplate-color-gray-200);
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+}
+
+.plugin-boilerplate-status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: var(--plugin-boilerplate-spacing-sm);
+}
+
+.plugin-boilerplate-status-running .plugin-boilerplate-status-dot {
+    background-color: #46b450;
+    box-shadow: 0 0 0 3px rgba(70, 180, 80, 0.3);
+}
+
+.plugin-boilerplate-status-stopped .plugin-boilerplate-status-dot {
+    background-color: #dc3232;
+    box-shadow: 0 0 0 3px rgba(220, 50, 50, 0.3);
+}
+
+.plugin-boilerplate-runtime-display {
+    margin-right: var(--plugin-boilerplate-spacing-xl);
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Database Table Status */
+.plugin-boilerplate-table-status {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-status-good {
+    background-color: #d4f9d4;
+    color: #1e7e1e;
+}
+
+.plugin-boilerplate-status-warning {
+    background-color: #fff8e5;
+    color: #956d00;
+}
+
+.plugin-boilerplate-status-error {
+    background-color: #ffd6d6;
+    color: #c72121;
+}
+
+.plugin-boilerplate-process-status-badge {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-status-badge-active {
+    background-color: #d4f9d4;
+    color: #1e7e1e;
+}
+
+.plugin-boilerplate-status-badge-warning {
+    background-color: #fff8e5;
+    color: #956d00;
+}
+
+.plugin-boilerplate-status-badge-error, 
+.plugin-boilerplate-status-badge-inactive {
+    background-color: #ffd6d6;
+    color: #c72121;
+}
+
+.plugin-boilerplate-status-badge-not-implemented {
+    background-color: #f0f0f0;
+    color: #6c6c6c;
+}
+
+/* Database Table Status */
+.plugin-boilerplate-table-exists {
+    color: #46b450;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-table-missing {
+    color: #dc3232;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-missing-table {
+    background-color: #fff9f9 !important;
+}
+
+.plugin-boilerplate-warning-table {
+    background-color: #ffffd8 !important;
+}
+
+.plugin-boilerplate-table-warning {
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-table-warning .dashicons {
+    color: #f0b849;
+    margin-right: 5px;
+}
+
+/* Process Status */
+.plugin-boilerplate-process-status-good {
+    color: #1e7e1e;
+}
+
+.plugin-boilerplate-process-status-warning {
+    color: #956d00;
+}
+
+.plugin-boilerplate-process-status-error {
+    color: #c72121;
+}
+
+.plugin-boilerplate-process-status-not-implemented {
+    color: #6c6c6c;
+}
+
+.plugin-boilerplate-not-implemented-count {
+    font-size: 11px;
+    font-weight: normal;
+    font-style: italic;
+    color: #6c6c6c;
+}
+
+.plugin-boilerplate-process-issues {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.plugin-boilerplate-warning-count {
+    color: #956d00;
+}
+
+.plugin-boilerplate-error-count {
+    color: #c72121;
+}
+
+/* API Status Badge */
+.plugin-boilerplate-status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-status-success {
+    background-color: #d4f9d4;
+    color: #1e7e1e;
+}
+
+.plugin-boilerplate-status-error {
+    background-color: #ffd6d6;
+    color: #c72121;
+}
+
+.plugin-boilerplate-status-pending {
+    background-color: #e5e5e5;
+    color: #666;
+}
+
+/* Status badge styling */
+.plugin-boilerplate-status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 60px;
+}
+
+.plugin-boilerplate-status-badge.ready {
+    background-color: #e7f7ed;
+    color: #46b450;
+    border: 1px solid #c8e6d0;
+}
+
+.plugin-boilerplate-status-badge.wip {
+    background-color: #f6f7f7;
+    color: #72777c;
+    border: 1px solid #ddd;
+}
+
+.plugin-boilerplate-status-badge.live {
+    background-color: #e7f7ed;
+    color: #46b450;
+    border: 1px solid #c8e6d0;
+}
+
+.plugin-boilerplate-status-badge.demo {
+    background-color: #fef8e8;
+    color: #f0c33c;
+    border: 1px solid #f8e6b8;
+}
+
+.plugin-boilerplate-status-badge.disabled {
+    background-color: #f6f7f7;
+    color: #72777c;
+    border: 1px solid #ddd;
+}
+
+/* Feature Mode Indicators */
+.plugin-boilerplate-feature-mode-indicator {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.plugin-boilerplate-feature-mode-indicator.live {
+    background-color: #e7f7ed;
+    color: #46b450;
+    border: 1px solid #c8e6d0;
+}
+
+.plugin-boilerplate-feature-mode-indicator.demo {
+    background-color: #fef8e8;
+    color: #f0c33c;
+    border: 1px solid #f8e6b8;
+}
+
+.plugin-boilerplate-feature-mode-indicator.disabled {
+    background-color: #f6f7f7;
+    color: #72777c;
+    border: 1px solid #ddd;
+}
+
+.plugin-boilerplate-feature-mode.live {
+    color: #46b450;
+}
+
+.plugin-boilerplate-feature-mode.demo {
+    color: #f0c33c;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Status Panel */
+.plugin-boilerplate-status-panel {
+    background: #f9f9f9;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: 15px;
+}
+
+.plugin-boilerplate-status-section {
+    margin-bottom: var(--plugin-boilerplate-spacing-xl);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-200);
+    padding-bottom: 15px;
+}
+
+.plugin-boilerplate-status-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.plugin-boilerplate-status-section h4 {
+    margin: 0 0 var(--plugin-boilerplate-spacing-md);
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+}
+
+/* Status Indicators */
+.plugin-boilerplate-status-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+}
+
+.plugin-boilerplate-status-success {
+    color: #46b450;
+}
+
+.plugin-boilerplate-status-error {
+    color: #dc3232;
+}
+
+.plugin-boilerplate-status-neutral {
+    color: #646970;
+}
+
+.plugin-boilerplate-status-text {
+    margin-left: var(--plugin-boilerplate-spacing-xs);
+}
+
+/* Status Actions */
+.plugin-boilerplate-status-actions {
+    margin-top: var(--plugin-boilerplate-spacing-lg);
+    text-align: center;
+}
+
+/* Badge System */
+.plugin-boilerplate-admin-badge {
+    position: absolute;
+    top: var(--plugin-boilerplate-spacing-md);
+    right: var(--plugin-boilerplate-spacing-md);
+    background-color: #2271b1;
+    color: white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.plugin-boilerplate-demo-badge {
+    position: absolute;
+    top: var(--plugin-boilerplate-spacing-md);
+    right: var(--plugin-boilerplate-spacing-md);
+    background-color: #dba617;
+    color: white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Task Status Indicators */
+.plugin-boilerplate-status-indicator {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    margin: 0 auto !important;
+}
+
+.plugin-boilerplate-status-indicator.pending {
+    background-color: #f0ad4e !important;
+}
+
+.plugin-boilerplate-status-indicator.in-progress {
+    background-color: #5bc0de !important;
+}
+
+.plugin-boilerplate-status-indicator.completed {
+    background-color: #5cb85c !important;
+}
+
+/* Priority Indicators */
+.plugin-boilerplate-priority-indicator {
+    display: inline-block !important;
+    padding: 3px 8px !important;
+    border-radius: 3px !important;
+    font-size: 0.9em !important;
+}
+
+.plugin-boilerplate-priority-indicator.priority-1 {
+    background-color: #f2dede !important;
+    color: #a94442 !important;
+}
+
+.plugin-boilerplate-priority-indicator.priority-2 {
+    background-color: #fcf8e3 !important;
+    color: #8a6d3b !important;
+}
+
+.plugin-boilerplate-priority-indicator.priority-3 {
+    background-color: #d9edf7 !important;
+    color: #31708f !important;
+}
+
+/* Detail Status */
+.plugin-boilerplate-detail-status {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold) !important;
+}
+
+.plugin-boilerplate-detail-status.status-completed {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.plugin-boilerplate-detail-status.status-pending {
+    background-color: #fff8e1 !important;
+    color: #f57c00 !important;
+}
+
+.plugin-boilerplate-detail-status.status-in-progress {
+    background-color: #e3f2fd !important;
+    color: #1976d2 !important;
+}
+
+/* Cache Status */
+.plugin-boilerplate-cache-status {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: var(--plugin-boilerplate-spacing-md) !important;
+    padding: 8px 12px !important;
+    background-color: #f9f9f9 !important;
+    border-radius: var(--plugin-boilerplate-border-radius) !important;
+    font-size: 12px !important;
+}
+
+.plugin-boilerplate-status-label {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold) !important;
+}
+
+.plugin-boilerplate-status-fresh {
+    color: #46b450 !important;
+}
+
+.plugin-boilerplate-status-stale {
+    color: #ffb900 !important;
+}
+
+/* Legacy classes mapping for backward compatibility */
+/* Status Indicators Showcase Styles */
+.status-indicators-showcase .component-demo { 
+    margin-bottom: 20px; 
+}
+
+.status-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plugin-boilerplate-status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.plugin-boilerplate-status-success {
+    background-color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-status-warning {
+    background-color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-status-error {
+    background-color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-status-info {
+    background-color: var(--plugin-boilerplate-color-info);
+}
+
+.plugin-boilerplate-status-processing {
+    background-color: var(--plugin-boilerplate-color-primary);
+}
+
+.plugin-boilerplate-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+.plugin-boilerplate-badge-success {
+    background-color: var(--plugin-boilerplate-color-success-light);
+    color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-badge-warning {
+    background-color: var(--plugin-boilerplate-color-warning-light);
+    color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-badge-error {
+    background-color: var(--plugin-boilerplate-color-error-light);
+    color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-badge-info {
+    background-color: var(--plugin-boilerplate-color-info-light);
+    color: var(--plugin-boilerplate-color-info);
+}
+
+.plugin-boilerplate-badge-neutral {
+    background-color: var(--plugin-boilerplate-color-border-light);
+    color: var(--plugin-boilerplate-color-text-light);
+}
+
+.plugin-boilerplate-status-success-icon {
+    color: var(--plugin-boilerplate-color-success);
+}
+
+.plugin-boilerplate-status-warning-icon {
+    color: var(--plugin-boilerplate-color-warning);
+}
+
+.plugin-boilerplate-status-error-icon {
+    color: var(--plugin-boilerplate-color-error);
+}
+
+.plugin-boilerplate-status-info-icon {
+    color: var(--plugin-boilerplate-color-info);
+}
+
+.plugin-boilerplate-status-processing-icon {
+    color: var(--plugin-boilerplate-color-primary);
+}

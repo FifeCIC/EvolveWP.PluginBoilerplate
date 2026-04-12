@@ -1,0 +1,25 @@
+{
+    "generated_at": "2026-02-15 23:30:12",
+    "plugin": "Plugin Seed",
+    "note": "All WPSeed core files have been fixed (12 files, 45 errors). Remaining errors are in third-party libraries that should be EXCLUDED from Plugin Check scanning, not modified.",
+    "third_party_libraries_to_exclude": [
+        "includes/libraries/action-scheduler/",
+        "includes/libraries/carbon-fields/"
+    ],
+    "plugin_boilerplate_core_files_fixed": [
+        "admin/notifications/notifications.php",
+        "admin/config/admin-menus.php",
+        "admin/page/development/view/tasks-monitor.php",
+        "admin/page/development/view/credits.php",
+        "assets/queue-assets.php",
+        "includes/classes/dependencies.php",
+        "includes/admin/settings/settings-license.php",
+        "includes/toolbars/toolbar-developers.php",
+        "includes/libraries/library.background-process.php",
+        "includes/shortcodes/shortcodes-abstract.php",
+        "includes/widgets/widget-example.php",
+        "toolbars/toolbars.php",
+        "includes/classes/license-manager.php"
+    ],
+    "recommendation": ""
+}

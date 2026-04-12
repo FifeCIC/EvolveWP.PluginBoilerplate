@@ -1,0 +1,204 @@
+<?php
+/**
+ * EvolveWP Core License Management Page
+ * 
+ * @package EvolveWP Core/Admin
+ * @version 1.0.0
+ */
+
+if (!defined('ABSPATH')) exit;
+
+// Handle form submissions
+if (isset($_POST['plugin_boilerplate_activate_license']) && check_admin_referer('plugin_boilerplate_license_action')) {
+    $plugin_boilerplate_license_key = isset($_POST['license_key']) ? sanitize_text_field(wp_unslash($_POST['license_key'])) : '';
+    $plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+    $plugin_boilerplate_result = $plugin_boilerplate_client->activate_license($plugin_boilerplate_license_key);
+    
+    if (is_wp_error($plugin_boilerplate_result)) {
+        echo '<div class="notice notice-error"><p>' . esc_html($plugin_boilerplate_result->get_error_message()) . '</p></div>';
+    } else {
+        echo '<div class="notice notice-success"><p>License activated successfully!</p></div>';
+    }
+}
+
+if (isset($_POST['plugin_boilerplate_deactivate_license']) && check_admin_referer('plugin_boilerplate_license_action')) {
+    $plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+    $plugin_boilerplate_result = $plugin_boilerplate_client->deactivate_license();
+    
+    if (is_wp_error($plugin_boilerplate_result)) {
+        echo '<div class="notice notice-error"><p>' . esc_html($plugin_boilerplate_result->get_error_message()) . '</p></div>';
+    } else {
+        echo '<div class="notice notice-success"><p>License deactivated successfully!</p></div>';
+    }
+}
+
+$plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+$plugin_boilerplate_license_data = $plugin_boilerplate_client->get_license_data();
+$plugin_boilerplate_is_valid = $plugin_boilerplate_client->is_license_valid();
+?>
+
+<div class="wrap">
+    <h1>EvolveWP Core License Management</h1>
+    
+    <div class="plugin-boilerplate-license-container" style="max-width: 800px;">
+        
+        <?php if (empty($plugin_boilerplate_license_data)): ?>
+            <!-- No License -->
+            <div class="card" style="padding: 20px; margin-top: 20px;">
+                <h2>Activate Your License</h2>
+                <p>Enter your license key to activate premium features and receive automatic updates.</p>
+                
+                <form method="post" action="">
+                    <?php wp_nonce_field('plugin_boilerplate_license_action'); ?>
+                    
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">
+                                <label for="license_key">License Key</label>
+                            </th>
+                            <td>
+                                <input type="text" 
+                                       id="license_key" 
+                                       name="license_key" 
+                                       class="regular-text" 
+                                       placeholder="XXXX-XXXX-XXXX-XXXX"
+                                       required>
+                                <p class="description">Enter the license key you received after purchase.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <p class="submit">
+                        <button type="submit" name="plugin_boilerplate_activate_license" class="button button-primary">
+                            Activate License
+                        </button>
+                    </p>
+                </form>
+                
+                <hr>
+                
+                <h3>Don't have a license?</h3>
+                <p>
+                    <a href="https://plugin-boilerplate.com/pricing/" target="_blank" class="button">Purchase a License</a>
+                    <a href="https://plugin-boilerplate.com/my-account/" target="_blank" class="button">View My Licenses</a>
+                </p>
+            </div>
+            
+        <?php else: ?>
+            <!-- License Active -->
+            <div class="card" style="padding: 20px; margin-top: 20px;">
+                <h2>License Information</h2>
+                
+                <table class="widefat fixed striped">
+                    <tbody>
+                        <tr>
+                            <td style="width: 200px;"><strong>Status</strong></td>
+                            <td>
+                                <?php if ($plugin_boilerplate_is_valid): ?>
+                                    <span style="color: #00a32a;">
+                                        <span class="dashicons dashicons-yes-alt"></span> Active
+                                    </span>
+                                <?php else: ?>
+                                    <span style="color: #d63638;">
+                                        <span class="dashicons dashicons-warning"></span> 
+                                        <?php echo esc_html(ucfirst($plugin_boilerplate_license_data['status'])); ?>
+                                    </span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>License Key</strong></td>
+                            <td>
+                                <code><?php echo esc_html(plugin_boilerplate_mask_license_key($plugin_boilerplate_license_data['license_key'])); ?></code>
+                            </td>
+                        </tr>
+                        <?php if (isset($plugin_boilerplate_license_data['license_type'])): ?>
+                        <tr>
+                            <td><strong>License Type</strong></td>
+                            <td><?php echo esc_html(ucwords(str_replace('_', ' ', $plugin_boilerplate_license_data['license_type']))); ?></td>
+                        </tr>
+                        <?php endif; ?>
+                        <?php if (isset($plugin_boilerplate_license_data['expires'])): ?>
+                        <tr>
+                            <td><strong>Expires</strong></td>
+                            <td>
+                                <?php 
+                                if ($plugin_boilerplate_license_data['expires'] === 'lifetime') {
+                                    echo 'Lifetime';
+                                } else {
+                                    $plugin_boilerplate_expires = strtotime($plugin_boilerplate_license_data['expires']);
+                                    $plugin_boilerplate_days_left = floor(($plugin_boilerplate_expires - time()) / DAY_IN_SECONDS);
+                                    echo esc_html( gmdate( 'F j, Y', $plugin_boilerplate_expires ) );
+                                    
+                                    if ($plugin_boilerplate_days_left > 0) {
+                                        echo ' <span style="color: #666;">(' . esc_html($plugin_boilerplate_days_left) . ' days remaining)</span>';
+                                    } else {
+                                        echo ' <span style="color: #d63638;">(Expired)</span>';
+                                    }
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php endif; ?>
+                        <?php if (isset($plugin_boilerplate_license_data['activated_at'])): ?>
+                        <tr>
+                            <td><strong>Activated</strong></td>
+                            <td><?php echo esc_html( gmdate( 'F j, Y', $plugin_boilerplate_license_data['activated_at'] ) ); ?></td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                
+                <form method="post" action="" style="margin-top: 20px;">
+                    <?php wp_nonce_field('plugin_boilerplate_license_action'); ?>
+                    <button type="submit" 
+                            name="plugin_boilerplate_deactivate_license" 
+                            class="button" 
+                            onclick="return confirm('Are you sure you want to deactivate this license?');">
+                        Deactivate License
+                    </button>
+                    <a href="https://plugin-boilerplate.com/my-account/" target="_blank" class="button">Manage Licenses</a>
+                </form>
+            </div>
+            
+            <?php if ($plugin_boilerplate_is_valid): ?>
+            <!-- Premium Features -->
+            <div class="card" style="padding: 20px; margin-top: 20px;">
+                <h2>Premium Features</h2>
+                <p>Your license includes access to the following premium features:</p>
+                
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li>Automatic plugin updates</li>
+                    <li>Priority support</li>
+                    <li>Premium extensions</li>
+                    <li>Advanced developer tools</li>
+                    <li>Commercial use license</li>
+                </ul>
+            </div>
+            <?php endif; ?>
+            
+        <?php endif; ?>
+        
+        <!-- Help Section -->
+        <div class="card" style="padding: 20px; margin-top: 20px; background: #f0f6fc; border-left: 4px solid #0073aa;">
+            <h3 style="margin-top: 0;">Need Help?</h3>
+            <ul style="margin-bottom: 0;">
+                <li><a href="https://plugin-boilerplate.com/docs/licensing/" target="_blank">Licensing Documentation</a></li>
+                <li><a href="https://plugin-boilerplate.com/support/" target="_blank">Contact Support</a></li>
+                <li><a href="https://plugin-boilerplate.com/faq/" target="_blank">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+<?php
+// Helper function to mask license key
+function plugin_boilerplate_mask_license_key($key) {
+    $parts = explode('-', $key);
+    if (count($parts) === 4) {
+        return $parts[0] . '-****-****-' . $parts[3];
+    }
+    return substr($key, 0, 4) . str_repeat('*', strlen($key) - 8) . substr($key, -4);
+}
+?>

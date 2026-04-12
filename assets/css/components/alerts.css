@@ -1,0 +1,160 @@
+/**
+ * plugin-boilerplate - Alert Component Styles
+ * 
+ * Alert boxes, info panels, and contextual notifications.
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+/* Admin Only Notice */
+.plugin-boilerplate-admin-only-notice {
+    display: flex;
+    align-items: center;
+    background-color: #f6f7f7;
+    border-left: 4px solid #2271b1;
+    padding: var(--plugin-boilerplate-spacing-md) 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.plugin-boilerplate-admin-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #2271b1;
+}
+
+.plugin-boilerplate-admin-text h4 {
+    margin: 0 0 5px;
+}
+
+.plugin-boilerplate-admin-text p {
+    margin: 0;
+}
+
+/* Demo Mode Indicator */
+.plugin-boilerplate-demo-indicator {
+    display: flex;
+    align-items: center;
+    background-color: #fff8e5;
+    border-left: 4px solid #dba617;
+    padding: var(--plugin-boilerplate-spacing-md) 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.plugin-boilerplate-demo-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #dba617;
+}
+
+.plugin-boilerplate-demo-text h4 {
+    margin: 0 0 5px;
+}
+
+.plugin-boilerplate-demo-text p {
+    margin: 0;
+}
+
+/* Debug Info Panel */
+.plugin-boilerplate-debug-info-panel {
+    background-color: #f8e3dd;
+    border: 1px dashed #d63638;
+    border-radius: var(--plugin-boilerplate-border-radius);
+    padding: var(--plugin-boilerplate-spacing-md) 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.plugin-boilerplate-debug-info-panel h4 {
+    color: #d63638;
+    margin-top: 0;
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    font-size: var(--plugin-boilerplate-font-size);
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-debug-info-panel h4:before {
+    content: '\f348';
+    font-family: dashicons;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.plugin-boilerplate-debug-info-content {
+    background-color: var(--plugin-boilerplate-color-white);
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-radius: 3px;
+}
+
+.plugin-boilerplate-debug-info-content p {
+    font-family: monospace;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.plugin-boilerplate-debug-info-content p strong {
+    display: inline-block;
+    width: 150px;
+}
+
+.plugin-boilerplate-debug-advanced-section {
+    margin-top: 15px;
+    border-top: 1px solid #e1e1e1;
+    padding-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-toggle-advanced-debug {
+    cursor: pointer;
+    color: #2271b1;
+    font-weight: var(--plugin-boilerplate-font-weight-medium);
+    margin-bottom: var(--plugin-boilerplate-spacing-md);
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-toggle-advanced-debug .dashicons {
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+}
+
+.plugin-boilerplate-advanced-debug-content {
+    background-color: #f9f9f9;
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-radius: 3px;
+    border: 1px solid #e1e1e1;
+}
+
+.plugin-boilerplate-advanced-debug-content h5 {
+    margin: var(--plugin-boilerplate-spacing-md) 0 5px;
+    font-size: var(--plugin-boilerplate-font-size);
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    color: #1d2327;
+}
+
+.plugin-boilerplate-advanced-debug-content h5:first-child {
+    margin-top: 0;
+}
+
+.plugin-boilerplate-advanced-debug-content pre {
+    background: var(--plugin-boilerplate-color-white);
+    padding: 8px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    font-size: 12px;
+    margin: 5px 0;
+    white-space: pre-wrap;
+}
+
+.plugin-boilerplate-advanced-debug-content ol {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.plugin-boilerplate-advanced-debug-content ol li {
+    margin-bottom: 5px;
+}
+
+/* Legacy classes mapping for backward compatibility */

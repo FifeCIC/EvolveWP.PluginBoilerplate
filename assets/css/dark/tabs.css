@@ -1,0 +1,59 @@
+/**
+ * plugin-boilerplate Dark Theme - Tabs Layout Styles
+ * 
+ * Dark theme overrides for tab interfaces.
+ * 
+ * @package plugin-boilerplate/CSS/Dark
+ * @since 1.0.0
+ */
+
+/* Tabs Navigation */
+.plugin-boilerplate-dark-theme .plugin-boilerplate-tabs-nav {
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-400);
+}
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-tab-nav-item a {
+    color: var(--plugin-boilerplate-color-gray-700);
+    background-color: transparent;
+}
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-tab-nav-item a:hover {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .plugin-boilerplate-tab-nav-item.active a {
+    border-color: var(--plugin-boilerplate-color-gray-400);
+    background-color: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-black);
+    border-bottom: 1px solid var(--plugin-boilerplate-color-white);
+}
+
+/* Tab Content */
+.plugin-boilerplate-dark-theme .plugin-boilerplate-tab-content {
+    background-color: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+/* WordPress Nav Tabs Override */
+.plugin-boilerplate-dark-theme .nav-tab-wrapper {
+    border-bottom: 1px solid var(--plugin-boilerplate-color-gray-400);
+}
+
+.plugin-boilerplate-dark-theme .nav-tab {
+    color: var(--plugin-boilerplate-color-gray-700);
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.plugin-boilerplate-dark-theme .nav-tab:hover {
+    background-color: var(--plugin-boilerplate-color-gray-100);
+    color: var(--plugin-boilerplate-color-black);
+}
+
+.plugin-boilerplate-dark-theme .nav-tab-active {
+    border-color: var(--plugin-boilerplate-color-gray-400);
+    background-color: var(--plugin-boilerplate-color-white);
+    color: var(--plugin-boilerplate-color-black);
+    border-bottom-color: var(--plugin-boilerplate-color-white);
+}

@@ -1,0 +1,77 @@
+/**
+ * plugin-boilerplate - Tabs Layout Styles
+ * 
+ * Layout structures for tab interfaces.
+ * 
+ * HTML Structure:
+ * <div class="tp-tabs">
+ *   <ul class="tp-tabs-nav">
+ *     <li class="tp-tab-nav-item active"><a href="#">Tab 1</a></li>
+ *     <li class="tp-tab-nav-item"><a href="#">Tab 2</a></li>
+ *   </ul>
+ *   <div class="tp-tab-content active">
+ *     Tab 1 content
+ *   </div>
+ *   <div class="tp-tab-content">
+ *     Tab 2 content
+ *   </div>
+ * </div>
+ * 
+ * @package plugin-boilerplate/CSS/Layouts
+ * @since 1.0.0
+ */
+
+/* Tabs Container */
+.plugin-boilerplate-tabs {
+    margin: var(--plugin-boilerplate-spacing-lg) 0;
+}
+
+/* Tabs Navigation */
+.plugin-boilerplate-tabs-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.plugin-boilerplate-tab-nav-item {
+    margin: 0 0 -1px 0;
+    padding: 0;
+}
+
+.plugin-boilerplate-tab-nav-item a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-right: 2px;
+    font-weight: 500;
+}
+
+.plugin-boilerplate-tab-nav-item a:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.plugin-boilerplate-tab-nav-item.active a {
+    border-color: #ccc;
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #fff;
+    font-weight: 600;
+}
+
+/* Tab Content */
+.plugin-boilerplate-tab-content {
+    padding: var(--plugin-boilerplate-spacing-lg) 0;
+    display: none;
+}
+
+.plugin-boilerplate-tab-content.active {
+    display: block;
+}
+
+/* Legacy classes mapping for backward compatibility */

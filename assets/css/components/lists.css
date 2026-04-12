@@ -1,0 +1,99 @@
+/**
+ * plugin-boilerplate - Lists Component Styles
+ * 
+ * Styles for various list types, including task lists, subtasks, etc.
+ * 
+ * HTML Structure:
+ * <ul class="plugin-boilerplate-list">
+ *   <li class="plugin-boilerplate-list-item">
+ *     <div class="plugin-boilerplate-list-content">Content here</div>
+ *   </li>
+ * </ul>
+ * 
+ * @package plugin-boilerplate/CSS/Components
+ * @since 1.0.0
+ */
+
+.plugin-boilerplate-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plugin-boilerplate-list-item {
+    padding: var(--plugin-boilerplate-spacing-md);
+    border-bottom: var(--plugin-boilerplate-border-standard);
+    display: flex;
+    align-items: center;
+}
+
+.plugin-boilerplate-list-item:last-child {
+    border-bottom: none;
+}
+
+.plugin-boilerplate-list-content {
+    flex: 1;
+}
+
+/* Task Lists */
+.plugin-boilerplate-task-list .plugin-boilerplate-list-item {
+    padding: var(--plugin-boilerplate-spacing-md);
+    transition: background-color 0.2s ease;
+}
+
+.plugin-boilerplate-task-list .plugin-boilerplate-list-item:hover {
+    background-color: var(--plugin-boilerplate-color-gray-50);
+}
+
+.plugin-boilerplate-task-list .plugin-boilerplate-list-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-task-title {
+    font-weight: var(--plugin-boilerplate-font-weight-semibold);
+    flex: 1;
+    min-width: 200px;
+}
+
+.plugin-boilerplate-task-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--plugin-boilerplate-spacing-lg);
+    color: #666;
+    font-size: 13px;
+}
+
+/* Subtask Lists */
+.plugin-boilerplate-subtask-list {
+    margin-top: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-subtask-list .plugin-boilerplate-list-item {
+    padding: var(--plugin-boilerplate-spacing-sm) var(--plugin-boilerplate-spacing-md);
+    background-color: var(--plugin-boilerplate-color-gray-50);
+    border-radius: var(--plugin-boilerplate-border-radius);
+    margin-bottom: var(--plugin-boilerplate-spacing-xs);
+    border: var(--plugin-boilerplate-border-standard);
+}
+
+.plugin-boilerplate-subtask-checkbox {
+    margin-right: var(--plugin-boilerplate-spacing-md);
+}
+
+.plugin-boilerplate-subtask-title {
+    flex: 1;
+}
+
+.plugin-boilerplate-subtask-list .plugin-boilerplate-list-item.completed {
+    background-color: #f0f9eb;
+}
+
+.plugin-boilerplate-subtask-list .plugin-boilerplate-list-item.completed .plugin-boilerplate-subtask-title {
+    text-decoration: line-through;
+    color: #666;
+}
+
+/* Legacy classes mapping for backward compatibility */
