@@ -4,7 +4,7 @@
  * 
  * Examples of all jQuery UI components supported by WordPress core
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;

@@ -65,7 +65,7 @@ foreach ($items as $item) {
 }
 
 // Using WPSeed API
-$items = EvolveWP_Core_Admin_Settings::get_option('field_id', array());
+$items = EvolveWP_Boilerplate_Admin_Settings::get_option('field_id', array());
 ```
 
 ## Common Patterns

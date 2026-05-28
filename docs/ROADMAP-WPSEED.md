@@ -4,7 +4,7 @@
 > consistent, AI-navigable starting point. Development here is about standards,
 > structure, and reusable patterns — not features.
 >
-> All `wpseed` / `PLUGIN_BOILERPLATE_` / `EvolveWP_Core_` strings are placeholders. When a new
+> All `wpseed` / `PLUGIN_BOILERPLATE_` / `EvolveWP_Boilerplate_` strings are placeholders. When a new
 > plugin is created from WPSeed, these are mass-replaced with the plugin's
 > own prefix via `docs/CLONING-GUIDE.md`.
 
@@ -103,16 +103,16 @@ WP-CLI clone command (Task 6.2) deferred — manual process works.
 
 ---
 
-## Items Deferred to EvolveWP Core
+## Items Deferred to Plugin Boilerplate
 
 | Item | Why deferred | Where planned |
 |---|---|---|
-| Typed Settings Manager | Runtime feature, not boilerplate | EvolveWP Core Stage B |
-| Database Abstraction (Table + Query) | Needed by plugins with custom tables | EvolveWP Core Stage B |
-| Frontend Template System | Needed by plugins with public UI | EvolveWP Core Stage D |
-| Frontend REST API | Public-facing endpoints for portals | EvolveWP Core Stage D |
-| Cloud Services Foundation | Backup, storage, hack detection | EvolveWP Core Stage D |
-| Webhook System | Event notifications to external services | EvolveWP Core Stage D |
+| Typed Settings Manager | Runtime feature, not boilerplate | Plugin Boilerplate Stage B |
+| Database Abstraction (Table + Query) | Needed by plugins with custom tables | Plugin Boilerplate Stage B |
+| Frontend Template System | Needed by plugins with public UI | Plugin Boilerplate Stage D |
+| Frontend REST API | Public-facing endpoints for portals | Plugin Boilerplate Stage D |
+| Cloud Services Foundation | Backup, storage, hack detection | Plugin Boilerplate Stage D |
+| Webhook System | Event notifications to external services | Plugin Boilerplate Stage D |
 
 ## Items Deferred to Future WPSeed Pass
 
@@ -121,5 +121,5 @@ WP-CLI clone command (Task 6.2) deferred — manual process works.
 | Asset Manager namespacing | Existing classes work, low risk to defer |
 | Legacy admin file migration | `includes/admin/*.php` procedural files |
 | Centralised hook registration | Moving `add_action` from constructors to Hook_Registry |
-| Unmigrated class references | `EvolveWP_Core_Developer_Mode`, `EvolveWP_Core_Notifications`, `EvolveWP_Core_API_Logging` |
+| Unmigrated class references | `EvolveWP_Boilerplate_Developer_Mode`, `EvolveWP_Boilerplate_Notifications`, `EvolveWP_Boilerplate_API_Logging` |
 | WP-CLI clone command (Task 6.2) | Manual process works, automate later |

@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core - Developer Toolbar
+ * Plugin Boilerplate - Developer Toolbar
  *
  * The developer toolbar requires the "seniordeveloper" custom capability. The
  * toolbar allows actions not all key holders should be giving access to. The
@@ -8,7 +8,7 @@
  *
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Toolbars
+ * @package  Plugin Boilerplate/Toolbars
  * @since    1.0.0
  * @version  1.2.0
  */
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }  
 
-if( !class_exists( 'EvolveWP_Core_Admin_Toolbar_Developers' ) ) :
+if( !class_exists( 'EvolveWP_Boilerplate_Admin_Toolbar_Developers' ) ) :
 
-class EvolveWP_Core_Admin_Toolbar_Developers {
+class EvolveWP_Boilerplate_Admin_Toolbar_Developers {
     public function __construct() {
         if( !current_user_can( 'seniordeveloper' ) ) return false;
         $this->init(); 
@@ -110,4 +110,4 @@ class EvolveWP_Core_Admin_Toolbar_Developers {
 
 endif;
 
-return new EvolveWP_Core_Admin_Toolbar_Developers();
+return new EvolveWP_Boilerplate_Admin_Toolbar_Developers();

@@ -135,8 +135,8 @@ WPSeed();
 2. **Update Class Names**
    ```bash
    # Find and replace
-   Plugin_Name_Admin → EvolveWP_Core_Admin
-   Plugin_Name_Public → EvolveWP_Core_Public
+   Plugin_Name_Admin → EvolveWP_Boilerplate_Admin
+   Plugin_Name_Public → EvolveWP_Boilerplate_Public
    ```
 
 3. **Register Assets**
@@ -185,7 +185,7 @@ wp_schedule_event(time(), 'hourly', 'my_cron_hook');
 **New Way (WPSeed):**
 ```php
 // Use Action Scheduler (reliable)
-EvolveWP_Core_Task_Scheduler::schedule_recurring(
+EvolveWP_Boilerplate_Task_Scheduler::schedule_recurring(
     'my_task',
     array('data' => 'value'),
     time(),
@@ -222,7 +222,7 @@ Container::make('theme_options', 'Settings')
    wp_schedule_event(time(), 'hourly', 'my_hook');
    
    // New
-   EvolveWP_Core_Task_Scheduler::schedule_recurring('my_hook', array(), time(), 3600);
+   EvolveWP_Boilerplate_Task_Scheduler::schedule_recurring('my_hook', array(), time(), 3600);
    ```
 
 2. **Upgrade Settings to Carbon Fields**
@@ -252,7 +252,7 @@ Access at: `wp-admin/admin.php?page=plugin-boilerplate-development`
 #### 2. Background Task System
 ```php
 // Schedule a task
-EvolveWP_Core_Task_Scheduler::schedule_single(
+EvolveWP_Boilerplate_Task_Scheduler::schedule_single(
     'send_email',
     array('to' => 'user@example.com'),
     time() + 300  // 5 minutes
@@ -267,7 +267,7 @@ add_action('send_email', function($to) {
 #### 3. Notification System
 ```php
 // Add notification
-EvolveWP_Core_Notifications::add_notification(
+EvolveWP_Boilerplate_Notifications::add_notification(
     get_current_user_id(),
     'Task Complete',
     'Your export is ready',
@@ -281,9 +281,9 @@ EvolveWP_Core_Notifications::add_notification(
 #### 4. Enhanced Logging
 ```php
 // Log anything
-EvolveWP_Core_Enhanced_Logger::log_query($sql, $time, $function);
-EvolveWP_Core_Enhanced_Logger::log_hook($hook, $callback, $time);
-EvolveWP_Core_Enhanced_Logger::log_error($message, $type, $source);
+EvolveWP_Boilerplate_Enhanced_Logger::log_query($sql, $time, $function);
+EvolveWP_Boilerplate_Enhanced_Logger::log_hook($hook, $callback, $time);
+EvolveWP_Boilerplate_Enhanced_Logger::log_error($message, $type, $source);
 
 // View in Performance tab
 ```
@@ -413,7 +413,7 @@ wp_enqueue_style('my-style');
 wp_schedule_event(time(), 'hourly', 'my_hook');
 
 // ✅ Use Action Scheduler
-EvolveWP_Core_Task_Scheduler::schedule_recurring('my_hook', array(), time(), 3600);
+EvolveWP_Boilerplate_Task_Scheduler::schedule_recurring('my_hook', array(), time(), 3600);
 ```
 
 ### 3. Use Carbon Fields
@@ -435,7 +435,7 @@ Container::make('theme_options', 'Settings')
 error_log('Query took ' . $time . ' seconds');
 
 // ✅ Use Enhanced Logger
-EvolveWP_Core_Enhanced_Logger::log_query($sql, $time, $function);
+EvolveWP_Boilerplate_Enhanced_Logger::log_query($sql, $time, $function);
 ```
 
 ### 5. Use Notifications
@@ -446,7 +446,7 @@ add_action('admin_notices', function() {
 });
 
 // ✅ Use Notification System
-EvolveWP_Core_Notifications::add_notification(
+EvolveWP_Boilerplate_Notifications::add_notification(
     get_current_user_id(),
     'Title',
     'Message',

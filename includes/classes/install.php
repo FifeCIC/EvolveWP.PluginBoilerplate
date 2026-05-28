@@ -1,12 +1,12 @@
 <?php       
 /**
- * EvolveWP Core - Installation
+ * Plugin Boilerplate - Installation
  *
  * Installation of post types, taxonomies, database tables, options etc.
  *
  * @author   Ryan Bayne
  * @category Installation
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  * @version  2.0.0
  */
@@ -15,15 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( !class_exists( 'EvolveWP_Core_Install' ) ) : 
+if( !class_exists( 'EvolveWP_Boilerplate_Install' ) ) : 
 
 /**
- * EvolveWP_Core_Install Class.
+ * EvolveWP_Boilerplate_Install Class.
  *
  * @since   1.0.0
  * @version 2.0.0
  */
-class EvolveWP_Core_Install { 
+class EvolveWP_Boilerplate_Install { 
     
     /** @var array DB updates and callbacks that need to be run per version */
     private static $db_updates = array(
@@ -75,7 +75,7 @@ class EvolveWP_Core_Install {
             // Nonce verified via _plugin_boilerplate_update_nonce added to the update notice link.
             if ( isset( $_GET['_plugin_boilerplate_update_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_plugin_boilerplate_update_nonce'] ) ), 'plugin_boilerplate_do_update' ) ) {
                 self::install();
-                EvolveWP_Core_Admin_Notices::add_notice( 'update' );
+                EvolveWP_Boilerplate_Admin_Notices::add_notice( 'update' );
             }
         }
     }
@@ -114,7 +114,7 @@ class EvolveWP_Core_Install {
     }
     
     /**
-     * Install EvolveWP Core by Ryan Bayne.
+     * Install Plugin Boilerplate by Ryan Bayne.
      */
     public static function install() {
         global $wpdb;
@@ -124,11 +124,11 @@ class EvolveWP_Core_Install {
         }
 
         // Ensure needed classes are loaded
-        if ( ! class_exists( 'EvolveWP_Core_Admin_Notices' ) ) {
+        if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Notices' ) ) {
             include_once( dirname( __FILE__ ) . '/../admin/admin-notices.php' );
         }
 
-        EvolveWP_Core_Admin_Notices::remove_all_notices();
+        EvolveWP_Boilerplate_Admin_Notices::remove_all_notices();
         
         self::create_options();
         self::create_roles();
@@ -141,12 +141,12 @@ class EvolveWP_Core_Install {
 
         // No versions? This is a new install :)
         if ( is_null( $current_installed_version ) && is_null( $current_db_version ) && apply_filters( 'plugin_boilerplate_enable_setup_wizard', true ) ) {  
-            EvolveWP_Core_Admin_Notices::add_notice( 'install' );
+            EvolveWP_Boilerplate_Admin_Notices::add_notice( 'install' );
             set_transient( '_plugin_boilerplate_activation_redirect', 1, 30 );
         }                           
 
         if ( ! is_null( $current_db_version ) && version_compare( $current_db_version, max( array_keys( self::$db_updates ) ), '<' ) ) {
-            EvolveWP_Core_Admin_Notices::add_notice( 'update' );
+            EvolveWP_Boilerplate_Admin_Notices::add_notice( 'update' );
         } else {
             self::update_db_version();
         }
@@ -211,7 +211,7 @@ class EvolveWP_Core_Install {
      */
     public static function plugin_action_links( $links ) {
         $action_links = array(
-            'settings' => '<a href="' . admin_url( 'options-general.php?page=plugin-boilerplate-settings' ) . '" title="' . esc_attr( __( 'View EvolveWP Core Settings', 'plugin-boilerplate' ) ) . '">' . __( 'Settings', 'plugin-boilerplate' ) . '</a>',
+            'settings' => '<a href="' . admin_url( 'options-general.php?page=plugin-boilerplate-settings' ) . '" title="' . esc_attr( __( 'View Plugin Boilerplate Settings', 'plugin-boilerplate' ) ) . '">' . __( 'Settings', 'plugin-boilerplate' ) . '</a>',
         );
 
         return array_merge( $action_links, $links );
@@ -227,7 +227,7 @@ class EvolveWP_Core_Install {
     public static function plugin_row_meta( $links, $file ) {     
         if ( $file == PLUGIN_BOILERPLATE_PLUGIN_BASENAME ) {
             $row_meta = array(
-                'docs'    => '<a href="' . esc_url( apply_filters( 'plugin_boilerplate_docs_url', PLUGIN_BOILERPLATE_DOCS ) ) . '" title="' . esc_attr( __( 'View EvolveWP Core Documentation', 'plugin-boilerplate' ) ) . '">' . __( 'Docs', 'plugin-boilerplate' ) . '</a>',
+                'docs'    => '<a href="' . esc_url( apply_filters( 'plugin_boilerplate_docs_url', PLUGIN_BOILERPLATE_DOCS ) ) . '" title="' . esc_attr( __( 'View Plugin Boilerplate Documentation', 'plugin-boilerplate' ) ) . '">' . __( 'Docs', 'plugin-boilerplate' ) . '</a>',
                 'support' => '<a href="' . esc_url( apply_filters( 'plugin_boilerplate_support_url', PLUGIN_BOILERPLATE_GITHUB . '/issues' ) ) . '" title="' . esc_attr( __( 'Visit Support Forum', 'plugin-boilerplate' ) ) . '">' . __( 'Support', 'plugin-boilerplate' ) . '</a>',
                 'donate' => '<a href="' . esc_url( apply_filters( 'plugin_boilerplate_donate_url', PLUGIN_BOILERPLATE_DONATE ) ) . '" title="' . esc_attr( __( 'Donate to Project', 'plugin-boilerplate' ) ) . '">' . __( 'Donate', 'plugin-boilerplate' ) . '</a>',
                 'blog' => '<a href="' . esc_url( apply_filters( 'plugin_boilerplate_blog_url', PLUGIN_BOILERPLATE_DONATE ) ) . '" title="' . esc_attr( __( 'Get project updates from the blog.', 'plugin-boilerplate' ) ) . '">' . __( 'Blog', 'plugin-boilerplate' ) . '</a>',
@@ -407,11 +407,11 @@ class EvolveWP_Core_Install {
      */
     private static function create_options() {
         // Include settings so that we can run through defaults
-        if ( ! class_exists( 'EvolveWP_Core_Admin_Settings' ) ) {
+        if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Settings' ) ) {
             include_once( dirname( __FILE__ ) . '/../admin/admin-settings.php' );
         }
 
-        $settings = EvolveWP_Core_Admin_Settings::get_settings_pages();
+        $settings = EvolveWP_Boilerplate_Admin_Settings::get_settings_pages();
 
         foreach ( $settings as $section ) {
             if ( ! method_exists( $section, 'get_settings' ) ) {
@@ -576,4 +576,4 @@ class EvolveWP_Core_Install {
 
 endif;
 
-EvolveWP_Core_Install::init();
+EvolveWP_Boilerplate_Install::init();

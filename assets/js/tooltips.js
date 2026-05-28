@@ -1,5 +1,5 @@
 /**
- * EvolveWP Core Tooltips
+ * Plugin Boilerplate Tooltips
  */
 (function($) {
     'use strict';

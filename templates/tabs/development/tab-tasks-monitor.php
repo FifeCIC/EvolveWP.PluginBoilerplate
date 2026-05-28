@@ -1,14 +1,14 @@
 <?php
 /**
- * EvolveWP Core Development - Tasks Monitor
+ * Plugin Boilerplate Development - Tasks Monitor
  *
- * @package EvolveWP Core/Admin/Development
+ * @package Plugin Boilerplate/Admin/Development
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Admin_Development_Tasks_Monitor {
+class EvolveWP_Boilerplate_Admin_Development_Tasks_Monitor {
     
     public static function output() {
         if (!function_exists('as_get_scheduled_actions')) {

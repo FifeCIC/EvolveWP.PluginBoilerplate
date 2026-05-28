@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core License Client
+ * Plugin Boilerplate License Client
  * 
  * Handles license validation, updates, and premium feature activation
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 1.0.0
  */
 
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class EvolveWP_Core_License_Client {
+class EvolveWP_Boilerplate_License_Client {
     
     private $license_server_url;
     private $plugin_slug;
@@ -284,7 +284,7 @@ class EvolveWP_Core_License_Client {
         // No license
         if (empty($license_data)) {
             echo '<div class="notice notice-warning"><p>';
-            echo '<strong>EvolveWP Core:</strong> ';
+            echo '<strong>Plugin Boilerplate:</strong> ';
             echo 'No license key activated. <a href="' . esc_url( admin_url('admin.php?page=plugin-boilerplate-license') ) . '">Activate your license</a> to receive updates and premium features.';
             echo '</p></div>';
             return;
@@ -297,12 +297,12 @@ class EvolveWP_Core_License_Client {
             
             if ($days_left < 0) {
                 echo '<div class="notice notice-error"><p>';
-                echo '<strong>EvolveWP Core:</strong> ';
+                echo '<strong>Plugin Boilerplate:</strong> ';
                 echo 'Your license has expired. <a href="' . esc_url( admin_url('admin.php?page=plugin-boilerplate-license') ) . '">Renew your license</a> to continue receiving updates.';
                 echo '</p></div>';
             } elseif ($days_left < 30) {
                 echo '<div class="notice notice-warning"><p>';
-                echo '<strong>EvolveWP Core:</strong> ';
+                echo '<strong>Plugin Boilerplate:</strong> ';
                 echo 'Your license expires in ' . esc_html( $days_left ) . ' days. <a href="' . esc_url( admin_url('admin.php?page=plugin-boilerplate-license') ) . '">Renew now</a> to avoid interruption.';
                 echo '</p></div>';
             }
@@ -311,4 +311,4 @@ class EvolveWP_Core_License_Client {
 }
 
 // Initialize - disabled pending full development
-// new EvolveWP_Core_License_Client();
+// new EvolveWP_Boilerplate_License_Client();

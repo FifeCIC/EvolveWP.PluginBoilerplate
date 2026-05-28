@@ -9,10 +9,10 @@
  * 2. Button behaviour table (action → handler → data effect)
  * 3. Data flow diagram (numbered steps with split branches)
  *
- * Every plugin cloned from EvolveWP Core gets this tab and replaces the content
+ * Every plugin cloned from Plugin Boilerplate gets this tab and replaces the content
  * with its own architecture.
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @since    3.0.0
  */
 
@@ -33,22 +33,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h3><?php esc_html_e( 'Namespace Map', 'plugin-boilerplate' ); ?> <span class="plugin-boilerplate-help-tip" data-tooltip="<?php esc_attr_e( 'PSR-4 autoloading maps each namespace to a directory under includes/. Composer resolves class names to file paths automatically.', 'plugin-boilerplate' ); ?>"><span class="dashicons dashicons-editor-help"></span></span></h3>
 		<div class="plugin-boilerplate-arch-flow">
 			<div class="plugin-boilerplate-arch-step">
-				<strong>EvolveWP Core\Ecosystem\</strong><br>
+				<strong>Plugin Boilerplate\Ecosystem\</strong><br>
 				→ <code>includes/Ecosystem/</code><br>
 				<?php esc_html_e( 'Registry, Menu_Manager, Installer', 'plugin-boilerplate' ); ?>
 			</div>
 			<div class="plugin-boilerplate-arch-step">
-				<strong>EvolveWP Core\Core\</strong><br>
+				<strong>Plugin Boilerplate\Core\</strong><br>
 				→ <code>includes/Core/</code><br>
 				<?php esc_html_e( 'Install, AJAX_Handler, Logger, Enhanced_Logger, Task_Scheduler', 'plugin-boilerplate' ); ?>
 			</div>
 			<div class="plugin-boilerplate-arch-step">
-				<strong>EvolveWP Core\Admin\</strong><br>
+				<strong>Plugin Boilerplate\Admin\</strong><br>
 				→ <code>includes/Admin/</code><br>
 				<?php esc_html_e( 'Dashboard_Widgets, Notification_Bell, Uninstall_Feedback', 'plugin-boilerplate' ); ?>
 			</div>
 			<div class="plugin-boilerplate-arch-step">
-				<strong>EvolveWP Core\API\</strong><br>
+				<strong>Plugin Boilerplate\API\</strong><br>
 				→ <code>includes/API/</code><br>
 				<?php esc_html_e( 'Connector_Interface, Base_API, REST_Bridge, REST_Controller', 'plugin-boilerplate' ); ?>
 			</div>
@@ -85,8 +85,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h5><code>plugin_boilerplate_version</code> — <?php esc_html_e( 'Plugin Version', 'plugin-boilerplate' ); ?></h5>
 			<div class="plugin-boilerplate-arch-json-content">
 				<strong><?php esc_html_e( 'Type:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'WordPress option (string)', 'plugin-boilerplate' ); ?><br>
-				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>EvolveWP Core\Core\Install::update_package_version()</code><br>
-				<strong><?php esc_html_e( 'Read by:', 'plugin-boilerplate' ); ?></strong> <code>EvolveWP Core\Core\Install::check_version()</code><br>
+				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>Plugin Boilerplate\Core\Install::update_package_version()</code><br>
+				<strong><?php esc_html_e( 'Read by:', 'plugin-boilerplate' ); ?></strong> <code>Plugin Boilerplate\Core\Install::check_version()</code><br>
 				<strong><?php esc_html_e( 'Purpose:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'Triggers install routine when version changes.', 'plugin-boilerplate' ); ?>
 			</div>
 		</div>
@@ -95,7 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h5><code>plugin_boilerplate_ecosystem_mode</code> — <?php esc_html_e( 'Ecosystem Status', 'plugin-boilerplate' ); ?></h5>
 			<div class="plugin-boilerplate-arch-json-content">
 				<strong><?php esc_html_e( 'Type:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'WordPress option (boolean)', 'plugin-boilerplate' ); ?><br>
-				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>EvolveWP Core\Ecosystem\Registry::detect_ecosystem()</code><br>
+				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>Plugin Boilerplate\Ecosystem\Registry::detect_ecosystem()</code><br>
 				<strong><?php esc_html_e( 'Read by:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'Admin UI for conditional menu placement', 'plugin-boilerplate' ); ?><br>
 				<strong><?php esc_html_e( 'Purpose:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'True when 2+ EvolveWP plugins are active.', 'plugin-boilerplate' ); ?>
 			</div>
@@ -105,11 +105,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h5><code>plugin_boilerplate_ecosystem_plugins</code> — <?php esc_html_e( 'Registered Plugins', 'plugin-boilerplate' ); ?></h5>
 			<div class="plugin-boilerplate-arch-json-content">
 				<strong><?php esc_html_e( 'Type:', 'plugin-boilerplate' ); ?></strong> <?php esc_html_e( 'WordPress option (serialized array)', 'plugin-boilerplate' ); ?><br>
-				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>EvolveWP Core\Ecosystem\Registry::detect_ecosystem()</code><br>
+				<strong><?php esc_html_e( 'Written by:', 'plugin-boilerplate' ); ?></strong> <code>Plugin Boilerplate\Ecosystem\Registry::detect_ecosystem()</code><br>
 				<strong><?php esc_html_e( 'Structure:', 'plugin-boilerplate' ); ?></strong>
 				<pre>{
   plugin-boilerplate": {
-    "name": "EvolveWP Core",
+    "name": "Plugin Boilerplate",
     "version": "3.0.0",
     "has_logging": true,
     "has_cron": true,
@@ -124,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- Pattern 2: Key Functions Table -->
 <div class="plugin-boilerplate-arch-json-panel">
-	<h3><?php esc_html_e( 'Key Functions & Classes', 'plugin-boilerplate' ); ?> <span class="plugin-boilerplate-help-tip" data-tooltip="<?php esc_attr_e( 'These are the core classes that every plugin inherits from EvolveWP Core. Each has a single responsibility documented in its file header.', 'plugin-boilerplate' ); ?>"><span class="dashicons dashicons-editor-help"></span></span></h3>
+	<h3><?php esc_html_e( 'Key Functions & Classes', 'plugin-boilerplate' ); ?> <span class="plugin-boilerplate-help-tip" data-tooltip="<?php esc_attr_e( 'These are the core classes that every plugin inherits from Plugin Boilerplate. Each has a single responsibility documented in its file header.', 'plugin-boilerplate' ); ?>"><span class="dashicons dashicons-editor-help"></span></span></h3>
 	<table class="wp-list-table widefat fixed striped">
 		<thead>
 			<tr>
@@ -135,37 +135,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</thead>
 		<tbody>
 			<tr>
-				<td><code>EvolveWP Core\Ecosystem\Registry</code></td>
+				<td><code>Plugin Boilerplate\Ecosystem\Registry</code></td>
 				<td><code>includes/Ecosystem/Registry.php</code></td>
 				<td><?php esc_html_e( 'Cross-plugin registration, feature detection, shared resource management.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\Core\Install</code></td>
+				<td><code>Plugin Boilerplate\Core\Install</code></td>
 				<td><code>includes/Core/Install.php</code></td>
 				<td><?php esc_html_e( 'Activation, DB tables, roles, version checking, transient cleanup.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\Core\Logger</code></td>
+				<td><code>Plugin Boilerplate\Core\Logger</code></td>
 				<td><code>includes/Core/Logger.php</code></td>
 				<td><?php esc_html_e( 'Structured trace logging with loop detection and data-loss tracking.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\Core\Enhanced_Logger</code></td>
+				<td><code>Plugin Boilerplate\Core\Enhanced_Logger</code></td>
 				<td><code>includes/Core/Enhanced_Logger.php</code></td>
 				<td><?php esc_html_e( 'Query Monitor-style per-request logging — queries, hooks, HTTP, errors.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\Core\Task_Scheduler</code></td>
+				<td><code>Plugin Boilerplate\Core\Task_Scheduler</code></td>
 				<td><code>includes/Core/Task_Scheduler.php</code></td>
 				<td><?php esc_html_e( 'Action Scheduler wrapper — schedule, cancel, query background jobs.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\API\REST_Controller</code></td>
+				<td><code>Plugin Boilerplate\API\REST_Controller</code></td>
 				<td><code>includes/API/REST_Controller.php</code></td>
 				<td><?php esc_html_e( 'Abstract base for REST endpoints with secure-by-default permissions.', 'plugin-boilerplate' ); ?></td>
 			</tr>
 			<tr>
-				<td><code>EvolveWP Core\API\Base_API</code></td>
+				<td><code>Plugin Boilerplate\API\Base_API</code></td>
 				<td><code>includes/API/Base_API.php</code></td>
 				<td><?php esc_html_e( 'Abstract base for external API integrations with logging.', 'plugin-boilerplate' ); ?></td>
 			</tr>

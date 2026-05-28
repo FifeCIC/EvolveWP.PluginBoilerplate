@@ -328,7 +328,7 @@ add_action('plugin_boilerplate_ecosystem_plugin_registered', function($slug, $pl
 ### Functions
 
 **`plugin_boilerplate_ecosystem()`**
-- Returns: `EvolveWP_Core_Ecosystem_Registry` instance
+- Returns: `EvolveWP_Boilerplate_Ecosystem_Registry` instance
 - Global accessor for ecosystem registry
 
 ### Registry Methods

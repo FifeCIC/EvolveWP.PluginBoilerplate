@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Admin Menu Configuration
+ * Plugin Boilerplate Admin Menu Configuration
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.0.0
  */
 
@@ -11,13 +11,13 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Register EvolveWP Core admin menus
+ * Register Plugin Boilerplate admin menus
  */
 function plugin_boilerplate_register_admin_menus() {
     // Main menu
     add_menu_page(
-        __('EvolveWP Core', 'plugin-boilerplate'),
-        __('EvolveWP Core', 'plugin-boilerplate'),
+        __('Plugin Boilerplate', 'plugin-boilerplate'),
+        __('Plugin Boilerplate', 'plugin-boilerplate'),
         'manage_options',
         'plugin-boilerplate',
         'plugin_boilerplate_main_page',
@@ -99,8 +99,8 @@ add_action('admin_menu', 'plugin_boilerplate_register_admin_menus');
 function plugin_boilerplate_main_page() {
     ?>
     <div class="wrap">
-        <h1><?php esc_html_e('EvolveWP Core', 'plugin-boilerplate'); ?></h1>
-        <p><?php esc_html_e('Welcome to EvolveWP Core - Your WordPress Plugin Boilerplate', 'plugin-boilerplate'); ?></p>
+        <h1><?php esc_html_e('Plugin Boilerplate', 'plugin-boilerplate'); ?></h1>
+        <p><?php esc_html_e('Welcome to Plugin Boilerplate - Your WordPress Plugin Boilerplate', 'plugin-boilerplate'); ?></p>
         <div class="card">
             <h2><?php esc_html_e('Getting Started', 'plugin-boilerplate'); ?></h2>
             <p><?php esc_html_e('This is a boilerplate plugin with developer tools and examples.', 'plugin-boilerplate'); ?></p>
@@ -118,10 +118,10 @@ function plugin_boilerplate_main_page() {
  * Development page callback
  */
 function plugin_boilerplate_development_page() {
-    if (!class_exists('EvolveWP_Core_Admin_Development_Page')) {
+    if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Page')) {
         require_once PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH . 'admin/page/development/development-tabs.php';
     }
-    EvolveWP_Core_Admin_Development_Page::output();
+    EvolveWP_Boilerplate_Admin_Development_Page::output();
 }
 
 /**

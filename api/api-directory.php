@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core API Directory — registry of all available connectors.
+ * Plugin Boilerplate API Directory — registry of all available connectors.
  *
  * ROLE: api-endpoint
  *
@@ -13,7 +13,7 @@
  *   - WordPress functions: apply_filters, wp_parse_args
  *
  * CONSUMED BY:
- *   - EvolveWP_Core_API_Factory (looks up providers to instantiate)
+ *   - EvolveWP_Boilerplate_API_Factory (looks up providers to instantiate)
  *   - Admin UI (displays connector grid with status)
  *   - REST Bridge (validates connector IDs)
  *   - plugin_boilerplate_connector() global accessor in functions.php
@@ -22,7 +22,7 @@
  *   Input  → Static provider definitions + runtime registrations via filter
  *   Output → Provider metadata arrays
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @category API
  * @since    1.0.0
  */
@@ -36,14 +36,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Connectors are registered in two ways:
  * 1. Static — hardcoded in get_default_providers() as boilerplate examples.
- * 2. Runtime — plugins call EvolveWP_Core_API_Directory::register() or use the
+ * 2. Runtime — plugins call EvolveWP_Boilerplate_API_Directory::register() or use the
  *    'plugin_boilerplate_api_providers' filter during init.
  *
  * @since 1.0.0
  * @since 3.1.0 Added runtime registration, get_provider_capabilities(),
  *              get_configured_providers(), is_registered().
  */
-class EvolveWP_Core_API_Directory {
+class EvolveWP_Boilerplate_API_Directory {
 
 	/**
 	 * Runtime-registered providers.
@@ -202,7 +202,7 @@ class EvolveWP_Core_API_Directory {
 	 * @return array<string, array> Capabilities keyed by action name.
 	 */
 	public static function get_provider_capabilities( $provider_id ) {
-		$instance = EvolveWP_Core_API_Factory::create( $provider_id );
+		$instance = EvolveWP_Boilerplate_API_Factory::create( $provider_id );
 
 		if ( is_wp_error( $instance ) ) {
 			return array();
@@ -214,7 +214,7 @@ class EvolveWP_Core_API_Directory {
 	/**
 	 * Return the default (static) provider definitions.
 	 *
-	 * These are boilerplate examples shipped with EvolveWP Core. When cloning to
+	 * These are boilerplate examples shipped with Plugin Boilerplate. When cloning to
 	 * a new plugin, replace or remove these with the plugin's own connectors.
 	 *
 	 * @since  1.0.0
@@ -230,7 +230,7 @@ class EvolveWP_Core_API_Directory {
 				'url'         => '',
 				'api_doc_url' => '',
 				'class_path'  => 'custom/custom-api.php',
-				'class_name'  => 'EvolveWP_Core_Custom_API',
+				'class_name'  => 'EvolveWP_Boilerplate_Custom_API',
 				'auth_type'   => 'api_key',
 				'icon'        => 'dashicons-admin-generic',
 				'features'    => array( 'data_retrieval' => true ),
@@ -241,7 +241,7 @@ class EvolveWP_Core_API_Directory {
 				'url'         => 'https://discord.com/',
 				'api_doc_url' => 'https://discord.com/developers/docs/resources/webhook',
 				'class_path'  => 'discord/discord-api.php',
-				'class_name'  => 'EvolveWP_Core_Discord_API',
+				'class_name'  => 'EvolveWP_Boilerplate_Discord_API',
 				'auth_type'   => 'webhook_url',
 				'icon'        => 'dashicons-format-chat',
 				'features'    => array( 'notifications' => true ),

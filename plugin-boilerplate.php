@@ -8,7 +8,7 @@
  * Author:      FifeCIC
  * Author URI:  https://evolvewp.dev
  * Requires at least: 5.6
- * Tested up to: 6.9
+ * Tested up to: 6.8
  * Requires PHP: 7.4
  * License:     GPL-3.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt

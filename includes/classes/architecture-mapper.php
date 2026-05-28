@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Architecture Mapper
+ * Plugin Boilerplate Architecture Mapper
  * 
  * Visual guide to plugin structure for developers and AI
  * 
- * @package EvolveWP Core/Development
+ * @package Plugin Boilerplate/Development
  * @version 1.0.0
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Architecture_Mapper {
+class EvolveWP_Boilerplate_Architecture_Mapper {
     
     public static function get_architecture_map() {
         return array(
@@ -27,7 +27,7 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Centralized asset loading with metadata tracking',
                         'children' => array(
                             'asset_manager' => array(
-                                'name' => 'EvolveWP_Core_Asset_Manager',
+                                'name' => 'EvolveWP_Boilerplate_Asset_Manager',
                                 'type' => 'class',
                                 'file' => 'includes/classes/asset-manager.php',
                                 'methods' => array('enqueue_assets', 'get_all_assets', 'asset_exists', 'get_missing_assets'),
@@ -55,14 +55,14 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Multi-provider AI assistant with usage tracking',
                         'children' => array(
                             'ai_assistant' => array(
-                                'name' => 'EvolveWP_Core_AI_Assistant',
+                                'name' => 'EvolveWP_Boilerplate_AI_Assistant',
                                 'type' => 'class',
                                 'file' => 'includes/ai-system/ai-assistant.php',
                                 'methods' => array('process_request', 'get_conversation_history'),
                                 'purpose' => 'Main AI interface for code generation and debugging'
                             ),
                             'provider_factory' => array(
-                                'name' => 'EvolveWP_Core_AI_Provider_Factory',
+                                'name' => 'EvolveWP_Boilerplate_AI_Provider_Factory',
                                 'type' => 'factory',
                                 'file' => 'includes/ai-system/ai-provider-factory.php',
                                 'methods' => array('create_provider'),
@@ -70,7 +70,7 @@ class EvolveWP_Core_Architecture_Mapper {
                                 'supported_providers' => array('amazonq', 'gemini')
                             ),
                             'usage_tracker' => array(
-                                'name' => 'EvolveWP_Core_AI_Usage_Tracker',
+                                'name' => 'EvolveWP_Boilerplate_AI_Usage_Tracker',
                                 'type' => 'class',
                                 'file' => 'includes/ai-system/ai-usage-tracker.php',
                                 'methods' => array('track_request', 'get_usage_stats'),
@@ -86,7 +86,7 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Generic API client architecture',
                         'children' => array(
                             'base_api' => array(
-                                'name' => 'EvolveWP_Core_Base_API',
+                                'name' => 'EvolveWP_Boilerplate_Base_API',
                                 'type' => 'class',
                                 'file' => 'api/base-api.php',
                                 'methods' => array('make_request', 'get', 'post', 'handle_response'),
@@ -94,11 +94,11 @@ class EvolveWP_Core_Architecture_Mapper {
                                 'purpose' => 'Base class for all API clients with error handling'
                             ),
                             'api_factory' => array(
-                                'name' => 'EvolveWP_Core_API_Factory',
+                                'name' => 'EvolveWP_Boilerplate_API_Factory',
                                 'type' => 'factory',
                                 'file' => 'api/api-factory.php',
                                 'methods' => array('create'),
-                                'usage_pattern' => '$api = EvolveWP_Core_API_Factory::create("provider_name", $args);'
+                                'usage_pattern' => '$api = EvolveWP_Boilerplate_API_Factory::create("provider_name", $args);'
                             ),
                             'api_logging' => array(
                                 'name' => 'API Logging',
@@ -116,7 +116,7 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Secure REST API endpoints',
                         'children' => array(
                             'rest_controller' => array(
-                                'name' => 'EvolveWP_Core_REST_Controller',
+                                'name' => 'EvolveWP_Boilerplate_REST_Controller',
                                 'type' => 'class',
                                 'file' => 'includes/classes/rest-controller.php',
                                 'methods' => array('register_routes', 'get_items_permissions_check'),
@@ -125,10 +125,10 @@ class EvolveWP_Core_Architecture_Mapper {
                                 'security' => 'Requires manage_options capability by default'
                             ),
                             'rest_example' => array(
-                                'name' => 'EvolveWP_Core_REST_Example_Controller',
+                                'name' => 'EvolveWP_Boilerplate_REST_Example_Controller',
                                 'type' => 'class',
                                 'file' => 'includes/classes/rest-example.php',
-                                'extends' => 'EvolveWP_Core_REST_Controller',
+                                'extends' => 'EvolveWP_Boilerplate_REST_Controller',
                                 'endpoint' => '/wp-json/plugin-boilerplate/v1/example'
                             )
                         )
@@ -140,21 +140,21 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Inter-plugin communication and shared resources',
                         'children' => array(
                             'ecosystem_registry' => array(
-                                'name' => 'EvolveWP_Core_Ecosystem_Registry',
+                                'name' => 'EvolveWP_Boilerplate_Ecosystem_Registry',
                                 'type' => 'class',
                                 'file' => 'includes/classes/ecosystem-registry.php',
                                 'methods' => array('register_plugin', 'get_plugins', 'is_ecosystem_mode'),
                                 'purpose' => 'Detects and manages multiple Ryan Bayne plugins'
                             ),
                             'menu_manager' => array(
-                                'name' => 'EvolveWP_Core_Ecosystem_Menu_Manager',
+                                'name' => 'EvolveWP_Boilerplate_Ecosystem_Menu_Manager',
                                 'type' => 'class',
                                 'file' => 'includes/classes/ecosystem-menu-manager.php',
                                 'purpose' => 'Dynamic menu placement - single plugin vs ecosystem mode',
                                 'behavior' => 'Moves shared views to Tools/Settings when 2+ plugins detected'
                             ),
                             'installer' => array(
-                                'name' => 'EvolveWP_Core_Ecosystem_Installer',
+                                'name' => 'EvolveWP_Boilerplate_Ecosystem_Installer',
                                 'type' => 'class',
                                 'file' => 'includes/classes/ecosystem-installer.php',
                                 'purpose' => 'One-click installation of related plugins'
@@ -189,14 +189,14 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Queue system for long-running tasks',
                         'children' => array(
                             'async_request' => array(
-                                'name' => 'EvolveWP_Core_Async_Request',
+                                'name' => 'EvolveWP_Boilerplate_Async_Request',
                                 'type' => 'class',
                                 'file' => 'includes/classes/async-request.php',
                                 'methods' => array('dispatch', 'handle'),
                                 'purpose' => 'Base class for async operations'
                             ),
                             'background_process' => array(
-                                'name' => 'EvolveWP_Core_Background_Process',
+                                'name' => 'EvolveWP_Boilerplate_Background_Process',
                                 'type' => 'class',
                                 'file' => 'includes/classes/background-process.php',
                                 'methods' => array('push_to_queue', 'save', 'dispatch', 'task'),
@@ -212,11 +212,11 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Global object access without globals',
                         'children' => array(
                             'registry' => array(
-                                'name' => 'EvolveWP_Core_Object_Registry',
+                                'name' => 'EvolveWP_Boilerplate_Object_Registry',
                                 'type' => 'class',
                                 'file' => 'includes/classes/object-registry.php',
                                 'methods' => array('add', 'get', 'update_var', 'remove', 'exists'),
-                                'usage_pattern' => 'EvolveWP_Core_Object_Registry::add("key", $object);',
+                                'usage_pattern' => 'EvolveWP_Boilerplate_Object_Registry::add("key", $object);',
                                 'purpose' => 'Store and retrieve objects globally'
                             )
                         )
@@ -228,7 +228,7 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Cache validation and auto-refresh',
                         'children' => array(
                             'freshness_manager' => array(
-                                'name' => 'EvolveWP_Core_Data_Freshness_Manager',
+                                'name' => 'EvolveWP_Boilerplate_Data_Freshness_Manager',
                                 'type' => 'class',
                                 'file' => 'includes/classes/data-freshness-manager.php',
                                 'methods' => array('validate_freshness', 'ensure_freshness', 'set_fresh_data'),
@@ -244,7 +244,7 @@ class EvolveWP_Core_Architecture_Mapper {
                         'description' => 'Detailed decision tracking for debugging',
                         'children' => array(
                             'flow_logger' => array(
-                                'name' => 'EvolveWP_Core_Developer_Flow_Logger',
+                                'name' => 'EvolveWP_Boilerplate_Developer_Flow_Logger',
                                 'type' => 'class',
                                 'file' => 'includes/classes/developer-flow-logger.php',
                                 'methods' => array('start_flow', 'log_decision', 'log_action', 'log_cache', 'end_flow'),

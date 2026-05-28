@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Asset Management
+ * Plugin Boilerplate Asset Management
  * 
  * Central library for managing asset paths and metadata
  * 
- * @package EvolveWP Core/Assets
+ * @package Plugin Boilerplate/Assets
  * @version 1.0.0
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Asset_Manager {
+class EvolveWP_Boilerplate_Asset_Manager {
     
     private $assets_dir;
     public $assets_url;
@@ -143,7 +143,7 @@ class EvolveWP_Core_Asset_Manager {
         );
         
         if (get_option('plugin_boilerplate_log_missing_assets', 'yes') === 'yes') {
-            EvolveWP_Core_Logging_Helper::log_error(
+            EvolveWP_Boilerplate_Logging_Helper::log_error(
                 'missing_asset',
                 sprintf('Asset not found: %s (%s) at %s', $name, $type, $path)
             );
@@ -161,7 +161,7 @@ class EvolveWP_Core_Asset_Manager {
 
 global $plugin_boilerplate_assets;
 if (!isset($plugin_boilerplate_assets)) {
-    $plugin_boilerplate_assets = new EvolveWP_Core_Asset_Manager();
+    $plugin_boilerplate_assets = new EvolveWP_Boilerplate_Asset_Manager();
 }
 
 function plugin_boilerplate_get_asset($type, $name) {

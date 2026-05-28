@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core Database Helper Functions
+ * Plugin Boilerplate Database Helper Functions
  *
  * Low-level database utility functions for querying custom plugin tables.
  * All read queries use wp_cache_get()/wp_cache_set() so repeated calls within
@@ -8,7 +8,7 @@
  * Table and column identifiers are sanitised with esc_sql() because the %i
  * placeholder requires WordPress 6.2+ and this plugin targets WordPress 5.0+.
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 1.2.0
  */
 

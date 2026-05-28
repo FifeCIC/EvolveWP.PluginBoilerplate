@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         
 <div class="wrap plugin-boilerplate">
     <h1>
-        <?php esc_html_e( 'EvolveWP Core Settings', 'plugin-boilerplate' ); ?>
+        <?php esc_html_e( 'Plugin Boilerplate Settings', 'plugin-boilerplate' ); ?>
     </h1>
     <form method="<?php echo esc_attr( apply_filters( 'plugin_boilerplate_settings_form_method_tab_' . $current_tab, 'post' ) ); ?>" id="mainform" action="" enctype="multipart/form-data">
         <nav class="nav-tab-wrapper woo-nav-tab-wrapper">

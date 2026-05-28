@@ -3,7 +3,7 @@
  * Uninstall Feedback System
  * Shows modal on plugin deactivation to collect user feedback
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Uninstall_Feedback {
+class EvolveWP_Boilerplate_Uninstall_Feedback {
     
     public function __construct() {
         add_action('admin_footer', array($this, 'render_modal'));
@@ -49,7 +49,7 @@ class EvolveWP_Core_Uninstall_Feedback {
                 </div>
                 
                 <div class="plugin-boilerplate-modal-body">
-                    <p><?php esc_html_e('If you have a moment, please let us know why you\'re deactivating EvolveWP Core:', 'plugin-boilerplate'); ?></p>
+                    <p><?php esc_html_e('If you have a moment, please let us know why you\'re deactivating Plugin Boilerplate:', 'plugin-boilerplate'); ?></p>
                     
                     <form id="plugin-boilerplate-feedback-form">
                         <label class="plugin-boilerplate-reason">
@@ -150,4 +150,4 @@ class EvolveWP_Core_Uninstall_Feedback {
     }
 }
 
-return new EvolveWP_Core_Uninstall_Feedback();
+return new EvolveWP_Boilerplate_Uninstall_Feedback();

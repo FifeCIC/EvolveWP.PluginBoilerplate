@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core License Settings Page
+ * Plugin Boilerplate License Settings Page
  *
- * @package EvolveWP Core/Admin/Settings
+ * @package Plugin Boilerplate/Admin/Settings
  * @version 1.2.0
  */
 
@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Settings_License' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Settings_License' ) ) :
 
 /**
- * EvolveWP_Core_Settings_License
+ * EvolveWP_Boilerplate_Settings_License
  */
-class EvolveWP_Core_Settings_License extends EvolveWP_Core_Settings_Page {
+class EvolveWP_Boilerplate_Settings_License extends EvolveWP_Boilerplate_Settings_Page {
 
     /**
      * License manager instance
@@ -60,7 +60,7 @@ class EvolveWP_Core_Settings_License extends EvolveWP_Core_Settings_Page {
      */
     public function output() {
         $settings = $this->get_settings();
-        EvolveWP_Core_Admin_Settings::output_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::output_fields( $settings );
         
         // Output license UI
         $this->output_license_ui();
@@ -283,4 +283,4 @@ class EvolveWP_Core_Settings_License extends EvolveWP_Core_Settings_Page {
 
 endif;
 
-return new EvolveWP_Core_Settings_License();
+return new EvolveWP_Boilerplate_Settings_License();

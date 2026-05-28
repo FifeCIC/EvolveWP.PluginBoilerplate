@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core - Santization Functions
+ * Plugin Boilerplate - Santization Functions
  *
  * @author   Ryan Bayne
  * @category Security
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

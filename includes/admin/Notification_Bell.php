@@ -6,17 +6,17 @@
  *
  * Single responsibility: Add a notification bell icon to the WordPress admin
  * bar showing the unread notification count. Does NOT manage notifications
- * themselves — that is EvolveWP_Core_Notifications.
+ * themselves — that is EvolveWP_Boilerplate_Notifications.
  *
  * DEPENDS ON:
- *   - EvolveWP_Core_Notifications::get_unread_count() (not yet migrated)
+ *   - EvolveWP_Boilerplate_Notifications::get_unread_count() (not yet migrated)
  *
  * CONSUMED BY:
  *   - Hook: admin_bar_menu (priority 999)
  *   - Hook: admin_enqueue_scripts
  *
  * DATA FLOW:
- *   Input  → EvolveWP_Core_Notifications unread count
+ *   Input  → EvolveWP_Boilerplate_Notifications unread count
  *   Output → Admin bar node HTML
  *
  * @package  EvolveWP\PluginBoilerplate\Admin
@@ -59,7 +59,7 @@ class Notification_Bell {
 			return;
 		}
 
-		$unread_count = \EvolveWP_Core_Notifications::get_unread_count( get_current_user_id() );
+		$unread_count = \EvolveWP_Boilerplate_Notifications::get_unread_count( get_current_user_id() );
 
 		$wp_admin_bar->add_node( array(
 			'id'    => 'plugin-boilerplate-notifications',

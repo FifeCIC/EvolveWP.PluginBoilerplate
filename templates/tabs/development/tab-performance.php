@@ -1,24 +1,24 @@
 <?php
 /**
- * EvolveWP Core Development - Performance Monitor
+ * Plugin Boilerplate Development - Performance Monitor
  *
- * @package EvolveWP Core/Admin/Development
+ * @package Plugin Boilerplate/Admin/Development
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Admin_Development_Performance {
+class EvolveWP_Boilerplate_Admin_Development_Performance {
     
     public static function output() {
         // Handle clear logs
         if (isset($_POST['clear_logs']) && isset($_POST['_wpnonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'plugin_boilerplate_clear_logs')) {
-            EvolveWP Core\Core\Enhanced_Logger::clear_old_logs(0);
+            Plugin Boilerplate\Core\Enhanced_Logger::clear_old_logs(0);
             echo '<div class="notice notice-success"><p>' . esc_html__('Logs cleared successfully.', 'plugin-boilerplate') . '</p></div>';
         }
         
-        $logs = EvolveWP Core\Core\Enhanced_Logger::get_recent_logs(50);
-        $current_metrics = EvolveWP Core\Core\Enhanced_Logger::instance()->get_performance_metrics();
+        $logs = Plugin Boilerplate\Core\Enhanced_Logger::get_recent_logs(50);
+        $current_metrics = Plugin Boilerplate\Core\Enhanced_Logger::instance()->get_performance_metrics();
         
         ?>
         <div class="plugin-boilerplate-performance-monitor">
@@ -58,7 +58,7 @@ class EvolveWP_Core_Admin_Development_Performance {
             
             <!-- Query Statistics -->
             <?php 
-            $query_stats = EvolveWP Core\Core\Enhanced_Logger::instance()->get_query_stats();
+            $query_stats = Plugin Boilerplate\Core\Enhanced_Logger::instance()->get_query_stats();
             if (!empty($query_stats['slow_queries'])):
             ?>
             <div class="slow-queries-section" style="background: #fff; padding: 20px; border: 1px solid #ccd0d4; border-radius: 4px; margin-bottom: 20px;">
@@ -85,7 +85,7 @@ class EvolveWP_Core_Admin_Development_Performance {
             <?php endif; ?>
             
             <!-- Hook Statistics -->
-            <?php $hook_stats = EvolveWP Core\Core\Enhanced_Logger::instance()->get_hook_stats(); ?>
+            <?php $hook_stats = Plugin Boilerplate\Core\Enhanced_Logger::instance()->get_hook_stats(); ?>
             <div class="hook-stats-section" style="background: #fff; padding: 20px; border: 1px solid #ccd0d4; border-radius: 4px; margin-bottom: 20px;">
                 <h3><?php esc_html_e('Most Called Hooks', 'plugin-boilerplate'); ?></h3>
                 <table class="wp-list-table widefat fixed striped">

@@ -1,13 +1,13 @@
 <?php
 /**
- * EvolveWP Core global helper functions.
+ * Plugin Boilerplate global helper functions.
  *
  * ROLE: Global accessor functions for namespaced classes.
- * DEPENDS ON: EvolveWP\Core\ namespaced classes via Composer autoloader.
+ * DEPENDS ON: EvolveWP\PluginBoilerplate\ namespaced classes via Composer autoloader.
  * CONSUMED BY: Any plugin or template that needs the ecosystem registry or main instance.
  * DATA FLOW: Provides shorthand access to singleton instances.
  *
- * @package  EvolveWP\Core
+ * @package  EvolveWP\PluginBoilerplate
  * @since    1.0.0
  */
 
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Return the main EvolveWP Core plugin instance.
+ * Return the main Plugin Boilerplate plugin instance.
  *
  * Shorthand for PluginBoilerplate::instance(). Prevents the need to use
  * globals anywhere in the codebase.
@@ -75,7 +75,7 @@ function plugin_boilerplate_trace( $type, $message, $data = array() ) {
 /**
  * Create or retrieve an API connector instance.
  *
- * Global accessor for EvolveWP_Core_API_Factory::create_from_settings().
+ * Global accessor for EvolveWP_Boilerplate_API_Factory::create_from_settings().
  *
  * @since  1.0.0
  *
@@ -85,7 +85,7 @@ function plugin_boilerplate_trace( $type, $message, $data = array() ) {
  * @return \EvolveWP\PluginBoilerplate\API\Connector_Interface|\WP_Error Connector instance or error.
  */
 function plugin_boilerplate_connector( $provider_id, $account_id = '' ) {
-	return EvolveWP_Core_API_Factory::create_from_settings( $provider_id, $account_id );
+	return EvolveWP_Boilerplate_API_Factory::create_from_settings( $provider_id, $account_id );
 }
 
 /**
@@ -119,20 +119,3 @@ function plugin_boilerplate_rest_endpoints( $source = '' ) {
 	return \EvolveWP\PluginBoilerplate\API\REST_Bridge::get_registered_endpoints( $source );
 }
 
-
-/**
- * Register a module with the EvolveWP ecosystem.
- *
- * Global accessor for \EvolveWP\PluginBoilerplate\Core\Modules::register().
- * Called by modules on plugins_loaded.
- *
- * @since 1.0.0
- *
- * @param string $slug Module slug.
- * @param array  $args Module registration arguments.
- *
- * @return void
- */
-function evolvewp_register_module( $slug, $args = array() ) {
-	\EvolveWP\PluginBoilerplate\Core\Modules::register( $slug, $args );
-}

@@ -1,5 +1,5 @@
 /**
- * EvolveWP Core — Help Tooltips
+ * Plugin Boilerplate — Help Tooltips
  *
  * Initialises hover tooltips for elements with data-tooltip attributes.
  * Used on development pages for contextual help.

@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Library Manager
+ * Plugin Boilerplate Library Manager
  * Tracks bundled libraries and checks for updates
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Library_Manager {
+class EvolveWP_Boilerplate_Library_Manager {
 
     private static $instance = null;
 
@@ -98,7 +98,7 @@ class EvolveWP_Core_Library_Manager {
         
         $response = wp_remote_get($url, array(
             'timeout' => 10,
-            'headers' => array('User-Agent' => 'EvolveWP Core-Library-Manager'),
+            'headers' => array('User-Agent' => 'Plugin Boilerplate-Library-Manager'),
         ));
         
         if (is_wp_error($response)) {
@@ -173,7 +173,7 @@ class EvolveWP_Core_Library_Manager {
         
         $response = wp_remote_get($url, array(
             'timeout' => 10,
-            'headers' => array('User-Agent' => 'EvolveWP Core-Library-Manager'),
+            'headers' => array('User-Agent' => 'Plugin Boilerplate-Library-Manager'),
         ));
         
         if (is_wp_error($response)) {
@@ -201,4 +201,4 @@ class EvolveWP_Core_Library_Manager {
 }
 
 // Initialize
-EvolveWP_Core_Library_Manager::instance();
+EvolveWP_Boilerplate_Library_Manager::instance();

@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core API Logging
+ * Plugin Boilerplate API Logging
  *
  * Database-driven logging system for API activity, errors, and usage tracking.
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 2.0.0
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_API_Logging {
+class EvolveWP_Boilerplate_API_Logging {
     
     /**
      * Check whether the API logging table exists and logging is enabled.

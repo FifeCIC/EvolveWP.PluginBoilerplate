@@ -10,7 +10,7 @@
  * Does NOT handle plugin registration (Registry) or plugin installation (Installer).
  *
  * DEPENDS ON:
- *   - EvolveWP Core\Ecosystem\Registry via plugin_boilerplate_ecosystem() in functions.php
+ *   - Plugin Boilerplate\Ecosystem\Registry via plugin_boilerplate_ecosystem() in functions.php
  *
  * CONSUMED BY:
  *   - Hook: admin_menu (priority 999, registered in constructor)

@@ -59,7 +59,7 @@
  * ROLE: admin-ui
  *
  * DEPENDS ON:
- *   - EvolveWP_Core_Admin_Settings in includes/admin/admin-settings.php
+ *   - EvolveWP_Boilerplate_Admin_Settings in includes/admin/admin-settings.php
  *   - global plugin_boilerplate_get_screen_ids() in includes/admin/admin-functions.php
  *
  * CONSUMED BY:
@@ -116,8 +116,8 @@
  * DEPENDS ON: WordPress options API
  *
  * CONSUMED BY:
- *   - EvolveWP_Core_Admin_Settings::save() in includes/admin/admin-settings.php
- *   - EvolveWP_Core_Admin_Settings::get() in includes/admin/admin-settings.php
+ *   - EvolveWP_Boilerplate_Admin_Settings::save() in includes/admin/admin-settings.php
+ *   - EvolveWP_Boilerplate_Admin_Settings::get() in includes/admin/admin-settings.php
  *
  * DATA FLOW:
  *   Input  → get_option( 'plugin_boilerplate_settings' )
@@ -203,10 +203,10 @@
  * controller and passed as local variables before this file is included.
  *
  * DEPENDS ON:
- *   - $data array prepared by EvolveWP_Core_Admin_Dashboard::render()
+ *   - $data array prepared by EvolveWP_Boilerplate_Admin_Dashboard::render()
  *
  * CONSUMED BY:
- *   - EvolveWP_Core_Admin_Dashboard::render() in includes/Admin/Dashboard.php
+ *   - EvolveWP_Boilerplate_Admin_Dashboard::render() in includes/Admin/Dashboard.php
  *
  * DATA FLOW:
  *   Input  → $data (local variable set by caller)

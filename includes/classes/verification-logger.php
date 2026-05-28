@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Verification Logger
+ * Plugin Boilerplate Verification Logger
  * Specialised logging for verification process debugging.
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 2.0.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Verification_Logger {
+class EvolveWP_Boilerplate_Verification_Logger {
 
     private static $instance = null;
     private $verification_steps = array();
@@ -46,7 +46,7 @@ class EvolveWP_Core_Verification_Logger {
      * Return the singleton instance.
      *
      * @since  1.0.0
-     * @return EvolveWP_Core_Verification_Logger
+     * @return EvolveWP_Boilerplate_Verification_Logger
      */
     public static function instance() {
         if ( null === self::$instance ) {
@@ -90,22 +90,22 @@ class EvolveWP_Core_Verification_Logger {
         $this->data_counts[ $step_name ]  = $output_count;
 
         // Delegate to the unified logger for cross-system trace correlation.
-        if ( class_exists( 'EvolveWP_Core_Unified_Logger' ) ) {
-            EvolveWP_Core_Unified_Logger::instance()->php_trace( $step_name, $input_count, $output_count, $details );
+        if ( class_exists( 'EvolveWP_Boilerplate_Unified_Logger' ) ) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->php_trace( $step_name, $input_count, $output_count, $details );
         }
 
         // Write data-loss entries immediately so they appear in the log even
         // if output_summary() is never called (e.g. on a fatal error).
         if ( $step_data['data_loss'] ) {
-            $this->write_log( "EvolveWP_Core_Verification: DATA LOSS in {$step_name}: {$input_count} → {$output_count} (lost {$step_data['loss_amount']})" );
+            $this->write_log( "EvolveWP_Boilerplate_Verification: DATA LOSS in {$step_name}: {$input_count} → {$output_count} (lost {$step_data['loss_amount']})" );
             if ( ! empty( $details ) ) {
                 // wp_json_encode() used — handles encoding edge cases and avoids
                 // the raw json_encode() call that can silently return false.
-                $this->write_log( 'EvolveWP_Core_Verification: Details: ' . wp_json_encode( $details ) );
+                $this->write_log( 'EvolveWP_Boilerplate_Verification: Details: ' . wp_json_encode( $details ) );
             }
         }
 
-        $this->write_log( "EvolveWP_Core_Verification: {$step_name}: {$input_count} → {$output_count}" );
+        $this->write_log( "EvolveWP_Boilerplate_Verification: {$step_name}: {$input_count} → {$output_count}" );
     }
     
     /**
@@ -130,19 +130,19 @@ class EvolveWP_Core_Verification_Logger {
         }
 
         $this->write_log(
-            "EvolveWP_Core_Verification: JS_TRACE - {$operation}: {$data_count} items" .
+            "EvolveWP_Boilerplate_Verification: JS_TRACE - {$operation}: {$data_count} items" .
             ( $payload_size ? " ({$payload_size} bytes)" : '' )
         );
 
-        if ( class_exists( 'EvolveWP_Core_Unified_Logger' ) ) {
-            EvolveWP_Core_Unified_Logger::instance()->js_trace( $operation, $data_count, $details );
+        if ( class_exists( 'EvolveWP_Boilerplate_Unified_Logger' ) ) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->js_trace( $operation, $data_count, $details );
         }
     }
     
     /**
      * Log a single iteration of a file-processing loop.
      *
-     * Delegates to EvolveWP_Core_Unified_Logger::loop_trace() which throttles output
+     * Delegates to EvolveWP_Boilerplate_Unified_Logger::loop_trace() which throttles output
      * to every 10th iteration to avoid flooding the debug log.
      *
      * @since  1.0.0
@@ -164,8 +164,8 @@ class EvolveWP_Core_Verification_Logger {
             'result_count' => $result_count,
         ) );
 
-        if ( class_exists( 'EvolveWP_Core_Unified_Logger' ) ) {
-            EvolveWP_Core_Unified_Logger::instance()->loop_trace( $loop_id, $loop_details );
+        if ( class_exists( 'EvolveWP_Boilerplate_Unified_Logger' ) ) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->loop_trace( $loop_id, $loop_details );
         }
     }
     
@@ -193,8 +193,8 @@ class EvolveWP_Core_Verification_Logger {
             'changed'  => $changed,
         );
 
-        if ( class_exists( 'EvolveWP_Core_Unified_Logger' ) ) {
-            EvolveWP_Core_Unified_Logger::instance()->trace(
+        if ( class_exists( 'EvolveWP_Boilerplate_Unified_Logger' ) ) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->trace(
                 'HASH_COMPARE',
                 $changed ? 'File changed' : 'File unchanged',
                 $details
@@ -256,10 +256,10 @@ class EvolveWP_Core_Verification_Logger {
             $details['raw_data_size'] = is_array( $raw_data ) ? count( $raw_data ) : strlen( $raw_data );
         }
 
-        $this->write_log( "EvolveWP_Core_Verification: EXTRACT_PAYLOAD - {$payload_key}: expected {$expected_count}, got {$actual_count}" );
+        $this->write_log( "EvolveWP_Boilerplate_Verification: EXTRACT_PAYLOAD - {$payload_key}: expected {$expected_count}, got {$actual_count}" );
 
-        if ( class_exists( 'EvolveWP_Core_Unified_Logger' ) ) {
-            EvolveWP_Core_Unified_Logger::instance()->trace(
+        if ( class_exists( 'EvolveWP_Boilerplate_Unified_Logger' ) ) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->trace(
                 'EXTRACT_PAYLOAD',
                 "Payload {$payload_key}: {$expected_count} → {$actual_count}",
                 $details
@@ -323,12 +323,12 @@ class EvolveWP_Core_Verification_Logger {
 
         $summary = $this->get_verification_summary();
 
-        $this->write_log( "EvolveWP_Core_Verification: SUMMARY - {$summary['total_steps']} steps, {$summary['data_loss_steps']} with data loss" );
-        $this->write_log( "EvolveWP_Core_Verification: SUMMARY - Total data loss: {$summary['total_data_loss']}, Final count: {$summary['final_count']}" );
+        $this->write_log( "EvolveWP_Boilerplate_Verification: SUMMARY - {$summary['total_steps']} steps, {$summary['data_loss_steps']} with data loss" );
+        $this->write_log( "EvolveWP_Boilerplate_Verification: SUMMARY - Total data loss: {$summary['total_data_loss']}, Final count: {$summary['final_count']}" );
 
         foreach ( $summary['steps'] as $step ) {
             $loss_indicator = $step['loss'] > 0 ? " ❌ LOST {$step['loss']}" : ' ✅';
-            $this->write_log( "EvolveWP_Core_Verification: STEP - {$step['step']}: {$step['input']} → {$step['output']}{$loss_indicator}" );
+            $this->write_log( "EvolveWP_Boilerplate_Verification: STEP - {$step['step']}: {$step['input']} → {$step['output']}{$loss_indicator}" );
         }
     }
     
@@ -347,13 +347,13 @@ class EvolveWP_Core_Verification_Logger {
 
 // Global helper functions
 function plugin_boilerplate_verification_log() {
-    return EvolveWP_Core_Verification_Logger::instance();
+    return EvolveWP_Boilerplate_Verification_Logger::instance();
 }
 
 function plugin_boilerplate_log_verification_step($step_name, $input_count, $output_count, $details = array()) {
-    EvolveWP_Core_Verification_Logger::instance()->log_step($step_name, $input_count, $output_count, $details);
+    EvolveWP_Boilerplate_Verification_Logger::instance()->log_step($step_name, $input_count, $output_count, $details);
 }
 
 function plugin_boilerplate_log_js_data($operation, $count, $size = null) {
-    EvolveWP_Core_Verification_Logger::instance()->log_js_transmission($operation, $count, $size);
+    EvolveWP_Boilerplate_Verification_Logger::instance()->log_js_transmission($operation, $count, $size);
 }

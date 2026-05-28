@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-$monitor = EvolveWP_Core_Library_Update_Monitor::instance();
+$monitor = EvolveWP_Boilerplate_Library_Update_Monitor::instance();
 $plugin_boilerplate_libraries = $monitor->get_libraries();
 $updates = array();
 
@@ -28,7 +28,7 @@ foreach ( $plugin_boilerplate_libraries as $slug => $library ) {
         </a>
     </div>
     
-    <p>EvolveWP Core bundles the following third-party libraries. Updates are checked automatically every 6 hours.</p>
+    <p>Plugin Boilerplate bundles the following third-party libraries. Updates are checked automatically every 6 hours.</p>
     
     <table class="wp-list-table widefat fixed striped">
         <thead>
@@ -120,7 +120,7 @@ foreach ( $plugin_boilerplate_libraries as $slug => $library ) {
     <div style="margin-top: 30px; padding: 20px; background: #f0f6fc; border-left: 4px solid #0073aa;">
         <h3 style="margin-top: 0;">About Library Updates</h3>
         <ul style="margin-bottom: 0;">
-            <li><strong>Automatic Checking:</strong> EvolveWP Core checks for updates every 6 hours via GitHub API</li>
+            <li><strong>Automatic Checking:</strong> Plugin Boilerplate checks for updates every 6 hours via GitHub API</li>
             <li><strong>Outdated Warning:</strong> Libraries bundled 6+ months ago show a warning</li>
             <li><strong>Manual Updates:</strong> Currently requires manual download and replacement (automated updates coming soon)</li>
             <li><strong>Backup First:</strong> Always backup before updating libraries</li>

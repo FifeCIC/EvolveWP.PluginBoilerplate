@@ -11,7 +11,7 @@ WPSeed includes a unified feature example that demonstrates how to create conten
 
 ## Core Concept
 
-All implementations use the **same core rendering function**: `EvolveWP_Core_Unified_Feature::render_content()`
+All implementations use the **same core rendering function**: `EvolveWP_Boilerplate_Unified_Feature::render_content()`
 
 This ensures:
 - Consistent output across all contexts

@@ -3,12 +3,12 @@
  * Developer Mode Detection
  * Determines if plugin is running in development environment
  *
- * @package EvolveWP Core/Core
+ * @package Plugin Boilerplate/Core
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Developer_Mode {
+class EvolveWP_Boilerplate_Developer_Mode {
     
     public static function is_dev_environment() {
         // Check if explicitly enabled

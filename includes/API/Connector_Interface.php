@@ -12,7 +12,7 @@
  *   - Nothing. This is a pure interface with no dependencies.
  *
  * CONSUMED BY:
- *   - EvolveWP Core\API\Base_API (implements this interface)
+ *   - Plugin Boilerplate\API\Base_API (implements this interface)
  *   - api/api-factory.php (validates instances against this interface)
  *   - api/api-directory.php (calls get_capabilities() for feature discovery)
  *   - Any concrete connector class (GitHub, Discord, payment gateways, etc.)

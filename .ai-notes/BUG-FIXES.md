@@ -140,7 +140,7 @@
 2. Verify page loads
 3. Check admin bar for bell icon
 4. Test creating notification via code:
-   EvolveWP_Core_Notifications::add_notification(
+   EvolveWP_Boilerplate_Notifications::add_notification(
        get_current_user_id(),
        'Test',
        'Testing notification system',

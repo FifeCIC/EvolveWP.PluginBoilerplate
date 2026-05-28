@@ -1,12 +1,12 @@
 <?php             
 /**
- * EvolveWP Core - WordPress.org API
+ * Plugin Boilerplate - WordPress.org API
  *
  * Interacts with WordPress.org and fetches plugins data. 
  *
  * @author   Ryan Bayne
  * @category External
- * @package  EvolveWP Core/WordPressAPI
+ * @package  Plugin Boilerplate/WordPressAPI
  * @since    1.0.0
  */
  
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class EvolveWP_Core_Wordpressorgapi {  
+class EvolveWP_Boilerplate_Wordpressorgapi {  
 
     /**
     * Query plugin data on WordPress.org

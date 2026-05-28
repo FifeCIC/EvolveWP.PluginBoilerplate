@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core - Admin Only Functions
+ * Plugin Boilerplate - Admin Only Functions
  *
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @since    1.0.0
  */
  
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Get all WordPress EvolveWP Core screen ids.
+ * Get all WordPress Plugin Boilerplate screen ids.
  *
  * @return array
  */

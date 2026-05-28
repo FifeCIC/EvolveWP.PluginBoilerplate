@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook Registry — reference list of all actions and filters registered by EvolveWP Core.
+ * Hook Registry — reference list of all actions and filters registered by Plugin Boilerplate.
  *
  * ROLE: hook-registration
  *
@@ -13,7 +13,7 @@
  * actual registration point. Moving registrations here is a future task
  * that requires refactoring every class.
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @category Core
  * @since    3.0.0
  */
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ==========================================================================
  *
  * init (0)  → \EvolveWP\PluginBoilerplate\Core\AJAX_Handler::define_ajax()
- *             Detects EvolveWP Core AJAX requests, sets DOING_AJAX constant.
+ *             Detects Plugin Boilerplate AJAX requests, sets DOING_AJAX constant.
  *
  * init (0)  → PluginBoilerplate::init()
  *             Fires before_plugin_boilerplate_init and plugin_boilerplate_init actions.
@@ -61,14 +61,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * admin_init       → \EvolveWP\PluginBoilerplate\Core\Install::install_actions()
  *                     Handles manual update and forced update actions.
  *
- * admin_init (1)   → EvolveWP_Core_Admin::buffer()
+ * admin_init (1)   → EvolveWP_Boilerplate_Admin::buffer()
  *                     Starts output buffering for admin redirects.
  *
- * admin_init       → EvolveWP_Core_Admin::admin_redirects()
+ * admin_init       → EvolveWP_Boilerplate_Admin::admin_redirects()
  *                     Handles setup wizard redirect after activation.
  *
  * admin_menu       → plugin_boilerplate_register_admin_menus()  [admin/config/admin-menus.php]
- *                     Registers main EvolveWP Core menu and all submenus.
+ *                     Registers main Plugin Boilerplate menu and all submenus.
  *
  * admin_menu (999) → \EvolveWP\PluginBoilerplate\Ecosystem\Menu_Manager::register_menus()
  *                     Registers shared ecosystem menus (Tools/Settings) when
@@ -90,10 +90,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  *                     Renders feedback modal HTML (plugins.php only).
  *
  * admin_footer     → \EvolveWP\PluginBoilerplate\Core\Logger (anonymous)
- *                     Outputs EvolveWP CoreLogger JS helper (dev mode only).
+ *                     Outputs Plugin BoilerplateLogger JS helper (dev mode only).
  *
  * wp_dashboard_setup → \EvolveWP\PluginBoilerplate\Admin\Dashboard_Widgets::add_widgets()
- *                       Registers EvolveWP Core dashboard widgets.
+ *                       Registers Plugin Boilerplate dashboard widgets.
  *
  * ==========================================================================
  * AJAX HOOKS
@@ -126,14 +126,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * plugin_row_meta                → \EvolveWP\PluginBoilerplate\Core\Install::plugin_row_meta()
  *                                   Adds Docs/Support/Donate links on Plugins screen.
  *
- * admin_footer_text              → EvolveWP_Core_Admin::admin_footer_text()
- *                                   Custom footer text on EvolveWP Core admin pages.
+ * admin_footer_text              → EvolveWP_Boilerplate_Admin::admin_footer_text()
+ *                                   Custom footer text on Plugin Boilerplate admin pages.
  *
  * in_plugin_update_message       → \EvolveWP\PluginBoilerplate\Core\Install::in_plugin_update_message()
  *                                   Shows upgrade notice from WordPress.org readme.
  *
  * ==========================================================================
- * CUSTOM ACTIONS (fired by EvolveWP Core, consumed by other plugins)
+ * CUSTOM ACTIONS (fired by Plugin Boilerplate, consumed by other plugins)
  * ==========================================================================
  *
  * plugin_boilerplate_loaded                → Fired after main class constructor completes.
@@ -146,7 +146,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * plugin_boilerplate_updater_cron          → Fired by forced update action.
  *
  * ==========================================================================
- * CUSTOM FILTERS (fired by EvolveWP Core, consumed by other plugins)
+ * CUSTOM FILTERS (fired by Plugin Boilerplate, consumed by other plugins)
  * ==========================================================================
  *
  * plugin_boilerplate_ajax_get_endpoint          → Filters the custom AJAX endpoint URL.
@@ -162,25 +162,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * plugin_boilerplate_api_providers       → Filters the list of registered API connector providers.
  *                               Add, remove, or modify providers at runtime.
- *                               Fired by EvolveWP_Core_API_Directory::get_all_providers().
+ *                               Fired by EvolveWP_Boilerplate_API_Directory::get_all_providers().
  *
  * plugin_boilerplate_connector_credentials → Filters credentials before creating a connector.
  *                                 Allows injecting credentials from environment
  *                                 variables, secrets managers, or other sources.
- *                                 Fired by EvolveWP_Core_API_Factory::create_from_settings().
+ *                                 Fired by EvolveWP_Boilerplate_API_Factory::create_from_settings().
  *                                 Parameters: $args, $provider_id, $account_id.
  *
  * plugin_boilerplate_connector_request_args → Filters wp_remote_request() arguments before
  *                                  an API call is made. Allows modifying headers,
  *                                  timeout, or body for specific providers.
- *                                  Fired by EvolveWP Core\API\Base_API::make_request().
+ *                                  Fired by Plugin Boilerplate\API\Base_API::make_request().
  *                                  Parameters: $args, $url, $provider_id, $endpoint.
  *
  * plugin_boilerplate_user_can               → Filters the capability check result. Return a
  *                                  non-null bool to override the default WordPress
- *                                  capability check. Used by EvolveWP Core to
+ *                                  capability check. Used by Plugin Boilerplate to
  *                                  implement cross-plugin permission logic.
- *                                  Fired by EvolveWP Core\Core\Capability_Manager::user_can().
+ *                                  Fired by Plugin Boilerplate\Core\Capability_Manager::user_can().
  *                                  Parameters: $result (null), $capability, $user_id.
  *
  * ==========================================================================

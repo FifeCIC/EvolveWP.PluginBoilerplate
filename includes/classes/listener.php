@@ -4,12 +4,12 @@
  * 
  * Centralized form processing with security
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
 
-class EvolveWP_Core_Listener {
+class EvolveWP_Boilerplate_Listener {
     
     public function __construct() {
         add_action( 'wp_loaded', array( $this, 'process_requests' ) );
@@ -59,5 +59,5 @@ class EvolveWP_Core_Listener {
 
 // Initialize only after WordPress is loaded
 add_action('init', function() {
-    new EvolveWP_Core_Listener();
+    new EvolveWP_Boilerplate_Listener();
 });

@@ -1,13 +1,13 @@
 <?php  
 /**
- * EvolveWP Core - Primary Shortcode File
+ * Plugin Boilerplate - Primary Shortcode File
  *
  * Shortcode files are included here, loaded and registered so that they can be
  * detected by other plugins.  
  *
  * @author   Ryan Bayne
  * @category Shortcodes
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

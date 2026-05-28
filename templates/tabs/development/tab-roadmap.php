@@ -6,14 +6,14 @@
  *
  * Displays the plugin's development roadmap with accordion phases, two-column
  * task/architecture layout, priority badges, and localStorage-persisted
- * checkboxes. Every plugin cloned from EvolveWP Core gets this tab and populates
+ * checkboxes. Every plugin cloned from Plugin Boilerplate gets this tab and populates
  * it with its own phases.
  *
  * DEPENDS ON:
  *   - assets/js/admin/roadmap.js (accordion + localStorage)
  *   - assets/css/components/roadmap.css (styling)
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @since    3.0.0
  */
 
@@ -150,16 +150,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="plugin-boilerplate-roadmap-architecture-column">
 						<h4><?php esc_html_e( 'Namespace Map', 'plugin-boilerplate' ); ?></h4>
 						<div class="plugin-boilerplate-roadmap-arch-item">
-							<code>EvolveWP Core\Ecosystem\</code> → <code>includes/Ecosystem/</code>
+							<code>Plugin Boilerplate\Ecosystem\</code> → <code>includes/Ecosystem/</code>
 						</div>
 						<div class="plugin-boilerplate-roadmap-arch-item">
-							<code>EvolveWP Core\Core\</code> → <code>includes/Core/</code>
+							<code>Plugin Boilerplate\Core\</code> → <code>includes/Core/</code>
 						</div>
 						<div class="plugin-boilerplate-roadmap-arch-item">
-							<code>EvolveWP Core\Admin\</code> → <code>includes/Admin/</code>
+							<code>Plugin Boilerplate\Admin\</code> → <code>includes/Admin/</code>
 						</div>
 						<div class="plugin-boilerplate-roadmap-arch-item">
-							<code>EvolveWP Core\API\</code> → <code>includes/API/</code>
+							<code>Plugin Boilerplate\API\</code> → <code>includes/API/</code>
 						</div>
 					</div>
 				</div>

@@ -2,7 +2,7 @@
 /**
  * Internationalization Helper
  *
- * @package EvolveWP Core/i18n
+ * @package Plugin Boilerplate/i18n
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_i18n {
+class EvolveWP_Boilerplate_i18n {
     
     public function __construct() {
         add_action('init', array($this, 'load_plugin_textdomain'));
@@ -29,4 +29,4 @@ class EvolveWP_Core_i18n {
     }
 }
 
-return new EvolveWP_Core_i18n();
+return new EvolveWP_Boilerplate_i18n();

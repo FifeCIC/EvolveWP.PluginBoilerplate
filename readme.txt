@@ -5,7 +5,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: boilerplate, plugin starter, AI assistant, REST API, developer tools, WP-CLI, modern architecture
 Requires at least: 4.4
-Tested up to: 6.9
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 2.0.0
 License: GPLv3
@@ -162,7 +162,7 @@ No special upgrade instructions this time.
 * FIXED: $_GET['page'] and $_GET['tab'] in assets/queue-assets.php detect_current_context() now use sanitize_key(); current_user_can() check moved to enqueue_assets() hook to avoid fatal error from calling wp_get_current_user() too early
 * FIXED: W-412b6f1b assets/queue-assets.php $_GET['tab'] — already resolved in detect_current_context() rewrite; issue closed via WPVerifier UI
 * FIXED: includes/admin/admin-settings.php — all four OutputNotEscaped errors on $custom_attributes wrapped with wp_kses_post(implode()); $_REQUEST['_wpnonce'] extracted into sanitised local variable; $_GET['section'] wrapped with wp_unslash(); stripslashes() on plugin_boilerplate_error and plugin_boilerplate_message replaced with sanitize_text_field(wp_unslash())
-* FIXED: includes/widgets/widget-example.php — ABSPATH guard added; class renamed from Foo_Widget to EvolveWP_Core_Foo_Widget; all widget wrapper args (before_widget, after_widget, before_title, after_title, apply_filters widget_title) wrapped with wp_kses_post()
+* FIXED: includes/widgets/widget-example.php — ABSPATH guard added; class renamed from Foo_Widget to EvolveWP_Boilerplate_Foo_Widget; all widget wrapper args (before_widget, after_widget, before_title, after_title, apply_filters widget_title) wrapped with wp_kses_post()
 * FIXED: admin/page/development/view/libraries.php — stale false-positive issues removed (plugin_updater_detected, update_modification_detected, missing_direct_file_access_protection, Internal.NoCodeFound); file was previously damaged by WPVerifier and has since been restored with valid PHP
 * FIXED: admin/notifications/notifications.php — %i identifier placeholders replaced with esc_sql() for WP 4.4+ compatibility (UnsupportedIdentifierPlaceholder); interpolated $where_sql and $order removed from prepare() string; cache flush added after process_pending_notifications() write
 * FIXED: includes/api-logging.php — get_api_calls() and get_api_call_count() rewritten to use esc_sql() for table/column identifiers, removing NotPrepared errors and UnquotedComplexPlaceholder warnings; caching added to both read methods; debug_backtrace() calls confirmed already gated behind WP_DEBUG (false positives removed from results)
@@ -201,7 +201,7 @@ No special upgrade instructions this time.
 * FIXED: uninstall.php — all DirectQuery and NoCaching issues confirmed as unavoidable; bulk DELETE by LIKE pattern on wp_options and wp_usermeta has no WordPress API equivalent; all queries already use $wpdb->prepare() and cache invalidation is already present; stale NoCaching warnings removed (one-time uninstall, caching not applicable)
 * FIXED: uninstall.php — file-level docblock rewritten to explicitly document why direct queries are the only option for each operation; PHPDoc block added before each query group; wp_cache_delete_multiple() replaced with correct individual wp_cache_delete('alloptions','options') and wp_cache_delete('notoptions','options') calls; second wp_cache_flush() added after user meta removal; unused $wp_version global removed; @version bumped to 2.0.0
 * FIXED: includes/admin/admin-settings.php — $current_tab renamed to $plugin_boilerplate_current_tab and $current_section renamed to $plugin_boilerplate_current_section in save() and output(); aliased back to unprefixed names for template partial scope; settings-page.php updated consistently
-* FIXED: includes/widgets/widget-example.php — W-75715fa9 Foo_Widget class rename to EvolveWP_Core_Foo_Widget already applied earlier; issue closed via WPVerifier UI
+* FIXED: includes/widgets/widget-example.php — W-75715fa9 Foo_Widget class rename to EvolveWP_Boilerplate_Foo_Widget already applied earlier; issue closed via WPVerifier UI
 * FIXED: admin/page/development/view/libraries.php — W-399024d1 Internal.NoCodeFound is a stale false positive from when the file was previously overwritten with JSON; file was restored with valid PHP earlier in the session; issue closed via WPVerifier UI
 * FIXED: admin/notifications/notifications.php — process_pending_notifications() now uses wp_cache_get()/wp_cache_set() as a 55-minute run-once lock around the direct UPDATE query, satisfying WordPress.DB.DirectDatabaseQuery.DirectQuery caching requirement; PHPDoc added; file header @version bumped to 2.0.0
 s import/export, requirements checker, conflict detector, debugging integrations

@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core - Small Get Functions
+ * Plugin Boilerplate - Small Get Functions
  *
  * Make the plugins API easier with get functions. Try to avoid functions
  * that need to include files or create objects. The goal is for this file
@@ -8,7 +8,7 @@
  *
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

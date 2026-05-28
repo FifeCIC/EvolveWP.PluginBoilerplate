@@ -20,7 +20,7 @@
                │
                ▼
 ┌──────────────────────┐     ┌──────────────────────────┐
-│   EvolveWP_Core_API_Factory │────▶│  EvolveWP_Core_API_Directory    │
+│   EvolveWP_Boilerplate_API_Factory │────▶│  EvolveWP_Boilerplate_API_Directory    │
 │                      │     │                          │
 │  - Loads credentials │     │  - Provider registry     │
 │  - Instantiates class│     │  - Static + runtime      │
@@ -43,7 +43,7 @@
 │                                                          │
 │   - HTTP request handling (GET/POST/PUT/PATCH/DELETE)    │
 │   - Bearer token authentication                          │
-│   - API call logging via EvolveWP_Core_API_Logging              │
+│   - API call logging via EvolveWP_Boilerplate_API_Logging              │
 │   - Error handling with WP_Error                         │
 │   - Connection test helpers                              │
 └──────────────────────────────────────────────────────────┘
@@ -180,7 +180,7 @@ In your plugin's init, register the connector with the API Directory:
 
 ```php
 add_action( 'init', function() {
-    EvolveWP_Core_API_Directory::register( 'github', array(
+    EvolveWP_Boilerplate_API_Directory::register( 'github', array(
         'name'        => 'GitHub',
         'description' => 'GitHub repository and issue management.',
         'url'         => 'https://github.com',
@@ -320,7 +320,7 @@ action validation.
 
 ```php
 // From the Directory (no credentials needed for capability listing).
-$caps = EvolveWP_Core_API_Directory::get_provider_capabilities( 'github' );
+$caps = EvolveWP_Boilerplate_API_Directory::get_provider_capabilities( 'github' );
 
 // From an instance.
 $github = plugin_boilerplate_connector( 'github' );

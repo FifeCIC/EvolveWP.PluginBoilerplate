@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Notification Bell
+ * Plugin Boilerplate Notification Bell
  * Admin bar notification indicator
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Notification_Bell {
+class EvolveWP_Boilerplate_Notification_Bell {
     
     public static function init() {
         add_action('admin_bar_menu', array(__CLASS__, 'add_notification_bell'), 999);
@@ -21,7 +21,7 @@ class EvolveWP_Core_Notification_Bell {
             return;
         }
         
-        $unread_count = EvolveWP_Core_Notifications::get_unread_count(get_current_user_id());
+        $unread_count = EvolveWP_Boilerplate_Notifications::get_unread_count(get_current_user_id());
         
         $wp_admin_bar->add_node(array(
             'id' => 'plugin-boilerplate-notifications',
@@ -67,4 +67,4 @@ class EvolveWP_Core_Notification_Bell {
     }
 }
 
-EvolveWP_Core_Notification_Bell::init();
+EvolveWP_Boilerplate_Notification_Bell::init();

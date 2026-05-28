@@ -4,7 +4,7 @@
  *
  * @author      Ryan Bayne
  * @category    Admin
- * @package     EvolveWP Core/Admin
+ * @package     Plugin Boilerplate/Admin
  * @version     2.0.0
  */
           
@@ -12,15 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Help', false ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Help', false ) ) :
 
 /**
- * EvolveWP_Core_Admin_Help Class.
+ * EvolveWP_Boilerplate_Admin_Help Class.
  *
  * @since   1.0.0
  * @version 2.0.0
  */
-class EvolveWP_Core_Admin_Help {
+class EvolveWP_Boilerplate_Admin_Help {
 
     /**
      * Hook in tabs.
@@ -30,7 +30,7 @@ class EvolveWP_Core_Admin_Help {
     }
 
     /**
-     * Add contextual help tabs to EvolveWP Core admin screens.
+     * Add contextual help tabs to Plugin Boilerplate admin screens.
      *
      * Registers all help tabs and the sidebar for any screen whose ID is
      * included in plugin_boilerplate_get_screen_ids(). The $_GET['page'] and $_GET['tab']
@@ -81,7 +81,7 @@ class EvolveWP_Core_Admin_Help {
         */
         $screen->set_help_sidebar(
             '<p><strong>' . __( 'For more information:', 'plugin-boilerplate' ) . '</strong></p>' .
-            '<p><a href="' . PLUGIN_BOILERPLATE_GITHUB . '/wiki" target="_blank">' . __( 'About EvolveWP Core', 'plugin-boilerplate' ) . '</a></p>' .
+            '<p><a href="' . PLUGIN_BOILERPLATE_GITHUB . '/wiki" target="_blank">' . __( 'About Plugin Boilerplate', 'plugin-boilerplate' ) . '</a></p>' .
             '<p><a href="' . PLUGIN_BOILERPLATE_GITHUB . '" target="_blank">' . __( 'GitHub project', 'plugin-boilerplate' ) . '</a></p>' .
             '<p><a href="' . PLUGIN_BOILERPLATE_GITHUB . '/blob/master/CHANGELOG.txt" target="_blank">' . __( 'Change Log', 'plugin-boilerplate' ) . '</a></p>' .
             '<p><a href="https://pluginseed.wordpress.com" target="_blank">' . __( 'Blog', 'plugin-boilerplate' ) . '</a></p>'
@@ -118,7 +118,7 @@ class EvolveWP_Core_Admin_Help {
             'title'     => __( 'Newsletter', 'plugin-boilerplate' ),
             'content'   => '<h2>' . __( 'Annual Newsletter', 'plugin-boilerplate' ) . '</h2>' .
             '<p>' . __( 'Mailchip is used to manage the projects newsletter subscribers list.', 'plugin-boilerplate' ) . '</p>' .
-            '<p>' . __( 'Visit the MailChimp website to subscribe to the EvolveWP Core newsletter.', 'plugin-boilerplate' ) . '</p>' .
+            '<p>' . __( 'Visit the MailChimp website to subscribe to the Plugin Boilerplate newsletter.', 'plugin-boilerplate' ) . '</p>' .
             '<p><a href="http://eepurl.com/2W_2n" class="button button-primary" target="_blank">' . __( 'Subscribe to Newsletter', 'plugin-boilerplate' ) . '</a></p>',
         ) );
         
@@ -368,4 +368,4 @@ class EvolveWP_Core_Admin_Help {
 
 endif;
 
-return new EvolveWP_Core_Admin_Help();
+return new EvolveWP_Boilerplate_Admin_Help();

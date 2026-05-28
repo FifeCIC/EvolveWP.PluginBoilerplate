@@ -2,7 +2,7 @@
 /**
  * Architecture View
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 if (!defined('ABSPATH')) {
@@ -15,7 +15,7 @@ require_once PLUGIN_BOILERPLATE_PLUGIN_DIR . 'includes/classes/architecture-mapp
 
 <div class="plugin-boilerplate-architecture-view">
     <h2>Plugin Architecture</h2>
-    <p>Visual guide to EvolveWP Core structure for developers and AI assistants.</p>
+    <p>Visual guide to Plugin Boilerplate structure for developers and AI assistants.</p>
     
-    <?php EvolveWP_Core_Architecture_Mapper::render_tree(); ?>
+    <?php EvolveWP_Boilerplate_Architecture_Mapper::render_tree(); ?>
 </div>

@@ -1,12 +1,12 @@
 <?php
 /**
- * EvolveWP Core - Plugin Menus
+ * Plugin Boilerplate - Plugin Menus
  *
  * Maintain plugins admin menu and tab-menus here.  
  *
  * @author   Ryan Bayne
  * @category User Interface
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @since    1.0.0
  */
  
@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Menus' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Menus' ) ) :
 
 /**
- * EvolveWP_Core_Admin_Menus Class.
+ * EvolveWP_Boilerplate_Admin_Menus Class.
  */
-class EvolveWP_Core_Admin_Menus {
+class EvolveWP_Boilerplate_Admin_Menus {
 
     /**
      * Hook in tabs.
@@ -34,38 +34,38 @@ class EvolveWP_Core_Admin_Menus {
      * Add menu items.
      */
     public function toplevel_menu() {
-        //add_menu_page( __( 'EvolveWP Core', 'plugin-boilerplate' ), __( 'EvolveWP Core', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate', array( $this, 'main_page' ), null, '55.5' );
+        //add_menu_page( __( 'Plugin Boilerplate', 'plugin-boilerplate' ), __( 'Plugin Boilerplate', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate', array( $this, 'main_page' ), null, '55.5' );
     }
 
     /**
      * Add settings menu item to the existing Settings menu.
      */
     public function settings_menu() {
-        //$settings_page = add_submenu_page( 'plugin-boilerplate', __( 'EvolveWP Core Settings', 'plugin-boilerplate' ),  __( 'Settings', 'plugin-boilerplate' ) , 'activate_plugins', 'plugin-boilerplate-settings', array( $this, 'settings_page' ) ); 
+        //$settings_page = add_submenu_page( 'plugin-boilerplate', __( 'Plugin Boilerplate Settings', 'plugin-boilerplate' ),  __( 'Settings', 'plugin-boilerplate' ) , 'activate_plugins', 'plugin-boilerplate-settings', array( $this, 'settings_page' ) ); 
         //add_action( 'load-' . $settings_page, array( $this, 'settings_page_init' ) );
         
-        add_options_page( __( 'EvolveWP Core Settings', 'plugin-boilerplate' ), __( 'EvolveWP Core Settings', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate-settings', array( $this, 'settings_page' ) );
+        add_options_page( __( 'Plugin Boilerplate Settings', 'plugin-boilerplate' ), __( 'Plugin Boilerplate Settings', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate-settings', array( $this, 'settings_page' ) );
     }
 
     /**
     * Add the main tables views to the existing Plugins menu.  
     */
     public function mainviews_menu() {
-        add_plugins_page( __( 'EvolveWP Core Plugin', 'plugin-boilerplate' ), __( 'EvolveWP Core Plugin', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate', array( $this, 'main_page' ) );        
+        add_plugins_page( __( 'Plugin Boilerplate Plugin', 'plugin-boilerplate' ), __( 'Plugin Boilerplate Plugin', 'plugin-boilerplate' ), 'activate_plugins', 'plugin-boilerplate', array( $this, 'main_page' ) );        
     } 
         
     /**
     * Init the main page. 
     */
     public function main_page() { 
-        EvolveWP_Core_Admin_Main_Views::output(); 
+        EvolveWP_Boilerplate_Admin_Main_Views::output(); 
     }
         
     /**
      * Init the settings page.
      */
     public function settings_page() {    
-        EvolveWP_Core_Admin_Settings::output();
+        EvolveWP_Boilerplate_Admin_Settings::output();
     }
     
     /**
@@ -79,4 +79,4 @@ class EvolveWP_Core_Admin_Menus {
 
 endif;
 
-return new EvolveWP_Core_Admin_Menus();
+return new EvolveWP_Boilerplate_Admin_Menus();

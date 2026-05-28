@@ -1,20 +1,20 @@
 <?php
 /**
- * EvolveWP Core Development - Credits & Contributors
+ * Plugin Boilerplate Development - Credits & Contributors
  *
- * @package EvolveWP Core/Admin/Development
+ * @package Plugin Boilerplate/Admin/Development
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
 /**
- * EvolveWP_Core_Admin_Development_Credits Class.
+ * EvolveWP_Boilerplate_Admin_Development_Credits Class.
  *
  * @since   1.0.0
  * @version 1.2.0
  */
-class EvolveWP_Core_Admin_Development_Credits {
+class EvolveWP_Boilerplate_Admin_Development_Credits {
     
     // Set to false to use AJAX, true to use URL-based navigation
     const USE_URL_NAVIGATION = false;
@@ -331,7 +331,7 @@ class EvolveWP_Core_Admin_Development_Credits {
                 'status' => 'reference',
                 'featured' => true,
                 'description' => 'Architecture patterns and best practices by Automattic',
-                'details' => 'Created by Automattic. EvolveWP Core draws inspiration from WooCommerce\'s plugin architecture, including REST API patterns, background processing, and asset management.',
+                'details' => 'Created by Automattic. Plugin Boilerplate draws inspiration from WooCommerce\'s plugin architecture, including REST API patterns, background processing, and asset management.',
                 'used_in' => 'Overall architecture, coding standards',
                 'website' => 'https://woocommerce.com/',
                 'github' => 'https://github.com/woocommerce/woocommerce',
@@ -345,7 +345,7 @@ class EvolveWP_Core_Admin_Development_Credits {
                 'status' => 'integrated',
                 'featured' => true,
                 'description' => 'Version control and collaboration by GitHub, Inc. (Microsoft)',
-                'details' => 'Owned by Microsoft Corporation. GitHub provides version control, issue tracking, and CI/CD integration for EvolveWP Core development.',
+                'details' => 'Owned by Microsoft Corporation. GitHub provides version control, issue tracking, and CI/CD integration for Plugin Boilerplate development.',
                 'used_in' => 'Version control, documentation sync, CI/CD',
                 'website' => 'https://github.com/',
                 'github' => 'https://github.com/ryanbayne/plugin-boilerplate',
@@ -356,6 +356,6 @@ class EvolveWP_Core_Admin_Development_Credits {
     }
 }
 
-EvolveWP_Core_Admin_Development_Credits::init();
+EvolveWP_Boilerplate_Admin_Development_Credits::init();
 
-add_action('wp_ajax_plugin_boilerplate_get_contributor_details', array('EvolveWP_Core_Admin_Development_Credits', 'ajax_get_contributor_details'));
+add_action('wp_ajax_plugin_boilerplate_get_contributor_details', array('EvolveWP_Boilerplate_Admin_Development_Credits', 'ajax_get_contributor_details'));

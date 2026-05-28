@@ -4,12 +4,12 @@
  * 
  * Validates cache freshness and triggers updates when needed
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
 
-class EvolveWP_Core_Data_Freshness_Manager {
+class EvolveWP_Boilerplate_Data_Freshness_Manager {
 
     private static $freshness_requirements = array(
         'default' => 3600,      // 1 hour

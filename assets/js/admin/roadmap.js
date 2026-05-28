@@ -4,7 +4,7 @@
  * Ported from WPVerifier's admin-roadmap.js. All CSS class prefixes use
  * plugin-boilerplate- instead of wpv- so the styles are plugin-agnostic.
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @since   3.0.0
  */
 

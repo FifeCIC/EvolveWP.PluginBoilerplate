@@ -1,12 +1,12 @@
 <?php
 /**
- * EvolveWP Core Notifications
+ * Plugin Boilerplate Notifications
  *
  * Uses custom database table for performance with high-volume transient notification data.
  * Custom table provides proper indexing and query optimisation that would not be possible
  * with WordPress core tables (posts/options).
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 2.0.0
  */
 
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Notifications {
+class EvolveWP_Boilerplate_Notifications {
 
     private static $notification_types = array();
 
@@ -413,4 +413,4 @@ class EvolveWP_Core_Notifications {
     }
 }
 
-add_action('init', array('EvolveWP_Core_Notifications', 'init'));
+add_action('init', array('EvolveWP_Boilerplate_Notifications', 'init'));

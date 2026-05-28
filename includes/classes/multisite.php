@@ -2,7 +2,7 @@
 /**
  * Multisite Support
  *
- * @package EvolveWP Core/Multisite
+ * @package Plugin Boilerplate/Multisite
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Multisite {
+class EvolveWP_Boilerplate_Multisite {
     
     public function __construct() {
         if (is_multisite()) {
@@ -40,4 +40,4 @@ class EvolveWP_Core_Multisite {
     }
 }
 
-return new EvolveWP_Core_Multisite();
+return new EvolveWP_Boilerplate_Multisite();

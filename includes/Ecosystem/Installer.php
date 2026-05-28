@@ -64,7 +64,7 @@ class Installer {
 	private function define_available_plugins() {
 		$this->available_plugins = apply_filters( 'plugin_boilerplate_ecosystem_available_plugins', array(
 			'plugin-boilerplate' => array(
-				'name'            => 'EvolveWP Core',
+				'name'            => 'Plugin Boilerplate',
 				'description'     => 'WordPress plugin boilerplate for the EvolveWP ecosystem.',
 				'download_url'    => 'https://github.com/FifeCIC/plugin-boilerplate/archive/main.zip',
 				'required_by'     => array(),
@@ -74,7 +74,7 @@ class Installer {
 	}
 
 	/**
-	 * Register the installer submenu page under EvolveWP Core settings.
+	 * Register the installer submenu page under Plugin Boilerplate settings.
 	 *
 	 * @since 1.0.0
 	 * @return void

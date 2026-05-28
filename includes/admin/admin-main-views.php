@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Admin Main Views
+ * Plugin Boilerplate Admin Main Views
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.0.0
  */
 
@@ -10,15 +10,15 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Admin_Main_Views {
+class EvolveWP_Boilerplate_Admin_Main_Views {
     
     public static function output() {
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e('EvolveWP Core Plugin', 'plugin-boilerplate'); ?></h1>
+            <h1><?php esc_html_e('Plugin Boilerplate Plugin', 'plugin-boilerplate'); ?></h1>
             
             <div class="plugin-boilerplate-main-dashboard">
-                <p><?php esc_html_e('Welcome to EvolveWP Core - The AI-Powered WordPress Plugin Boilerplate', 'plugin-boilerplate'); ?></p>
+                <p><?php esc_html_e('Welcome to Plugin Boilerplate - The AI-Powered WordPress Plugin Boilerplate', 'plugin-boilerplate'); ?></p>
                 
                 <div class="plugin-boilerplate-quick-links" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
                     <div class="plugin-boilerplate-card" style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 4px;">

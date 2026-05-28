@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Settings Import/Export
+ * Plugin Boilerplate Settings Import/Export
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.2.0
  */
 
@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * EvolveWP_Core_Settings_Import_Export Class
+ * EvolveWP_Boilerplate_Settings_Import_Export Class
  */
-class EvolveWP_Core_Settings_Import_Export {
+class EvolveWP_Boilerplate_Settings_Import_Export {
 
     /**
      * Initialize
@@ -235,4 +235,4 @@ class EvolveWP_Core_Settings_Import_Export {
     }
 }
 
-EvolveWP_Core_Settings_Import_Export::init();
+EvolveWP_Boilerplate_Settings_Import_Export::init();

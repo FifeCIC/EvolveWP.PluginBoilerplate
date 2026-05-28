@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Asset Queue System
+ * Plugin Boilerplate Asset Queue System
  * 
  * Centralized asset enqueueing based on page detection
  * 
- * @package EvolveWP Core/Assets
+ * @package Plugin Boilerplate/Assets
  * @version 1.2.0
  */
 
@@ -12,14 +12,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Asset_Queue {
+class EvolveWP_Boilerplate_Asset_Queue {
     
     private $asset_manager;
     private $current_page;
     private $current_tab;
     
     public function __construct() {
-        if (!class_exists('EvolveWP_Core_Asset_Manager')) {
+        if (!class_exists('EvolveWP_Boilerplate_Asset_Manager')) {
             require_once PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH . 'assets/manage-assets.php';
         }
         
@@ -167,7 +167,7 @@ class EvolveWP_Core_Asset_Queue {
         ?>
         <div class="notice notice-warning is-dismissible">
             <p>
-                <strong>EvolveWP Core:</strong>
+                <strong>Plugin Boilerplate:</strong>
                 <?php
                 /* translators: %d: Number of missing asset files */
                 echo esc_html(sprintf(_n('%d asset file is missing', '%d asset files are missing', $count, 'plugin-boilerplate'), $count));
@@ -189,17 +189,17 @@ class EvolveWP_Core_Asset_Queue {
     }
 }
 
-if (!class_exists('EvolveWP_Core_Asset_Queue_Instance')) {
-    class EvolveWP_Core_Asset_Queue_Instance {
+if (!class_exists('EvolveWP_Boilerplate_Asset_Queue_Instance')) {
+    class EvolveWP_Boilerplate_Asset_Queue_Instance {
         private static $instance = null;
         
         public static function get_instance() {
             if (self::$instance === null) {
-                self::$instance = new EvolveWP_Core_Asset_Queue();
+                self::$instance = new EvolveWP_Boilerplate_Asset_Queue();
             }
             return self::$instance;
         }
     }
     
-    EvolveWP_Core_Asset_Queue_Instance::get_instance();
+    EvolveWP_Boilerplate_Asset_Queue_Instance::get_instance();
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Ajax Event Handler.
+ * Plugin Boilerplate Ajax Event Handler.
  *
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @category Ajax
  * @author   Ryan Bayne
  * @version  2.0.0
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-class EvolveWP_Core_AJAX {
+class EvolveWP_Boilerplate_AJAX {
 
     /**
      * Hook in ajax handlers.
@@ -27,7 +27,7 @@ class EvolveWP_Core_AJAX {
     }
 
     /**
-     * Get EvolveWP Core Ajax Endpoint.
+     * Get Plugin Boilerplate Ajax Endpoint.
      * @param  string $request Optional
      * @return string
      */
@@ -36,10 +36,10 @@ class EvolveWP_Core_AJAX {
     }
 
     /**
-     * Set EvolveWP Core AJAX constant and headers.
+     * Set Plugin Boilerplate AJAX constant and headers.
      *
      * Runs at init priority 0 — before nonce infrastructure is reliable — so
-     * this method only detects whether a EvolveWP Core AJAX request is in progress.
+     * this method only detects whether a Plugin Boilerplate AJAX request is in progress.
      * The $_GET['plugin-boilerplate-ajax'] value is extracted into a sanitised local
      * variable immediately so the sniff can confirm it is not used raw.
      * Actual nonce verification happens in do_plugin_boilerplate_ajax() where WordPress
@@ -73,7 +73,7 @@ class EvolveWP_Core_AJAX {
     }
 
     /**
-     * Send headers for EvolveWP Core Ajax Requests
+     * Send headers for Plugin Boilerplate Ajax Requests
      */
     private static function plugin_boilerplate_ajax_headers() {
         send_origin_headers();
@@ -85,7 +85,7 @@ class EvolveWP_Core_AJAX {
     }
 
     /**
-     * Check for EvolveWP Core Ajax request and fire action.
+     * Check for Plugin Boilerplate Ajax request and fire action.
      */
     public static function do_plugin_boilerplate_ajax() {
         global $wp_query;
@@ -125,11 +125,11 @@ class EvolveWP_Core_AJAX {
             if ( $nopriv ) {
                 add_action( 'wp_ajax_nopriv_plugin_boilerplate_' . $ajax_event, array( __CLASS__, $ajax_event ) );
 
-                // EvolveWP Core AJAX can be used for frontend ajax requests
+                // Plugin Boilerplate AJAX can be used for frontend ajax requests
                 add_action( 'plugin_boilerplate_ajax_' . $ajax_event, array( __CLASS__, $ajax_event ) );
             }
         }
     }
 }
 
-EvolveWP_Core_AJAX::init();
+EvolveWP_Boilerplate_AJAX::init();

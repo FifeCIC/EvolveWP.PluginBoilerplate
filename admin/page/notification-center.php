@@ -1,16 +1,16 @@
 <?php
 /**
- * EvolveWP Core Notification Center
+ * Plugin Boilerplate Notification Center
  *
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
 // Enqueue assets
-wp_enqueue_style('plugin-boilerplate-notification-center', EvolveWP Core()->plugin_url() . '/assets/css/notification-center.css', array(), PLUGIN_BOILERPLATE_VERSION);
-wp_enqueue_script('plugin-boilerplate-notification-center', EvolveWP Core()->plugin_url() . '/assets/js/notification-center.js', array('jquery'), PLUGIN_BOILERPLATE_VERSION, true);
+wp_enqueue_style('plugin-boilerplate-notification-center', Plugin Boilerplate()->plugin_url() . '/assets/css/notification-center.css', array(), PLUGIN_BOILERPLATE_VERSION);
+wp_enqueue_script('plugin-boilerplate-notification-center', Plugin Boilerplate()->plugin_url() . '/assets/js/notification-center.js', array('jquery'), PLUGIN_BOILERPLATE_VERSION, true);
 
 // Handle actions
 if (isset($_POST['notification_action'])) {
@@ -21,17 +21,17 @@ if (isset($_POST['notification_action'])) {
     
     switch ($action) {
         case 'mark_read':
-            EvolveWP_Core_Notifications::mark_as_read($plugin_boilerplate_notification_id);
+            EvolveWP_Boilerplate_Notifications::mark_as_read($plugin_boilerplate_notification_id);
             break;
         case 'snooze':
                 $plugin_boilerplate_duration = isset($_POST['snooze_duration']) ? intval($_POST['snooze_duration']) : 3600;
-                EvolveWP_Core_Notifications::snooze_notification($plugin_boilerplate_notification_id, $plugin_boilerplate_duration);
+                EvolveWP_Boilerplate_Notifications::snooze_notification($plugin_boilerplate_notification_id, $plugin_boilerplate_duration);
             break;
         case 'delete':
-            EvolveWP_Core_Notifications::delete_notification($plugin_boilerplate_notification_id);
+            EvolveWP_Boilerplate_Notifications::delete_notification($plugin_boilerplate_notification_id);
             break;
         case 'mark_all_read':
-            EvolveWP_Core_Notifications::mark_all_read(get_current_user_id());
+            EvolveWP_Boilerplate_Notifications::mark_all_read(get_current_user_id());
             break;
     }
     
@@ -47,8 +47,8 @@ if ($filter === 'unread') {
     $plugin_boilerplate_args['is_read'] = 0;
 }
 
-$notifications = EvolveWP_Core_Notifications::get_notifications($plugin_boilerplate_user_id, $plugin_boilerplate_args);
-$plugin_boilerplate_unread_count = EvolveWP_Core_Notifications::get_unread_count($plugin_boilerplate_user_id);
+$notifications = EvolveWP_Boilerplate_Notifications::get_notifications($plugin_boilerplate_user_id, $plugin_boilerplate_args);
+$plugin_boilerplate_unread_count = EvolveWP_Boilerplate_Notifications::get_unread_count($plugin_boilerplate_user_id);
 ?>
 
 <div class="wrap plugin-boilerplate-notification-center">

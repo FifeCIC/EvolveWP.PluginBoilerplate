@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Script Assets Registry
+ * Plugin Boilerplate Script Assets Registry
  *
- * @package EvolveWP Core/Assets
+ * @package Plugin Boilerplate/Assets
  * @version 1.0.0
  */
 

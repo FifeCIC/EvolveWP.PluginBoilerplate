@@ -3,7 +3,7 @@
  * Ecosystem Plugin Installer
  * One-click installation of related plugins
  *
- * @package EvolveWP Core/Ecosystem
+ * @package Plugin Boilerplate/Ecosystem
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Ecosystem_Installer {
+class EvolveWP_Boilerplate_Ecosystem_Installer {
     
     private $available_plugins = array();
     
@@ -170,4 +170,4 @@ class EvolveWP_Core_Ecosystem_Installer {
     }
 }
 
-return new EvolveWP_Core_Ecosystem_Installer();
+return new EvolveWP_Boilerplate_Ecosystem_Installer();

@@ -14,8 +14,8 @@
  *
  * CONSUMED BY:
  *   - functions.php: plugin_boilerplate_log() and plugin_boilerplate_trace() global accessors
- *   - EvolveWP_Core_Enhanced_Logger (via class_exists guard — will update when migrated)
- *   - EvolveWP_Core_Verification_Logger (via class_exists guard)
+ *   - EvolveWP_Boilerplate_Enhanced_Logger (via class_exists guard — will update when migrated)
+ *   - EvolveWP_Boilerplate_Verification_Logger (via class_exists guard)
  *
  * DATA FLOW:
  *   Input  → trace() calls from any code path
@@ -305,7 +305,7 @@ class Logger {
 			$output .= ' | ' . wp_json_encode( $log_entry['data'] );
 		}
 
-		$this->write_log( 'EvolveWP_Core_Trace: ' . $output );
+		$this->write_log( 'EvolveWP_Boilerplate_Trace: ' . $output );
 	}
 
 	/**
@@ -318,7 +318,7 @@ class Logger {
 		$total_logs = count( $this->logs );
 		$duration   = ( microtime( true ) - $this->start_time ) * 1000;
 
-		$this->write_log( "EvolveWP_Core_Summary: Context '{$this->current_context}' - {$total_logs} logs in " . number_format( $duration, 2 ) . 'ms' );
+		$this->write_log( "EvolveWP_Boilerplate_Summary: Context '{$this->current_context}' - {$total_logs} logs in " . number_format( $duration, 2 ) . 'ms' );
 
 		$type_counts = array();
 		foreach ( $this->logs as $log ) {
@@ -330,12 +330,12 @@ class Logger {
 		}
 
 		foreach ( $type_counts as $type => $count ) {
-			$this->write_log( "EvolveWP_Core_Summary: {$type}: {$count}" );
+			$this->write_log( "EvolveWP_Boilerplate_Summary: {$type}: {$count}" );
 		}
 
 		$loop_summary = $this->get_loop_summary();
 		if ( ! empty( $loop_summary ) ) {
-			$this->write_log( 'EvolveWP_Core_Summary: Loops: ' . wp_json_encode( $loop_summary ) );
+			$this->write_log( 'EvolveWP_Boilerplate_Summary: Loops: ' . wp_json_encode( $loop_summary ) );
 		}
 	}
 }
@@ -353,7 +353,7 @@ add_action( 'admin_footer', function () {
 		startContext: function(context) {
 			this.context = context;
 			this.loopCounters = {};
-			console.log('EvolveWP_Core_JS: CONTEXT_START - ' + context);
+			console.log('EvolveWP_Boilerplate_JS: CONTEXT_START - ' + context);
 		},
 		trace: function(type, message, data) {
 			data = data || {};
@@ -361,10 +361,10 @@ add_action( 'admin_footer', function () {
 			var logKey = type + ':' + message;
 			if (!this.loopCounters[logKey]) { this.loopCounters[logKey] = 0; }
 			this.loopCounters[logKey]++;
-			var output = 'EvolveWP_Core_JS: [' + type + '] ' + this.context + ' (+' + timestamp.toFixed(2) + 'ms): ' + message;
+			var output = 'EvolveWP_Boilerplate_JS: [' + type + '] ' + this.context + ' (+' + timestamp.toFixed(2) + 'ms): ' + message;
 			if (this.loopCounters[logKey] > 1) { output += ' (x' + this.loopCounters[logKey] + ')'; }
 			console.log(output);
-			if (Object.keys(data).length > 0) { console.log('EvolveWP_Core_JS_Data:', data); }
+			if (Object.keys(data).length > 0) { console.log('EvolveWP_Boilerplate_JS_Data:', data); }
 		},
 		loopTrace: function(loopId, iterationData) {
 			iterationData = iterationData || {};
@@ -385,7 +385,7 @@ add_action( 'admin_footer', function () {
 			var loopSummary = {};
 			var self = this;
 			Object.keys(this.loopCounters).forEach(function(key) { if (key.indexOf('LOOP:') === 0) { loopSummary[key.substring(5)] = self.loopCounters[key]; } });
-			if (Object.keys(loopSummary).length > 0) { console.log('EvolveWP_Core_JS_Summary: Loops:', loopSummary); }
+			if (Object.keys(loopSummary).length > 0) { console.log('EvolveWP_Boilerplate_JS_Summary: Loops:', loopSummary); }
 			this.context = '';
 		}
 	};

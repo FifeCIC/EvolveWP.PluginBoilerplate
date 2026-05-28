@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Base API Class
+ * Plugin Boilerplate Base API Class
  *
- * @package EvolveWP Core/API
+ * @package Plugin Boilerplate/API
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-abstract class EvolveWP_Core_Base_API {
+abstract class EvolveWP_Boilerplate_Base_API {
     
     protected $provider_id;
     protected $api_key;
@@ -27,7 +27,7 @@ abstract class EvolveWP_Core_Base_API {
     abstract public function test_connection();
     
     protected function make_request($endpoint, $params = array(), $method = 'GET') {
-        $call_id = EvolveWP_Core_API_Logging::log_call(
+        $call_id = EvolveWP_Boilerplate_API_Logging::log_call(
             $this->provider_id,
             $endpoint,
             $method,
@@ -51,15 +51,15 @@ abstract class EvolveWP_Core_Base_API {
         $response = wp_remote_request($url, $args);
         
         if (is_wp_error($response)) {
-            EvolveWP_Core_API_Logging::log_error($call_id, 'request_failed', $response->get_error_message());
-            EvolveWP_Core_API_Logging::update_call_outcome($call_id, 'Error: ' . $response->get_error_message(), 'error');
+            EvolveWP_Boilerplate_API_Logging::log_error($call_id, 'request_failed', $response->get_error_message());
+            EvolveWP_Boilerplate_API_Logging::update_call_outcome($call_id, 'Error: ' . $response->get_error_message(), 'error');
             return $response;
         }
         
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);
         
-        EvolveWP_Core_API_Logging::update_call_outcome($call_id, 'Success', 'success');
+        EvolveWP_Boilerplate_API_Logging::update_call_outcome($call_id, 'Success', 'success');
         
         return $data;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core API Factory — creates connector instances.
+ * Plugin Boilerplate API Factory — creates connector instances.
  *
  * ROLE: api-endpoint
  *
@@ -9,8 +9,8 @@
  * implements Connector_Interface.
  *
  * DEPENDS ON:
- *   - EvolveWP_Core_API_Directory (looks up provider metadata)
- *   - EvolveWP Core\API\Connector_Interface (validates instances)
+ *   - EvolveWP_Boilerplate_API_Directory (looks up provider metadata)
+ *   - Plugin Boilerplate\API\Connector_Interface (validates instances)
  *   - WordPress functions: get_option, is_wp_error
  *
  * CONSUMED BY:
@@ -23,7 +23,7 @@
  *   Input  → Provider ID + optional credentials array
  *   Output → Connector instance (implements Connector_Interface) or WP_Error
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @category API
  * @since    1.0.0
  */
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.1.0 Validates Connector_Interface. Added multi-account support,
  *              instance caching, create_all().
  */
-class EvolveWP_Core_API_Factory {
+class EvolveWP_Boilerplate_API_Factory {
 
 	/**
 	 * Cached connector instances keyed by "provider_id:account_id".
@@ -70,7 +70,7 @@ class EvolveWP_Core_API_Factory {
 	 * @return \EvolveWP\PluginBoilerplate\API\Connector_Interface|\WP_Error Connector instance or error.
 	 */
 	public static function create( $provider_id, $args = array() ) {
-		$provider = EvolveWP_Core_API_Directory::get_provider( $provider_id );
+		$provider = EvolveWP_Boilerplate_API_Directory::get_provider( $provider_id );
 
 		if ( ! $provider ) {
 			return new \WP_Error(
@@ -211,7 +211,7 @@ class EvolveWP_Core_API_Factory {
 	 * @return array<string, \EvolveWP\PluginBoilerplate\API\Connector_Interface> Keyed by provider ID.
 	 */
 	public static function create_all_configured() {
-		$configured = EvolveWP_Core_API_Directory::get_configured_providers();
+		$configured = EvolveWP_Boilerplate_API_Directory::get_configured_providers();
 		$instances  = array();
 
 		foreach ( $configured as $provider_id => $provider ) {

@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Development - PHP Info Tab
+ * Plugin Boilerplate Development - PHP Info Tab
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Admin_Development_PHPInfo {
+class EvolveWP_Boilerplate_Admin_Development_PHPInfo {
     public static function output() {
         ?>
         <div class="plugin-boilerplate-dev-section">

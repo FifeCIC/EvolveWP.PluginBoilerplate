@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Enhanced Logger
+ * Plugin Boilerplate Enhanced Logger
  * Query Monitor-style logging and debugging.
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 2.0.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Enhanced_Logger {
+class EvolveWP_Boilerplate_Enhanced_Logger {
 
     private static $instance = null;
     private $queries = array();
@@ -27,7 +27,7 @@ class EvolveWP_Core_Enhanced_Logger {
     }
 
     private function __construct() {
-        if ( ! EvolveWP_Core_Developer_Mode::is_dev_environment() ) {
+        if ( ! EvolveWP_Boilerplate_Developer_Mode::is_dev_environment() ) {
             return;
         }
 
@@ -105,8 +105,8 @@ class EvolveWP_Core_Enhanced_Logger {
         );
         
         // Use unified logger for query tracking
-        if (class_exists('EvolveWP_Core_Unified_Logger')) {
-            EvolveWP_Core_Unified_Logger::instance()->trace('DB_QUERY', "{$query_type} query", array(
+        if (class_exists('EvolveWP_Boilerplate_Unified_Logger')) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->trace('DB_QUERY', "{$query_type} query", array(
                 'query_hash' => $query_hash,
                 'execution_time' => $wpdb->timer_stop()
             ));
@@ -129,8 +129,8 @@ class EvolveWP_Core_Enhanced_Logger {
         $this->hooks[$hook]['count']++;
         
         // Use unified logger for hook tracking (only log frequently called hooks)
-        if (class_exists('EvolveWP_Core_Unified_Logger') && $this->hooks[$hook]['count'] % 50 === 0) {
-            EvolveWP_Core_Unified_Logger::instance()->trace('HOOK_FREQUENT', "Hook {$hook} called {$this->hooks[$hook]['count']} times");
+        if (class_exists('EvolveWP_Boilerplate_Unified_Logger') && $this->hooks[$hook]['count'] % 50 === 0) {
+            EvolveWP_Boilerplate_Unified_Logger::instance()->trace('HOOK_FREQUENT', "Hook {$hook} called {$this->hooks[$hook]['count']} times");
         }
         
         return $hook;
@@ -367,9 +367,9 @@ class EvolveWP_Core_Enhanced_Logger {
 }
 
 // Initialize
-if (EvolveWP_Core_Developer_Mode::is_dev_environment()) {
-    EvolveWP_Core_Enhanced_Logger::instance();
+if (EvolveWP_Boilerplate_Developer_Mode::is_dev_environment()) {
+    EvolveWP_Boilerplate_Enhanced_Logger::instance();
 }
 
 // Create table on activation
-register_activation_hook(PLUGIN_BOILERPLATE_PLUGIN_FILE, array('EvolveWP_Core_Enhanced_Logger', 'create_table'));
+register_activation_hook(PLUGIN_BOILERPLATE_PLUGIN_FILE, array('EvolveWP_Boilerplate_Enhanced_Logger', 'create_table'));

@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core - Toolbars Class
+ * Plugin Boilerplate - Toolbars Class
  *
  * Add menus to the admin toolbar
  *
- * @package EvolveWP Core/Toolbars
+ * @package Plugin Boilerplate/Toolbars
  * @since 1.0.0
  */
  
@@ -12,9 +12,9 @@ if (!defined('ABSPATH')) {
     exit;
 }  
 
-if (!class_exists('EvolveWP_Core_Toolbars')) :
+if (!class_exists('EvolveWP_Boilerplate_Toolbars')) :
 
-class EvolveWP_Core_Toolbars {
+class EvolveWP_Boilerplate_Toolbars {
     
     public function __construct() {     
         add_action('wp_before_admin_bar_render', array($this, 'admin_only_toolbars'));
@@ -90,4 +90,4 @@ class EvolveWP_Core_Toolbars {
 
 endif;
 
-return new EvolveWP_Core_Toolbars();
+return new EvolveWP_Boilerplate_Toolbars();

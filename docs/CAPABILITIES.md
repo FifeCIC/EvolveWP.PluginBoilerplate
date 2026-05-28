@@ -20,7 +20,7 @@ adds three things:
 2. **Lifecycle management** — capabilities are installed into roles on activation
    and removed on uninstall automatically. No manual role manipulation needed.
 
-3. **Override hook** — the `plugin_boilerplate_user_can` filter lets EvolveWP Core intercept
+3. **Override hook** — the `plugin_boilerplate_user_can` filter lets Plugin Boilerplate intercept
    permission checks across all ecosystem plugins for cross-plugin permission
    management, two-person authorisation, and audit logging.
 
@@ -175,7 +175,7 @@ add_filter( 'plugin_boilerplate_user_can', function( $result, $capability, $user
 }, 10, 3 );
 ```
 
-This filter is how EvolveWP Core will implement:
+This filter is how Plugin Boilerplate will implement:
 - Cross-plugin permission management
 - Two-person authorisation for sensitive operations
 - Permission audit logging

@@ -3,7 +3,7 @@
  * Ecosystem Menu Manager
  * Dynamically places menus based on ecosystem mode
  *
- * @package EvolveWP Core/Ecosystem
+ * @package Plugin Boilerplate/Ecosystem
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Ecosystem_Menu_Manager {
+class EvolveWP_Boilerplate_Ecosystem_Menu_Manager {
     
     public function __construct() {
         add_action('admin_menu', array($this, 'register_menus'), 999);
@@ -337,4 +337,4 @@ class EvolveWP_Core_Ecosystem_Menu_Manager {
     }
 }
 
-return new EvolveWP_Core_Ecosystem_Menu_Manager();
+return new EvolveWP_Boilerplate_Ecosystem_Menu_Manager();

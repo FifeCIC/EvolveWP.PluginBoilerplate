@@ -15,10 +15,10 @@
  *
  * CONSUMED BY:
  *   - functions.php: plugin_boilerplate_user_can() global accessor
- *   - EvolveWP Core\Core\Install: delegates capability installation here
+ *   - Plugin Boilerplate\Core\Install: delegates capability installation here
  *   - REST controllers, admin pages, AJAX handlers — anywhere a permission
  *     check is needed
- *   - EvolveWP Core (elevates this into cross-plugin permission management)
+ *   - Plugin Boilerplate (elevates this into cross-plugin permission management)
  *
  * DATA FLOW:
  *   Input  → Capability definitions registered via register()
@@ -140,10 +140,10 @@ class Capability_Manager {
 	}
 
 	/**
-	 * Register the default EvolveWP Core capabilities.
+	 * Register the default Plugin Boilerplate capabilities.
 	 *
 	 * Called automatically on first use. These are the baseline caps that
-	 * every EvolveWP Core-based plugin starts with. Plugins add their own via
+	 * every Plugin Boilerplate-based plugin starts with. Plugins add their own via
 	 * register() during init.
 	 *
 	 * @since  3.1.0
@@ -157,13 +157,13 @@ class Capability_Manager {
 
 		self::register_many( array(
 			'manage_plugin-boilerplate' => array(
-				'label'       => __( 'Manage EvolveWP Core', 'plugin-boilerplate' ),
-				'description' => __( 'Full administrative access to the EvolveWP Core plugin.', 'plugin-boilerplate' ),
+				'label'       => __( 'Manage Plugin Boilerplate', 'plugin-boilerplate' ),
+				'description' => __( 'Full administrative access to the Plugin Boilerplate plugin.', 'plugin-boilerplate' ),
 				'grant_to'    => array( 'administrator' ),
 				'group'       => 'core',
 			),
 			'code_plugin-boilerplate' => array(
-				'label'       => __( 'Code EvolveWP Core', 'plugin-boilerplate' ),
+				'label'       => __( 'Code Plugin Boilerplate', 'plugin-boilerplate' ),
 				'description' => __( 'Access developer-level features and code tools.', 'plugin-boilerplate' ),
 				'grant_to'    => array( 'administrator' ),
 				'group'       => 'development',
@@ -209,7 +209,7 @@ class Capability_Manager {
 	 * This is the single check point for all permission checks in the plugin.
 	 * It ensures defaults are registered, then delegates to WordPress
 	 * current_user_can(). Using this instead of current_user_can() directly
-	 * allows EvolveWP Core to intercept and extend permission logic later.
+	 * allows Plugin Boilerplate to intercept and extend permission logic later.
 	 *
 	 * @since  3.1.0
 	 *
@@ -223,7 +223,7 @@ class Capability_Manager {
 		/**
 		 * Filter the capability check result.
 		 *
-		 * Allows EvolveWP Core or other plugins to override permission
+		 * Allows Plugin Boilerplate or other plugins to override permission
 		 * decisions. Return a non-null value to short-circuit the check.
 		 *
 		 * @since 3.1.0

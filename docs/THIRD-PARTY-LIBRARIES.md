@@ -204,7 +204,7 @@ add_filter( 'action_scheduler_queue_runner_batch_size', function( $batch_size ) 
 #### 2. Wrapper Classes
 ```php
 // Create a wrapper for Carbon Fields
-class EvolveWP_Core_Settings {
+class EvolveWP_Boilerplate_Settings {
     public static function register_fields() {
         // Your custom logic
         \Carbon_Fields\Container::make( 'theme_options', 'Settings' )
@@ -223,7 +223,7 @@ class EvolveWP_Core_Settings {
 #### 3. Extend Classes
 ```php
 // Extend library classes (if supported)
-class EvolveWP_Core_Custom_Field extends \Carbon_Fields\Field\Field {
+class EvolveWP_Boilerplate_Custom_Field extends \Carbon_Fields\Field\Field {
     // Your custom field type
 }
 ```
@@ -291,11 +291,11 @@ WPSeed will support one-click library updates in future versions via the **Devel
 
 ## 🚀 Migration Guides
 
-### From EvolveWP_Core_Background_Process to Action Scheduler
+### From EvolveWP_Boilerplate_Background_Process to Action Scheduler
 
 **Old Code:**
 ```php
-class My_Background_Process extends EvolveWP_Core_Background_Process {
+class My_Background_Process extends EvolveWP_Boilerplate_Background_Process {
     protected $action = 'my_process';
     
     protected function task( $item ) {

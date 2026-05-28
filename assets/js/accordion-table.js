@@ -1,7 +1,7 @@
 /**
- * EvolveWP Core Accordion Table Functionality
+ * Plugin Boilerplate Accordion Table Functionality
  * 
- * @package EvolveWP Core/JS
+ * @package Plugin Boilerplate/JS
  * @version 1.2.0
  */
 

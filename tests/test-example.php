@@ -2,13 +2,13 @@
 /**
  * Example Test Case
  *
- * @package EvolveWP Core/Tests
+ * @package Plugin Boilerplate/Tests
  */
 
-class EvolveWP_Core_Test_Example extends WP_UnitTestCase {
+class EvolveWP_Boilerplate_Test_Example extends WP_UnitTestCase {
     
     public function test_plugin_activated() {
-        $this->assertTrue(function_exists('EvolveWP Core'));
+        $this->assertTrue(function_exists('Plugin Boilerplate'));
     }
     
     public function test_version_constant() {

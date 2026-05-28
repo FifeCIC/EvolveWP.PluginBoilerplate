@@ -16,7 +16,7 @@ WPSeed includes **Action Scheduler** - the battle-tested background processing l
 ### Schedule a Single Task
 
 ```php
-$scheduler = EvolveWP_Core_Task_Scheduler::instance();
+$scheduler = EvolveWP_Boilerplate_Task_Scheduler::instance();
 
 // Run in 1 hour
 $scheduler->schedule_single(
@@ -194,12 +194,12 @@ add_action('api_sync', function($endpoint) {
 });
 ```
 
-## Migration from EvolveWP_Core_Background_Process
+## Migration from EvolveWP_Boilerplate_Background_Process
 
 ### Old Way
 
 ```php
-class My_Process extends EvolveWP_Core_Background_Process {
+class My_Process extends EvolveWP_Boilerplate_Background_Process {
     protected $action = 'my_process';
     
     protected function task($item) {
@@ -216,7 +216,7 @@ $process->save()->dispatch();
 ### New Way
 
 ```php
-$scheduler = EvolveWP_Core_Task_Scheduler::instance();
+$scheduler = EvolveWP_Boilerplate_Task_Scheduler::instance();
 
 $scheduler->schedule_single(
     'my_process_task',

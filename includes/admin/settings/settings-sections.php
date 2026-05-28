@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Sections Settings
+ * Plugin Boilerplate Sections Settings
  *
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @version  1.0.0
  */
 
@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Settings_Sections' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Settings_Sections' ) ) :
 
 /**
- * EvolveWP_Core_Settings_Sections.
+ * EvolveWP_Boilerplate_Settings_Sections.
  */
-class EvolveWP_Core_Settings_Sections extends EvolveWP_Core_Settings_Page {
+class EvolveWP_Boilerplate_Settings_Sections extends EvolveWP_Boilerplate_Settings_Page {
 
     /**
      * Constructor.
@@ -56,7 +56,7 @@ class EvolveWP_Core_Settings_Sections extends EvolveWP_Core_Settings_Page {
 
         $settings = $this->get_settings( $current_section );
 
-        EvolveWP_Core_Admin_Settings::output_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::output_fields( $settings );
     }
 
     /**
@@ -66,7 +66,7 @@ class EvolveWP_Core_Settings_Sections extends EvolveWP_Core_Settings_Page {
         global $current_section;
 
         $settings = $this->get_settings( $current_section );
-        EvolveWP_Core_Admin_Settings::save_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::save_fields( $settings );
     }
 
     /**
@@ -155,4 +155,4 @@ class EvolveWP_Core_Settings_Sections extends EvolveWP_Core_Settings_Page {
 
 endif;
 
-return new EvolveWP_Core_Settings_Sections();
+return new EvolveWP_Boilerplate_Settings_Sections();

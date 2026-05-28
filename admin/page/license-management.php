@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core License Management Page
+ * Plugin Boilerplate License Management Page
  * 
- * @package EvolveWP Core/Admin
+ * @package Plugin Boilerplate/Admin
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
 // Handle form submissions
 if (isset($_POST['plugin_boilerplate_activate_license']) && check_admin_referer('plugin_boilerplate_license_action')) {
     $plugin_boilerplate_license_key = isset($_POST['license_key']) ? sanitize_text_field(wp_unslash($_POST['license_key'])) : '';
-    $plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+    $plugin_boilerplate_client = new EvolveWP_Boilerplate_License_Client();
     $plugin_boilerplate_result = $plugin_boilerplate_client->activate_license($plugin_boilerplate_license_key);
     
     if (is_wp_error($plugin_boilerplate_result)) {
@@ -22,7 +22,7 @@ if (isset($_POST['plugin_boilerplate_activate_license']) && check_admin_referer(
 }
 
 if (isset($_POST['plugin_boilerplate_deactivate_license']) && check_admin_referer('plugin_boilerplate_license_action')) {
-    $plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+    $plugin_boilerplate_client = new EvolveWP_Boilerplate_License_Client();
     $plugin_boilerplate_result = $plugin_boilerplate_client->deactivate_license();
     
     if (is_wp_error($plugin_boilerplate_result)) {
@@ -32,13 +32,13 @@ if (isset($_POST['plugin_boilerplate_deactivate_license']) && check_admin_refere
     }
 }
 
-$plugin_boilerplate_client = new EvolveWP_Core_License_Client();
+$plugin_boilerplate_client = new EvolveWP_Boilerplate_License_Client();
 $plugin_boilerplate_license_data = $plugin_boilerplate_client->get_license_data();
 $plugin_boilerplate_is_valid = $plugin_boilerplate_client->is_license_valid();
 ?>
 
 <div class="wrap">
-    <h1>EvolveWP Core License Management</h1>
+    <h1>Plugin Boilerplate License Management</h1>
     
     <div class="plugin-boilerplate-license-container" style="max-width: 800px;">
         

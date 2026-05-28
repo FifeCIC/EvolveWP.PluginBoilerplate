@@ -22,7 +22,7 @@ plugin-boilerplate" → "yourplugin"
 
 ### Schedule Single Task
 ```php
-EvolveWP_Core_Task_Scheduler::schedule_single(
+EvolveWP_Boilerplate_Task_Scheduler::schedule_single(
     'my_task_hook',
     array('param1' => 'value'),
     time() + 3600  // Run in 1 hour
@@ -31,7 +31,7 @@ EvolveWP_Core_Task_Scheduler::schedule_single(
 
 ### Schedule Recurring Task
 ```php
-EvolveWP_Core_Task_Scheduler::schedule_recurring(
+EvolveWP_Boilerplate_Task_Scheduler::schedule_recurring(
     'my_recurring_task',
     array('data' => 'value'),
     time(),
@@ -41,7 +41,7 @@ EvolveWP_Core_Task_Scheduler::schedule_recurring(
 
 ### Schedule Cron Task
 ```php
-EvolveWP_Core_Task_Scheduler::schedule_cron(
+EvolveWP_Boilerplate_Task_Scheduler::schedule_cron(
     'my_cron_task',
     array(),
     '0 0 * * *'  // Daily at midnight
@@ -95,7 +95,7 @@ Container::make('post_meta', 'Extra Fields')
 
 ### Add Notification
 ```php
-EvolveWP_Core_Notifications::add_notification(
+EvolveWP_Boilerplate_Notifications::add_notification(
     get_current_user_id(),
     'Update Available',
     'A new version is available',
@@ -108,17 +108,17 @@ EvolveWP_Core_Notifications::add_notification(
 
 ### Get Unread Count
 ```php
-$count = EvolveWP_Core_Notifications::get_unread_count(get_current_user_id());
+$count = EvolveWP_Boilerplate_Notifications::get_unread_count(get_current_user_id());
 ```
 
 ### Mark as Read
 ```php
-EvolveWP_Core_Notifications::mark_as_read($notification_id);
+EvolveWP_Boilerplate_Notifications::mark_as_read($notification_id);
 ```
 
 ### Snooze Notification
 ```php
-EvolveWP_Core_Notifications::snooze_notification($notification_id, 3600); // 1 hour
+EvolveWP_Boilerplate_Notifications::snooze_notification($notification_id, 3600); // 1 hour
 ```
 
 ---
@@ -127,7 +127,7 @@ EvolveWP_Core_Notifications::snooze_notification($notification_id, 3600); // 1 h
 
 ### Log Query
 ```php
-EvolveWP_Core_Enhanced_Logger::log_query(
+EvolveWP_Boilerplate_Enhanced_Logger::log_query(
     'SELECT * FROM wp_posts',
     0.025,  // execution time
     'get_posts'
@@ -136,7 +136,7 @@ EvolveWP_Core_Enhanced_Logger::log_query(
 
 ### Log Hook
 ```php
-EvolveWP_Core_Enhanced_Logger::log_hook(
+EvolveWP_Boilerplate_Enhanced_Logger::log_hook(
     'init',
     'my_function',
     0.001
@@ -145,7 +145,7 @@ EvolveWP_Core_Enhanced_Logger::log_hook(
 
 ### Log HTTP Request
 ```php
-EvolveWP_Core_Enhanced_Logger::log_http_request(
+EvolveWP_Boilerplate_Enhanced_Logger::log_http_request(
     'https://api.example.com/data',
     'GET',
     200,
@@ -155,7 +155,7 @@ EvolveWP_Core_Enhanced_Logger::log_http_request(
 
 ### Log Error
 ```php
-EvolveWP_Core_Enhanced_Logger::log_error(
+EvolveWP_Boilerplate_Enhanced_Logger::log_error(
     'Warning: Invalid data',
     'warning',  // notice, warning, error
     'my_function'
@@ -164,7 +164,7 @@ EvolveWP_Core_Enhanced_Logger::log_error(
 
 ### Get Performance Metrics
 ```php
-$metrics = EvolveWP_Core_Enhanced_Logger::get_performance_metrics();
+$metrics = EvolveWP_Boilerplate_Enhanced_Logger::get_performance_metrics();
 // Returns: queries, hooks, http_requests, errors, execution_time, memory_usage
 ```
 
@@ -206,7 +206,7 @@ wp_enqueue_script('my-custom-script');
 
 ### Create Endpoint
 ```php
-class My_REST_Controller extends EvolveWP_Core_REST_Controller {
+class My_REST_Controller extends EvolveWP_Boilerplate_REST_Controller {
     protected $rest_base = 'myendpoint';
     
     public function register_routes() {
@@ -283,17 +283,17 @@ wp wpseed generate settings "API Settings"
 
 ### Store Object
 ```php
-EvolveWP_Core_Object_Registry::add('my_object', $object);
+EvolveWP_Boilerplate_Object_Registry::add('my_object', $object);
 ```
 
 ### Retrieve Object
 ```php
-$obj = EvolveWP_Core_Object_Registry::get('my_object');
+$obj = EvolveWP_Boilerplate_Object_Registry::get('my_object');
 ```
 
 ### Check if Exists
 ```php
-if (EvolveWP_Core_Object_Registry::exists('my_object')) {
+if (EvolveWP_Boilerplate_Object_Registry::exists('my_object')) {
     // Object exists
 }
 ```
@@ -304,7 +304,7 @@ if (EvolveWP_Core_Object_Registry::exists('my_object')) {
 
 ### Ensure Fresh Data
 ```php
-$data = EvolveWP_Core_Data_Freshness_Manager::ensure_freshness(
+$data = EvolveWP_Boilerplate_Data_Freshness_Manager::ensure_freshness(
     'my_cache_key',
     'hourly',  // hourly, daily, weekly
     function() {
@@ -316,12 +316,12 @@ $data = EvolveWP_Core_Data_Freshness_Manager::ensure_freshness(
 
 ### Check if Fresh
 ```php
-$is_fresh = EvolveWP_Core_Data_Freshness_Manager::is_fresh('my_cache_key', 'hourly');
+$is_fresh = EvolveWP_Boilerplate_Data_Freshness_Manager::is_fresh('my_cache_key', 'hourly');
 ```
 
 ### Invalidate Cache
 ```php
-EvolveWP_Core_Data_Freshness_Manager::invalidate('my_cache_key');
+EvolveWP_Boilerplate_Data_Freshness_Manager::invalidate('my_cache_key');
 ```
 
 ---
@@ -330,22 +330,22 @@ EvolveWP_Core_Data_Freshness_Manager::invalidate('my_cache_key');
 
 ### Start Flow
 ```php
-EvolveWP_Core_Developer_Flow_Logger::start_flow('data_processing');
+EvolveWP_Boilerplate_Developer_Flow_Logger::start_flow('data_processing');
 ```
 
 ### Log Decision
 ```php
-EvolveWP_Core_Developer_Flow_Logger::log_decision('Check cache', 'HIT');
+EvolveWP_Boilerplate_Developer_Flow_Logger::log_decision('Check cache', 'HIT');
 ```
 
 ### End Flow
 ```php
-EvolveWP_Core_Developer_Flow_Logger::end_flow('Success');
+EvolveWP_Boilerplate_Developer_Flow_Logger::end_flow('Success');
 ```
 
 ### Get Flow Log
 ```php
-$log = EvolveWP_Core_Developer_Flow_Logger::get_flow_log('data_processing');
+$log = EvolveWP_Boilerplate_Developer_Flow_Logger::get_flow_log('data_processing');
 ```
 
 ---

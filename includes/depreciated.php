@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core - Depreciated Functions
+ * Plugin Boilerplate - Depreciated Functions
  *
  * Please add the WordPress core function for triggering and error if a
  * depreciated function is used. 
@@ -9,7 +9,7 @@
  *
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

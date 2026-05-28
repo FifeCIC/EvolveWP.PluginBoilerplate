@@ -1,5 +1,5 @@
 /**
- * EvolveWP Core — Scoped CSS Reset
+ * Plugin Boilerplate — Scoped CSS Reset
  *
  * Normalises rendering ONLY within .plugin-boilerplate-admin-wrap containers.
  * A plugin must never apply a global reset — that breaks the WordPress
@@ -21,7 +21,7 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────
-   Everything below is scoped to EvolveWP Core's own admin content wrapper.
+   Everything below is scoped to Plugin Boilerplate's own admin content wrapper.
    WordPress admin chrome (menus, toolbar, notices) is untouched.
    ───────────────────────────────────────────────────────────────────── */
 
@@ -76,7 +76,7 @@
   text-decoration: underline;
 }
 
-/* Focus ring for interactive elements within EvolveWP Core content */
+/* Focus ring for interactive elements within Plugin Boilerplate content */
 .plugin-boilerplate-admin-wrap a:focus,
 .plugin-boilerplate-admin-wrap button:focus,
 .plugin-boilerplate-admin-wrap input:focus,

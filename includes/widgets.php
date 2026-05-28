@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core - Primary Sidebar Widgets File
+ * Plugin Boilerplate - Primary Sidebar Widgets File
  *
  * @author   Ryan Bayne
  * @category Widgets
- * @package  EvolveWP Core/Widgets
+ * @package  Plugin Boilerplate/Widgets
  * @since    1.0.0
  */
  
@@ -19,6 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Widgets.
  */
 function plugin_boilerplate_register_widgets() {
-    //register_widget( 'EvolveWP_Core_Widget_Example' );
+    //register_widget( 'EvolveWP_Boilerplate_Widget_Example' );
 }
 add_action( 'widgets_init', 'plugin_boilerplate_register_widgets' );

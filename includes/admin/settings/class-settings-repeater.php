@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Settings Repeater Field Handler
+ * Plugin Boilerplate Settings Repeater Field Handler
  *
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin/Settings
+ * @package  Plugin Boilerplate/Admin/Settings
  * @version  1.1.0
  */
 
@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * EvolveWP_Core_Settings_Repeater Class.
+ * EvolveWP_Boilerplate_Settings_Repeater Class.
  */
-class EvolveWP_Core_Settings_Repeater {
+class EvolveWP_Boilerplate_Settings_Repeater {
 
     /**
      * Initialize repeater field functionality.
@@ -34,13 +34,13 @@ class EvolveWP_Core_Settings_Repeater {
             return;
         }
 
-        $option_value = EvolveWP_Core_Admin_Settings::get_option( $value['id'], array() );
+        $option_value = EvolveWP_Boilerplate_Admin_Settings::get_option( $value['id'], array() );
         
         if ( ! is_array( $option_value ) ) {
             $option_value = array();
         }
 
-        $field_description = EvolveWP_Core_Admin_Settings::get_field_description( $value );
+        $field_description = EvolveWP_Boilerplate_Admin_Settings::get_field_description( $value );
         extract( $field_description );
 
         ?>
@@ -206,4 +206,4 @@ class EvolveWP_Core_Settings_Repeater {
     }
 }
 
-EvolveWP_Core_Settings_Repeater::init();
+EvolveWP_Boilerplate_Settings_Repeater::init();

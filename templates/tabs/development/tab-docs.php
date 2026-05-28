@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Documentation Viewer
+ * Plugin Boilerplate Documentation Viewer
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 1.1.0
  */
 
@@ -11,12 +11,12 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * EvolveWP_Core_Admin_Development_Docs Class.
+ * EvolveWP_Boilerplate_Admin_Development_Docs Class.
  *
  * @since   1.1.0
  * @version 1.2.0
  */
-class EvolveWP_Core_Admin_Development_Docs {
+class EvolveWP_Boilerplate_Admin_Development_Docs {
     
     /**
      * Output the documentation viewer.

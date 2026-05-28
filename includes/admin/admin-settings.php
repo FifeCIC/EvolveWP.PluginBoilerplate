@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Admin Settings Class
+ * Plugin Boilerplate Admin Settings Class
  *
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @version  1.0.0
  */
 
@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Settings' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Settings' ) ) :
 
 /**
- * EvolveWP_Core_Admin_Settings Class.
+ * EvolveWP_Boilerplate_Admin_Settings Class.
  */
-class EvolveWP_Core_Admin_Settings {
+class EvolveWP_Boilerplate_Admin_Settings {
 
     /**
      * Setting pages.

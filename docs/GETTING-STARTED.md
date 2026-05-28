@@ -183,7 +183,7 @@ Create `includes/classes/rest-books.php`:
 
 ```php
 <?php
-class MyAwesomePlugin_REST_Books extends EvolveWP_Core_REST_Controller {
+class MyAwesomePlugin_REST_Books extends EvolveWP_Boilerplate_REST_Controller {
     protected $rest_base = 'books';
     
     public function register_routes() {
@@ -219,7 +219,7 @@ Create `includes/admin/settings/settings-books.php`:
 <?php
 if (!defined('ABSPATH')) exit;
 
-class MyAwesomePlugin_Settings_Books extends EvolveWP_Core_Settings_Page {
+class MyAwesomePlugin_Settings_Books extends EvolveWP_Boilerplate_Settings_Page {
     
     public function __construct() {
         $this->id = 'books';
@@ -352,7 +352,7 @@ Use: `wp myawesomeplugin books`
 **Solution**:
 1. Deactivate and reactivate plugin
 2. Check `wp_options` for `plugin_boilerplate_db_version`
-3. Manually run: `EvolveWP_Core_Install::install()`
+3. Manually run: `EvolveWP_Boilerplate_Install::install()`
 
 ---
 
@@ -395,11 +395,11 @@ my-awesome-plugin/
 ```
 
 ### Key Classes
-- `EvolveWP_Core_Install` - Installation and setup
-- `EvolveWP_Core_REST_Controller` - REST API base
-- `EvolveWP_Core_Logger` - Logging system
-- `EvolveWP_Core_AI_Assistant` - AI integration
-- `EvolveWP_Core_Settings_Page` - Settings framework
+- `EvolveWP_Boilerplate_Install` - Installation and setup
+- `EvolveWP_Boilerplate_REST_Controller` - REST API base
+- `EvolveWP_Boilerplate_Logger` - Logging system
+- `EvolveWP_Boilerplate_AI_Assistant` - AI integration
+- `EvolveWP_Boilerplate_Settings_Page` - Settings framework
 
 ### Key Functions
 - `plugin_boilerplate_log()` - Log messages

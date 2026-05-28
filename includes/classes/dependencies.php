@@ -2,7 +2,7 @@
 /**
  * Plugin Dependency Checker
  *
- * @package EvolveWP Core/Dependencies
+ * @package Plugin Boilerplate/Dependencies
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Dependencies {
+class EvolveWP_Boilerplate_Dependencies {
     
     private $dependencies = array();
     
@@ -33,7 +33,7 @@ class EvolveWP_Core_Dependencies {
                     echo '<div class="error"><p>';
                     echo wp_kses_post(sprintf(
                         /* translators: %s: Required plugin name */
-                        __('EvolveWP Core requires %s to be installed and activated.', 'plugin-boilerplate'),
+                        __('Plugin Boilerplate requires %s to be installed and activated.', 'plugin-boilerplate'),
                         '<strong>' . esc_html($dependency['name']) . '</strong>'
                     ));
                     echo '</p></div>';
@@ -43,4 +43,4 @@ class EvolveWP_Core_Dependencies {
     }
 }
 
-return new EvolveWP_Core_Dependencies();
+return new EvolveWP_Boilerplate_Dependencies();

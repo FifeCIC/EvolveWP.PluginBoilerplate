@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Development Views
+ * Plugin Boilerplate Development Views
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 2.0.0
  */
 
@@ -11,12 +11,12 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * EvolveWP_Core_Admin_Development_Page Class
+ * EvolveWP_Boilerplate_Admin_Development_Page Class
  *
  * @since   1.0.0
  * @version 2.0.0
  */
-class EvolveWP_Core_Admin_Development_Page {
+class EvolveWP_Boilerplate_Admin_Development_Page {
 
     /**
      * Return the nonce action string used to sign development-page tab URLs.
@@ -126,7 +126,7 @@ class EvolveWP_Core_Admin_Development_Page {
         ?>
         <div class="wrap plugin-boilerplate-development-wrap">
             <h1>
-                <?php esc_html_e('EvolveWP Core Development', 'plugin-boilerplate'); ?>
+                <?php esc_html_e('Plugin Boilerplate Development', 'plugin-boilerplate'); ?>
                 <?php if (!empty($tab_title)) : ?>
                     <span class="dashicons dashicons-arrow-right-alt2" style="font-size: 0.8em; vertical-align: middle; margin: 0 5px;"></span>
                     <?php echo esc_html($tab_title); ?>
@@ -199,73 +199,73 @@ class EvolveWP_Core_Admin_Development_Page {
                 require_once $tab_dir . 'tab-assets.php';
                 break;
             case 'performance':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Performance')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Performance')) {
                     require_once $tab_dir . 'tab-performance.php';
                 }
-                EvolveWP_Core_Admin_Development_Performance::output();
+                EvolveWP_Boilerplate_Admin_Development_Performance::output();
                 break;
             case 'theme_info':
-                if (!class_exists('EvolveWP_Core_Admin_Development_UI_Library')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_UI_Library')) {
                     require_once $tab_dir . 'tab-theme.php';
                 }
-                EvolveWP_Core_Admin_Development_UI_Library::output();
+                EvolveWP_Boilerplate_Admin_Development_UI_Library::output();
                 break;
             case 'debug_log':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Debug_Log')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Debug_Log')) {
                     require_once $tab_dir . 'tab-debug-log.php';
                 }
-                EvolveWP_Core_Admin_Development_Debug_Log::output();
+                EvolveWP_Boilerplate_Admin_Development_Debug_Log::output();
                 break;
             case 'database':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Database')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Database')) {
                     require_once $tab_dir . 'tab-database.php';
                 }
-                EvolveWP_Core_Admin_Development_Database::output();
+                EvolveWP_Boilerplate_Admin_Development_Database::output();
                 break;
             case 'phpinfo':
-                if (!class_exists('EvolveWP_Core_Admin_Development_PHPInfo')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_PHPInfo')) {
                     require_once $tab_dir . 'tab-phpinfo.php';
                 }
-                EvolveWP_Core_Admin_Development_PHPInfo::output();
+                EvolveWP_Boilerplate_Admin_Development_PHPInfo::output();
                 break;
             case 'tasks':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Tasks_Monitor')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Tasks_Monitor')) {
                     require_once $tab_dir . 'tab-tasks-monitor.php';
                 }
-                EvolveWP_Core_Admin_Development_Tasks_Monitor::output();
+                EvolveWP_Boilerplate_Admin_Development_Tasks_Monitor::output();
                 break;
             case 'libraries':
                 require_once $tab_dir . 'tab-libraries.php';
                 break;
             case 'credits':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Credits')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Credits')) {
                     require_once $tab_dir . 'tab-credits.php';
                 }
-                EvolveWP_Core_Admin_Development_Credits::output();
+                EvolveWP_Boilerplate_Admin_Development_Credits::output();
                 break;
             case 'docs':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Docs')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Docs')) {
                     require_once $tab_dir . 'tab-docs.php';
                 }
-                EvolveWP_Core_Admin_Development_Docs::output();
+                EvolveWP_Boilerplate_Admin_Development_Docs::output();
                 break;
             case 'dev_checklist':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Checklist')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Checklist')) {
                     require_once $tab_dir . 'tab-checklist.php';
                 }
-                EvolveWP_Core_Admin_Development_Checklist::output();
+                EvolveWP_Boilerplate_Admin_Development_Checklist::output();
                 break;
             case 'layouts':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Layouts')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Layouts')) {
                     require_once $tab_dir . 'tab-layouts.php';
                 }
-                EvolveWP_Core_Admin_Development_Layouts::output();
+                EvolveWP_Boilerplate_Admin_Development_Layouts::output();
                 break;
             case 'diagrams':
-                if (!class_exists('EvolveWP_Core_Admin_Development_Diagrams')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_Diagrams')) {
                     require_once $tab_dir . 'tab-diagrams.php';
                 }
-                EvolveWP_Core_Admin_Development_Diagrams::output();
+                EvolveWP_Boilerplate_Admin_Development_Diagrams::output();
                 break;
             case 'architecture':
                 require_once $tab_dir . 'tab-architecture.php';
@@ -280,10 +280,10 @@ class EvolveWP_Core_Admin_Development_Page {
                 require_once $tab_dir . 'tab-capabilities.php';
                 break;
             default:
-                if (!class_exists('EvolveWP_Core_Admin_Development_UI_Library')) {
+                if (!class_exists('EvolveWP_Boilerplate_Admin_Development_UI_Library')) {
                     require_once $tab_dir . 'tab-theme.php';
                 }
-                EvolveWP_Core_Admin_Development_UI_Library::output();
+                EvolveWP_Boilerplate_Admin_Development_UI_Library::output();
                 break;
         }
     }

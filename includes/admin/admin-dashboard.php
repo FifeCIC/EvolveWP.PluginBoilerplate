@@ -1,12 +1,12 @@
 <?php                 
 /**
- * EvolveWP Core - WP Admin Dashboard
+ * Plugin Boilerplate - WP Admin Dashboard
  *
  * Custom dashboard widgets and functionality goes here.  
  *
  * @author   Ryan Bayne
  * @category WordPress Dashboard
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @since    1.0.0
  */
  
@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Dashboard' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Dashboard' ) ) :
 
 /**
- * EvolveWP_Core_Admin_Dashboard Class.
+ * EvolveWP_Boilerplate_Admin_Dashboard Class.
  */
-class EvolveWP_Core_Admin_Dashboard {
+class EvolveWP_Boilerplate_Admin_Dashboard {
 
     /**
      * Init dashboard widgets.
@@ -41,4 +41,4 @@ class EvolveWP_Core_Admin_Dashboard {
 
 endif;
 
-return new EvolveWP_Core_Admin_Dashboard();
+return new EvolveWP_Boilerplate_Admin_Dashboard();

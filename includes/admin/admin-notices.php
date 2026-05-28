@@ -1,12 +1,12 @@
 <?php
 /**
- * EvolveWP Core - Admin Notices
+ * Plugin Boilerplate - Admin Notices
  *
  * Management of notice data and arguments controlling notice presentation. 
  *
  * @author   Ryan Bayne
  * @category User Interface
- * @package  EvolveWP Core/Notices
+ * @package  Plugin Boilerplate/Notices
  * @since    1.0.0
  * @version  1.2.0
  */
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( !class_exists( 'EvolveWP_Core_Admin_Notices') ) :
+if( !class_exists( 'EvolveWP_Boilerplate_Admin_Notices') ) :
 
-class EvolveWP_Core_Admin_Notices {
+class EvolveWP_Boilerplate_Admin_Notices {
 
     /**
     * Stores notices.
@@ -37,7 +37,7 @@ class EvolveWP_Core_Admin_Notices {
     /**
      * Constructor.
      * 
-     * @package EvolveWP Core
+     * @package Plugin Boilerplate
      */
     public static function init() {             
         self::$notices = get_option( 'plugin_boilerplate_admin_notices', array() );
@@ -57,7 +57,7 @@ class EvolveWP_Core_Admin_Notices {
     * Includes HTML5 progress bars.
     * 
     * @author Ryan Bayne
-    * @package EvolveWP Core
+    * @package Plugin Boilerplate
     */    
     public function progress_box( $title, $intro, $progress_array = array() ){    
         echo '
@@ -173,7 +173,7 @@ class EvolveWP_Core_Admin_Notices {
     * @param mixed $message
     * 
     * @author Ryan Bayne
-    * @package EvolveWP Core 
+    * @package Plugin Boilerplate 
     */
     public function info_area( $title, $message, $admin_only = true ){   
         if( $admin_only == true && function_exists('current_user_can') && current_user_can( 'manage_options' ) || $admin_only !== true){
@@ -286,7 +286,7 @@ class EvolveWP_Core_Admin_Notices {
     /**
      * Add a custom notice.
      * 
-     * Example: EvolveWP_Core_Admin_Notices::add_custom_notice( 'mycustomnotice', 'My name is <strong>Ryan Bayne</strong>' );
+     * Example: EvolveWP_Boilerplate_Admin_Notices::add_custom_notice( 'mycustomnotice', 'My name is <strong>Ryan Bayne</strong>' );
      * 
      * @param string $name
      * @param string $notice_html
@@ -328,7 +328,7 @@ class EvolveWP_Core_Admin_Notices {
      */
     public static function update_notice() {
         if ( version_compare( get_option( 'plugin_boilerplate_db_version' ), PLUGIN_BOILERPLATE_VERSION, '<' ) ) {
-            $updater = new EvolveWP_Core_Background_Updater();
+            $updater = new EvolveWP_Boilerplate_Background_Updater();
 
             // Verify nonce and capability before treating the GET parameter as
             // an instruction to run the updater — prevents CSRF and privilege abuse.
@@ -361,4 +361,4 @@ class EvolveWP_Core_Admin_Notices {
 endif;
 
 // Initialize only after WordPress is loaded
-add_action('init', array('EvolveWP_Core_Admin_Notices', 'init'));
+add_action('init', array('EvolveWP_Boilerplate_Admin_Notices', 'init'));

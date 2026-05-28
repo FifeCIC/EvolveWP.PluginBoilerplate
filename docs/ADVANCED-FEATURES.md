@@ -8,7 +8,7 @@ Process large tasks in the background without blocking requests.
 
 ```php
 // Create your background process class
-class My_Background_Process extends EvolveWP_Core_Background_Process {
+class My_Background_Process extends EvolveWP_Boilerplate_Background_Process {
     protected $action = 'my_process';
     
     protected function task( $item ) {
@@ -41,21 +41,21 @@ Store and access objects globally without using globals.
 ```php
 // Store object
 $my_object = new My_Class();
-EvolveWP_Core_Object_Registry::add( 'my_object', $my_object );
+EvolveWP_Boilerplate_Object_Registry::add( 'my_object', $my_object );
 
 // Retrieve object
-$obj = EvolveWP_Core_Object_Registry::get( 'my_object' );
+$obj = EvolveWP_Boilerplate_Object_Registry::get( 'my_object' );
 
 // Update object property
-EvolveWP_Core_Object_Registry::update_var( 'my_object', 'property', 'new_value' );
+EvolveWP_Boilerplate_Object_Registry::update_var( 'my_object', 'property', 'new_value' );
 
 // Check existence
-if ( EvolveWP_Core_Object_Registry::exists( 'my_object' ) ) {
+if ( EvolveWP_Boilerplate_Object_Registry::exists( 'my_object' ) ) {
     // Object exists
 }
 
 // Remove object
-EvolveWP_Core_Object_Registry::remove( 'my_object' );
+EvolveWP_Boilerplate_Object_Registry::remove( 'my_object' );
 ```
 
 ## Data Freshness Manager
@@ -66,7 +66,7 @@ Validate cache freshness and ensure data quality.
 
 ```php
 // Check if data is fresh
-$validation = EvolveWP_Core_Data_Freshness_Manager::validate_freshness( 
+$validation = EvolveWP_Boilerplate_Data_Freshness_Manager::validate_freshness( 
     'my_cache_key', 
     'hourly' 
 );
@@ -76,20 +76,20 @@ if ( $validation['needs_update'] ) {
 }
 
 // Store fresh data
-EvolveWP_Core_Data_Freshness_Manager::set_fresh_data( 
+EvolveWP_Boilerplate_Data_Freshness_Manager::set_fresh_data( 
     'my_cache_key', 
     $data, 
     3600 
 );
 
 // Get fresh data
-$data = EvolveWP_Core_Data_Freshness_Manager::get_fresh_data( 'my_cache_key' );
+$data = EvolveWP_Boilerplate_Data_Freshness_Manager::get_fresh_data( 'my_cache_key' );
 ```
 
 ### Ensure Freshness with Callback
 
 ```php
-$data = EvolveWP_Core_Data_Freshness_Manager::ensure_freshness( 
+$data = EvolveWP_Boilerplate_Data_Freshness_Manager::ensure_freshness( 
     'my_cache_key',
     'hourly',
     function() {
@@ -114,10 +114,10 @@ Track decision flows for debugging (developer mode only).
 
 ```php
 // Start flow
-EvolveWP_Core_Developer_Flow_Logger::start_flow( 'data_processing', 'Processing user data' );
+EvolveWP_Boilerplate_Developer_Flow_Logger::start_flow( 'data_processing', 'Processing user data' );
 
 // Log decision
-EvolveWP_Core_Developer_Flow_Logger::log_decision( 
+EvolveWP_Boilerplate_Developer_Flow_Logger::log_decision( 
     'Check cache', 
     'HIT', 
     'Found cached data', 
@@ -125,14 +125,14 @@ EvolveWP_Core_Developer_Flow_Logger::log_decision(
 );
 
 // Log action
-EvolveWP_Core_Developer_Flow_Logger::log_action( 
+EvolveWP_Boilerplate_Developer_Flow_Logger::log_action( 
     'Fetch API', 
     'Calling external API', 
     array( 'endpoint' => '/users' ) 
 );
 
 // Log cache operation
-EvolveWP_Core_Developer_Flow_Logger::log_cache( 
+EvolveWP_Boilerplate_Developer_Flow_Logger::log_cache( 
     'GET', 
     'user_123', 
     'HIT', 
@@ -140,7 +140,7 @@ EvolveWP_Core_Developer_Flow_Logger::log_cache(
 );
 
 // End flow
-EvolveWP_Core_Developer_Flow_Logger::end_flow( 'Success', null );
+EvolveWP_Boilerplate_Developer_Flow_Logger::end_flow( 'Success', null );
 ```
 
 ### Output
@@ -157,12 +157,12 @@ Displays detailed flow breakdown with:
 ### Background Processing + Object Registry
 
 ```php
-class Data_Import_Process extends EvolveWP_Core_Background_Process {
+class Data_Import_Process extends EvolveWP_Boilerplate_Background_Process {
     protected $action = 'data_import';
     
     protected function task( $item ) {
         // Get shared object
-        $importer = EvolveWP_Core_Object_Registry::get( 'data_importer' );
+        $importer = EvolveWP_Boilerplate_Object_Registry::get( 'data_importer' );
         
         // Process item
         $importer->import( $item );
@@ -175,18 +175,18 @@ class Data_Import_Process extends EvolveWP_Core_Background_Process {
 ### Data Freshness + Flow Logger
 
 ```php
-EvolveWP_Core_Developer_Flow_Logger::start_flow( 'api_request' );
+EvolveWP_Boilerplate_Developer_Flow_Logger::start_flow( 'api_request' );
 
-$data = EvolveWP_Core_Data_Freshness_Manager::ensure_freshness(
+$data = EvolveWP_Boilerplate_Data_Freshness_Manager::ensure_freshness(
     'api_data',
     'hourly',
     function() {
-        EvolveWP_Core_Developer_Flow_Logger::log_action( 'API Call', 'Fetching fresh data' );
+        EvolveWP_Boilerplate_Developer_Flow_Logger::log_action( 'API Call', 'Fetching fresh data' );
         return fetch_from_api();
     }
 );
 
-EvolveWP_Core_Developer_Flow_Logger::end_flow( 'Data retrieved' );
+EvolveWP_Boilerplate_Developer_Flow_Logger::end_flow( 'Data retrieved' );
 ```
 
 ## Best Practices

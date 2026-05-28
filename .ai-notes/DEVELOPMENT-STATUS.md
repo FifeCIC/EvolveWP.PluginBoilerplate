@@ -258,7 +258,7 @@
 3. **Remove unused features** - Delete what you don't need
 4. **Add your features** - Build on the solid foundation
 
-### For EvolveWP Core Development
+### For Plugin Boilerplate Development
 1. **Use WPSeed as base** - Copy entire structure
 2. **Add EvolveWP-specific features** - Build on top
 3. **Customize Development Dashboard** - Add EvolveWP tabs
@@ -284,7 +284,7 @@ The boilerplate now includes:
 - ✅ Comprehensive documentation
 - ✅ Battle-tested libraries
 
-**Status**: Ready for real-world use, distribution, and as a foundation for EvolveWP Core.
+**Status**: Ready for real-world use, distribution, and as a foundation for Plugin Boilerplate.
 
 ---
 

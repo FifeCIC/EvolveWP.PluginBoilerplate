@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Installation Class
+ * Plugin Boilerplate Installation Class
  *
- * @package EvolveWP Core/Classes
+ * @package Plugin Boilerplate/Classes
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Install {
+class EvolveWP_Boilerplate_Install {
 
     public function __construct() {
         register_activation_hook(PLUGIN_BOILERPLATE_PLUGIN_FILE, array($this, 'install'));
@@ -54,7 +54,7 @@ class EvolveWP_Core_Install {
     private function create_roles() {
         add_role(
             'plugin_boilerplate_user',
-            __('EvolveWP Core User', 'plugin-boilerplate'),
+            __('Plugin Boilerplate User', 'plugin-boilerplate'),
             array(
                 'read' => true,
                 'manage_plugin-boilerplate' => true
@@ -119,4 +119,4 @@ class EvolveWP_Core_Install {
     }
 }
 
-new EvolveWP_Core_Install();
+new EvolveWP_Boilerplate_Install();

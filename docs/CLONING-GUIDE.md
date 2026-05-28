@@ -1,192 +1,237 @@
-# WPSeed Cloning Guide
+# EvolveWP Plugin Cloning Guide
 
-> How to create a new EvolveWP plugin from WPSeed. Follow every step in order.
-> This document is also the specification for the automated `wp wpseed clone`
-> command (Task 6.2).
+> How to create a new EvolveWP ecosystem plugin from the PluginBoilerplate.
+> Follow every step in order. A PowerShell script (`clone-plugin.ps1`) automates
+> steps 1–7.
+>
+> **Updated**: April 2026 — corrected token order, added legacy class prefix,
+> documented lessons from OpsStudio clone.
 
 ---
 
 ## Before You Start
 
 You need:
-- The WPSeed plugin directory (the `Composer` branch for new plugins)
-- Your new plugin's details:
-  - **Slug** — lowercase, hyphens, no spaces. e.g. `evolvewp-verifier`
-  - **Name** — human-readable. e.g. `EvolveWP.Verifier`
-  - **Prefix** — short lowercase, used for functions/options. e.g. `evolvewp_verifier`
-  - **Namespace** — PascalCase. e.g. `EvolveWP\Verifier`
-  - **Constant prefix** — uppercase. e.g. `EVOLVEWP_VERIFIER`
-  - **Text domain** — same as slug. e.g. `evolvewp-verifier`
+- The `EvolveWP.PluginBoilerplate` directory (the cloning source)
+- A target directory that already has a `.git` folder (cloned from GitHub)
+- Your new plugin's details (see Planned Clones table below)
+
+**The PluginBoilerplate must never be activated** alongside Core or any real
+plugin. It is a cloning source only.
 
 ---
 
-## Step 1 — Copy the directory
+## The 7 Tokens
 
-Copy the entire WPSeed plugin folder to a new folder named after your slug:
+All replacements are case-sensitive. **Order matters** — namespace must be
+replaced before class name to prevent double-prefixing.
 
-```
-wp-content/plugins/plugin-boilerplate/          ← source
-wp-content/plugins/evolvewp-verifier/  ← destination
-```
+| # | Find | Replace With | Example (OpsStudio) |
+|---|---|---|---|
+| 1 | `EvolveWP\PluginBoilerplate\` | `{Namespace}\` | `EvolveWP\OpsStudio\` |
+| 2 | `PLUGIN_BOILERPLATE_` | `{CONSTANT_PREFIX_}` | `EVOLVEWP_OPS_` |
+| 3 | `EvolveWP_Boilerplate_` | `{Legacy_Class_Prefix_}` | `EvolveWP_Ops_` |
+| 4 | `plugin_boilerplate_` | `{function_prefix_}` | `evolvewp_ops_` |
+| 5 | `plugin-boilerplate` | `{slug}` | `evolvewp-opsstudio` |
+| 6 | `PluginBoilerplate` | `{ClassName}` | `EvolveWPOpsStudio` |
+| 7 | `Plugin Boilerplate` | `{Display Name}` | `EvolveWP OpsStudio` |
 
-Do **not** rename or delete the WPSeed source — it stays as the master boilerplate.
+### Why This Order?
 
----
+- **Namespace (#1) before class name (#6)**: The namespace token
+  `EvolveWP\PluginBoilerplate\` contains `PluginBoilerplate`. If the class
+  name replacement runs first, it becomes `EvolveWP\EvolveWPOpsStudio\` — wrong.
+- **Legacy class prefix (#3) early**: `EvolveWP_Boilerplate_` is the prefix for
+  ~40 non-namespaced classes. Missing this causes `Cannot redeclare class`
+  fatal errors when running alongside Core.
+- **Display name (#7) last**: Catches remaining human-readable strings in
+  PHPDoc, admin UI, and translatable text.
 
-## Step 2 — Rename the main plugin file
+### What to Exclude
 
-Inside the new folder, rename `plugin-boilerplate.php` to match your slug:
-
-```
-evolvewp-verifier/plugin-boilerplate.php  →  evolvewp-verifier/evolvewp-verifier.php
-```
-
----
-
-## Step 3 — Find-and-replace all prefix variants
-
-Run these replacements **case-sensitively** in the following order. Use your
-editor's project-wide find-and-replace (not case-insensitive — order matters).
-
-| Find | Replace with | Notes |
-|---|---|---|
-| `PluginBoilerplate` | `EvolveWP_Verifier` | Main class name in loader.php |
-| `PLUGIN_BOILERPLATE_` | `EVOLVEWP_VERIFIER_` | All constants |
-| `EvolveWP\Core\\` | `EvolveWP\\Verifier\\` | Namespace in PHP files |
-| `EvolveWP_Core_` | `EvolveWP_Verifier_` | Legacy global class prefixes |
-| `plugin_boilerplate_` | `evolvewp_verifier_` | Functions, options, hooks |
-| `plugin-boilerplate-` | `evolvewp-verifier-` | CSS/JS handles, text domain in some places |
-| `wpseed` | `evolvewp-verifier` | Text domain, remaining slug references |
-
-**Check after each replacement** that you haven't broken any string that should
-not have been changed (e.g. comments referencing WPSeed by name for attribution).
+- `vendor/` — update `vendor/composer/autoload_psr4.php` manually instead
+- `libraries/` — third-party code, never modify
+- `.git/` — preserve the target repo's git history
 
 ---
 
-## Step 4 — Update the plugin file header
+## Automated Cloning (Recommended)
 
-Open `evolvewp-verifier.php` and update the WordPress plugin header:
+Use the PowerShell script in the PluginBoilerplate directory:
+
+```powershell
+cd c:\wamp64\www\Ecosystem\wp-content\plugins\EvolveWP.PluginBoilerplate
+
+.\clone-plugin.ps1 `
+    -ClassName "EvolveWPClientJourney" `
+    -ConstantPrefix "EVOLVEWP_CJ_" `
+    -Namespace "EvolveWP\ClientJourney" `
+    -FunctionPrefix "evolvewp_cj_" `
+    -Slug "evolvewp-clientjourney" `
+    -DisplayName "EvolveWP ClientJourney" `
+    -LegacyPrefix "EvolveWP_CJ_" `
+    -Description "CRM, proposals, and client portal for the EvolveWP ecosystem." `
+    -GitHubRepo "EvolveWP.ClientJourney"
+```
+
+The script:
+1. Copies files (preserving target `.git`)
+2. Renames main plugin file
+3. Runs all 7 replacements in correct order
+4. Updates plugin header and composer.json
+5. Updates the Composer autoloader
+6. Reports any stale tokens
+
+After the script, you still need to:
+- Write a plugin-specific `README.md`
+- Restart Apache (OPcache)
+- Activate in WordPress and check `debug.log`
+- Commit and push
+
+---
+
+## Manual Cloning Steps
+
+If not using the script:
+
+### Step 1 — Copy the directory
+
+Copy all files from `EvolveWP.PluginBoilerplate/` into the target directory.
+**Preserve the target's `.git` folder** — do not overwrite or delete it.
+
+```
+robocopy "EvolveWP.PluginBoilerplate" "EvolveWPClientJourney" /E /XD .git /IS /IT
+```
+
+### Step 2 — Rename the main plugin file
+
+```
+plugin-boilerplate.php  →  evolvewp-clientjourney.php
+```
+
+### Step 3 — Run all 7 token replacements
+
+Run in the order shown in the table above. Exclude `vendor/`, `libraries/`,
+and `.git/` directories.
+
+### Step 4 — Update the plugin file header
 
 ```php
 /**
- * Plugin Name: EvolveWP.Verifier
- * Plugin URI:  https://evolvewp.dev/plugins/verifier
- * Description: WordPress plugin code verification tool.
+ * Plugin Name: EvolveWP ClientJourney
+ * Plugin URI:  https://evolvewp.dev/plugins/clientjourney
+ * Github URI:  https://github.com/FifeCIC/EvolveWP.ClientJourney
+ * Description: CRM, proposals, and client portal for the EvolveWP ecosystem.
  * Version:     1.0.0
- * Author:      Ryan Bayne
+ * Author:      FifeCIC
  * Author URI:  https://evolvewp.dev
- * Text Domain: evolvewp-verifier
+ * Text Domain: evolvewp-clientjourney
  * Domain Path: /i18n/languages/
+ *
+ * @package EvolveWP\ClientJourney
  */
 ```
 
----
-
-## Step 5 — Update composer.json
-
-Open `composer.json` and update:
+### Step 5 — Update composer.json
 
 ```json
 {
-    "name": "evolvewp/evolvewp-verifier",
-    "description": "EvolveWP.Verifier — WordPress plugin code verification.",
+    "name": "evolvewp/evolvewp-clientjourney",
+    "description": "EvolveWP ClientJourney — CRM, proposals, and client portal.",
     "autoload": {
         "psr-4": {
-            "EvolveWP\\Verifier\\": "includes/"
+            "EvolveWP\\ClientJourney\\": "includes/"
         }
     }
 }
 ```
 
-Run `composer install --no-dev` to regenerate `vendor/autoload.php` with the
-new namespace. If Composer is not available, manually update
-`vendor/composer/autoload_psr4.php`:
+### Step 6 — Update the Composer autoloader
+
+Edit `vendor/composer/autoload_psr4.php`:
 
 ```php
 return array(
-    'EvolveWP\\Verifier\\' => array( $baseDir . '/includes' ),
+    'EvolveWP\\ClientJourney\\' => array( $baseDir . '/includes' ),
 );
 ```
 
----
+### Step 7 — Write README.md
 
-## Step 6 — Delete example/demo files
+Replace the boilerplate README with plugin-specific content.
 
-Remove files marked **Yes** in the `Delete on clone?` column of
-`docs/FILE-INVENTORY.md`. At minimum:
+### Step 8 — Update $GLOBALS variable
 
-```
-includes/classes/rest-example.php
-includes/classes/unified-feature.php
-includes/admin/mainviews/default-advanced.php
-includes/admin/mainviews/default-items.php
-includes/admin/mainviews/listtable-demo-advanced.php
-includes/admin/mainviews/listtable-demo.php
-includes/admin/mainviews/team-advanced.php
-includes/admin/mainviews/team-items.php
-includes/admin/presentation/barchart.php
-includes/admin/settings/settings-example.php
-includes/admin/settings/settings-repeater-example.php
-```
-
-Also remove any `include_once` references to these files from `loader.php`.
-
----
-
-## Step 7 — Update URL constants
-
-In `loader.php` (inside `define_constants()`), update the support and author
-URL constants to point to your plugin's own resources:
+In `loader.php`, the last line boots the plugin into a global. Update the
+variable name:
 
 ```php
-define( 'EVOLVEWP_VERIFIER_HOME',   'https://evolvewp.dev/plugins/verifier' );
-define( 'EVOLVEWP_VERIFIER_GITHUB', 'https://github.com/evolvewp/evolvewp-verifier' );
-define( 'EVOLVEWP_VERIFIER_DOCS',   'https://evolvewp.dev/docs/verifier' );
+$GLOBALS['evolvewp_cj'] = EvolveWPClientJourney();
+```
+
+### Step 9 — Restart Apache and activate
+
+1. Restart Apache (clears OPcache)
+2. Activate from WordPress Plugins screen
+3. Check `wp-content/debug.log` for errors
+4. Confirm admin menu appears
+
+### Step 10 — Commit and push
+
+```bash
+git add .
+git commit -m "Initial clone from PluginBoilerplate"
+git push origin main
 ```
 
 ---
 
-## Step 8 — Update the ecosystem self-registration
+## Planned Clones
 
-In `loader.php`, find the `plugin_boilerplate_ecosystem_register` action and update the
-plugin registration to use your new slug and details:
-
-```php
-add_action( 'plugin_boilerplate_ecosystem_register', function() {
-    plugin_boilerplate_ecosystem()->register_plugin( 'evolvewp-verifier', array(
-        'name'    => 'EvolveWP.Verifier',
-        'version' => EVOLVEWP_VERIFIER_VERSION,
-        'path'    => EVOLVEWP_VERIFIER_PLUGIN_DIR_PATH,
-        'url'     => plugins_url( '/', EVOLVEWP_VERIFIER_PLUGIN_FILE ),
-    ) );
-} );
-```
+| Plugin | Class Name | Constant Prefix | Legacy Prefix | Namespace | Function Prefix | Slug |
+|---|---|---|---|---|---|---|
+| OpsStudio | `EvolveWPOpsStudio` | `EVOLVEWP_OPS_` | `EvolveWP_Ops_` | `EvolveWP\OpsStudio` | `evolvewp_ops_` | `evolvewp-opsstudio` |
+| ClientJourney | `EvolveWPClientJourney` | `EVOLVEWP_CJ_` | `EvolveWP_CJ_` | `EvolveWP\ClientJourney` | `evolvewp_cj_` | `evolvewp-clientjourney` |
+| PredictiveERP | `EvolveWPPredictiveERP` | `EVOLVEWP_ERP_` | `EvolveWP_ERP_` | `EvolveWP\PredictiveERP` | `evolvewp_erp_` | `evolvewp-predictiveerp` |
+| Intranet | `EvolveWPIntranet` | `EVOLVEWP_INTRANET_` | `EvolveWP_Intranet_` | `EvolveWP\Intranet` | `evolvewp_intranet_` | `evolvewp-intranet` |
+| WorkplaceHub | `EvolveWPWorkplaceHub` | `EVOLVEWP_WH_` | `EvolveWP_WH_` | `EvolveWP\WorkplaceHub` | `evolvewp_wh_` | `evolvewp-workplacehub` |
 
 ---
 
-## Step 9 — Activation check
+## Troubleshooting
 
-1. Activate the plugin from the WordPress Plugins screen
-2. Confirm no PHP errors in `wp-content/debug.log`
-3. Confirm the plugin menu appears in wp-admin
-4. Confirm the ecosystem registry recognises the new plugin
+### "Cannot redeclare function/class"
+A function or class name collides with Core or another plugin. Check:
+- Was the legacy class prefix replacement (#3) run? Search for `EvolveWP_Boilerplate_`
+- Does `functions.php` still contain `evolvewp_register_module()`? Remove it — that's Core-only.
 
-If activation fails, check:
-- All prefix replacements completed (Step 3)
-- `composer.json` namespace matches PHP namespace declarations (Step 5)
-- No references to deleted example files remain in `loader.php` (Step 6)
+### "Class not found" after activation
+The Composer autoloader has the wrong namespace. Check:
+- `vendor/composer/autoload_psr4.php` maps the correct namespace to `includes/`
+- `composer.json` has the correct PSR-4 entry
+
+### Plugin activates but shows "EvolveWP Core" in admin UI
+The display name replacement (#7) missed some strings. Search for
+`Plugin Boilerplate` (case-sensitive) — any remaining instances are bugs.
+
+### Changes not taking effect after editing PHP files
+OPcache is serving stale files. Restart Apache via WAMP tray icon.
 
 ---
 
 ## Checklist
 
-- [ ] Directory copied and renamed
-- [ ] Main plugin file renamed
-- [ ] All 8 find-and-replace passes completed
-- [ ] Plugin file header updated
-- [ ] `composer.json` updated and autoloader regenerated
-- [ ] Example files deleted
-- [ ] URL constants updated
-- [ ] Ecosystem self-registration updated
-- [ ] Plugin activates without errors
+- [ ] Files copied (preserving `.git`)
+- [ ] Main plugin file renamed to `{slug}.php`
+- [ ] All 7 token replacements completed in order
+- [ ] Plugin file header updated (name, description, URIs, @package)
+- [ ] `composer.json` updated (name, description, PSR-4 namespace)
+- [ ] `vendor/composer/autoload_psr4.php` updated
+- [ ] `$GLOBALS` variable renamed in `loader.php`
+- [ ] `README.md` written with plugin-specific content
+- [ ] `evolvewp_register_module()` NOT present in `functions.php`
+- [ ] Apache restarted
+- [ ] Plugin activates without PHP errors
 - [ ] Plugin appears in wp-admin menu
+- [ ] No stale boilerplate tokens remain (search all 7)
+- [ ] Committed and pushed to GitHub

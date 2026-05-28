@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Development Tasks
+ * Plugin Boilerplate Development Tasks
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 1.0.0
  */
 
@@ -11,9 +11,9 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * EvolveWP_Core_Admin_Development_Tasks Class
+ * EvolveWP_Boilerplate_Admin_Development_Tasks Class
  */
-class EvolveWP_Core_Admin_Development_Tasks {
+class EvolveWP_Boilerplate_Admin_Development_Tasks {
     
     /**
      * Output the tasks view

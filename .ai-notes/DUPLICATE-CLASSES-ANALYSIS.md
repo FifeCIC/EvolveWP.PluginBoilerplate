@@ -22,7 +22,7 @@ WPSeed has duplicate background processing implementations that need consolidati
 
 ### Files Using These Classes
 1. `loader.php` - Loads original classes
-2. `examples/background-process-example.php` - Example using EvolveWP_Core_Background_Process
+2. `examples/background-process-example.php` - Example using EvolveWP_Boilerplate_Background_Process
 3. `examples/task-scheduler-examples.php` - References both systems
 
 ## Recommended Solution

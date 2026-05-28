@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Unified Logger
+ * Plugin Boilerplate Unified Logger
  * Enhanced logging with loop counting and streamlined traces
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 2.0.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Unified_Logger {
+class EvolveWP_Boilerplate_Unified_Logger {
     
     private static $instance = null;
     private $logs = array();
@@ -261,7 +261,7 @@ class EvolveWP_Core_Unified_Logger {
         }
 
         // write_log() handles the WP_DEBUG / WP_DEBUG_LOG gate — no error_log() used.
-        $this->write_log( 'EvolveWP_Core_Trace: ' . $output );
+        $this->write_log( 'EvolveWP_Boilerplate_Trace: ' . $output );
     }
     
     /**
@@ -294,7 +294,7 @@ class EvolveWP_Core_Unified_Logger {
         $total_logs = count( $this->logs );
         $duration   = ( microtime( true ) - $this->start_time ) * 1000;
 
-        $this->write_log( "EvolveWP_Core_Summary: Context '{$this->current_context}' - {$total_logs} logs in " . number_format( $duration, 2 ) . 'ms' );
+        $this->write_log( "EvolveWP_Boilerplate_Summary: Context '{$this->current_context}' - {$total_logs} logs in " . number_format( $duration, 2 ) . 'ms' );
 
         // Tally entries by type so the summary shows which trace types fired most.
         $type_counts = array();
@@ -307,13 +307,13 @@ class EvolveWP_Core_Unified_Logger {
         }
 
         foreach ( $type_counts as $type => $count ) {
-            $this->write_log( "EvolveWP_Core_Summary: {$type}: {$count}" );
+            $this->write_log( "EvolveWP_Boilerplate_Summary: {$type}: {$count}" );
         }
 
         // Include loop iteration counts so runaway loops are visible in the summary.
         $loop_summary = $this->get_loop_summary();
         if ( ! empty( $loop_summary ) ) {
-            $this->write_log( 'EvolveWP_Core_Summary: Loops: ' . wp_json_encode( $loop_summary ) );
+            $this->write_log( 'EvolveWP_Boilerplate_Summary: Loops: ' . wp_json_encode( $loop_summary ) );
         }
     }
     
@@ -351,7 +351,7 @@ function plugin_boilerplate_js_log_helper() {
         startContext: function(context) {
             this.context = context;
             this.loopCounters = {};
-            console.log(`EvolveWP_Core_JS: CONTEXT_START - ${context}`);
+            console.log(`EvolveWP_Boilerplate_JS: CONTEXT_START - ${context}`);
         },
         
         trace: function(type, message, data = {}) {
@@ -363,7 +363,7 @@ function plugin_boilerplate_js_log_helper() {
             }
             this.loopCounters[logKey]++;
             
-            const output = `EvolveWP_Core_JS: [${type}] ${this.context} (+${timestamp.toFixed(2)}ms): ${message}`;
+            const output = `EvolveWP_Boilerplate_JS: [${type}] ${this.context} (+${timestamp.toFixed(2)}ms): ${message}`;
             
             if (this.loopCounters[logKey] > 1) {
                 console.log(`${output} (×${this.loopCounters[logKey]})`);
@@ -372,7 +372,7 @@ function plugin_boilerplate_js_log_helper() {
             }
             
             if (Object.keys(data).length > 0) {
-                console.log('EvolveWP_Core_JS_Data:', data);
+                console.log('EvolveWP_Boilerplate_JS_Data:', data);
             }
         },
         
@@ -412,7 +412,7 @@ function plugin_boilerplate_js_log_helper() {
             });
             
             if (Object.keys(loopSummary).length > 0) {
-                console.log('EvolveWP_Core_JS_Summary: Loops:', loopSummary);
+                console.log('EvolveWP_Boilerplate_JS_Summary: Loops:', loopSummary);
             }
             
             this.context = '';
@@ -427,9 +427,9 @@ add_action('admin_footer', 'plugin_boilerplate_js_log_helper');
 
 // Global helper functions
 function plugin_boilerplate_log() {
-    return EvolveWP_Core_Unified_Logger::instance();
+    return EvolveWP_Boilerplate_Unified_Logger::instance();
 }
 
 function plugin_boilerplate_trace($type, $message, $data = array()) {
-    EvolveWP_Core_Unified_Logger::instance()->trace($type, $message, $data);
+    EvolveWP_Boilerplate_Unified_Logger::instance()->trace($type, $message, $data);
 }

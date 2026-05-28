@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Development Diagrams View
+ * Plugin Boilerplate Development Diagrams View
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Admin_Development_Diagrams {
+class EvolveWP_Boilerplate_Admin_Development_Diagrams {
     
     public static function output() {
         // Enqueue local Mermaid.js (download from https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js)
@@ -18,7 +18,7 @@ class EvolveWP_Core_Admin_Development_Diagrams {
         ?>
         <div class="plugin-boilerplate-diagrams-container">
             <div class="diagrams-header">
-                <h2><?php esc_html_e('EvolveWP Core System Diagrams', 'plugin-boilerplate'); ?></h2>
+                <h2><?php esc_html_e('Plugin Boilerplate System Diagrams', 'plugin-boilerplate'); ?></h2>
                 <p><?php esc_html_e('Visual diagrams showing plugin architecture, data flow, and system processes.', 'plugin-boilerplate'); ?></p>
             </div>
             
@@ -81,7 +81,7 @@ class EvolveWP_Core_Admin_Development_Diagrams {
             const diagrams = {
                 'plugin-structure': {
                     title: 'Plugin Structure',
-                    description: 'File and folder organization of EvolveWP Core plugin',
+                    description: 'File and folder organization of Plugin Boilerplate plugin',
                     mermaid: `
                         flowchart TD
                             A[plugin-boilerplate/] --> B[includes/]
@@ -114,17 +114,17 @@ class EvolveWP_Core_Admin_Development_Diagrams {
                     description: 'Core classes and their relationships',
                     mermaid: `
                         flowchart TD
-                            A[PluginBoilerplate] --> B[EvolveWP_Core_Install]
-                            A --> C[EvolveWP_Core_Logger]
-                            A --> D[EvolveWP_Core_REST_Controller]
-                            A --> E[EvolveWP_Core_AI_Assistant]
+                            A[PluginBoilerplate] --> B[EvolveWP_Boilerplate_Install]
+                            A --> C[EvolveWP_Boilerplate_Logger]
+                            A --> D[EvolveWP_Boilerplate_REST_Controller]
+                            A --> E[EvolveWP_Boilerplate_AI_Assistant]
                             
-                            D --> F[EvolveWP_Core_REST_Example]
+                            D --> F[EvolveWP_Boilerplate_REST_Example]
                             D --> G[Custom REST Controllers]
                             
-                            E --> H[EvolveWP_Core_AI_Provider_Factory]
-                            H --> I[EvolveWP_Core_AI_Provider_Gemini]
-                            H --> J[EvolveWP_Core_AI_Provider_AmazonQ]
+                            E --> H[EvolveWP_Boilerplate_AI_Provider_Factory]
+                            H --> I[EvolveWP_Boilerplate_AI_Provider_Gemini]
+                            H --> J[EvolveWP_Boilerplate_AI_Provider_AmazonQ]
                             
                             style A fill:#e3f2fd
                             style D fill:#fff3e0
@@ -133,7 +133,7 @@ class EvolveWP_Core_Admin_Development_Diagrams {
                 },
                 'hook-system': {
                     title: 'WordPress Hook System',
-                    description: 'Actions and filters used throughout EvolveWP Core',
+                    description: 'Actions and filters used throughout Plugin Boilerplate',
                     mermaid: `
                         flowchart LR
                             A[WordPress Init] --> B[plugin_boilerplate_loaded]
@@ -221,7 +221,7 @@ class EvolveWP_Core_Admin_Development_Diagrams {
                     description: 'File-based and database logging architecture',
                     mermaid: `
                         flowchart TD
-                            A[Event Occurs] --> B[EvolveWP_Core_Logger]
+                            A[Event Occurs] --> B[EvolveWP_Boilerplate_Logger]
                             B --> C{Log Level}
                             C -->|Error| D[Error Log]
                             C -->|Info| E[Info Log]
@@ -244,8 +244,8 @@ class EvolveWP_Core_Admin_Development_Diagrams {
                     description: 'AI provider management and request routing',
                     mermaid: `
                         flowchart TD
-                            A[AI Request] --> B[EvolveWP_Core_AI_Assistant]
-                            B --> C[EvolveWP_Core_AI_Router]
+                            A[AI Request] --> B[EvolveWP_Boilerplate_AI_Assistant]
+                            B --> C[EvolveWP_Boilerplate_AI_Router]
                             C --> D{Task Type}
                             D -->|Code Gen| E[Amazon Q]
                             D -->|Analysis| F[Gemini]

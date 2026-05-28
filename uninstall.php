@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall EvolveWP Core.
+ * Uninstall Plugin Boilerplate.
  *
  * Runs once when the plugin is deleted via the WordPress Plugins screen.
  * Direct $wpdb queries are used throughout because bulk DELETE by LIKE
@@ -13,7 +13,7 @@
  *
  * @author      Ryan Bayne
  * @category    Core
- * @package     EvolveWP Core/Uninstaller
+ * @package     Plugin Boilerplate/Uninstaller
  * @version     2.0.0
  */
 

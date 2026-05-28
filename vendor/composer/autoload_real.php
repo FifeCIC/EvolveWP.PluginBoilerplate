@@ -1,6 +1,6 @@
 <?php
 
-// autoload_real.php — EvolveWP Core PSR-4 bootstrap.
+// autoload_real.php — Plugin Boilerplate PSR-4 bootstrap.
 //
 // Multiple plugins on the same WordPress install each ship a Composer autoloader.
 // Creating a second ClassLoader instance and registering it causes files already
@@ -8,7 +8,7 @@
 // declarations that must appear before any other statement.
 //
 // The correct approach: find the ClassLoader already registered via spl_autoload,
-// and add EvolveWP Core's PSR-4 prefix to it. If no ClassLoader exists yet (EvolveWP Core is
+// and add Plugin Boilerplate's PSR-4 prefix to it. If no ClassLoader exists yet (Plugin Boilerplate is
 // the first plugin to load), create one and register it.
 
 class ComposerAutoloaderInitPluginBoilerplate {
@@ -17,7 +17,7 @@ class ComposerAutoloaderInitPluginBoilerplate {
     private static $loader = null;
 
     /**
-     * Register the EvolveWP Core\ PSR-4 prefix with the active Composer ClassLoader.
+     * Register the Plugin Boilerplate\ PSR-4 prefix with the active Composer ClassLoader.
      *
      * @return \Composer\Autoload\ClassLoader
      */

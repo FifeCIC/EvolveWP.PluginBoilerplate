@@ -29,14 +29,14 @@ In your plugin's main file or configuration:
 
 ```php
 // Initialize license manager
-$license_manager = new EvolveWP_Core_License_Manager(
+$license_manager = new EvolveWP_Boilerplate_License_Manager(
     'https://your-license-server.com',  // License server URL
     'your-product-id',                   // Unique product ID
     '1.0.0'                              // Product version
 );
 
 // Initialize extension installer
-$extension_installer = new EvolveWP_Core_Extension_Installer(
+$extension_installer = new EvolveWP_Boilerplate_Extension_Installer(
     'https://your-extension-server.com'  // Extension server URL
 );
 ```
@@ -235,7 +235,7 @@ POST /wp-json/plugin-boilerplate-extensions/v1/download
 ### Check if License is Active
 
 ```php
-$license_manager = new EvolveWP_Core_License_Manager(
+$license_manager = new EvolveWP_Boilerplate_License_Manager(
     PLUGIN_BOILERPLATE_LICENSE_SERVER,
     PLUGIN_BOILERPLATE_PRODUCT_ID,
     PLUGIN_BOILERPLATE_VERSION
@@ -260,7 +260,7 @@ if ( $license_info ) {
 ### Install Extension
 
 ```php
-$installer = new EvolveWP_Core_Extension_Installer( PLUGIN_BOILERPLATE_LICENSE_SERVER );
+$installer = new EvolveWP_Boilerplate_Extension_Installer( PLUGIN_BOILERPLATE_LICENSE_SERVER );
 
 $result = $installer->install_extension( 'premium-feature', $license_key );
 

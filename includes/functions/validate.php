@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core - Validation Functions
+ * Plugin Boilerplate - Validation Functions
  *
  * Functions with strict conditions. Functions here can have unlimited arguments
  * and should not be constrained for the sake for performance. The input should
@@ -8,7 +8,7 @@
  *
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

@@ -1,12 +1,12 @@
 <?php  
 /**
- * EvolveWP Core - Pointers
+ * Plugin Boilerplate - Pointers
  *
  * Manage multiple step tutorial like process using WP core points.  
  *
  * @author   Ryan Bayne
  * @category Support
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @since    1.0.0
  */
  
@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
                       
-if ( ! class_exists( 'EvolveWP_Core_Admin_Pointers' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Pointers' ) ) :
 
 /**
- * EvolveWP_Core_Admin_Pointers Class.
+ * EvolveWP_Boilerplate_Admin_Pointers Class.
  */
-class EvolveWP_Core_Admin_Pointers {
+class EvolveWP_Boilerplate_Admin_Pointers {
 
     /**
      * Constructor.
@@ -135,4 +135,4 @@ class EvolveWP_Core_Admin_Pointers {
 
 endif;
 
-new EvolveWP_Core_Admin_Pointers();
+new EvolveWP_Boilerplate_Admin_Pointers();

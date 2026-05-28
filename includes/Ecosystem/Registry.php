@@ -4,7 +4,7 @@
  *
  * ROLE: ecosystem-bridge
  *
- * Single responsibility: Maintain a registry of active EvolveWP Core-based plugins
+ * Single responsibility: Maintain a registry of active Plugin Boilerplate-based plugins
  * and provide a shared API for feature detection, menu placement, and
  * resource sharing between ecosystem plugins.
  *
@@ -30,9 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Manages cross-plugin communication and resource sharing for the EvolveWP Core ecosystem.
+ * Manages cross-plugin communication and resource sharing for the Plugin Boilerplate ecosystem.
  *
- * Single responsibility: Track which EvolveWP Core-based plugins are active and expose
+ * Single responsibility: Track which Plugin Boilerplate-based plugins are active and expose
  * a shared API so they can coordinate menus, logging, and background tasks.
  * Does NOT handle menu rendering (Menu_Manager) or plugin installation (Installer).
  *
@@ -77,7 +77,7 @@ class Registry {
 	/**
 	 * Register a plugin with the ecosystem.
 	 *
-	 * Called by each EvolveWP Core-based plugin on the `plugin_boilerplate_ecosystem_register`
+	 * Called by each Plugin Boilerplate-based plugin on the `plugin_boilerplate_ecosystem_register`
 	 * action. Once registered, the plugin appears in the ecosystem dashboard,
 	 * its shared resources are merged into unified views, and feature detection
 	 * becomes available via is_registered().
@@ -369,7 +369,7 @@ class Registry {
 				esc_html(
 					sprintf(
 						/* translators: 1: required version, 2: installed version */
-						__( 'requires EvolveWP Core %1$s or later. Installed version: %2$s. Some features may not work correctly.', 'plugin-boilerplate' ),
+						__( 'requires Plugin Boilerplate %1$s or later. Installed version: %2$s. Some features may not work correctly.', 'plugin-boilerplate' ),
 						$required,
 						$actual ?: __( 'not installed', 'plugin-boilerplate' )
 					)

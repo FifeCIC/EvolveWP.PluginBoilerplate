@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Development - Debug Log Tab
+ * Plugin Boilerplate Development - Debug Log Tab
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Admin_Development_Debug_Log {
+class EvolveWP_Boilerplate_Admin_Development_Debug_Log {
     public static function output() {
         $debug_file = WP_CONTENT_DIR . '/debug.log';
         $log_exists = file_exists($debug_file);

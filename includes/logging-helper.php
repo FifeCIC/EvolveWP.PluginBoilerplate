@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Logging Helper
+ * Plugin Boilerplate Logging Helper
  * 
  * Simple static methods for logging to specific files
  * 
- * @package EvolveWP Core/Core
+ * @package Plugin Boilerplate/Core
  * @version 1.0.0
  */
 
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Logging_Helper {
+class EvolveWP_Boilerplate_Logging_Helper {
     
     /**
      * Log general application events

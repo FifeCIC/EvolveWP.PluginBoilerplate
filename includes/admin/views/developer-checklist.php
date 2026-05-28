@@ -2,13 +2,13 @@
 /**
  * Developer Checklist View
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  */
 
 if (!defined('ABSPATH')) exit;
 
 // Only show in dev environment
-if (!EvolveWP_Core_Developer_Mode::is_dev_environment()) {
+if (!EvolveWP_Boilerplate_Developer_Mode::is_dev_environment()) {
     wp_die('Access denied');
 }
 

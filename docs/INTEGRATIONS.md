@@ -361,7 +361,7 @@ if (!class_exists('YourPlugin')) {
 ### Step 3: Create Integration Class
 
 ```php
-class EvolveWP_Core_YourPlugin_Integration {
+class EvolveWP_Boilerplate_YourPlugin_Integration {
     public function __construct() {
         add_action('plugin_hook', array($this, 'method'));
     }
@@ -371,7 +371,7 @@ class EvolveWP_Core_YourPlugin_Integration {
     }
 }
 
-new EvolveWP_Core_YourPlugin_Integration();
+new EvolveWP_Boilerplate_YourPlugin_Integration();
 ```
 
 ### Step 4: Include in Main Plugin

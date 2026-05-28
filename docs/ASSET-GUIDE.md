@@ -143,7 +143,7 @@ what's needed.
 ### How it works
 
 1. `style-assets.php` returns an array of CSS files with `pages` arrays
-2. `EvolveWP_Core_Asset_Queue` detects the current admin page slug
+2. `EvolveWP_Boilerplate_Asset_Queue` detects the current admin page slug
 3. Only files whose `pages` array includes the current page (or `'all'`) are enqueued
 
 ### Page values

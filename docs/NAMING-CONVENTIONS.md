@@ -15,7 +15,7 @@
 |---|---|---|
 | PHP constants | `PLUGIN_BOILERPLATE_` | `EVOLVEWP_VERIFIER_` |
 | PHP functions | `plugin_boilerplate_` | `evolvewp_verifier_` |
-| Global classes | `EvolveWP_Core_` | `EvolveWP_Verifier_` |
+| Global classes | `EvolveWP_Boilerplate_` | `EvolveWP_Verifier_` |
 | Namespace root | `WPSeed\` | `EvolveWP\Verifier\` |
 | Text domain | `wpseed` | `evolvewp-verifier` |
 | Option prefix | `plugin_boilerplate_` | `evolvewp_verifier_` |
@@ -40,7 +40,7 @@
 
 | Type | Convention | Example |
 |---|---|---|
-| Legacy global class | `EvolveWP_Core_Category_Name` | `EvolveWP_Core_Admin_Settings` |
+| Legacy global class | `EvolveWP_Boilerplate_Category_Name` | `EvolveWP_Boilerplate_Admin_Settings` |
 | Namespaced class | `PascalCase` (no prefix — namespace provides context) | `WPSeed\Core\Install` → class `Install` |
 | Abstract class | `Abstract_Name` or just the name with docblock noting it is abstract | `WPSeed\API\REST_Controller` |
 | Interface | `Name_Interface` | `WPSeed\Core\Logger_Interface` |

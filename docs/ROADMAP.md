@@ -265,7 +265,7 @@ C:\wamp64\www\Ecosystem\wp-content\plugins\WPVerifier\assets\Asset_Manager.php (
 
 ### Core Components
 ```
-EvolveWP_Core_Roadmap_System/
+EvolveWP_Boilerplate_Roadmap_System/
 ├── src/
 │   ├── Core/
 │   │   ├── Roadmap.php              # Main roadmap class

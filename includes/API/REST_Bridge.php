@@ -12,14 +12,14 @@
  * DEPENDS ON:
  *   - WordPress functions: register_rest_route, current_user_can, rest_ensure_response,
  *     is_wp_error, add_action, apply_filters, do_action
- *   - EvolveWP Core\Core\Capability_Manager (for plugin_boilerplate_user_can checks)
- *   - EvolveWP_Core_API_Factory (for connector route generation)
- *   - EvolveWP_Core_API_Directory (for connector capability discovery)
+ *   - Plugin Boilerplate\Core\Capability_Manager (for plugin_boilerplate_user_can checks)
+ *   - EvolveWP_Boilerplate_API_Factory (for connector route generation)
+ *   - EvolveWP_Boilerplate_API_Directory (for connector capability discovery)
  *
  * CONSUMED BY:
- *   - EvolveWP Core\API\REST_Controller::register_endpoint() (convenience wrapper)
+ *   - Plugin Boilerplate\API\REST_Controller::register_endpoint() (convenience wrapper)
  *   - Concrete controller classes (register their endpoints here)
- *   - EvolveWP Core Feature Gate (queries registered endpoints)
+ *   - Plugin Boilerplate Feature Gate (queries registered endpoints)
  *   - Amazon Q (discovers available actions via get_registered_endpoints)
  *   - Admin UI (shows endpoint catalogue on development tabs)
  *
@@ -370,7 +370,7 @@ class REST_Bridge {
 	 */
 	private static function make_connector_callback( $provider_id, $internal_action ) {
 		return static function ( \WP_REST_Request $request ) use ( $provider_id, $internal_action ) {
-			$connector = \EvolveWP_Core_API_Factory::create_from_settings( $provider_id );
+			$connector = \EvolveWP_Boilerplate_API_Factory::create_from_settings( $provider_id );
 
 			if ( is_wp_error( $connector ) ) {
 				return REST_Bridge::error( $connector, '', 503 );

@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Extension Installer
+ * Plugin Boilerplate Extension Installer
  *
  * Handles downloading and installing extensions from remote servers
  *
- * @package EvolveWP Core/Classes
+ * @package Plugin Boilerplate/Classes
  * @version 1.2.0
  */
 
@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * EvolveWP_Core_Extension_Installer Class
+ * EvolveWP_Boilerplate_Extension_Installer Class
  */
-class EvolveWP_Core_Extension_Installer {
+class EvolveWP_Boilerplate_Extension_Installer {
 
     /**
      * Server URL

@@ -11,9 +11,9 @@
  *
  * DEPENDS ON:
  *   - WordPress functions: add_option, get_option, dbDelta, add_role, flush_rewrite_rules
- *   - EvolveWP_Core_Admin_Notices (not yet migrated — referenced via global class name)
- *   - EvolveWP_Core_Admin_Settings (not yet migrated — referenced via global class name)
- *   - global EvolveWP Core() function in functions.php
+ *   - EvolveWP_Boilerplate_Admin_Notices (not yet migrated — referenced via global class name)
+ *   - EvolveWP_Boilerplate_Admin_Settings (not yet migrated — referenced via global class name)
+ *   - global Plugin Boilerplate() function in functions.php
  *
  * CONSUMED BY:
  *   - loader.php: register_activation_hook, register_deactivation_hook
@@ -111,7 +111,7 @@ class Install {
 		if ( ! empty( $_GET['do_update_plugin-boilerplate'] ) && current_user_can( 'manage_options' ) ) {
 			if ( isset( $_GET['_plugin_boilerplate_update_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_plugin_boilerplate_update_nonce'] ) ), 'plugin_boilerplate_do_update' ) ) {
 				self::install();
-				\EvolveWP_Core_Admin_Notices::add_notice( 'update' );
+				\EvolveWP_Boilerplate_Admin_Notices::add_notice( 'update' );
 			}
 		}
 	}
@@ -156,12 +156,12 @@ class Install {
 			define( 'PLUGIN_BOILERPLATE_INSTALLING', true );
 		}
 
-		// EvolveWP_Core_Admin_Notices is not yet namespaced — load via legacy path.
-		if ( ! class_exists( 'EvolveWP_Core_Admin_Notices' ) ) {
+		// EvolveWP_Boilerplate_Admin_Notices is not yet namespaced — load via legacy path.
+		if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Notices' ) ) {
 			include_once PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH . 'includes/admin/admin-notices.php';
 		}
 
-		\EvolveWP_Core_Admin_Notices::remove_all_notices();
+		\EvolveWP_Boilerplate_Admin_Notices::remove_all_notices();
 
 		self::create_options();
 		self::create_roles();
@@ -172,12 +172,12 @@ class Install {
 		$current_db_version        = get_option( 'plugin_boilerplate_db_version', null );
 
 		if ( is_null( $current_installed_version ) && is_null( $current_db_version ) && apply_filters( 'plugin_boilerplate_enable_setup_wizard', true ) ) {
-			\EvolveWP_Core_Admin_Notices::add_notice( 'install' );
+			\EvolveWP_Boilerplate_Admin_Notices::add_notice( 'install' );
 			set_transient( '_plugin_boilerplate_activation_redirect', 1, 30 );
 		}
 
 		if ( ! is_null( $current_db_version ) && version_compare( $current_db_version, max( array_keys( self::$db_updates ) ), '<' ) ) {
-			\EvolveWP_Core_Admin_Notices::add_notice( 'update' );
+			\EvolveWP_Boilerplate_Admin_Notices::add_notice( 'update' );
 		} else {
 			self::update_db_version();
 		}
@@ -234,7 +234,7 @@ class Install {
 	 */
 	public static function plugin_action_links( $links ) {
 		$action_links = array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page=plugin-boilerplate-settings' ) . '" title="' . esc_attr( __( 'View EvolveWP Core Settings', 'plugin-boilerplate' ) ) . '">' . __( 'Settings', 'plugin-boilerplate' ) . '</a>',
+			'settings' => '<a href="' . admin_url( 'options-general.php?page=plugin-boilerplate-settings' ) . '" title="' . esc_attr( __( 'View Plugin Boilerplate Settings', 'plugin-boilerplate' ) ) . '">' . __( 'Settings', 'plugin-boilerplate' ) . '</a>',
 		);
 		return array_merge( $action_links, $links );
 	}
@@ -369,11 +369,11 @@ class Install {
 	 * @return void
 	 */
 	private static function create_options() {
-		if ( ! class_exists( 'EvolveWP_Core_Admin_Settings' ) ) {
+		if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Settings' ) ) {
 			include_once PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH . 'includes/admin/admin-settings.php';
 		}
 
-		$settings = \EvolveWP_Core_Admin_Settings::get_settings_pages();
+		$settings = \EvolveWP_Boilerplate_Admin_Settings::get_settings_pages();
 
 		foreach ( $settings as $section ) {
 			if ( ! method_exists( $section, 'get_settings' ) ) {

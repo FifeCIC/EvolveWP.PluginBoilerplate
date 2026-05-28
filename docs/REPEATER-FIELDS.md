@@ -138,7 +138,7 @@ foreach ( $items as $item ) {
 ### Using WPSeed Settings API
 
 ```php
-$items = EvolveWP_Core_Admin_Settings::get_option( 'plugin_boilerplate_social_links', array() );
+$items = EvolveWP_Boilerplate_Admin_Settings::get_option( 'plugin_boilerplate_social_links', array() );
 ```
 
 ### Check if Items Exist

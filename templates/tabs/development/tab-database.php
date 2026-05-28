@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Development - Database Diagnosis Tab
+ * Plugin Boilerplate Development - Database Diagnosis Tab
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 2.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Admin_Development_Database {
+class EvolveWP_Boilerplate_Admin_Development_Database {
 
     /**
      * Output the database diagnosis tab.

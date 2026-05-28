@@ -1,6 +1,6 @@
 <?php         
 /**
- * EvolveWP Core - Options Table Interface
+ * Plugin Boilerplate - Options Table Interface
  *
  * Manage individual and groups of options. Contains methods for interfacing
  * with WordPress options. A key feature is controlling the update of individual
@@ -14,7 +14,7 @@
  *
  * @author   Ryan Bayne
  * @category Configuration
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  * @version  1.2.0
  */
@@ -31,11 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @version 1.0 
  */
-class EvolveWP_Core_Options {
-    use EvolveWP_Core_OptionsTrait;
+class EvolveWP_Boilerplate_Options {
+    use EvolveWP_Boilerplate_OptionsTrait;
 }
 
-trait EvolveWP_Core_OptionsTrait {
+trait EvolveWP_Boilerplate_OptionsTrait {
     
     /**
     * Array of the option types that are grouped (array of many options)
@@ -127,7 +127,7 @@ trait EvolveWP_Core_OptionsTrait {
             
                 // Remember the real option names are prepend with plugin-boilerplate".
                 $single_options = array(  
-                    // EvolveWP Core core options.                                  
+                    // Plugin Boilerplate core options.                                  
                     'example1' => array( 1,1,1, 'thevalue1' ),// Description of option.     
                     'example2' => array( 1,0,1, 'thevalue2' ),// Description of option.
                     'example3' => array( 1,0,1, 'thevalue3' ),// Description of option.
@@ -340,7 +340,7 @@ trait EvolveWP_Core_OptionsTrait {
 
         // _doing_it_wrong() integrates with WP_DEBUG and is silenced in production,
         // replacing trigger_error() which can expose file paths.
-        _doing_it_wrong( __METHOD__, sprintf( 'Invalid EvolveWP Core option name: %s', esc_html( $name ) ), '1.0.0' );
+        _doing_it_wrong( __METHOD__, sprintf( 'Invalid Plugin Boilerplate option name: %s', esc_html( $name ) ), '1.0.0' );
 
         return false;
     }
@@ -360,7 +360,7 @@ trait EvolveWP_Core_OptionsTrait {
         foreach ( array_diff( $names, self::get_option_names(), self::get_option_names( 'non_compact' ), self::get_option_names( 'private' ) ) as $unknown_name ) {
             // _doing_it_wrong() integrates with WP_DEBUG and is silenced in production,
             // replacing trigger_error() which can expose file paths.
-            _doing_it_wrong( __METHOD__, sprintf( 'Invalid EvolveWP Core option name: %s', esc_html( $unknown_name ) ), '1.0.0' );
+            _doing_it_wrong( __METHOD__, sprintf( 'Invalid Plugin Boilerplate option name: %s', esc_html( $unknown_name ) ), '1.0.0' );
             unset( $array[ $unknown_name ] );
         }
 
@@ -386,7 +386,7 @@ trait EvolveWP_Core_OptionsTrait {
         if ( ! self::is_valid( $names ) ) {
             // _doing_it_wrong() integrates with WP_DEBUG and is silenced in production,
             // replacing trigger_error() which can expose file paths.
-            _doing_it_wrong( __METHOD__, sprintf( 'Invalid EvolveWP Core option names: %s', wp_json_encode( $names ) ), '1.0.0' );
+            _doing_it_wrong( __METHOD__, sprintf( 'Invalid Plugin Boilerplate option names: %s', wp_json_encode( $names ) ), '1.0.0' );
 
             return false;
         }

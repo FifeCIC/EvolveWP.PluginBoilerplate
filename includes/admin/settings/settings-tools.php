@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Tools Settings Page
+ * Plugin Boilerplate Tools Settings Page
  *
- * @package EvolveWP Core/Admin/Settings
+ * @package Plugin Boilerplate/Admin/Settings
  * @version 1.2.0
  */
 
@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Settings_Tools' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Settings_Tools' ) ) :
 
 /**
- * EvolveWP_Core_Settings_Tools
+ * EvolveWP_Boilerplate_Settings_Tools
  */
-class EvolveWP_Core_Settings_Tools extends EvolveWP_Core_Settings_Page {
+class EvolveWP_Boilerplate_Settings_Tools extends EvolveWP_Boilerplate_Settings_Page {
 
     /**
      * Constructor
@@ -55,7 +55,7 @@ class EvolveWP_Core_Settings_Tools extends EvolveWP_Core_Settings_Page {
      */
     public function output() {
         $settings = $this->get_settings();
-        EvolveWP_Core_Admin_Settings::output_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::output_fields( $settings );
         
         // Output import/export UI
         do_action( 'plugin_boilerplate_settings_export_import' );
@@ -71,4 +71,4 @@ class EvolveWP_Core_Settings_Tools extends EvolveWP_Core_Settings_Page {
 
 endif;
 
-return new EvolveWP_Core_Settings_Tools();
+return new EvolveWP_Boilerplate_Settings_Tools();

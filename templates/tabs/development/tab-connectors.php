@@ -7,15 +7,15 @@
  * Shows all registered API connectors with their configuration status,
  * capabilities, and a test connection button for configured connectors.
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @category Admin
  * @since    3.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$providers  = EvolveWP_Core_API_Directory::get_all_providers();
-$configured = EvolveWP_Core_API_Directory::get_configured_providers();
+$providers  = EvolveWP_Boilerplate_API_Directory::get_all_providers();
+$configured = EvolveWP_Boilerplate_API_Directory::get_configured_providers();
 ?>
 
 <div class="plugin-boilerplate-admin-wrap">
@@ -74,7 +74,7 @@ $configured = EvolveWP_Core_API_Directory::get_configured_providers();
 
 							<?php
 							// Show capabilities if the connector class exists.
-							$caps = EvolveWP_Core_API_Directory::get_provider_capabilities( $provider_id );
+							$caps = EvolveWP_Boilerplate_API_Directory::get_provider_capabilities( $provider_id );
 							if ( ! empty( $caps ) ) :
 							?>
 								<h4 style="margin-top: 12px;"><?php esc_html_e( 'Capabilities', 'plugin-boilerplate' ); ?></h4>

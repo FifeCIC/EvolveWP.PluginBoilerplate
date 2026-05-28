@@ -1,13 +1,13 @@
 <?php          
 /**
- * EvolveWP Core - Shortcodes
+ * Plugin Boilerplate - Shortcodes
  *
  * This is one of the best approaches to shortcodes I could find. Not too bloated
  * and I've taking the opportunity to introduce some of WPMUDEV work into my plugin.  
  *
  * @author   WPMUDEV, Ignacio Cruz (igmoweb)
  * @category Shortcodes
- * @package  EvolveWP Core/Shortcodes
+ * @package  Plugin Boilerplate/Shortcodes
  * @since    1.0.0
  */
  
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Shortcode' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Shortcode' ) ) :
        
-abstract class EvolveWP_Core_Shortcode extends EvolveWP_Core_Codec_Instance {
+abstract class EvolveWP_Boilerplate_Shortcode extends EvolveWP_Boilerplate_Codec_Instance {
 
     private $_defaults = array();
     protected $_key;

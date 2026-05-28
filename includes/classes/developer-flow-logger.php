@@ -4,12 +4,12 @@
  * 
  * Detailed decision tracking for debugging
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
 
-class EvolveWP_Core_Developer_Flow_Logger {
+class EvolveWP_Boilerplate_Developer_Flow_Logger {
     
     private static $flow_steps = array();
     private static $current_context = '';

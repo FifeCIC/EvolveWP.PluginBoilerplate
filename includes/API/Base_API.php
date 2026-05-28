@@ -10,10 +10,10 @@
  * methods: test_connection(), get_capabilities(), and execute().
  *
  * DEPENDS ON:
- *   - EvolveWP Core\API\Connector_Interface (implements)
+ *   - Plugin Boilerplate\API\Connector_Interface (implements)
  *   - WordPress functions: wp_remote_request, wp_remote_retrieve_body,
  *     wp_remote_retrieve_response_code, add_query_arg, is_wp_error, wp_json_encode
- *   - EvolveWP_Core_API_Logging (global class, not yet namespaced)
+ *   - EvolveWP_Boilerplate_API_Logging (global class, not yet namespaced)
  *
  * CONSUMED BY:
  *   - Concrete connector classes (GitHub, Discord, payment gateways, etc.)
@@ -22,7 +22,7 @@
  *
  * DATA FLOW:
  *   Input  → API credentials, endpoint URLs, action name + parameters
- *   Output → Parsed JSON response data, logged API calls via EvolveWP_Core_API_Logging
+ *   Output → Parsed JSON response data, logged API calls via EvolveWP_Boilerplate_API_Logging
  *
  * @package  EvolveWP\PluginBoilerplate\API
  * @category API
@@ -251,8 +251,8 @@ abstract class Base_API implements Connector_Interface {
 	protected function make_request( $endpoint, $params = array(), $method = 'GET' ) {
 		$call_id = 0;
 
-		if ( class_exists( '\\EvolveWP_Core_API_Logging', false ) ) {
-			$call_id = \EvolveWP_Core_API_Logging::log_call(
+		if ( class_exists( '\\EvolveWP_Boilerplate_API_Logging', false ) ) {
+			$call_id = \EvolveWP_Boilerplate_API_Logging::log_call(
 				$this->provider_id,
 				$endpoint,
 				$method,
@@ -290,9 +290,9 @@ abstract class Base_API implements Connector_Interface {
 		$response = wp_remote_request( $url, $args );
 
 		if ( is_wp_error( $response ) ) {
-			if ( $call_id && class_exists( '\\EvolveWP_Core_API_Logging', false ) ) {
-				\EvolveWP_Core_API_Logging::log_error( $call_id, 'request_failed', $response->get_error_message() );
-				\EvolveWP_Core_API_Logging::update_call_outcome( $call_id, 'Error: ' . $response->get_error_message(), 'error' );
+			if ( $call_id && class_exists( '\\EvolveWP_Boilerplate_API_Logging', false ) ) {
+				\EvolveWP_Boilerplate_API_Logging::log_error( $call_id, 'request_failed', $response->get_error_message() );
+				\EvolveWP_Boilerplate_API_Logging::update_call_outcome( $call_id, 'Error: ' . $response->get_error_message(), 'error' );
 			}
 			return $response;
 		}
@@ -304,9 +304,9 @@ abstract class Base_API implements Connector_Interface {
 		if ( $status_code >= 400 ) {
 			$error_message = $data['message'] ?? $body;
 
-			if ( $call_id && class_exists( '\\EvolveWP_Core_API_Logging', false ) ) {
-				\EvolveWP_Core_API_Logging::log_error( $call_id, 'http_' . $status_code, $error_message );
-				\EvolveWP_Core_API_Logging::update_call_outcome( $call_id, 'HTTP ' . $status_code . ': ' . $error_message, 'error' );
+			if ( $call_id && class_exists( '\\EvolveWP_Boilerplate_API_Logging', false ) ) {
+				\EvolveWP_Boilerplate_API_Logging::log_error( $call_id, 'http_' . $status_code, $error_message );
+				\EvolveWP_Boilerplate_API_Logging::update_call_outcome( $call_id, 'HTTP ' . $status_code . ': ' . $error_message, 'error' );
 			}
 
 			return new \WP_Error(
@@ -319,8 +319,8 @@ abstract class Base_API implements Connector_Interface {
 			);
 		}
 
-		if ( $call_id && class_exists( '\\EvolveWP_Core_API_Logging', false ) ) {
-			\EvolveWP_Core_API_Logging::update_call_outcome( $call_id, 'HTTP ' . $status_code, 'success' );
+		if ( $call_id && class_exists( '\\EvolveWP_Boilerplate_API_Logging', false ) ) {
+			\EvolveWP_Boilerplate_API_Logging::update_call_outcome( $call_id, 'HTTP ' . $status_code, 'success' );
 		}
 
 		return $data ?? array();

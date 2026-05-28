@@ -1,12 +1,12 @@
 <?php
 /**
- * EvolveWP Core - Load Frontend Scripts
+ * Plugin Boilerplate - Load Frontend Scripts
  *
  * Register and queue scripts, css and filters that are not used globally. 
  * 
  * @author   Ryan Bayne
  * @category Scripts
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  
@@ -14,27 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( !class_exists( 'EvolveWP_Core_Frontend_Scripts' ) ) : 
+if( !class_exists( 'EvolveWP_Boilerplate_Frontend_Scripts' ) ) : 
 
 /**
- * EvolveWP_Core_Frontend_Scripts Class.
+ * EvolveWP_Boilerplate_Frontend_Scripts Class.
  */
-class EvolveWP_Core_Frontend_Scripts {
+class EvolveWP_Boilerplate_Frontend_Scripts {
                                             
     /**
-     * Contains an array of script handles registered by EvolveWP Core.
+     * Contains an array of script handles registered by Plugin Boilerplate.
      * @var array
      */
     private static $scripts = array();
 
     /**
-     * Contains an array of script handles registered by EvolveWP Core.
+     * Contains an array of script handles registered by Plugin Boilerplate.
      * @var array
      */
     private static $styles = array();
 
     /**
-     * Contains an array of script handles localized by EvolveWP Core.
+     * Contains an array of script handles localized by Plugin Boilerplate.
      * @var array
      */
     private static $wp_localize_scripts = array();
@@ -148,7 +148,7 @@ class EvolveWP_Core_Frontend_Scripts {
     }
 
     /**
-     * Localize a EvolveWP Core script once.
+     * Localize a Plugin Boilerplate script once.
      * @access private
      * @since  2.3.0 this needs less wp_script_is() calls due to https://core.trac.wordpress.org/ticket/28404 being added in WP 4.0.
      * @param  string $handle
@@ -185,4 +185,4 @@ class EvolveWP_Core_Frontend_Scripts {
 
 endif;
 
-return EvolveWP_Core_Frontend_Scripts::init();
+return EvolveWP_Boilerplate_Frontend_Scripts::init();

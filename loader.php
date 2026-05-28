@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * EvolveWP Core load order — PluginBoilerplate main class.
+ * Plugin Boilerplate load order — PluginBoilerplate main class.
  *
  * GROUP 1 — Composer PSR-4 autoloader (loaded in plugin-boilerplate.php before this file)
  *   vendor/autoload.php — resolves all EvolveWP\PluginBoilerplate\ namespaced classes automatically.
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class PluginBoilerplate {
     
     /**
-     * EvolveWP Core version.
+     * Plugin Boilerplate version.
      *
      * @var string
      */
@@ -108,12 +108,12 @@ final class PluginBoilerplate {
     /**
      * Session instance.
      *
-     * @var EvolveWP_Core_Session
+     * @var EvolveWP_Boilerplate_Session
      */
     public $session = null; 
         
     /**
-     * Main EvolveWP Core instance.
+     * Main Plugin Boilerplate instance.
      *
      * Ensures only one instance is loaded.
      *
@@ -158,7 +158,7 @@ final class PluginBoilerplate {
     }   
     
     /**
-     * EvolveWP Core constructor.
+     * Plugin Boilerplate constructor.
      *
      * @since 1.0.0
      */
@@ -183,7 +183,7 @@ final class PluginBoilerplate {
     }
 
     /**
-     * Define EvolveWP Core constants.
+     * Define Plugin Boilerplate constants.
      *
      * @since 1.0.0
      */
@@ -351,7 +351,7 @@ final class PluginBoilerplate {
     }
 
     /**
-     * Initialise EvolveWP Core when WordPress initialises.
+     * Initialise Plugin Boilerplate when WordPress initialises.
      *
      * @since 1.0.0
      */

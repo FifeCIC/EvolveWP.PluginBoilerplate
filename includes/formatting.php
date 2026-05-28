@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core - Data Formatting Functions
+ * Plugin Boilerplate - Data Formatting Functions
  *
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  

@@ -2,12 +2,12 @@
 /**
  * Dashboard Widgets
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
 
-class EvolveWP_Core_Dashboard_Widgets {
+class EvolveWP_Boilerplate_Dashboard_Widgets {
     
     public function __construct() {
         add_action( 'wp_dashboard_setup', array( $this, 'add_widgets' ) );
@@ -16,13 +16,13 @@ class EvolveWP_Core_Dashboard_Widgets {
     public function add_widgets() {
         wp_add_dashboard_widget(
             'plugin_boilerplate_stats_widget',
-            __( 'EvolveWP Core Stats', 'plugin-boilerplate' ),
+            __( 'Plugin Boilerplate Stats', 'plugin-boilerplate' ),
             array( $this, 'render_stats_widget' )
         );
         
         wp_add_dashboard_widget(
             'plugin_boilerplate_quick_links_widget',
-            __( 'EvolveWP Core Quick Links', 'plugin-boilerplate' ),
+            __( 'Plugin Boilerplate Quick Links', 'plugin-boilerplate' ),
             array( $this, 'render_quick_links_widget' )
         );
     }
@@ -62,4 +62,4 @@ class EvolveWP_Core_Dashboard_Widgets {
     }
 }
 
-return new EvolveWP_Core_Dashboard_Widgets();
+return new EvolveWP_Boilerplate_Dashboard_Widgets();

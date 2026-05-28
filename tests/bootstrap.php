@@ -7,7 +7,7 @@
  * guard is intentionally omitted — adding it would prevent the test suite
  * from loading.
  *
- * @package EvolveWP Core/Tests
+ * @package Plugin Boilerplate/Tests
  * @version 1.2.0
  */
 

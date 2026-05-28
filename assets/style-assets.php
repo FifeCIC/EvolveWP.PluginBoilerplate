@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core Style Assets Registry
+ * Plugin Boilerplate Style Assets Registry
  *
  * Central catalogue of all CSS files with page-based loading rules.
  * The Asset Queue reads this to enqueue only what's needed per page.
@@ -10,7 +10,7 @@
  *   - 'plugin_boilerplate_development' → loads only on the Development page
  *   - specific page slug   → loads only on that page
  *
- * @package EvolveWP Core/Assets
+ * @package Plugin Boilerplate/Assets
  * @version 3.1.0
  */
 

@@ -260,16 +260,16 @@ Container::make('user_meta', __('User Fields'))
 
 ```php
 // Create options page
-EvolveWP_Core_Carbon_Fields::create_options_page('My Settings', 'my-settings', 'plugin-boilerplate-settings');
+EvolveWP_Boilerplate_Carbon_Fields::create_options_page('My Settings', 'my-settings', 'plugin-boilerplate-settings');
 
 // Create post meta
-EvolveWP_Core_Carbon_Fields::create_post_meta('Product Info', array('product'));
+EvolveWP_Boilerplate_Carbon_Fields::create_post_meta('Product Info', array('product'));
 
 // Create term meta
-EvolveWP_Core_Carbon_Fields::create_term_meta('Category Fields', array('category'));
+EvolveWP_Boilerplate_Carbon_Fields::create_term_meta('Category Fields', array('category'));
 
 // Create user meta
-EvolveWP_Core_Carbon_Fields::create_user_meta('User Profile');
+EvolveWP_Boilerplate_Carbon_Fields::create_user_meta('User Profile');
 ```
 
 ## Common Use Cases

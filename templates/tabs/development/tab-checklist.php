@@ -2,12 +2,12 @@
 /**
  * Developer Checklist View
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Admin_Development_Checklist {
+class EvolveWP_Boilerplate_Admin_Development_Checklist {
     
     public static function output() {
         $checklist_file = PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH . 'docs/DEVELOPER-CHECKLIST.md';

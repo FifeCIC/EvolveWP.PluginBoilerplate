@@ -4,12 +4,12 @@
  * 
  * Provides object access throughout WordPress without using globals
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
 
-class EvolveWP_Core_Object_Registry {
+class EvolveWP_Boilerplate_Object_Registry {
 
     private static $storage = array();
 

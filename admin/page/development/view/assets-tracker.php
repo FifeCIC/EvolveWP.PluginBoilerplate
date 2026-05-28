@@ -1,14 +1,14 @@
 <?php
 /**
- * EvolveWP Core Development Assets Tab (Asset Status Management)
+ * Plugin Boilerplate Development Assets Tab (Asset Status Management)
  *
- * @package EvolveWP Core\Admin\Development
+ * @package Plugin Boilerplate\Admin\Development
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Admin_Development_Assets {
+class EvolveWP_Boilerplate_Admin_Development_Assets {
 
     public static function output() {
         $asset_manager = self::get_asset_manager();
@@ -207,4 +207,4 @@ class EvolveWP_Core_Admin_Development_Assets {
     }
 }
 
-EvolveWP_Core_Admin_Development_Assets::output();
+EvolveWP_Boilerplate_Admin_Development_Assets::output();

@@ -5,12 +5,12 @@
  * ROLE: api-endpoint
  *
  * Single responsibility: Provide a base class with default permission checks,
- * namespace configuration, and REST Bridge integration for all EvolveWP Core REST
+ * namespace configuration, and REST Bridge integration for all Plugin Boilerplate REST
  * API endpoints. Concrete controllers extend this and implement register_routes().
  *
  * DEPENDS ON:
  *   - WordPress WP_REST_Controller class
- *   - EvolveWP Core\API\REST_Bridge (for register_endpoint convenience method)
+ *   - Plugin Boilerplate\API\REST_Bridge (for register_endpoint convenience method)
  *
  * CONSUMED BY:
  *   - Any REST controller class in the plugin

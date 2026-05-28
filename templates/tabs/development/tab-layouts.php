@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Development Layouts View
+ * Plugin Boilerplate Development Layouts View
  *
- * @package EvolveWP Core/Admin/Views
+ * @package Plugin Boilerplate/Admin/Views
  * @version 1.0.0
  */
 
@@ -11,9 +11,9 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * EvolveWP_Core_Admin_Development_Layouts Class
+ * EvolveWP_Boilerplate_Admin_Development_Layouts Class
  */
-class EvolveWP_Core_Admin_Development_Layouts {
+class EvolveWP_Boilerplate_Admin_Development_Layouts {
     
     /**
      * Output the layouts view

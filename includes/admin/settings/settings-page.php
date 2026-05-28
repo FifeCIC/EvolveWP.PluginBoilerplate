@@ -1,10 +1,10 @@
 <?php
 /**
- * EvolveWP Core Settings Page/Tab
+ * Plugin Boilerplate Settings Page/Tab
  *
- * @author      EvolveWP Core
+ * @author      Plugin Boilerplate
  * @category    Admin
- * @package     EvolveWP Core/Admin
+ * @package     Plugin Boilerplate/Admin
  * @version     1.0.0
  */
 
@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Settings_Page' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Settings_Page' ) ) :
 
 /**
- * EvolveWP_Core_Settings_Page.
+ * EvolveWP_Boilerplate_Settings_Page.
  */
-abstract class EvolveWP_Core_Settings_Page {
+abstract class EvolveWP_Boilerplate_Settings_Page {
 
     /**
      * Setting page id.
@@ -100,7 +100,7 @@ abstract class EvolveWP_Core_Settings_Page {
     public function output() {
         $settings = $this->get_settings();
               
-        EvolveWP_Core_Admin_Settings::output_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::output_fields( $settings );
     }
 
     /**
@@ -112,7 +112,7 @@ abstract class EvolveWP_Core_Settings_Page {
         $current_section = $plugin_boilerplate_current_section;
 
         $settings = $this->get_settings();
-        EvolveWP_Core_Admin_Settings::save_fields( $settings );
+        EvolveWP_Boilerplate_Admin_Settings::save_fields( $settings );
 
         if ( $current_section ) {
             do_action( 'plugin_boilerplate_update_options_' . $this->id . '_' . $current_section );

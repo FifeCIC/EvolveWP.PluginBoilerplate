@@ -10,8 +10,8 @@
  * Does NOT handle structured trace logging — that is Core\Logger.
  *
  * DEPENDS ON:
- *   - EvolveWP_Core_Developer_Mode::is_dev_environment() in includes/classes/developer-mode.php
- *   - EvolveWP Core\Core\Logger (optional — used for cross-referencing trace data)
+ *   - EvolveWP_Boilerplate_Developer_Mode::is_dev_environment() in includes/classes/developer-mode.php
+ *   - Plugin Boilerplate\Core\Logger (optional — used for cross-referencing trace data)
  *   - WordPress globals: $wpdb
  *
  * CONSUMED BY:
@@ -75,7 +75,7 @@ class Enhanced_Logger {
 	}
 
 	private function __construct() {
-		if ( ! \EvolveWP_Core_Developer_Mode::is_dev_environment() ) {
+		if ( ! \EvolveWP_Boilerplate_Developer_Mode::is_dev_environment() ) {
 			return;
 		}
 
@@ -419,7 +419,7 @@ class Enhanced_Logger {
 }
 
 // Initialize only in dev environments.
-if ( \EvolveWP_Core_Developer_Mode::is_dev_environment() ) {
+if ( \EvolveWP_Boilerplate_Developer_Mode::is_dev_environment() ) {
 	Enhanced_Logger::instance();
 }
 

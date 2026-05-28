@@ -1,13 +1,13 @@
 <?php
 /**
- * EvolveWP Core - Core Functions
+ * Plugin Boilerplate - Core Functions
  *
  * Place a function here when it is doesn't make sense in other files or needs
  * to be obviously available to third-party developers. 
  * 
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  
@@ -77,7 +77,7 @@ function plugin_boilerplate_print_js() {
         $plugin_boilerplate_queued_js = preg_replace( '/&#(x)?0*(?(1)27|39);?/i', "'", $plugin_boilerplate_queued_js );
         $plugin_boilerplate_queued_js = str_replace( "\r", '', $plugin_boilerplate_queued_js );
 
-        $js = "<!-- EvolveWP Core JavaScript -->\n<script type=\"text/javascript\">\njQuery(function($) { $plugin_boilerplate_queued_js });\n</script>\n";
+        $js = "<!-- Plugin Boilerplate JavaScript -->\n<script type=\"text/javascript\">\njQuery(function($) { $plugin_boilerplate_queued_js });\n</script>\n";
 
         /**
          * plugin_boilerplate_queued_js filter.

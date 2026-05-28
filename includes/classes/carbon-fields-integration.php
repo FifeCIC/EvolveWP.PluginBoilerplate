@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Carbon Fields Integration
+ * Plugin Boilerplate Carbon Fields Integration
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 1.2.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit;
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-class EvolveWP_Core_Carbon_Fields {
+class EvolveWP_Boilerplate_Carbon_Fields {
 
     private static $instance = null;
 
@@ -75,5 +75,5 @@ class EvolveWP_Core_Carbon_Fields {
 
 // Initialize only after WordPress is loaded
 add_action('init', function() {
-    EvolveWP_Core_Carbon_Fields::instance();
+    EvolveWP_Boilerplate_Carbon_Fields::instance();
 });

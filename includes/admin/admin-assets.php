@@ -1,12 +1,12 @@
 <?php
 /**
- * EvolveWP Core - Load Assets 
+ * Plugin Boilerplate - Load Assets 
  *
  * Load admin only js, css, images and fonts. 
  *
  * @author   Ryan Bayne
  * @category Loading
- * @package  EvolveWP Core/Loading
+ * @package  Plugin Boilerplate/Loading
  * @since    1.0.0
  * @version  1.2.0
  */
@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Assets' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Assets' ) ) :
 
 /**
- * EvolveWP_Core_Admin_Assets Class.
+ * EvolveWP_Boilerplate_Admin_Assets Class.
  */
-class EvolveWP_Core_Admin_Assets {
+class EvolveWP_Boilerplate_Admin_Assets {
 
     public function __construct() {
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ) );
@@ -61,7 +61,7 @@ class EvolveWP_Core_Admin_Assets {
 
         $screen       = get_current_screen();
         $screen_id    = $screen ? $screen->id : '';
-        $package_screen_id = sanitize_title( __( 'EvolveWP Core', 'plugin-boilerplate' ) );
+        $package_screen_id = sanitize_title( __( 'Plugin Boilerplate', 'plugin-boilerplate' ) );
         $suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
         // Register scripts — true loads in footer for better page performance.
@@ -76,4 +76,4 @@ class EvolveWP_Core_Admin_Assets {
 
 endif;
 
-return new EvolveWP_Core_Admin_Assets();
+return new EvolveWP_Boilerplate_Admin_Assets();

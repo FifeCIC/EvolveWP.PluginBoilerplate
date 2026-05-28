@@ -2,7 +2,7 @@
 /**
  * UI Library Accordion Components Partial
  *
- * @package EvolveWP Core/Admin/Views/Partials
+ * @package Plugin Boilerplate/Admin/Views/Partials
  * @version 1.0.0
  */
 

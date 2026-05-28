@@ -1,10 +1,10 @@
 <?php
 /**
- * WordPress dashboard widgets for EvolveWP Core.
+ * WordPress dashboard widgets for Plugin Boilerplate.
  *
  * ROLE: admin-ui
  *
- * Single responsibility: Register and render EvolveWP Core dashboard widgets on the
+ * Single responsibility: Register and render Plugin Boilerplate dashboard widgets on the
  * WordPress admin dashboard. Does NOT handle settings or plugin-specific pages.
  *
  * DEPENDS ON:
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers and renders EvolveWP Core dashboard widgets.
+ * Registers and renders Plugin Boilerplate dashboard widgets.
  *
  * Single responsibility: Dashboard widget UI only. Does NOT handle
  * data collection or settings.
@@ -55,13 +55,13 @@ class Dashboard_Widgets {
 	public function add_widgets() {
 		wp_add_dashboard_widget(
 			'plugin_boilerplate_stats_widget',
-			__( 'EvolveWP Core Stats', 'plugin-boilerplate' ),
+			__( 'Plugin Boilerplate Stats', 'plugin-boilerplate' ),
 			array( $this, 'render_stats_widget' )
 		);
 
 		wp_add_dashboard_widget(
 			'plugin_boilerplate_quick_links_widget',
-			__( 'EvolveWP Core Quick Links', 'plugin-boilerplate' ),
+			__( 'Plugin Boilerplate Quick Links', 'plugin-boilerplate' ),
 			array( $this, 'render_quick_links_widget' )
 		);
 	}

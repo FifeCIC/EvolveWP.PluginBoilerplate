@@ -2,7 +2,7 @@
 /**
  * REST API Controller Base
  *
- * @package EvolveWP Core/API
+ * @package Plugin Boilerplate/API
  * @version 1.0.0
  */
 
@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-abstract class EvolveWP_Core_REST_Controller extends WP_REST_Controller {
+abstract class EvolveWP_Boilerplate_REST_Controller extends WP_REST_Controller {
     
     protected $namespace = 'plugin-boilerplate/v1';
     

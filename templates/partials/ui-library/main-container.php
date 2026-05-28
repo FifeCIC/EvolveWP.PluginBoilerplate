@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core UI Library Main Container
+ * Plugin Boilerplate UI Library Main Container
  *
- * @package EvolveWP Core/Admin/Views/Partials
+ * @package Plugin Boilerplate/Admin/Views/Partials
  */
 
 defined('ABSPATH') || exit;
@@ -28,8 +28,8 @@ $plugin_boilerplate_ui_sections = array(
 ?>
 
 <div class="wrap plugin-boilerplate-ui-library">
-    <h1><?php esc_html_e('EvolveWP Core UI Library', 'plugin-boilerplate'); ?></h1>
-    <p class="description"><?php esc_html_e('Comprehensive showcase of EvolveWP Core UI components, styles, and interactive elements.', 'plugin-boilerplate'); ?></p>
+    <h1><?php esc_html_e('Plugin Boilerplate UI Library', 'plugin-boilerplate'); ?></h1>
+    <p class="description"><?php esc_html_e('Comprehensive showcase of Plugin Boilerplate UI components, styles, and interactive elements.', 'plugin-boilerplate'); ?></p>
     
     <!-- Section Visibility Controls -->
     <div class="plugin-boilerplate-ui-section-controls">

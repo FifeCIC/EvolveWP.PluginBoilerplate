@@ -4,7 +4,7 @@
  *
  * ROLE: ajax-handler
  *
- * Single responsibility: Detect EvolveWP Core AJAX requests (both admin-ajax.php and
+ * Single responsibility: Detect Plugin Boilerplate AJAX requests (both admin-ajax.php and
  * custom ?plugin-boilerplate-ajax= endpoints), verify nonces, set appropriate headers, and
  * dispatch to registered action handlers. Does NOT implement any specific AJAX
  * actions — those are registered by other classes via the $ajax_events array.
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Handles EvolveWP Core AJAX request detection, nonce verification, and dispatch.
+ * Handles Plugin Boilerplate AJAX request detection, nonce verification, and dispatch.
  *
  * Single responsibility: AJAX infrastructure. Does NOT implement specific
  * AJAX actions — those are registered by domain-specific handler classes.
@@ -54,7 +54,7 @@ class AJAX_Handler {
 	}
 
 	/**
-	 * Get the EvolveWP Core AJAX endpoint URL.
+	 * Get the Plugin Boilerplate AJAX endpoint URL.
 	 *
 	 * @since  1.0.0
 	 * @param  string $request Optional action name to append.
@@ -69,7 +69,7 @@ class AJAX_Handler {
 	}
 
 	/**
-	 * Detect a EvolveWP Core AJAX request and set constants/headers.
+	 * Detect a Plugin Boilerplate AJAX request and set constants/headers.
 	 *
 	 * Runs at init priority 0. Only detects whether a request is in progress —
 	 * nonce verification happens in do_plugin_boilerplate_ajax() after WordPress is fully
@@ -98,7 +98,7 @@ class AJAX_Handler {
 	}
 
 	/**
-	 * Send appropriate headers for EvolveWP Core AJAX responses.
+	 * Send appropriate headers for Plugin Boilerplate AJAX responses.
 	 *
 	 * @since  1.0.0
 	 * @return void
@@ -113,7 +113,7 @@ class AJAX_Handler {
 	}
 
 	/**
-	 * Check for a EvolveWP Core AJAX request, verify nonce, and fire the action.
+	 * Check for a Plugin Boilerplate AJAX request, verify nonce, and fire the action.
 	 *
 	 * @since  1.0.0
 	 * @return void

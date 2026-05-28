@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core - Developer Toolbar
+ * Plugin Boilerplate - Developer Toolbar
  *
- * @package EvolveWP Core/Toolbars
+ * @package Plugin Boilerplate/Toolbars
  * @since 1.0.0
  */
  
@@ -10,9 +10,9 @@ if (!defined('ABSPATH')) {
     exit;
 }  
 
-if (!class_exists('EvolveWP_Core_Admin_Toolbar_Developers')) :
+if (!class_exists('EvolveWP_Boilerplate_Admin_Toolbar_Developers')) :
 
-class EvolveWP_Core_Admin_Toolbar_Developers {
+class EvolveWP_Boilerplate_Admin_Toolbar_Developers {
     public function __construct() {
         if (!current_user_can('manage_options')) {
             return false;
@@ -33,7 +33,7 @@ class EvolveWP_Core_Admin_Toolbar_Developers {
         
         $args = array(
             'id'     => 'plugin-boilerplate-toolbarmenu-developers',
-            'title'  => __('EvolveWP Core Dev', 'plugin-boilerplate'),          
+            'title'  => __('Plugin Boilerplate Dev', 'plugin-boilerplate'),          
         );
         $wp_admin_bar->add_menu($args);        
     }
@@ -99,5 +99,5 @@ class EvolveWP_Core_Admin_Toolbar_Developers {
 endif;
 
 if (current_user_can('manage_options')) {
-    return new EvolveWP_Core_Admin_Toolbar_Developers();
+    return new EvolveWP_Boilerplate_Admin_Toolbar_Developers();
 }

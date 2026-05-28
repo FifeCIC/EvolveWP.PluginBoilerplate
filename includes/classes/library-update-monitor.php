@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 
  * Tracks bundled third-party libraries and checks for updates via GitHub API
  */
-class EvolveWP_Core_Library_Update_Monitor {
+class EvolveWP_Boilerplate_Library_Update_Monitor {
     
     private static $instance = null;
     private $libraries = array();
@@ -168,7 +168,7 @@ class EvolveWP_Core_Library_Update_Monitor {
             add_action( 'admin_notices', function() use ( $outdated ) {
                 $url = admin_url( 'admin.php?page=plugin_boilerplate_development&tab=libraries' );
                 echo '<div class="notice notice-warning is-dismissible" data-notice="plugin-boilerplate-library-outdated">';
-                echo '<p><strong>EvolveWP Core:</strong> ' . esc_html( count( $outdated ) ) . ' bundled ' . esc_html( _n( 'library is', 'libraries are', count( $outdated ), 'plugin-boilerplate' ) ) . ' outdated (12+ months): ' . esc_html( implode( ', ', $outdated ) ) . '</p>';
+                echo '<p><strong>Plugin Boilerplate:</strong> ' . esc_html( count( $outdated ) ) . ' bundled ' . esc_html( _n( 'library is', 'libraries are', count( $outdated ), 'plugin-boilerplate' ) ) . ' outdated (12+ months): ' . esc_html( implode( ', ', $outdated ) ) . '</p>';
                 echo '<p><a href="' . esc_url( $url ) . '" class="button button-primary">Check for Updates</a> <button type="button" class="button plugin-boilerplate-dismiss-library-notice">Remind Me Later</button></p>';
                 echo '</div>';
             } );
@@ -198,4 +198,4 @@ class EvolveWP_Core_Library_Update_Monitor {
 }
 
 // Initialize
-EvolveWP_Core_Library_Update_Monitor::instance();
+EvolveWP_Boilerplate_Library_Update_Monitor::instance();

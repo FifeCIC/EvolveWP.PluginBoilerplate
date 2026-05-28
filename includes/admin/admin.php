@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core Admin - Main Admin Class
+ * Plugin Boilerplate Admin - Main Admin Class
  *
  * The primary for main add_action() and file includes during an administration side request. There is
  * also a functions.plugin-boilerplate-admin.php for functions strictly related to admin.  
@@ -8,10 +8,10 @@
  * Do not include files only meant for the frontside.
  * Do not queue scripts or css only meant for frontside. 
  * 
- * @class    EvolveWP_Core_Admin
+ * @class    EvolveWP_Boilerplate_Admin
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @version  1.0.0
  */
 
@@ -20,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * EvolveWP_Core_Admin class.
+ * EvolveWP_Boilerplate_Admin class.
  */
-class EvolveWP_Core_Admin {
+class EvolveWP_Boilerplate_Admin {
 
     /**
      * Constructor.
@@ -136,7 +136,7 @@ class EvolveWP_Core_Admin {
             }
 
             // If the user needs to install, send them to the setup wizard
-            if ( EvolveWP_Core_Admin_Notices::has_notice( 'install' ) ) {
+            if ( EvolveWP_Boilerplate_Admin_Notices::has_notice( 'install' ) ) {
                 wp_safe_redirect( admin_url( 'index.php?page=plugin-boilerplate-setup' ) );
                 exit;
             }
@@ -153,7 +153,7 @@ class EvolveWP_Core_Admin {
         $current_screen = get_current_screen();
         $plugin_boilerplate_pages   = plugin_boilerplate_get_screen_ids();
 
-        // Check to make sure we're on a EvolveWP Core admin page
+        // Check to make sure we're on a Plugin Boilerplate admin page
         if ( isset( $current_screen->id ) && apply_filters( 'plugin_boilerplate_display_admin_footer_text', in_array( $current_screen->id, $plugin_boilerplate_pages ) ) ) {
             $footer_text = __( 'Thank you for planting a WordPress Seed. I recommend removing this footer message. This text is an example only.', 'plugin-boilerplate' );
         }
@@ -162,4 +162,4 @@ class EvolveWP_Core_Admin {
     }
 }
 
-return new EvolveWP_Core_Admin();
+return new EvolveWP_Boilerplate_Admin();

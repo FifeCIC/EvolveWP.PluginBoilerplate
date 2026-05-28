@@ -221,7 +221,7 @@ array(
 
 This powers:
 - Admin UI endpoint catalogue (development tabs)
-- EvolveWP Core Feature Gate (knows what's available)
+- Plugin Boilerplate Feature Gate (knows what's available)
 - AI tools (discover actions without hardcoding)
 
 ---

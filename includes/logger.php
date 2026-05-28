@@ -1,13 +1,13 @@
 <?php
 /**
- * EvolveWP Core - Primary Logging Interface
+ * Plugin Boilerplate - Primary Logging Interface
  *
  * This class is not final. There is a task in the projects Trello for 
  * version 2.0 which details a far better log and trace system.
  *
  * @author   Ryan Bayne
  * @category Core
- * @package  EvolveWP Core/Core
+ * @package  Plugin Boilerplate/Core
  * @since    1.0.0
  */
  
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class EvolveWP_Core_Logger {
+class EvolveWP_Boilerplate_Logger {
 
     /**
      * Stores open file _handles.

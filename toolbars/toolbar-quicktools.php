@@ -2,7 +2,7 @@
 /**
  * Admin Toolbar - Quick Tools
  * 
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  */
 
 defined( 'ABSPATH' ) || die;
@@ -11,7 +11,7 @@ global $wp_admin_bar;
 
 $wp_admin_bar->add_menu( array(
     'id'    => 'plugin_boilerplate_toolbar',
-    'title' => '⚡ EvolveWP Core',
+    'title' => '⚡ Plugin Boilerplate',
     'href'  => admin_url( 'admin.php?page=plugin-boilerplate-development' ),
 ) );
 

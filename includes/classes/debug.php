@@ -1,14 +1,14 @@
 <?php
 /**
- * EvolveWP Core Admin - Debugging Class
+ * Plugin Boilerplate Admin - Debugging Class
  *
  * Including this class starts debugging. The level
  * and depth of debugging depends on configuration.
  *
- * @class    EvolveWP_Core_Debug
+ * @class    EvolveWP_Boilerplate_Debug
  * @author   Ryan Bayne
  * @category Admin
- * @package  EvolveWP Core/Admin
+ * @package  Plugin Boilerplate/Admin
  * @version  2.0.0
  */
 
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-if( !class_exists( 'EvolveWP_Core_Debug' ) ) :
+if( !class_exists( 'EvolveWP_Boilerplate_Debug' ) ) :
 
-class EvolveWP_Core_Debug {
+class EvolveWP_Boilerplate_Debug {
 
     /**
      * Activate database error display for the current request.

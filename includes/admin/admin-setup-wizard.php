@@ -1,6 +1,6 @@
 <?php
 /**
- * EvolveWP Core Business Onboarding Wizard.
+ * Plugin Boilerplate Business Onboarding Wizard.
  *
  * ROLE: admin-ui
  *
@@ -25,14 +25,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'EvolveWP_Core_Admin_Setup_Wizard' ) ) :
+if ( ! class_exists( 'EvolveWP_Boilerplate_Admin_Setup_Wizard' ) ) :
 
 /**
  * Business onboarding wizard for the EvolveWP ecosystem.
  *
  * @since 1.0.0
  */
-class EvolveWP_Core_Admin_Setup_Wizard {
+class EvolveWP_Boilerplate_Admin_Setup_Wizard {
 
 	/** @var string Current step key. */
 	private $step = '';
@@ -162,12 +162,12 @@ class EvolveWP_Core_Admin_Setup_Wizard {
 		<head>
 			<meta name="viewport" content="width=device-width" />
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-			<title><?php esc_html_e( 'EvolveWP Core &rsaquo; Setup', 'plugin-boilerplate' ); ?></title>
+			<title><?php esc_html_e( 'Plugin Boilerplate &rsaquo; Setup', 'plugin-boilerplate' ); ?></title>
 			<?php wp_print_styles( 'plugin-boilerplate-setup' ); ?>
 			<?php wp_print_styles( 'plugin_boilerplate_admin_styles' ); ?>
 		</head>
 		<body class="plugin-boilerplate-setup wp-core-ui">
-			<h1 id="plugin-boilerplate-logo"><?php esc_html_e( 'EvolveWP Core', 'plugin-boilerplate' ); ?></h1>
+			<h1 id="plugin-boilerplate-logo"><?php esc_html_e( 'Plugin Boilerplate', 'plugin-boilerplate' ); ?></h1>
 		<?php
 	}
 
@@ -490,8 +490,8 @@ class EvolveWP_Core_Admin_Setup_Wizard {
 	public function step_ready() {
 		update_option( 'evolvewp_onboarding_complete', true );
 
-		if ( class_exists( 'EvolveWP_Core_Admin_Notices' ) ) {
-			EvolveWP_Core_Admin_Notices::remove_notice( 'install' );
+		if ( class_exists( 'EvolveWP_Boilerplate_Admin_Notices' ) ) {
+			EvolveWP_Boilerplate_Admin_Notices::remove_notice( 'install' );
 		}
 
 		\EvolveWP\PluginBoilerplate\Core\Audit::log( array(
@@ -519,4 +519,4 @@ class EvolveWP_Core_Admin_Setup_Wizard {
 
 endif;
 
-new EvolveWP_Core_Admin_Setup_Wizard();
+new EvolveWP_Boilerplate_Admin_Setup_Wizard();

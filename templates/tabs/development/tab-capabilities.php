@@ -7,7 +7,7 @@
  * Shows all registered capabilities grouped by group key, with their
  * metadata and which roles currently have each capability.
  *
- * @package  EvolveWP Core
+ * @package  Plugin Boilerplate
  * @category Admin
  * @since    3.1.0
  */
@@ -115,7 +115,7 @@ foreach ( $wp_roles->role_objects as $role_slug => $role ) {
 				<div class="plugin-boilerplate-arch-step-number">3</div>
 				<div class="plugin-boilerplate-arch-step-content">
 					<strong><?php esc_html_e( 'Check', 'plugin-boilerplate' ); ?></strong>
-					<p><?php esc_html_e( 'plugin_boilerplate_user_can() checks capabilities at runtime. The plugin_boilerplate_user_can filter allows EvolveWP Core to override.', 'plugin-boilerplate' ); ?></p>
+					<p><?php esc_html_e( 'plugin_boilerplate_user_can() checks capabilities at runtime. The plugin_boilerplate_user_can filter allows Plugin Boilerplate to override.', 'plugin-boilerplate' ); ?></p>
 				</div>
 			</div>
 		</div>

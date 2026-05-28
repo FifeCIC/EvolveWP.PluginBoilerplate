@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             : '';
     }
 
-    echo '<h1>EvolveWP Core: ' . esc_html( $plugin_boilerplate_title ) . '</h1>';
+    echo '<h1>Plugin Boilerplate: ' . esc_html( $plugin_boilerplate_title ) . '</h1>';
     ?>
     
     <!-- TABS -->

@@ -3,7 +3,7 @@
  * Plugin Ecosystem Registry
  * Manages communication between multiple Ryan Bayne plugins
  *
- * @package EvolveWP Core/Ecosystem
+ * @package Plugin Boilerplate/Ecosystem
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EvolveWP_Core_Ecosystem_Registry {
+class EvolveWP_Boilerplate_Ecosystem_Registry {
     
     private static $instance = null;
     private $registered_plugins = array();
@@ -136,7 +136,7 @@ class EvolveWP_Core_Ecosystem_Registry {
  * Global accessor
  */
 function plugin_boilerplate_ecosystem() {
-    return EvolveWP_Core_Ecosystem_Registry::instance();
+    return EvolveWP_Boilerplate_Ecosystem_Registry::instance();
 }
 
 // Initialize
@@ -145,7 +145,7 @@ plugin_boilerplate_ecosystem();
 // Register this plugin
 add_action('plugin_boilerplate_ecosystem_register', function() {
     plugin_boilerplate_ecosystem()->register_plugin('plugin-boilerplate', array(
-        'name' => 'EvolveWP Core',
+        'name' => 'Plugin Boilerplate',
         'version' => PLUGIN_BOILERPLATE_VERSION,
         'path' => PLUGIN_BOILERPLATE_PLUGIN_DIR_PATH,
         'url' => plugins_url('/', PLUGIN_BOILERPLATE_PLUGIN_FILE),

@@ -1,8 +1,8 @@
 <?php
 /**
- * EvolveWP Core Shortcodes
+ * Plugin Boilerplate Shortcodes
  *
- * @package EvolveWP Core/Shortcodes
+ * @package Plugin Boilerplate/Shortcodes
  * @version 1.0.0
  */
 

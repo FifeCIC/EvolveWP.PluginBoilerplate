@@ -1,15 +1,15 @@
 <?php
 /**
- * EvolveWP Core Task Scheduler
+ * Plugin Boilerplate Task Scheduler
  * Wrapper for Action Scheduler library
  *
- * @package EvolveWP Core
+ * @package Plugin Boilerplate
  * @version 1.2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-class EvolveWP_Core_Task_Scheduler {
+class EvolveWP_Boilerplate_Task_Scheduler {
 
     private static $instance = null;
 
@@ -125,4 +125,4 @@ class EvolveWP_Core_Task_Scheduler {
 }
 
 // Initialize
-EvolveWP_Core_Task_Scheduler::instance();
+EvolveWP_Boilerplate_Task_Scheduler::instance();
